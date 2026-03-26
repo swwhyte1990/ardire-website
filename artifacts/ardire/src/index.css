@@ -80,54 +80,54 @@
   --elevate-1: rgba(255, 255, 255, .04);
   --elevate-2: rgba(255, 255, 255, .09);
 
-  /* Core Colors — Deep Hunter Green + Gold */
-  --background: 155 38% 7%;
-  --foreground: 43 78% 62%;
+  /* Core Colors — Rich Bottle Green + Dark Gold */
+  --background: 155 58% 7%;
+  --foreground: 43 72% 50%;
 
-  --card: 155 35% 10%;
-  --card-foreground: 43 78% 62%;
-  --card-border: 155 30% 16%;
+  --card: 155 55% 10%;
+  --card-foreground: 43 72% 50%;
+  --card-border: 155 50% 16%;
 
-  --popover: 155 35% 10%;
-  --popover-foreground: 43 78% 62%;
-  --popover-border: 155 30% 16%;
+  --popover: 155 55% 10%;
+  --popover-foreground: 43 72% 50%;
+  --popover-border: 155 50% 16%;
 
-  /* Bright Whisky Gold Accent */
-  --primary: 43 90% 52%;
-  --primary-foreground: 155 38% 7%;
+  /* Dark Antique Gold Accent */
+  --primary: 43 82% 44%;
+  --primary-foreground: 155 58% 7%;
 
-  --secondary: 155 32% 13%;
-  --secondary-foreground: 43 78% 62%;
+  --secondary: 155 52% 12%;
+  --secondary-foreground: 43 72% 50%;
 
-  --muted: 155 30% 13%;
-  --muted-foreground: 43 45% 52%;
+  --muted: 155 50% 12%;
+  --muted-foreground: 43 50% 40%;
 
-  --accent: 43 90% 52%;
-  --accent-foreground: 155 38% 7%;
+  --accent: 43 82% 44%;
+  --accent-foreground: 155 58% 7%;
 
   --destructive: 0 60% 50%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 155 28% 18%;
-  --input: 155 30% 13%;
-  --ring: 43 90% 52%;
+  --border: 155 48% 17%;
+  --input: 155 50% 12%;
+  --ring: 43 82% 44%;
 
   /* Sidebar */
-  --sidebar: 155 38% 6%;
-  --sidebar-foreground: 43 78% 62%;
-  --sidebar-border: 155 28% 14%;
-  --sidebar-primary: 43 90% 52%;
-  --sidebar-primary-foreground: 155 38% 7%;
-  --sidebar-accent: 155 30% 13%;
-  --sidebar-accent-foreground: 43 78% 62%;
-  --sidebar-ring: 43 90% 52%;
+  --sidebar: 155 58% 6%;
+  --sidebar-foreground: 43 72% 50%;
+  --sidebar-border: 155 48% 13%;
+  --sidebar-primary: 43 82% 44%;
+  --sidebar-primary-foreground: 155 58% 7%;
+  --sidebar-accent: 155 50% 12%;
+  --sidebar-accent-foreground: 43 72% 50%;
+  --sidebar-ring: 43 82% 44%;
 
   /* Charts */
-  --chart-1: 43 90% 52%;
-  --chart-2: 155 35% 35%;
-  --chart-3: 43 60% 72%;
-  --chart-4: 25 55% 50%;
-  --chart-5: 175 25% 30%;
+  --chart-1: 43 82% 44%;
+  --chart-2: 155 55% 30%;
+  --chart-3: 43 60% 58%;
+  --chart-4: 25 55% 42%;
+  --chart-5: 175 30% 25%;
 
   /* Typography */
   --app-font-sans: 'Lato', sans-serif;
