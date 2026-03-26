@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Ardire"
+version = "1.0.0"
+id = "artifacts/ardire"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18439
+
+[services.development]
+run = "pnpm --filter @workspace/ardire run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ardire", "run", "build" ]
+publicDir = "artifacts/ardire/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18439"
+BASE_PATH = "/"
