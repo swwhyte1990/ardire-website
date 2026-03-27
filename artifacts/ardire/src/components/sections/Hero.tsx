@@ -9,7 +9,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         {/* landing page hero dramatic scottish highlands landscape moody dark */}
         <img
-          src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?q=80&w=2940&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2940&auto=format&fit=crop"
           alt="Dramatic Scottish Highlands"
           className="w-full h-full object-cover scale-105 origin-center animate-[pulse_20s_ease-in-out_infinite_alternate]"
           style={{ animationName: 'kenburns' }}
