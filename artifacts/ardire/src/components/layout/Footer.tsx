@@ -10,7 +10,7 @@ export function Footer() {
             <img 
               src={`${import.meta.env.BASE_URL}images/logo.png`} 
               alt="Ardire Logo" 
-              className="h-8 w-8 object-contain opacity-80"
+              className="h-24 w-24 object-contain"
             />
             <span className="font-display text-xl tracking-widest uppercase text-foreground">
               ARDIRE
