@@ -36,11 +36,10 @@ export function Contact() {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Simulate API call
     console.log(values);
     toast({
       title: "Enquiry Received",
-      description: "Our concierge team will contact you shortly.",
+      description: "Our team will be in touch to arrange a private consultation.",
       variant: "default",
     });
     form.reset();
@@ -50,7 +49,7 @@ export function Contact() {
     <section id="contact" className="py-24 md:py-32 bg-background relative border-t border-border/30">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-          
+
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -61,18 +60,25 @@ export function Contact() {
               Begin Your <span className="italic text-primary">Journey</span>
             </h2>
             <p className="text-muted-foreground font-sans font-light text-lg mb-12 max-w-md">
-              Allow us to craft an itinerary that surpasses expectation. Share your initial thoughts, and our directors will be in touch to arrange a private consultation.
+              Allow us to craft an experience that surpasses expectation. Share your initial thoughts and our team will be in touch to arrange a private consultation.
             </p>
-            
+
             <div className="space-y-8">
               <div>
                 <h4 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Headquarters</h4>
-                <p className="font-display text-xl text-foreground">Edinburgh, Scotland</p>
+                <p className="font-display text-xl text-foreground">The Árd Íre Group</p>
+                <p className="text-muted-foreground font-sans mt-1">Clyde Offices, 2nd Floor<br />48 West George Street<br />Glasgow G2 1BP</p>
               </div>
               <div>
                 <h4 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Direct Enquiries</h4>
-                <a href="mailto:concierge@ardire.scot" className="font-display text-xl text-foreground hover:text-primary transition-colors">
-                  concierge@ardire.scot
+                <a href="mailto:inquire@ardire.co.uk" className="font-display text-xl text-foreground hover:text-primary transition-colors block">
+                  inquire@ardire.co.uk
+                </a>
+              </div>
+              <div>
+                <h4 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Telephone</h4>
+                <a href="tel:+441412550796" className="font-display text-xl text-foreground hover:text-primary transition-colors">
+                  +44 (0)141 255 0796
                 </a>
               </div>
             </div>
@@ -95,7 +101,7 @@ export function Contact() {
                       <FormItem>
                         <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Full Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="Lord James..." className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary h-12" {...field} />
+                          <Input placeholder="Your name..." className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary h-12" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -108,7 +114,7 @@ export function Contact() {
                       <FormItem>
                         <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Email Address</FormLabel>
                         <FormControl>
-                          <Input placeholder="contact@estate.com" className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary h-12" {...field} />
+                          <Input placeholder="your@email.com" className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary h-12" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -125,14 +131,16 @@ export function Contact() {
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger className="bg-background/50 border-border/50 rounded-none focus:ring-primary h-12">
-                            <SelectValue placeholder="Select an experience" />
+                            <SelectValue placeholder="Select a service" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent className="bg-card border-border rounded-none">
-                          <SelectItem value="concierge">Private Concierge</SelectItem>
-                          <SelectItem value="expedition">Luxury Expedition</SelectItem>
-                          <SelectItem value="events">Event Management</SelectItem>
-                          <SelectItem value="whisky">Rare Whisky Vault Access</SelectItem>
+                          <SelectItem value="luxury-tours">Luxury Tours</SelectItem>
+                          <SelectItem value="corporate-incentives">Corporate Incentives</SelectItem>
+                          <SelectItem value="self-guided">Self-Guided Tours</SelectItem>
+                          <SelectItem value="staffing">Event Staffing</SelectItem>
+                          <SelectItem value="concierge">Concierge</SelectItem>
+                          <SelectItem value="commonwealth">Commonwealth '26</SelectItem>
                           <SelectItem value="other">Other / General</SelectItem>
                         </SelectContent>
                       </Select>
@@ -148,10 +156,10 @@ export function Contact() {
                     <FormItem>
                       <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Your Requirements</FormLabel>
                       <FormControl>
-                        <Textarea 
-                          placeholder="Briefly describe what you envision..." 
-                          className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary min-h-[120px] resize-none" 
-                          {...field} 
+                        <Textarea
+                          placeholder="Tell us about what you have in mind..."
+                          className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary min-h-[120px] resize-none"
+                          {...field}
                         />
                       </FormControl>
                       <FormMessage />
@@ -159,8 +167,8 @@ export function Contact() {
                   )}
                 />
 
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-sans tracking-widest uppercase text-xs h-14 rounded-none transition-all duration-300"
                 >
                   Submit Enquiry
