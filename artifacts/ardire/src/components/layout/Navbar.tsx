@@ -37,7 +37,7 @@ export function Navbar() {
           <img 
             src={`${import.meta.env.BASE_URL}images/logo.png`} 
             alt="Ardire Logo" 
-            className="h-10 w-10 object-contain transition-transform duration-500 group-hover:scale-105"
+            className="h-16 w-16 object-contain transition-transform duration-500 group-hover:scale-105"
           />
           <span className="font-display text-2xl font-medium tracking-widest uppercase text-foreground">
             ARDIRE
