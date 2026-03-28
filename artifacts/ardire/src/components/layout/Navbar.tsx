@@ -70,6 +70,7 @@ export function Navbar() {
 
       {/* Mobile Menu — full-screen overlay, nav sits above it via z-50 */}
       <div
+        onClick={() => setMobileMenuOpen(false)}
         className={cn(
           "fixed inset-0 z-40 bg-background flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden",
           mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
