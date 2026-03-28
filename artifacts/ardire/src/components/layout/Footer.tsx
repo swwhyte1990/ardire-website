@@ -27,7 +27,7 @@ export function Footer() {
           <div className="text-muted-foreground font-sans text-xs leading-relaxed mt-2">
             <p>Clyde Offices, 2nd Floor, 48 West George Street</p>
             <p>Glasgow G2 1BP, Scotland</p>
-            <a href="mailto:inquire@ardire.co.uk" className="hover:text-primary transition-colors">inquire@ardire.co.uk</a>
+            <a href="mailto:enquiries@ardire.co.uk" className="hover:text-primary transition-colors">enquiries@ardire.co.uk</a>
             <span className="mx-2">·</span>
             <a href="tel:+441412550796" className="hover:text-primary transition-colors">+44 (0)141 255 0796</a>
           </div>

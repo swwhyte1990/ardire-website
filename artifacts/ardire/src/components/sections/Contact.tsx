@@ -71,8 +71,8 @@ export function Contact() {
               </div>
               <div>
                 <h4 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Direct Enquiries</h4>
-                <a href="mailto:inquire@ardire.co.uk" className="font-display text-lg text-foreground hover:text-primary transition-colors block">
-                  inquire@ardire.co.uk
+                <a href="mailto:enquiries@ardire.co.uk" className="font-display text-lg text-foreground hover:text-primary transition-colors block">
+                  enquiries@ardire.co.uk
                 </a>
               </div>
               <div>
