@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -130,9 +130,9 @@
   --chart-5: 175 30% 25%;
 
   /* Typography */
-  --app-font-sans: 'Lato', sans-serif;
-  --app-font-display: 'Cormorant Garamond', serif;
-  --app-font-serif: 'Cormorant Garamond', serif;
+  --app-font-sans: 'Raleway', sans-serif;
+  --app-font-display: 'Cinzel', serif;
+  --app-font-serif: 'Cinzel', serif;
   --app-font-mono: Menlo, monospace;
   
   --radius: 0.25rem; /* Slightly sharper corners for a more refined look */
