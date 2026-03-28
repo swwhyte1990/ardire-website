@@ -17,7 +17,6 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Commonwealth '26", href: "#services" },
-    { name: "Visit", href: "#experiences" },
     { name: "Event Staff", href: "#services" },
     { name: "Get in Touch", href: "#contact" },
   ];
