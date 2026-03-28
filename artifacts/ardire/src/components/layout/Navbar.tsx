@@ -88,12 +88,6 @@ export function Navbar() {
             </li>
           ))}
         </ul>
-        <Button
-          asChild
-          className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90 font-sans tracking-widest uppercase text-sm px-8 py-6"
-        >
-          <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Enquire Now</a>
-        </Button>
       </div>
     </nav>
   );
