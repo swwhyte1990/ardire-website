@@ -21,7 +21,6 @@ export default function ServiceDetail() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-primary/30">
       <Navbar />
-
       {/* Hero */}
       <section className="relative min-h-[50vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -58,7 +57,6 @@ export default function ServiceDetail() {
           </motion.div>
         </div>
       </section>
-
       {/* Content */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -97,9 +95,7 @@ export default function ServiceDetail() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="bg-card border border-border/50 p-10"
             >
-              <p className="font-sans tracking-[0.3em] uppercase text-primary mb-8 text-xs">
-                What's Included
-              </p>
+              <p className="font-sans tracking-[0.3em] uppercase text-primary mb-8 text-xs">What to expect.</p>
               <ul className="space-y-5">
                 {service.highlights.map((item, i) => (
                   <motion.li
@@ -122,7 +118,6 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
-
       {/* CTA Banner */}
       <section className="py-20 bg-card border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -148,7 +143,6 @@ export default function ServiceDetail() {
           </motion.div>
         </div>
       </section>
-
       <Footer />
     </div>
   );
