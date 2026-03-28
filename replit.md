@@ -48,6 +48,14 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 - `pnpm run build` — runs `typecheck` first, then recursively runs `build` in all packages that define it
 - `pnpm run typecheck` — runs `tsc --build --emitDeclarationOnly` using project references
 
+## Ardire Website (`artifacts/ardire`)
+
+Luxury brochure website for Árd Íre Hospitality Group (trading as Ardire). React + Vite + Wouter + Tailwind + shadcn/ui.
+
+- **Email**: Contact form POSTs to `POST /api/enquiry` on the API server, which sends via Resend.
+- **Resend**: API key stored as `RESEND_API_KEY` secret (added manually — NOT via Replit Resend integration connector). Do not attempt to set up the Resend connector; use the existing secret directly.
+- **Sending domain**: Emails sent from `enquiries@ardire.co.uk` — this domain must be verified in the Resend dashboard for delivery to work.
+
 ## Packages
 
 ### `artifacts/api-server` (`@workspace/api-server`)
