@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "About Us", href: "#about" },
@@ -13,7 +22,14 @@ export function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 py-6 bg-background/60 backdrop-blur-md border-b border-border/30">
+    <nav
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out border-b border-transparent",
+        scrolled
+          ? "bg-background/95 backdrop-blur-md border-border/50 py-4 shadow-lg shadow-black/20"
+          : "bg-transparent py-6"
+      )}
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
@@ -52,10 +68,11 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu — offset matches fixed navbar height (py-6 + h-16 logo = ~112px) */}
+      {/* Mobile Menu */}
       <div
         className={cn(
-          "fixed inset-x-0 bottom-0 top-28 bg-background border-t border-border/50 flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden",
+          "fixed inset-x-0 bottom-0 bg-background border-t border-border/50 flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden",
+          scrolled ? "top-24" : "top-28",
           mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         )}
       >
