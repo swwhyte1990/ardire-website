@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [menuOffsetScrolled, setMenuOffsetScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,20 +62,16 @@ export function Navbar() {
         {/* Mobile Toggle */}
         <button
           className="md:hidden text-foreground hover:text-primary transition-colors"
-          onClick={() => {
-            if (!mobileMenuOpen) setMenuOffsetScrolled(scrolled);
-            setMobileMenuOpen(!mobileMenuOpen);
-          }}
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={28} strokeWidth={1.5} /> : <Menu size={28} strokeWidth={1.5} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — full-screen overlay, nav sits above it via z-50 */}
       <div
         className={cn(
-          "fixed inset-x-0 bottom-0 bg-background border-t border-border/50 flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden",
-          menuOffsetScrolled ? "top-24" : "top-28",
+          "fixed inset-0 z-40 bg-background flex flex-col items-center justify-center gap-8 transition-all duration-500 md:hidden",
           mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         )}
       >
