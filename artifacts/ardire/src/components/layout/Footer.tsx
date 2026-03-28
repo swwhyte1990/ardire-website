@@ -59,7 +59,7 @@ export function Footer() {
               <Instagram size={20} strokeWidth={1.5} />
             </a>
             <a
-              href="https://www.instagram.com/ardiregroupsocial?igsh=MTh2OWNkZzJrZHBvdg=="
+              href="https://www.tiktok.com/@ardiregroup"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
