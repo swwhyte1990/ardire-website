@@ -27,9 +27,7 @@ export function Footer() {
               className="h-24 w-24 object-contain"
             />
             <div>
-              <span className="font-display text-xl tracking-widest uppercase text-foreground block">
-                ÁRD ÍRE
-              </span>
+              <span className="font-display text-xl tracking-widest uppercase text-foreground block">ÁRDÍRE</span>
               <span className="font-sans text-xs text-muted-foreground tracking-widest uppercase">
                 Hospitality Group
               </span>
@@ -71,7 +69,6 @@ export function Footer() {
         </div>
 
       </div>
-
       <div className="max-w-7xl mx-auto px-6 md:px-12 mt-12 pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-xs font-sans text-muted-foreground">
           © {new Date().getFullYear()} Árd Íre Hospitality Group. All rights reserved.
