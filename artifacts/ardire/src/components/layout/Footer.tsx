@@ -45,12 +45,6 @@ export function Footer() {
               <Linkedin size={20} strokeWidth={1.5} />
             </a>
           </div>
-          <nav className="flex flex-col md:items-end gap-2 text-xs font-sans text-muted-foreground uppercase tracking-widest">
-            <a href="#about" className="hover:text-primary transition-colors">About</a>
-            <a href="#services" className="hover:text-primary transition-colors">Services</a>
-            <a href="#experiences" className="hover:text-primary transition-colors">Experiences</a>
-            <a href="#contact" className="hover:text-primary transition-colors">Get in Touch</a>
-          </nav>
         </div>
 
       </div>

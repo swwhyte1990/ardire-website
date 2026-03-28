@@ -36,12 +36,12 @@ export function About() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           >
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-8">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-8">
               The Árd Íre<br/>
               <span className="italic text-primary">Hospitality Group.</span>
             </h2>
 
-            <div className="space-y-6 text-muted-foreground font-sans text-lg leading-relaxed font-light">
+            <div className="space-y-6 text-muted-foreground font-sans text-base leading-relaxed font-light">
               <p>
                 Árd Íre — meaning "high place" in Scottish Gaelic — was founded on a belief that truly exceptional experiences require more than a booking; they require vision, deep local knowledge, and a team that treats every detail as a privilege.
               </p>
@@ -55,7 +55,7 @@ export function About() {
 
             <div className="mt-12 flex items-center gap-6">
               <div className="w-16 h-[1px] bg-primary/50" />
-              <p className="font-display italic text-2xl text-foreground">
+              <p className="font-display italic text-xl text-foreground">
                 "Thoughtfully Curated. Seamlessly Delivered."
               </p>
             </div>

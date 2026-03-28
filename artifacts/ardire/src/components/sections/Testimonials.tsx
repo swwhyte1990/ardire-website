@@ -49,7 +49,7 @@ export function Testimonials() {
               transition={{ duration: 0.5 }}
               className="px-4"
             >
-              <h3 className="font-display text-2xl md:text-4xl text-foreground italic leading-relaxed mb-8">
+              <h3 className="font-display text-xl md:text-2xl text-foreground italic leading-relaxed mb-8">
                 "{testimonials[currentIndex].quote}"
               </h3>
               <div className="font-sans uppercase tracking-widest text-sm text-primary">

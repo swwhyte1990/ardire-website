@@ -21,14 +21,14 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
         >
-          <p className="font-sans tracking-[0.3em] uppercase text-primary mb-6 text-sm md:text-base">
+          <p className="font-sans tracking-[0.3em] uppercase text-primary mb-6 text-xs">
             Bespoke Scottish Experiences
           </p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display text-foreground leading-[1.1] mb-8 drop-shadow-2xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-foreground leading-[1.15] mb-8 drop-shadow-2xl">
             Thoughtfully Curated.<br />
             <span className="italic text-primary/90 font-light">Uniquely Yours.</span>
           </h1>
-          <p className="font-sans text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="font-sans text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
             Bespoke concierge and event planning services to elevate your holiday, corporate incentive or major event — blending your inspiration with our expertise.
           </p>
 

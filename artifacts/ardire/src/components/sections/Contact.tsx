@@ -56,28 +56,28 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
               Begin Your <span className="italic text-primary">Journey</span>
             </h2>
-            <p className="text-muted-foreground font-sans font-light text-lg mb-12 max-w-md">
+            <p className="text-muted-foreground font-sans font-light text-base mb-12 max-w-md">
               Allow us to craft an experience that surpasses expectation. Share your initial thoughts and our team will be in touch to arrange a private consultation.
             </p>
 
             <div className="space-y-8">
               <div>
                 <h4 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Headquarters</h4>
-                <p className="font-display text-xl text-foreground">The Árd Íre Group</p>
+                <p className="font-display text-lg text-foreground">The Árd Íre Group</p>
                 <p className="text-muted-foreground font-sans mt-1">Clyde Offices, 2nd Floor<br />48 West George Street<br />Glasgow G2 1BP</p>
               </div>
               <div>
                 <h4 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Direct Enquiries</h4>
-                <a href="mailto:inquire@ardire.co.uk" className="font-display text-xl text-foreground hover:text-primary transition-colors block">
+                <a href="mailto:inquire@ardire.co.uk" className="font-display text-lg text-foreground hover:text-primary transition-colors block">
                   inquire@ardire.co.uk
                 </a>
               </div>
               <div>
                 <h4 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Telephone</h4>
-                <a href="tel:+441412550796" className="font-display text-xl text-foreground hover:text-primary transition-colors">
+                <a href="tel:+441412550796" className="font-display text-lg text-foreground hover:text-primary transition-colors">
                   +44 (0)141 255 0796
                 </a>
               </div>

@@ -16,10 +16,11 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Experiences", href: "#experiences" },
-    { name: "Journal", href: "#testimonials" },
+    { name: "Commonwealth '26", href: "#services" },
+    { name: "Visit", href: "#experiences" },
+    { name: "Event Staff", href: "#services" },
+    { name: "Inspiration", href: "#testimonials" },
+    { name: "Get in Touch", href: "#contact" },
   ];
 
   return (
@@ -58,13 +59,6 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <Button 
-            asChild 
-            variant="outline" 
-            className="border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground font-sans tracking-widest uppercase text-xs px-6 transition-all duration-300"
-          >
-            <a href="#contact">Enquire</a>
-          </Button>
         </div>
 
         {/* Mobile Toggle */}

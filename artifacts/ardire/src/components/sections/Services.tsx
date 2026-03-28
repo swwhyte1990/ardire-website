@@ -54,7 +54,7 @@ export function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-display text-4xl md:text-5xl text-foreground"
+            className="font-display text-3xl md:text-4xl text-foreground"
           >
             What We <span className="italic">Deliver</span>
           </motion.h2>
@@ -76,7 +76,7 @@ export function Services() {
                   <div className="w-16 h-16 rounded-full bg-background border border-border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                     {service.icon}
                   </div>
-                  <CardTitle className="font-display text-2xl text-foreground font-medium">
+                  <CardTitle className="font-display text-xl text-foreground font-medium">
                     {service.title}
                   </CardTitle>
                 </CardHeader>

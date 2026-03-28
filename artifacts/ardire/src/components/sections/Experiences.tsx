@@ -39,7 +39,7 @@ export function Experiences() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
               Curated <span className="italic text-primary">Experiences</span>
             </h2>
             <p className="text-muted-foreground font-sans max-w-xl font-light">
@@ -69,7 +69,7 @@ export function Experiences() {
 
               <div className="absolute bottom-0 left-0 p-8 z-20 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                 <div className="w-8 h-[1px] bg-primary mb-4 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-100" />
-                <h3 className="font-display text-2xl md:text-3xl text-foreground">
+                <h3 className="font-display text-xl md:text-2xl text-foreground">
                   {exp.title}
                 </h3>
               </div>
