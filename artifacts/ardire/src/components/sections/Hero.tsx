@@ -29,7 +29,7 @@ export function Hero() {
             <span className="italic text-primary/90 font-light">Uniquely Yours.</span>
           </h1>
           <p className="font-sans text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
-            Bespoke concierge and event planning services to elevate your holiday, corporate incentive or major event — blending your inspiration with our expertise.
+            Bespoke concierge and event planning services to elevate your holiday, corporate incentive or major event, blending your inspiration with our expertise.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

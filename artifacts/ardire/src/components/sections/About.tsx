@@ -43,13 +43,13 @@ export function About() {
 
             <div className="space-y-6 text-muted-foreground font-sans text-base leading-relaxed font-light">
               <p>
-                Árd Íre — meaning "high place" in Scottish Gaelic — was founded on a belief that truly exceptional experiences require more than a booking; they require vision, deep local knowledge, and a team that treats every detail as a privilege.
+                Árd Íre, meaning "high place" in Scottish Gaelic, was founded on a belief that truly exceptional experiences require more than a booking; they require vision, deep local knowledge, and a team that treats every detail as a privilege.
               </p>
               <p>
                 We provide bespoke concierge and event planning services to elevate your holiday, corporate incentive or major event. Tour Scotland and beyond, blending your inspiration with our expertise to create unforgettable experiences.
               </p>
               <p>
-                From intimate private tours to large-scale corporate incentive programmes, we blend your ambitions with our network, creativity, and on-the-ground expertise — seamlessly delivering moments that matter.
+                From intimate private tours to large-scale corporate incentive programmes, we blend your ambitions with our network, creativity, and on-the-ground expertise, seamlessly delivering moments that matter.
               </p>
             </div>
 

@@ -16,7 +16,7 @@ const services = [
   {
     icon: <Compass className="w-8 h-8 text-primary" strokeWidth={1} />,
     title: "Self-Guided Tours",
-    description: "For those who seek freedom with a safety net of expertise. We curate the itinerary, pre-book the best stops, and provide round-the-clock support — you choose the pace."
+    description: "For those who seek freedom with a safety net of expertise. We curate the itinerary, pre-book the best stops, and provide round-the-clock support. You choose the pace."
   },
   {
     icon: <Users className="w-8 h-8 text-primary" strokeWidth={1} />,
@@ -26,12 +26,12 @@ const services = [
   {
     icon: <Key className="w-8 h-8 text-primary" strokeWidth={1} />,
     title: "Concierge",
-    description: "Round-the-clock lifestyle management for discerning individuals. From securing impossible reservations to orchestrating complex logistics — handled with absolute discretion."
+    description: "Round-the-clock lifestyle management for discerning individuals. From securing impossible reservations to orchestrating complex logistics, handled with absolute discretion."
   },
   {
     icon: <Star className="w-8 h-8 text-primary" strokeWidth={1} />,
     title: "Commonwealth '26",
-    description: "Árd Íre is proud to be supporting the Glasgow 2026 Commonwealth Games — delivering bespoke visitor experiences, VIP hospitality, and corporate programmes around this landmark event."
+    description: "Árd Íre is proud to be supporting the Glasgow 2026 Commonwealth Games, delivering bespoke visitor experiences, VIP hospitality, and corporate programmes around this landmark event."
   }
 ];
 
