@@ -40,7 +40,7 @@ export function Navbar() {
             className="h-16 w-16 object-contain transition-transform duration-500 group-hover:scale-105"
           />
           <span className="font-display text-2xl font-medium tracking-widest uppercase text-foreground">
-            ARDIRE
+            Árdíre
           </span>
         </a>
 
