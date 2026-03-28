@@ -71,7 +71,7 @@ export function Footer() {
       </div>
       <div className="max-w-7xl mx-auto px-6 md:px-12 mt-12 pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-xs font-sans text-muted-foreground">
-          © {new Date().getFullYear()} Árd Íre Hospitality Group. All rights reserved.
+          © {new Date().getFullYear()} Árdíre Hospitality Group. All rights reserved.
         </p>
         <div className="flex gap-6 text-xs font-sans text-muted-foreground">
           <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
