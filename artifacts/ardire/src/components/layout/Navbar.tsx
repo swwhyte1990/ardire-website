@@ -19,7 +19,6 @@ export function Navbar() {
     { name: "Commonwealth '26", href: "#services" },
     { name: "Visit", href: "#experiences" },
     { name: "Event Staff", href: "#services" },
-    { name: "Inspiration", href: "#testimonials" },
     { name: "Get in Touch", href: "#contact" },
   ];
 
