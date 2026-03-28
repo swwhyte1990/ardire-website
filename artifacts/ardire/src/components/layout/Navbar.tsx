@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type MouseEvent } from "react";
+import { useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location, navigate] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,10 +17,24 @@ export function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "About Us", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Get in Touch", href: "#contact" },
+    { name: "About Us", sectionId: "about" },
+    { name: "Services", sectionId: "services" },
+    { name: "Get in Touch", sectionId: "contact" },
   ];
+
+  function handleNavClick(e: MouseEvent<HTMLAnchorElement>, sectionId: string) {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    const isHome = location === "/" || location === "";
+    if (isHome) {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    }
+  }
 
   return (
     <nav
@@ -32,7 +47,7 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group">
+        <a href="/" className="flex items-center gap-3 group" onClick={(e) => { e.preventDefault(); navigate("/"); }}>
           <img
             src={`${import.meta.env.BASE_URL}images/logo.png`}
             alt="Ardire Logo"
@@ -49,7 +64,8 @@ export function Navbar() {
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a
-                  href={link.href}
+                  href={`/#${link.sectionId}`}
+                  onClick={(e) => handleNavClick(e, link.sectionId)}
                   className="text-sm font-sans tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors duration-300"
                 >
                   {link.name}
@@ -61,14 +77,14 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-foreground hover:text-primary transition-colors"
+          className="md:hidden text-foreground hover:text-primary transition-colors relative z-50"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={28} strokeWidth={1.5} /> : <Menu size={28} strokeWidth={1.5} />}
         </button>
       </div>
 
-      {/* Mobile Menu — full-screen overlay, nav sits above it via z-50 */}
+      {/* Mobile Menu — full-screen overlay, toggle button sits above it via z-50 */}
       <div
         onClick={() => setMobileMenuOpen(false)}
         className={cn(
@@ -80,8 +96,8 @@ export function Navbar() {
           {navLinks.map((link) => (
             <li key={link.name}>
               <a
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
+                href={`/#${link.sectionId}`}
+                onClick={(e) => handleNavClick(e, link.sectionId)}
                 className="text-2xl font-display italic text-foreground hover:text-primary transition-colors"
               >
                 {link.name}
