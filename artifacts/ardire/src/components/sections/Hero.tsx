@@ -38,7 +38,7 @@ export function Hero() {
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-sans tracking-widest uppercase text-xs px-8 h-14 rounded-none border border-primary transition-all duration-300 hover:shadow-[0_0_20px_rgba(184,134,11,0.3)]"
             >
-              <a href="#experiences">Discover Experiences</a>
+              <a href="#services">Explore Our Services</a>
             </Button>
             <Button
               asChild
