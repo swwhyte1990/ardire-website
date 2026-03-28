@@ -35,14 +35,32 @@ export function Contact() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: "Enquiry Received",
-      description: "Our team will be in touch to arrange a private consultation.",
-      variant: "default",
-    });
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      const res = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error((data as { error?: string }).error || "Submission failed");
+      }
+
+      toast({
+        title: "Enquiry Received",
+        description: "Our team will be in touch to arrange a private consultation.",
+        variant: "default",
+      });
+      form.reset();
+    } catch (err) {
+      toast({
+        title: "Something went wrong",
+        description: err instanceof Error ? err.message : "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    }
   }
 
   return (
