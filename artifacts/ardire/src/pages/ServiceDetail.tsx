@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams, Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle, ArrowRight } from "lucide-react";
@@ -10,6 +11,10 @@ import NotFound from "@/pages/not-found";
 export default function ServiceDetail() {
   const { slug } = useParams<{ slug: string }>();
   const service = getServiceBySlug(slug);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
 
   if (!service) return <NotFound />;
 
