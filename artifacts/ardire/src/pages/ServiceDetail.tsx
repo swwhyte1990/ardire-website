@@ -85,10 +85,10 @@ export default function ServiceDetail() {
                   asChild
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-sans tracking-widest uppercase text-xs px-8 h-14 rounded-none transition-all duration-300"
                 >
-                  <Link href="/#contact" className="inline-flex items-center gap-2">
+                  <a href="/#contact" className="inline-flex items-center gap-2">
                     {service.cta}
                     <ArrowRight size={14} />
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </motion.div>
@@ -140,9 +140,7 @@ export default function ServiceDetail() {
             asChild
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-sans tracking-widest uppercase text-xs px-10 h-14 rounded-none transition-all duration-300"
           >
-            <Link href="/#contact">
-              Get in Touch
-            </Link>
+            <a href="/#contact">Get in Touch</a>
           </Button>
         </div>
       </motion.section>
