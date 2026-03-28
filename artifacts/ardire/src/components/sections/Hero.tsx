@@ -4,7 +4,7 @@ import { ChevronDown } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden pb-28">
       <div className="absolute inset-0 z-0">
         <img
           src={`${import.meta.env.BASE_URL}images/hero.png`}
