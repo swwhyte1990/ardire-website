@@ -1,5 +1,5 @@
 import { useEffect, type MouseEvent } from "react";
-import { useParams, Link, useLocation } from "wouter";
+import { useParams, useLocation } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -22,6 +22,14 @@ export default function ServiceDetail() {
     navigate("/");
     setTimeout(() => {
       document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+    }, 300);
+  }
+
+  function goToServices(e: MouseEvent<HTMLAnchorElement>) {
+    e.preventDefault();
+    navigate("/");
+    setTimeout(() => {
+      document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
     }, 300);
   }
 
@@ -53,13 +61,14 @@ export default function ServiceDetail() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           >
-            <Link
+            <a
               href="/#services"
+              onClick={goToServices}
               className="inline-flex items-center gap-2 text-xs font-sans tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors mb-8"
             >
               <ArrowLeft size={14} />
               Back to Services
-            </Link>
+            </a>
             <p className="font-sans tracking-[0.3em] uppercase text-primary mb-4 text-xs">
               Our Services
             </p>
