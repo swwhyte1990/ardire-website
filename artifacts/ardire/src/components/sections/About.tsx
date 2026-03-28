@@ -22,8 +22,8 @@ export function About() {
             className="relative"
           >
             <img
-              src="https://pixabay.com/get/ga83448586fe88b173f16c96661b5a8e4e56a63852556afcc977c9d194d9e79143891f6501eb132c9af389f8c1efe1b5f57ca6cbf81e8aefaa4d8d54a4374f928_1280.jpg"
-              alt="Scottish Heritage"
+              src={`${import.meta.env.BASE_URL}images/about.png`}
+              alt="Scottish Highland Landscape"
               className="w-full aspect-[4/5] object-cover rounded-sm grayscale-[30%] contrast-[1.1] brightness-[0.9]"
             />
             <div className="absolute -bottom-8 -right-8 w-2/3 aspect-square border border-primary/30 -z-10" />
