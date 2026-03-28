@@ -66,7 +66,7 @@ export function Contact() {
             <div className="space-y-8">
               <div>
                 <h4 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Headquarters</h4>
-                <p className="font-display text-lg text-foreground">The Árd Íre Group</p>
+                <p className="font-display text-lg text-foreground">The ÁrdÍre Group</p>
                 <p className="text-muted-foreground font-sans mt-1">Clyde Offices, 2nd Floor<br />48 West George Street<br />Glasgow G2 1BP</p>
               </div>
               <div>
