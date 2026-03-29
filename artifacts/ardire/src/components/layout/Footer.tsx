@@ -76,7 +76,6 @@ export function Footer() {
         </p>
         <div className="flex gap-6 text-xs font-sans text-muted-foreground">
           <a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
-          <a href="/terms" className="hover:text-primary transition-colors">Terms of Service</a>
         </div>
       </div>
     </footer>
