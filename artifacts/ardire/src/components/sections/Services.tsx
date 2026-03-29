@@ -19,7 +19,7 @@ const descriptions: Record<string, string> = {
   "self-guided-tours": "For those who seek freedom with a safety net of expertise. We curate the itinerary, pre-book the best stops, and provide round-the-clock support. You choose the pace.",
   "event-staffing": "Professional, discreet, and impeccably presented event staff for any occasion. Our team bring expertise, warmth, and composure to every event we support.",
   "concierge": "Round-the-clock lifestyle management for discerning individuals. From securing impossible reservations to orchestrating complex logistics, handled with absolute discretion.",
-  "commonwealth-26": "Árd Íre is proud to be supporting the Glasgow 2026 Commonwealth Games, delivering bespoke visitor experiences, VIP hospitality, and corporate programmes around this landmark event.",
+  "commonwealth-26": "Árdíre is proud to be supporting the Glasgow 2026 Commonwealth Games, delivering bespoke visitor experiences, VIP hospitality, and corporate programmes around this landmark event.",
 };
 
 export function Services() {
