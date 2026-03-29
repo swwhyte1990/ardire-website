@@ -25,7 +25,7 @@ export function Footer() {
               src={`${import.meta.env.BASE_URL}images/logo.png`}
               alt="Árd Íre Logo"
               className="h-24 w-24 object-contain"
-              style={{ filter: "brightness(0.76) saturate(1.5)" }}
+              style={{ filter: "brightness(0.86) saturate(1.45)" }}
             />
             <div>
               <span className="font-display text-xl tracking-widest uppercase text-foreground block">ÁRDÍRE</span>

@@ -61,7 +61,7 @@ export function Navbar() {
               src={`${import.meta.env.BASE_URL}images/logo.png`}
               alt="Ardire Logo"
               className="h-16 w-16 object-contain transition-transform duration-500 group-hover:scale-105"
-              style={{ filter: "brightness(0.76) saturate(1.5)" }}
+              style={{ filter: "brightness(0.86) saturate(1.45)" }}
             />
             <span className="font-display text-2xl font-medium tracking-widest uppercase text-foreground">
               ÁRDÍRE
