@@ -34,7 +34,7 @@ export function Footer() {
               </span>
             </div>
           </div>
-          <p className="font-sans text-xs text-muted-foreground tracking-widest uppercase">
+          <p className="font-sans text-xs text-muted-foreground tracking-widest uppercase text-center md:text-left">
             Thoughtfully Curated. Seamlessly Delivered. Uniquely Yours.
           </p>
           <div className="text-muted-foreground font-sans text-xs leading-relaxed mt-2">
