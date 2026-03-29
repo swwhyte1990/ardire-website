@@ -19,7 +19,7 @@ export function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="relative"
+            className="relative hidden lg:block"
           >
             <img
               src={`${import.meta.env.BASE_URL}images/about.png`}
