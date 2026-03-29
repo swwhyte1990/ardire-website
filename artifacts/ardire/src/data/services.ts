@@ -58,6 +58,14 @@ export const services: ServiceData[] = [
     subtitle: "Your Pace. Our Expertise.",
     intro:
       "For those who love to explore independently but want the confidence of expert planning behind them. We build the perfect itinerary, secure every booking, and prepare detailed route notes, then hand the keys over to you. Enjoy the freedom of self-guided travel with round-the-clock support on standby.",
+    introRich: [
+      { type: "heading", text: "Self-Guided Tours in Scotland" },
+      { type: "paragraph", text: "Experience Scotland at your own pace with our thoughtfully planned self-guided tours. Perfect for independent travellers who want the freedom to explore without a fixed schedule, each tour comes with everything you need to make the most of your journey, from detailed route notes and maps to hand-picked accommodation and local tips along the way." },
+      { type: "heading", text: "Your Journey, Your Way" },
+      { type: "paragraph", text: "Whether you're walking the iconic West Highland Way, cycling through Perthshire, driving the legendary North Coast 500, or tracing the Scotch Whisky Trail through the distilleries of Speyside, we take care of the planning so you can focus on the experience. Every route is researched and tailored to suit your timeframe, fitness level, and interests." },
+      { type: "heading", text: "Explore Scotland's Most Iconic Routes" },
+      { type: "paragraph", text: "Scotland offers some of the most rewarding self-guided journeys in the world. Follow ancient drovers' roads through the Cairngorms, explore the rugged coastline of Argyll, or take your time wandering through the history-soaked streets of Edinburgh and Stirling. With so much to discover, no two tours ever look the same." },
+    ],
     highlights: [
       "Fully curated, day-by-day itinerary tailored to your interests",
       "Pre-booked accommodation, dining, and key attractions",
