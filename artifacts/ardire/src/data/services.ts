@@ -110,7 +110,7 @@ export const services: ServiceData[] = [
     title: "Commonwealth '26",
     subtitle: "Glasgow 2026. Experience It Properly.",
     intro:
-      "The Glasgow 2026 Commonwealth Games is set to be one of the most significant sporting events ever hosted in Scotland. Árd Íre is offering it's support, delivering bespoke visitor programmes, VIP hospitality packages, and corporate experiences that allow businesses and private guests to make the very most of this landmark occasion.",
+      "The Glasgow 2026 Commonwealth Games is set to be one of the most significant sporting events ever hosted in Scotland. Árdíre is offering it's support, delivering bespoke visitor programmes, VIP hospitality packages, and corporate experiences that allow businesses and private guests to make the very most of this landmark occasion.",
     highlights: [
       "VIP hospitality packages for Games events",
       "Bespoke visitor experiences and itinerary planning",
