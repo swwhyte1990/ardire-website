@@ -1,8 +1,14 @@
+export interface RichIntroBlock {
+  type: "heading" | "paragraph";
+  text: string;
+}
+
 export interface ServiceData {
   slug: string;
   title: string;
   subtitle: string;
   intro: string;
+  introRich?: RichIntroBlock[];
   highlights: string[];
   cta: string;
 }
@@ -14,6 +20,14 @@ export const services: ServiceData[] = [
     subtitle: "Scotland. Expertly Guided.",
     intro:
       "Every landscape tells a story; our guides know them all. We design private, fully guided journeys across Scotland's most dramatic and exclusive locations, from the ancient glens of the Highlands to the whisky distilleries of Speyside and the wild shores of the Outer Hebrides. Each tour is crafted around your interests, pace, and vision, never from a template.",
+    introRich: [
+      { type: "heading", text: "Bespoke Luxury Tours in Scotland" },
+      { type: "paragraph", text: "Discover Scotland on your own terms with our handcrafted luxury tour experiences, designed exclusively around you. Whether you're drawn to the dramatic landscapes of the Highlands, the cobbled streets of Edinburgh's Old Town, the rugged beauty of the North Coast 500, or the rolling countryside of the Scottish Borders, we create personalised itineraries that go far beyond the ordinary." },
+      { type: "heading", text: "Tailored Scottish Experiences" },
+      { type: "paragraph", text: "Our bespoke tours are carefully curated to match your interests, pace, and preferences. Explore the historic Royal Mile, venture deep into Glencoe, follow the celebrated Scotch Whisky Trail through Speyside and beyond, or take in the breathtaking scenery of Loch Lomond and the Trossachs. Whatever Scotland means to you, we bring it to life with expert local knowledge and seamless luxury service." },
+      { type: "heading", text: "Golf Tours Across Scotland" },
+      { type: "paragraph", text: "Scotland is the birthplace of golf, and no destination on earth rivals it for the sheer quality and variety of its courses. We arrange exclusive access to some of the world's most prestigious links, from St Andrews and Carnoustie on the east coast, to Turnberry and Royal Troon in the west. Whether you're teeing off at a celebrated championship venue or discovering a hidden gem in the Highlands, our golf tours are crafted for those who demand excellence on and off the course." },
+    ],
     highlights: [
       "Private, expert guides with deep local knowledge",
       "Premium transport by luxury vehicle, helicopter, or private charter",

@@ -100,9 +100,25 @@ export default function ServiceDetail() {
               <p className="font-sans tracking-[0.3em] uppercase text-primary mb-6 text-xs">
                 Overview
               </p>
-              <p className="text-foreground font-sans text-lg leading-relaxed font-light">
-                {service.intro}
-              </p>
+              {service.introRich ? (
+                <div className="space-y-4">
+                  {service.introRich.map((block, i) =>
+                    block.type === "heading" ? (
+                      <h3 key={i} className="font-display text-xl text-foreground mt-8 first:mt-0">
+                        {block.text}
+                      </h3>
+                    ) : (
+                      <p key={i} className="text-foreground font-sans text-base leading-relaxed font-light">
+                        {block.text}
+                      </p>
+                    )
+                  )}
+                </div>
+              ) : (
+                <p className="text-foreground font-sans text-lg leading-relaxed font-light">
+                  {service.intro}
+                </p>
+              )}
 
               <div className="mt-12">
                 <Button
