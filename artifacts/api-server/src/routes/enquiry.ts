@@ -20,7 +20,7 @@ router.post("/enquiry", async (req, res) => {
   }
 
   const transporter = nodemailer.createTransport({
-    host: "smtp.protonmail.com",
+    host: "smtp.protonmail.ch",
     port: 587,
     secure: false,
     auth: {
