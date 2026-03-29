@@ -1,5 +1,5 @@
 import { Router, type IRouter } from "express";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
 const router: IRouter = Router();
 
@@ -11,18 +11,28 @@ router.post("/enquiry", async (req, res) => {
     return;
   }
 
-  const apiKey = process.env["RESEND_API_KEY"];
-  if (!apiKey) {
+  const protonUser = process.env["PROTON_MAIL_USER"];
+  const protonPass = process.env["PROTON_MAIL_PASSWORD"];
+
+  if (!protonUser || !protonPass) {
     res.status(500).json({ error: "Email service not configured." });
     return;
   }
 
-  const resend = new Resend(apiKey);
+  const transporter = nodemailer.createTransport({
+    host: "smtp.protonmail.com",
+    port: 587,
+    secure: false,
+    auth: {
+      user: protonUser,
+      pass: protonPass,
+    },
+  });
 
   try {
-    await resend.emails.send({
+    await transporter.sendMail({
       from: "Árdíre Enquiries <enquiries@ardire.co.uk>",
-      to: ["enquiries@ardire.co.uk"],
+      to: "enquiries@ardire.co.uk",
       replyTo: email,
       subject: `New Enquiry: ${service} — ${name}`,
       html: `
