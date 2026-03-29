@@ -9,7 +9,7 @@ id = "artifacts/mockup-sandbox"
 [deployment]
 router = "application"
 deploymentTarget = "static"
-publicDir = "Artifacts/Árdíre/DIST/"
+publicDir = "artifacts/ardire/dist/public"
 
 [deployment.postBuild]
 args = ["pnpm", "store", "prune"]
