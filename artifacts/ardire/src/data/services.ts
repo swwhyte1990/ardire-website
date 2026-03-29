@@ -70,7 +70,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "concierge",
-    title: "Concierge",
+    title: "Concierge and Event Management",
     subtitle: "Nothing Is Too Much.",
     intro:
       "We are the people you call when the usual avenues simply will not do. Our concierge service offers round-the-clock lifestyle management for private individuals, executives, and visiting guests, securing the impossible, coordinating the complex, and delivering everything with complete discretion.",
