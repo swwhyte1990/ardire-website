@@ -25,6 +25,7 @@ export function About() {
               src={`${import.meta.env.BASE_URL}images/about.png`}
               alt="Scottish Highland Landscape"
               className="w-full aspect-[4/5] object-cover rounded-sm grayscale-[30%] contrast-[1.1] brightness-[0.9]"
+              loading="lazy"
             />
             <div className="absolute -bottom-8 -right-8 w-2/3 aspect-square border border-primary/30 -z-10" />
             <div className="absolute -top-8 -left-8 w-1/2 aspect-square bg-muted/50 -z-10 blur-2xl" />
