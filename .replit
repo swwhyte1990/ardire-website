@@ -29,5 +29,3 @@ timeoutMs = 20000
 [userenv]
 
 [userenv.shared]
-PROTON_MAIL_USER = "enquiries@ardire.co.uk"
-PROTON_MAIL_PASSWORD = "NK9ANAHJ5TJHTHB3"
