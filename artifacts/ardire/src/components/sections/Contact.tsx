@@ -37,15 +37,27 @@ export function Contact() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      const res = await fetch("/api/enquiry", {
+      const accessKey = import.meta.env.VITE_WEB3FORMS_KEY as string | undefined;
+      if (!accessKey) {
+        throw new Error("Form not yet configured — please email us directly at enquiries@ardire.co.uk");
+      }
+
+      const formData = new FormData();
+      formData.append("access_key", accessKey);
+      formData.append("from_name", "Árdíre Website");
+      formData.append("subject", `New Enquiry: ${values.service} — ${values.name}`);
+      formData.append("name", values.name);
+      formData.append("email", values.email);
+      formData.append("message", `Area of Interest: ${values.service}\n\n${values.message}`);
+
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        body: formData,
       });
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error((data as { error?: string }).error || "Submission failed");
+      const data = await res.json() as { success: boolean; message?: string };
+      if (!data.success) {
+        throw new Error(data.message || "Submission failed");
       }
 
       toast({

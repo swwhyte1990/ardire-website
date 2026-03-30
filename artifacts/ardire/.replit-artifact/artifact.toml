@@ -18,23 +18,13 @@ localPort = 18439
 run = "pnpm --filter @workspace/ardire run dev"
 
 [services.production]
+build = [ "pnpm", "--filter", "@workspace/ardire", "run", "build" ]
+publicDir = "artifacts/ardire/dist/public"
+serve = "static"
 
-[services.production.build]
-args = ["sh", "-c", "pnpm --filter @workspace/ardire run build && pnpm --filter @workspace/api-server run build"]
-
-[services.production.build.env]
-NODE_ENV = "production"
-BASE_PATH = "/"
-
-[services.production.run]
-args = ["node", "--enable-source-maps", "artifacts/api-server/dist/index.mjs"]
-
-[services.production.run.env]
-PORT = "18439"
-NODE_ENV = "production"
-
-[services.production.health.startup]
-path = "/api/healthz"
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
 
 [services.env]
 PORT = "18439"
