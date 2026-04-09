@@ -1,0 +1,20 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "BXnbOjJ2hle4s4NDOZCC9"
+uri = "file://attached_assets/stock_images/eilean_donan_castle_1.jpg"
+type = "image"
+title = "Eilean Donan Castle Scotland loch dramatic landscape"
+
+[[outputs]]
+id = "Sp-yvuizjDjfUPjm67jQR"
+uri = "file://attached_assets/stock_images/eilean_donan_castle_2.jpg"
+type = "image"
+title = "Eilean Donan Castle Scotland loch dramatic landscape"
+
+[[outputs]]
+id = "cejwqAQqltr6L0VYz0uOA"
+uri = "file://attached_assets/stock_images/eilean_donan_castle_3.jpg"
+type = "image"
+title = "Eilean Donan Castle Scotland loch dramatic landscape"
