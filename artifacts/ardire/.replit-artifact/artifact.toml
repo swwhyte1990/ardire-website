@@ -22,9 +22,6 @@ build = [ "pnpm", "--filter", "@workspace/ardire", "run", "build" ]
 publicDir = "artifacts/ardire/dist/public"
 serve = "static"
 
-[[services.production.rewrites]]
-from = "/**"
-to = "/index.html"
 
 [services.env]
 PORT = "18439"
