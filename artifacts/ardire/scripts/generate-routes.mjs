@@ -40,7 +40,7 @@ const routes = [
     path: 'services/concierge',
     title: 'Private Concierge Glasgow & Scotland | Árdíre Hospitality Group',
     description: 'A discreet, personal concierge service for every detail of your Scottish visit. Árdíre handles everything so you can focus on the experience.',
-    h1: 'Private Concierge Glasgow & Scotland',
+    h1: 'Private Concierge Glasgow &amp; Scotland',
   },
   {
     path: 'services/commonwealth-26',
