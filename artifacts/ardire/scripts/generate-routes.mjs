@@ -2,6 +2,7 @@
  * Post-build script: generates pre-rendered HTML files for each route.
  * This ensures Google and other crawlers receive a 200 response with
  * the correct canonical URL for every page, enabling proper indexing.
+ * H1 tags are injected into the root div so crawlers see them without JS.
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
@@ -15,36 +16,43 @@ const routes = [
     path: 'services/luxury-tours',
     title: 'Luxury Private Tours Scotland | Árdíre Hospitality Group',
     description: 'Fully escorted private touring across Scotland\'s most breathtaking landscapes. Bespoke itineraries crafted by Árdíre Hospitality Group, Glasgow.',
+    h1: 'Luxury Private Tours Scotland',
   },
   {
     path: 'services/corporate-incentives',
     title: 'Corporate Incentive Travel Scotland | Árdíre Hospitality Group',
     description: 'Reward your top performers with world-class Scottish experiences. Corporate incentive programmes designed by Árdíre Hospitality Group.',
+    h1: 'Corporate Incentive Travel Scotland',
   },
   {
     path: 'services/self-guided-tours',
     title: 'Self-Guided Tours Scotland | Árdíre Hospitality Group',
     description: 'Explore Scotland at your own pace with curated self-guided itineraries, pre-booked accommodations and 24/7 support from Árdíre.',
+    h1: 'Self-Guided Tours Scotland',
   },
   {
     path: 'services/event-staffing',
     title: 'Event Staffing Scotland | Árdíre Hospitality Group',
     description: 'Professional hospitality and event staffing for Scotland\'s most prestigious events. Sourced and managed by Árdíre Hospitality Group.',
+    h1: 'Event Staffing Scotland',
   },
   {
     path: 'services/concierge',
     title: 'Private Concierge Glasgow & Scotland | Árdíre Hospitality Group',
     description: 'A discreet, personal concierge service for every detail of your Scottish visit. Árdíre handles everything so you can focus on the experience.',
+    h1: 'Private Concierge Glasgow & Scotland',
   },
   {
     path: 'services/commonwealth-26',
     title: 'Commonwealth Games 2026 Hospitality | Árdíre Hospitality Group',
     description: 'Premium hospitality packages for the Glasgow 2026 Commonwealth Games. Accommodation, transfers, tickets and experiences by Árdíre.',
+    h1: 'Commonwealth Games 2026 Hospitality Glasgow',
   },
   {
     path: 'privacy',
     title: 'Privacy Policy | Árdíre Hospitality Group',
     description: 'Privacy policy for Árd Íre Hospitality Group trading as Árdíre. How we collect, use and protect your personal data.',
+    h1: 'Privacy Policy',
   },
 ];
 
@@ -96,10 +104,15 @@ for (const route of routes) {
     .replace(
       /<meta name="twitter:description" content="[^"]*" \/>/,
       `<meta name="twitter:description" content="${route.description}" />`
+    )
+    // Replace crawler H1 text with page-specific H1 (React replaces on hydration)
+    .replace(
+      /<h1 data-crawler-h1[^>]*>[^<]*<\/h1>/,
+      `<h1 data-crawler-h1 style="font-family:serif;font-size:1.5rem;padding:1rem;color:#0d2b1f">${route.h1}</h1>`
     );
 
   writeFileSync(join(routeDir, 'index.html'), html);
-  console.log(`Generated: /${route.path}/index.html  [canonical: ${canonicalUrl}]`);
+  console.log(`Generated: /${route.path}/index.html  [h1: ${route.h1}]`);
 }
 
 console.log(`\nStatic route generation complete — ${routes.length} pages pre-rendered.`);
