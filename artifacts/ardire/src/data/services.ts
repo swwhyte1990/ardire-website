@@ -25,8 +25,6 @@ export const services: ServiceData[] = [
       { type: "paragraph", text: "Discover Scotland on your own terms with our handcrafted luxury tour experiences, designed exclusively around you. Whether you're drawn to the dramatic landscapes of the Highlands, the cobbled streets of Edinburgh's Old Town, the rugged beauty of the North Coast 500, or the rolling countryside of the Scottish Borders, we create personalised itineraries that go far beyond the ordinary." },
       { type: "heading", text: "Tailored Scottish Experiences" },
       { type: "paragraph", text: "Our bespoke tours are carefully curated to match your interests, pace, and preferences. Explore the historic Royal Mile, venture deep into Glencoe, follow the celebrated Scotch Whisky Trail through Speyside and beyond, or take in the breathtaking scenery of Loch Lomond and the Trossachs. Whatever Scotland means to you, we bring it to life with expert local knowledge and seamless luxury service." },
-      { type: "heading", text: "Golf Tours Across Scotland" },
-      { type: "paragraph", text: "Scotland is the birthplace of golf, and no destination on earth rivals it for the sheer quality and variety of its courses. We arrange exclusive access to some of the world's most prestigious links, from St Andrews and Carnoustie on the east coast, to Turnberry and Royal Troon in the west. Whether you're teeing off at a celebrated championship venue or discovering a hidden gem in the Highlands, our golf tours are crafted for those who demand excellence on and off the course." },
     ],
     highlights: [
       "Private, expert guides with deep local knowledge",
@@ -36,6 +34,29 @@ export const services: ServiceData[] = [
       "Fine dining and curated accommodation throughout",
     ],
     cta: "Plan Your Tour",
+  },
+  {
+    slug: "golf-tours",
+    title: "Golf Tours",
+    subtitle: "The Home of Golf. Played Properly.",
+    intro:
+      "Scotland is the birthplace of golf, and no destination on earth rivals it for the sheer quality and variety of its courses. We arrange exclusive access to some of the world's most prestigious links, from St Andrews and Carnoustie on the east coast to Turnberry and Royal Troon in the west. Whether you're teeing off at a celebrated championship venue or discovering a hidden gem in the Highlands, our golf tours are crafted for those who demand excellence on and off the course.",
+    introRich: [
+      { type: "heading", text: "Bespoke Golf Tours in Scotland" },
+      { type: "paragraph", text: "Play the courses that defined the game. Árdíre designs fully bespoke golf tours across Scotland for individuals, pairs, and groups who want more than a tee time — they want an experience. From the legendary Old Course at St Andrews to the dramatic links of the Outer Hebrides, we handle every detail so you can focus entirely on your game." },
+      { type: "heading", text: "Championship Links & Hidden Gems" },
+      { type: "paragraph", text: "Scotland boasts some of the finest golf courses in the world. We can secure access to celebrated venues including St Andrews, Carnoustie, Turnberry, Royal Troon, Muirfield, and Kingsbarns, as well as spectacular lesser-known courses where the scenery is as memorable as the golf. Every round is arranged in advance, with tee times, caddies, and transport all confirmed before you arrive." },
+      { type: "heading", text: "Beyond the Fairway" },
+      { type: "paragraph", text: "A great golf tour is about more than the game. We arrange luxury accommodation at castle hotels and boutique retreats, whisky distillery visits, fine dining at acclaimed restaurants, and private transfers between venues. Every moment off the course is as carefully planned as every moment on it." },
+    ],
+    highlights: [
+      "Access to Scotland's most prestigious championship courses",
+      "Pre-booked tee times, caddies, and club hire arranged",
+      "Luxury accommodation at estate hotels and boutique retreats",
+      "Private chauffeured transfers between courses and lodgings",
+      "Whisky tastings, fine dining, and cultural experiences woven in",
+    ],
+    cta: "Plan Your Golf Tour",
   },
   {
     slug: "corporate-incentives",
@@ -91,8 +112,31 @@ export const services: ServiceData[] = [
     cta: "Request Staff",
   },
   {
+    slug: "event-management",
+    title: "Event Management",
+    subtitle: "Conceived, Managed, Delivered.",
+    intro:
+      "From the first concept to the final curtain, we take full ownership of your event. Árdíre provides end-to-end event management for private occasions, corporate functions, product launches, gala dinners, and high-profile gatherings across Scotland and beyond. We don't just supply the team — we lead the entire production.",
+    introRich: [
+      { type: "heading", text: "Full-Service Event Management Scotland" },
+      { type: "paragraph", text: "Whether you're hosting an intimate private dinner for twenty or a corporate gala for five hundred, Árdíre manages every element of your event from initial concept through to post-event debrief. Our event management team brings creative vision, logistical precision, and an unwavering commitment to excellence to every occasion we take on." },
+      { type: "heading", text: "From Concept to Execution" },
+      { type: "paragraph", text: "We work closely with you to understand your objectives, brand, and vision, then develop a bespoke event strategy around them. Venue sourcing and negotiation, supplier management, catering, entertainment, AV and technical production, décor, guest management, and on-the-day coordination — all handled seamlessly under one roof." },
+      { type: "heading", text: "Corporate Events & Private Functions" },
+      { type: "paragraph", text: "Our portfolio spans product launches, awards ceremonies, corporate hospitality days, charity galas, private celebrations, and more. Whatever the occasion, we bring the same attention to detail and creative ambition, ensuring your guests leave with an experience that stays with them long after the evening ends." },
+    ],
+    highlights: [
+      "Full end-to-end event planning and production management",
+      "Venue sourcing across Scotland's finest estates, hotels, and unique spaces",
+      "Supplier and contractor management including catering, AV, and entertainment",
+      "Creative concept development and event styling",
+      "On-the-day management with a dedicated senior event producer",
+    ],
+    cta: "Start Planning Your Event",
+  },
+  {
     slug: "concierge",
-    title: "Concierge and Event Management",
+    title: "Concierge",
     subtitle: "Nothing Is Too Much.",
     intro:
       "We are the people you call when the usual avenues simply will not do. Our concierge service offers round-the-clock lifestyle management for private individuals, executives, and visiting guests, securing the impossible, coordinating the complex, and delivering everything with complete discretion.",

@@ -19,6 +19,12 @@ const routes = [
     h1: 'Luxury Private Tours Scotland',
   },
   {
+    path: 'services/golf-tours',
+    title: 'Golf Tours Scotland | St Andrews, Turnberry & Beyond | Árdíre',
+    description: 'Bespoke golf tours across Scotland\'s most prestigious courses. Tee times at St Andrews, Carnoustie, Turnberry, and Royal Troon arranged by Árdíre Hospitality Group.',
+    h1: 'Golf Tours Scotland',
+  },
+  {
     path: 'services/corporate-incentives',
     title: 'Corporate Incentive Travel Scotland | Árdíre Hospitality Group',
     description: 'Reward your top performers with world-class Scottish experiences. Corporate incentive programmes designed by Árdíre Hospitality Group.',
@@ -37,8 +43,14 @@ const routes = [
     h1: 'Event Staffing Scotland',
   },
   {
+    path: 'services/event-management',
+    title: 'Event Management Scotland | Árdíre Hospitality Group',
+    description: 'Full-service event management for corporate functions, gala dinners, and private occasions across Scotland. Conceived, managed, and delivered by Árdíre.',
+    h1: 'Event Management Scotland',
+  },
+  {
     path: 'services/concierge',
-    title: 'Private Concierge Glasgow & Scotland | Árdíre Hospitality Group',
+    title: 'Private Concierge Glasgow &amp; Scotland | Árdíre Hospitality Group',
     description: 'A discreet, personal concierge service for every detail of your Scottish visit. Árdíre handles everything so you can focus on the experience.',
     h1: 'Private Concierge Glasgow &amp; Scotland',
   },

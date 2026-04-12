@@ -11,6 +11,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ardire.co.uk/services/golf-tours</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ardire.co.uk/services/corporate-incentives</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -22,6 +27,11 @@
   </url>
   <url>
     <loc>https://ardire.co.uk/services/event-staffing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ardire.co.uk/services/event-management</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
