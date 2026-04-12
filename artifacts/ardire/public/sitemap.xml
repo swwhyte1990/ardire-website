@@ -16,6 +16,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://ardire.co.uk/services/private-chauffeur</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://ardire.co.uk/services/corporate-incentives</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

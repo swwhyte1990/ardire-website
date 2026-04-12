@@ -25,6 +25,12 @@ const routes = [
     h1: 'Golf Tours Scotland',
   },
   {
+    path: 'services/private-chauffeur',
+    title: 'Private Chauffeur Scotland | Glasgow &amp; Edinburgh Transfers | Árdíre',
+    description: 'Premium private chauffeur hire across Scotland. Airport transfers, executive transport, and bespoke touring by Árdíre Hospitality Group, Glasgow.',
+    h1: 'Private Chauffeur Scotland',
+  },
+  {
     path: 'services/corporate-incentives',
     title: 'Corporate Incentive Travel Scotland | Árdíre Hospitality Group',
     description: 'Reward your top performers with world-class Scottish experiences. Corporate incentive programmes designed by Árdíre Hospitality Group.',

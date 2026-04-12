@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Key, Map, Users, Compass, Star, ArrowRight, Flag, CalendarCheck } from "lucide-react";
+import { Key, Map, Users, Compass, Star, ArrowRight, Flag, CalendarCheck, Car } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "wouter";
 import { services } from "@/data/services";
@@ -7,6 +7,7 @@ import { services } from "@/data/services";
 const icons: Record<string, React.ReactNode> = {
   "luxury-tours": <Map className="w-8 h-8 text-primary" strokeWidth={1} />,
   "golf-tours": <Flag className="w-8 h-8 text-primary" strokeWidth={1} />,
+  "private-chauffeur": <Car className="w-8 h-8 text-primary" strokeWidth={1} />,
   "corporate-incentives": <Star className="w-8 h-8 text-primary" strokeWidth={1} />,
   "self-guided-tours": <Compass className="w-8 h-8 text-primary" strokeWidth={1} />,
   "event-staffing": <Users className="w-8 h-8 text-primary" strokeWidth={1} />,
@@ -18,6 +19,7 @@ const icons: Record<string, React.ReactNode> = {
 const descriptions: Record<string, string> = {
   "luxury-tours": "Expertly guided journeys through Scotland's most dramatic landscapes, private estates, and hidden corners. Tailored entirely around your pace, interests, and appetite for adventure.",
   "golf-tours": "Play the courses that defined the game. We secure tee times at Scotland's most prestigious links — St Andrews, Turnberry, Carnoustie and beyond — and build a seamless luxury experience around every round.",
+  "private-chauffeur": "Discreet, professional chauffeured transport across Scotland. From airport transfers and executive runs to full-day touring, every journey delivered with precision and quiet luxury.",
   "corporate-incentives": "High-impact incentive programmes that reward, inspire, and motivate. From Highland challenges to exclusive gala dinners, we create experiences your team will never forget.",
   "self-guided-tours": "For those who seek freedom with a safety net of expertise. We curate the itinerary, pre-book the best stops, and provide round-the-clock support. You choose the pace.",
   "event-staffing": "Professional, discreet, and impeccably presented event staff for any occasion. Our team bring expertise, warmth, and composure to every event we support.",

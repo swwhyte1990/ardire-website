@@ -59,6 +59,29 @@ export const services: ServiceData[] = [
     cta: "Plan Your Golf Tour",
   },
   {
+    slug: "private-chauffeur",
+    title: "Private Chauffeur",
+    subtitle: "Driven to a Different Standard.",
+    intro:
+      "From airport arrivals to full-day touring, our private chauffeur service sets the benchmark for discreet, professional ground transportation across Scotland. Every journey is handled with precision, punctuality, and an unwavering attention to comfort.",
+    introRich: [
+      { type: "heading", text: "Private Chauffeur Services Across Scotland" },
+      { type: "paragraph", text: "Árdíre provides a premium chauffeur service for private individuals, corporate clients, and visiting guests throughout Scotland. Whether you require a seamless airport transfer, a chauffeured day of meetings across Glasgow and Edinburgh, or a multi-day touring driver for a leisurely exploration of the country, our experienced chauffeurs deliver an impeccable standard of service every time." },
+      { type: "heading", text: "Comfort, Discretion & Reliability" },
+      { type: "paragraph", text: "Our chauffeurs are carefully selected for their professionalism, local knowledge, and calm composure. They are immaculately presented, punctual to the minute, and trained to anticipate your needs without being intrusive. All journeys are conducted in premium vehicles, maintained to the highest standard and specified for comfort on Scotland's varied roads." },
+      { type: "heading", text: "Bespoke Ground Transportation" },
+      { type: "paragraph", text: "We cater for a wide range of requirements: private airport transfers from Glasgow, Edinburgh, and Inverness; executive transfers between meetings and business events; full-day and multi-day touring itineraries; wedding and special occasion transport; and event shuttle services for corporate and private functions. Whatever your itinerary, we build the transport around it." },
+    ],
+    highlights: [
+      "Premium executive and luxury vehicles, immaculately maintained",
+      "Airport transfers, corporate runs, and multi-day touring",
+      "Punctual, discreet, and professionally trained chauffeurs",
+      "Advance route planning with local knowledge built in",
+      "Available across Scotland including Glasgow, Edinburgh, and the Highlands",
+    ],
+    cta: "Arrange a Chauffeur",
+  },
+  {
     slug: "corporate-incentives",
     title: "Corporate Incentives",
     subtitle: "Performance. Rewarded. Unforgettably.",
