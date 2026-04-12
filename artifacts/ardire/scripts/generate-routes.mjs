@@ -20,7 +20,7 @@ const routes = [
   },
   {
     path: 'services/golf-tours',
-    title: 'Golf Tours Scotland | St Andrews, Turnberry & Beyond | Árdíre',
+    title: 'Golf Tours Scotland | St Andrews, Turnberry &amp; Beyond | Árdíre',
     description: 'Bespoke golf tours across Scotland\'s most prestigious courses. Tee times at St Andrews, Carnoustie, Turnberry, and Royal Troon arranged by Árdíre Hospitality Group.',
     h1: 'Golf Tours Scotland',
   },
