@@ -19,7 +19,7 @@ function esc(str) {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+    .replace(/\"/g, '&quot;');
 }
 
 /** All service slugs/titles used for cross-page internal link injection */
@@ -199,7 +199,7 @@ const routes = [
   },
   {
     path: 'services/concierge',
-    title: 'Private Concierge Glasgow &amp; Scotland | Ardire Hospitality Group',
+    title: 'Private Concierge Services in Scotland.',
     description: 'A discreet, personal concierge service for every detail of your Scottish visit. Ardire handles everything so you can focus on the experience.',
     h1: 'Private Concierge Glasgow &amp; Scotland',
     paragraphs: [
