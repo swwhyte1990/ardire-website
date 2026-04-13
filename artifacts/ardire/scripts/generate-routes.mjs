@@ -295,10 +295,15 @@ for (const route of routes) {
       /<meta name="twitter:description" content="[^"]*" \/>/,
       `<meta name="twitter:description" content="${route.description}" />`
     )
-    // Replace H1 + closing root div — inject page-specific H1 and enriched crawler block
+    // Replace page-specific H1 text (React replaces on hydration)
     .replace(
-      /<h1 data-crawler-h1[^>]*>[^<]*<\/h1><\/div>/,
-      `<h1 data-crawler-h1 style="font-family:serif;font-size:1.5rem;padding:1rem;color:#0d2b1f">${route.h1}</h1>${crawlerBlock}</div>`
+      /<h1 data-crawler-h1[^>]*>[^<]*<\/h1>/,
+      `<h1 data-crawler-h1 style="font-family:serif;font-size:1.5rem;padding:1rem;color:#0d2b1f">${route.h1}</h1>`
+    )
+    // Replace the page-content placeholder with the enriched crawler block
+    .replace(
+      '<div data-page-content></div>',
+      crawlerBlock
     );
 
   writeFileSync(join(routeDir, 'index.html'), html);
