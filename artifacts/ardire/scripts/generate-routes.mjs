@@ -217,7 +217,7 @@ const routes = [
   },
   {
     path: 'services/commonwealth-26',
-    title: 'Commonwealth Games 2026 Hospitality | Ardire Hospitality Group',
+    title: 'Commonwealth Games 2026 Services',
     description: 'Premium hospitality packages for the Glasgow 2026 Commonwealth Games. Accommodation, transfers, tickets and experiences by Ardire.',
     h1: 'Commonwealth Games 2026 Hospitality Glasgow',
     paragraphs: [
