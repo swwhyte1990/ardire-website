@@ -13,7 +13,6 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, '../dist/public');
 
-/** HTML-escape plain text for safe injection into HTML content */
 function esc(str) {
   return str
     .replace(/&/g, '&amp;')
@@ -22,7 +21,6 @@ function esc(str) {
     .replace(/\"/g, '&quot;');
 }
 
-/** All service slugs/titles used for cross-page internal link injection */
 const allServiceLinks = [
   { slug: 'luxury-tours', label: 'Luxury Tours Scotland' },
   { slug: 'golf-tours', label: 'Golf Tours Scotland' },
@@ -35,11 +33,6 @@ const allServiceLinks = [
   { slug: 'commonwealth-26', label: 'Commonwealth Games 2026 Hospitality Glasgow' },
 ];
 
-/**
- * Builds a display:none content block to inject alongside the H1 in each
- * pre-rendered page. Contains intro paragraphs, highlights list, and links
- * to all other internal pages.
- */
 function buildCrawlerBlock(route) {
   const paragraphsHtml = (route.paragraphs || [])
     .map(p => `<p>${esc(p)}</p>`)
@@ -87,7 +80,7 @@ const routes = [
   },
   {
     path: 'services/golf-tours',
-    title: 'Golf Tours Scotland | St Andrews, Turnberry & Beyond | Árdíre',
+    title: 'Golf Tours Scotland | St Andrews, Turnberry & Beyond',
     description: 'Play St Andrews, Carnoustie, and Turnberry on a luxury private golf tour of Scotland with private transport and luxury accomodation.',
     h1: 'Golf Tours Scotland',
     paragraphs: [
@@ -125,7 +118,7 @@ const routes = [
   },
   {
     path: 'services/corporate-incentives',
-    title: 'Corporate Incentive Travel Scotland | Ardire Hospitality Group',
+    title: 'Corporate Incentivisation in Scotland',
     description: 'Reward your top performers with world-class Scottish experiences. Corporate incentive programmes designed by Ardire Hospitality Group.',
     h1: 'Corporate Incentive Travel Scotland',
     paragraphs: [
