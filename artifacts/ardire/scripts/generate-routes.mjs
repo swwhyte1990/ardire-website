@@ -257,7 +257,7 @@ for (const route of routes) {
       `<title>${route.title}</title>`
     )
     .replace(
-      /<meta name="description" content="[^"]*" \/>/,
+      /<meta\s+name="description"\s+content="[^"]*"\s*\/>/,
       `<meta name="description" content="${route.description}" />`
     )
     .replace(
@@ -265,19 +265,19 @@ for (const route of routes) {
       `<meta property="og:url" content="${canonicalUrl}" />`
     )
     .replace(
-      /<meta property="og:title" content="[^"]*" \/>/,
+      /<meta\s+property="og:title"\s+content="[^"]*"\s*\/>/,
       `<meta property="og:title" content="${route.title}" />`
     )
     .replace(
-      /<meta property="og:description" content="[^"]*" \/>/,
+      /<meta\s+property="og:description"\s+content="[^"]*"\s*\/>/,
       `<meta property="og:description" content="${route.description}" />`
     )
     .replace(
-      /<meta name="twitter:title" content="[^"]*" \/>/,
+      /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/>/,
       `<meta name="twitter:title" content="${route.title}" />`
     )
     .replace(
-      /<meta name="twitter:description" content="[^"]*" \/>/,
+      /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/>/,
       `<meta name="twitter:description" content="${route.description}" />`
     )
     .replace(
