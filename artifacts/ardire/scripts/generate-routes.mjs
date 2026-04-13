@@ -106,7 +106,7 @@ const routes = [
   },
   {
     path: 'services/private-chauffeur',
-    title: 'Private Chauffeur Scotland | Glasgow &amp; Edinburgh Transfers | Ardire',
+    title: 'Private Chauffeurs in Scotland | Glasgow, Edinburgh, Beyond.',
     description: 'Premium private chauffeur hire across Scotland. Airport transfers, executive transport, and bespoke touring by Ardire Hospitality Group, Glasgow.',
     h1: 'Private Chauffeur Scotland',
     paragraphs: [
