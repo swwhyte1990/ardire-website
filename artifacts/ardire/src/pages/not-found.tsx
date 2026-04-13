@@ -8,7 +8,7 @@ export default function NotFound() {
       <div 
         className="absolute inset-0 opacity-10 pointer-events-none mix-blend-overlay"
         style={{ 
-          backgroundImage: `url(${import.meta.env.BASE_URL}images/texture.png)`,
+          backgroundImage: `url(${import.meta.env.BASE_URL}images/texture.webp)`,
           backgroundSize: 'cover'
         }}
       />

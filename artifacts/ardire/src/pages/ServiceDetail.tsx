@@ -54,9 +54,11 @@ export default function ServiceDetail() {
       <section className="relative min-h-[50vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/hero.png`}
+            src={`${import.meta.env.BASE_URL}images/hero.webp`}
             alt="Scotland"
             className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background z-10" />
         </div>

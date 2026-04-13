@@ -7,10 +7,12 @@ export function Hero() {
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden pb-28">
       <div className="absolute inset-0 z-0">
         <img
-          src={`${import.meta.env.BASE_URL}images/hero.jpg`}
+          src={`${import.meta.env.BASE_URL}images/hero-home.webp`}
           alt="Scottish Castle on a Loch"
           className="w-full h-full object-cover scale-105 origin-center animate-[pulse_20s_ease-in-out_infinite_alternate]"
           style={{ animationName: 'kenburns' }}
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background z-10" />
       </div>

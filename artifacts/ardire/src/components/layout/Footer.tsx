@@ -22,7 +22,7 @@ export function Footer() {
         <div className="flex flex-col items-center md:items-start gap-4">
           <div className="flex items-center gap-4">
             <img
-              src={`${import.meta.env.BASE_URL}images/logo.png`}
+              src={`${import.meta.env.BASE_URL}images/logo.webp`}
               alt="Árd Íre Logo"
               className="h-24 w-24 object-contain"
               style={{ filter: "brightness(0.86) saturate(1.45)" }}

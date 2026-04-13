@@ -58,7 +58,7 @@ export function Navbar() {
             onClick={(e) => { e.preventDefault(); navigate("/"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
           >
             <img
-              src={`${import.meta.env.BASE_URL}images/logo.png`}
+              src={`${import.meta.env.BASE_URL}images/logo.webp`}
               alt="Ardire Logo"
               className="h-16 w-16 object-contain transition-transform duration-500 group-hover:scale-105"
               style={{ filter: "brightness(0.86) saturate(1.45)" }}

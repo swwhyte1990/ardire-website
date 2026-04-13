@@ -6,7 +6,7 @@ export function About() {
       <div
         className="absolute inset-0 opacity-10 pointer-events-none mix-blend-overlay"
         style={{
-          backgroundImage: `url(${import.meta.env.BASE_URL}images/texture.png)`,
+          backgroundImage: `url(${import.meta.env.BASE_URL}images/texture.webp)`,
           backgroundSize: 'cover'
         }}
       />
@@ -22,7 +22,7 @@ export function About() {
             className="relative hidden lg:block"
           >
             <img
-              src={`${import.meta.env.BASE_URL}images/about.png`}
+              src={`${import.meta.env.BASE_URL}images/about.webp`}
               alt="Scottish Highland Landscape"
               className="w-full aspect-[4/5] object-cover rounded-sm grayscale-[30%] contrast-[1.1] brightness-[0.9]"
               loading="lazy"
