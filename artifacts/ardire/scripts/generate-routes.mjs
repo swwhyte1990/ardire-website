@@ -24,15 +24,15 @@ function esc(str) {
 
 /** All service slugs/titles used for cross-page internal link injection */
 const allServiceLinks = [
-  { slug: 'luxury-tours',        label: 'Luxury Tours Scotland' },
-  { slug: 'golf-tours',          label: 'Golf Tours Scotland' },
-  { slug: 'private-chauffeur',   label: 'Private Chauffeur Scotland' },
-  { slug: 'corporate-incentives',label: 'Corporate Incentive Travel Scotland' },
-  { slug: 'self-guided-tours',   label: 'Self-Guided Tours Scotland' },
-  { slug: 'event-staffing',      label: 'Event Staffing Scotland' },
-  { slug: 'event-management',    label: 'Event Management Scotland' },
-  { slug: 'concierge',           label: 'Private Concierge Scotland' },
-  { slug: 'commonwealth-26',     label: 'Commonwealth Games 2026 Hospitality Glasgow' },
+  { slug: 'luxury-tours', label: 'Luxury Tours Scotland' },
+  { slug: 'golf-tours', label: 'Golf Tours Scotland' },
+  { slug: 'private-chauffeur', label: 'Private Chauffeur Scotland' },
+  { slug: 'corporate-incentives', label: 'Corporate Incentive Travel Scotland' },
+  { slug: 'self-guided-tours', label: 'Self-Guided Tours Scotland' },
+  { slug: 'event-staffing', label: 'Event Staffing Scotland' },
+  { slug: 'event-management', label: 'Event Management Scotland' },
+  { slug: 'concierge', label: 'Private Concierge Scotland' },
+  { slug: 'commonwealth-26', label: 'Commonwealth Games 2026 Hospitality Glasgow' },
 ];
 
 /**
@@ -87,8 +87,8 @@ const routes = [
   },
   {
     path: 'services/golf-tours',
-    title: 'Golf Tours Scotland | St Andrews, Turnberry &amp; Beyond | Ardire',
-    description: 'Bespoke golf tours across Scotland\'s most prestigious courses. Tee times at St Andrews, Carnoustie, Turnberry, and Royal Troon arranged by Ardire Hospitality Group.',
+    title: 'Golf Tours Scotland | St Andrews, Turnberry & Beyond | Árdíre',
+    description: 'Play St Andrews, Carnoustie, and Turnberry on a luxury private golf tour of Scotland with private transport and luxury accomodation.',
     h1: 'Golf Tours Scotland',
     paragraphs: [
       'Scotland is the birthplace of golf, and no destination on earth rivals it for the sheer quality and variety of its courses. We arrange exclusive access to some of the world\'s most prestigious links, from St Andrews and Carnoustie on the east coast to Turnberry and Royal Troon in the west. Whether you\'re teeing off at a celebrated championship venue or discovering a hidden gem in the Highlands, our golf tours are crafted for those who demand excellence on and off the course.',
@@ -255,52 +255,42 @@ for (const route of routes) {
   const crawlerBlock = buildCrawlerBlock(route);
 
   let html = indexHtml
-    // Canonical
     .replace(
       '<link rel="canonical" href="https://ardire.co.uk/" />',
       `<link rel="canonical" href="${canonicalUrl}" />`
     )
-    // Page title
     .replace(
       /<title>[^<]*<\/title>/,
       `<title>${route.title}</title>`
     )
-    // Meta description
     .replace(
       /<meta name="description" content="[^"]*" \/>/,
       `<meta name="description" content="${route.description}" />`
     )
-    // OG URL
     .replace(
       '<meta property="og:url" content="https://ardire.co.uk/" />',
       `<meta property="og:url" content="${canonicalUrl}" />`
     )
-    // OG Title
     .replace(
       /<meta property="og:title" content="[^"]*" \/>/,
       `<meta property="og:title" content="${route.title}" />`
     )
-    // OG Description
     .replace(
       /<meta property="og:description" content="[^"]*" \/>/,
       `<meta property="og:description" content="${route.description}" />`
     )
-    // Twitter Title
     .replace(
       /<meta name="twitter:title" content="[^"]*" \/>/,
       `<meta name="twitter:title" content="${route.title}" />`
     )
-    // Twitter Description
     .replace(
       /<meta name="twitter:description" content="[^"]*" \/>/,
       `<meta name="twitter:description" content="${route.description}" />`
     )
-    // Replace page-specific H1 text (React replaces on hydration)
     .replace(
       /<h1 data-crawler-h1[^>]*>[^<]*<\/h1>/,
       `<h1 data-crawler-h1 style="font-family:serif;font-size:1.5rem;padding:1rem;color:#0d2b1f">${route.h1}</h1>`
     )
-    // Replace the page-content placeholder with the enriched crawler block
     .replace(
       '<div data-page-content></div>',
       crawlerBlock
