@@ -49,7 +49,7 @@ export function Services() {
             transition={{ delay: 0.1 }}
             className="font-display text-3xl md:text-4xl text-foreground"
           >
-            What We <span className="italic">Deliver</span>
+            What We Deliver
           </motion.h2>
         </div>
 
