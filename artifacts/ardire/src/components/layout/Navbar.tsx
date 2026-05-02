@@ -166,15 +166,6 @@ export function Navbar() {
                   )}
                 >
                   <ul className="overflow-hidden flex flex-col gap-3 pl-4 border-l border-border/40">
-                    <li>
-                      <a
-                        href="/#services"
-                        onClick={(e) => handleNavClick(e, "services")}
-                        className="font-sans text-xs tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        Overview
-                      </a>
-                    </li>
                     {services.map((s) => (
                       <li key={s.slug}>
                         <a
