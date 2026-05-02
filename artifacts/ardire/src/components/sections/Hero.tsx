@@ -27,8 +27,7 @@ export function Hero() {
             Bespoke Scottish Experiences
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-foreground leading-[1.15] mb-8 drop-shadow-2xl">
-            Thoughtfully Curated.<br />
-            <span className="italic text-primary/90 font-light">Uniquely Yours.</span>
+            Luxury Tours of Scotland
           </h1>
           <p className="font-sans text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
             Bespoke concierge and event planning services to elevate your holiday, corporate incentive or major event, blending your inspiration with our expertise.
