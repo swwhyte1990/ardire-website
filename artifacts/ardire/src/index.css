@@ -81,14 +81,14 @@
 
   /* Core Colors — Rich Bottle Green + Dark Gold */
   --background: 155 58% 7%;
-  --foreground: 43 72% 50%;
+  --foreground: 43 80% 65%;
 
   --card: 155 55% 10%;
-  --card-foreground: 43 72% 50%;
+  --card-foreground: 43 80% 65%;
   --card-border: 155 50% 16%;
 
   --popover: 155 55% 10%;
-  --popover-foreground: 43 72% 50%;
+  --popover-foreground: 43 80% 65%;
   --popover-border: 155 50% 16%;
 
   /* Dark Antique Gold Accent */
@@ -96,10 +96,10 @@
   --primary-foreground: 155 58% 7%;
 
   --secondary: 155 52% 12%;
-  --secondary-foreground: 43 72% 50%;
+  --secondary-foreground: 43 80% 65%;
 
   --muted: 155 50% 12%;
-  --muted-foreground: 43 50% 40%;
+  --muted-foreground: 43 65% 58%;
 
   --accent: 43 82% 44%;
   --accent-foreground: 155 58% 7%;
@@ -113,12 +113,12 @@
 
   /* Sidebar */
   --sidebar: 155 58% 6%;
-  --sidebar-foreground: 43 72% 50%;
+  --sidebar-foreground: 43 80% 65%;
   --sidebar-border: 155 48% 13%;
   --sidebar-primary: 43 82% 44%;
   --sidebar-primary-foreground: 155 58% 7%;
   --sidebar-accent: 155 50% 12%;
-  --sidebar-accent-foreground: 43 72% 50%;
+  --sidebar-accent-foreground: 43 80% 65%;
   --sidebar-ring: 43 82% 44%;
 
   /* Charts */

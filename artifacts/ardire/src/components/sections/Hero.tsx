@@ -23,10 +23,10 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display leading-[1.15] mb-8 drop-shadow-2xl" style={{ color: 'hsl(43 90% 80%)' }}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-foreground leading-[1.15] mb-8 drop-shadow-2xl">
             Luxury Tours of Scotland
           </h1>
-          <p className="font-sans text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed" style={{ color: 'hsl(43 75% 72%)' }}>
+          <p className="font-sans text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
             Bespoke concierge and event planning services to elevate your holiday, corporate incentive or major event, blending your inspiration with our expertise.
           </p>
 
