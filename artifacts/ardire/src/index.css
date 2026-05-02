@@ -92,7 +92,7 @@
   --popover-border: 155 50% 16%;
 
   /* Dark Antique Gold Accent */
-  --primary: 43 82% 44%;
+  --primary: 43 80% 65%;
   --primary-foreground: 155 58% 7%;
 
   --secondary: 155 52% 12%;
@@ -101,7 +101,7 @@
   --muted: 155 50% 12%;
   --muted-foreground: 43 80% 65%;
 
-  --accent: 43 82% 44%;
+  --accent: 43 80% 65%;
   --accent-foreground: 155 58% 7%;
 
   --destructive: 0 60% 50%;
