@@ -1,11 +1,13 @@
 import { useState, useEffect, type MouseEvent } from "react";
 import { useLocation } from "wouter";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { services } from "@/data/services";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [servicesExpanded, setServicesExpanded] = useState(false);
   const [location, navigate] = useLocation();
 
   useEffect(() => {
@@ -16,6 +18,7 @@ export function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    if (!mobileMenuOpen) setServicesExpanded(false);
     return () => { document.body.style.overflow = ""; };
   }, [mobileMenuOpen]);
 
@@ -37,6 +40,13 @@ export function Navbar() {
         document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
       }, 300);
     }
+  }
+
+  function handleServiceClick(e: MouseEvent<HTMLAnchorElement>, slug: string) {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    navigate(`/services/${slug}`);
+    window.scrollTo({ top: 0, behavior: "auto" });
   }
 
   return (
@@ -127,18 +137,70 @@ export function Navbar() {
         </div>
 
         {/* Nav links */}
-        <ul className="flex flex-col px-8 pt-10 gap-8">
-          {navLinks.map((link) => (
-            <li key={link.name}>
-              <a
-                href={`/#${link.sectionId}`}
-                onClick={(e) => handleNavClick(e, link.sectionId)}
-                className="font-display text-xl italic text-foreground hover:text-primary transition-colors duration-300"
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
+        <ul className="flex flex-col px-8 pt-10 gap-7 overflow-y-auto">
+          {navLinks.map((link) =>
+            link.sectionId === "services" ? (
+              <li key={link.name}>
+                <button
+                  type="button"
+                  onClick={() => setServicesExpanded((v) => !v)}
+                  aria-expanded={servicesExpanded}
+                  className="w-full flex items-center justify-between font-display text-xl italic text-foreground hover:text-primary transition-colors duration-300"
+                >
+                  <span>{link.name}</span>
+                  <ChevronDown
+                    size={18}
+                    strokeWidth={1.5}
+                    className={cn(
+                      "transition-transform duration-300",
+                      servicesExpanded ? "rotate-180" : "rotate-0"
+                    )}
+                  />
+                </button>
+                <div
+                  className={cn(
+                    "grid transition-all duration-400 ease-in-out",
+                    servicesExpanded
+                      ? "grid-rows-[1fr] opacity-100 mt-4"
+                      : "grid-rows-[0fr] opacity-0"
+                  )}
+                >
+                  <ul className="overflow-hidden flex flex-col gap-3 pl-4 border-l border-border/40">
+                    <li>
+                      <a
+                        href="/#services"
+                        onClick={(e) => handleNavClick(e, "services")}
+                        className="font-sans text-xs tracking-widest uppercase text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        Overview
+                      </a>
+                    </li>
+                    {services.map((s) => (
+                      <li key={s.slug}>
+                        <a
+                          href={`/services/${s.slug}`}
+                          onClick={(e) => handleServiceClick(e, s.slug)}
+                          className="font-display text-base text-muted-foreground hover:text-primary transition-colors duration-300 block py-0.5"
+                        >
+                          {s.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
+            ) : (
+              <li key={link.name}>
+                <a
+                  href={`/#${link.sectionId}`}
+                  onClick={(e) => handleNavClick(e, link.sectionId)}
+                  className="font-display text-xl italic text-foreground hover:text-primary transition-colors duration-300"
+                >
+                  {link.name}
+                </a>
+              </li>
+            )
+          )}
         </ul>
 
         {/* Drawer footer */}
