@@ -1,10 +1,10 @@
 /**
  * Post-build script: generates pre-rendered HTML files for each route.
- * Each page is enriched with full intro text, highlights, and internal links
- * injected as hidden raw HTML so crawlers see 200+ words and can discover
- * all internal pages without executing JavaScript.
- * React replaces the root div content on hydration — sighted users never see
- * the hidden block.
+ * Each page contains genuine, visible content matching what React renders
+ * (intro paragraphs, highlights and internal links). The static markup uses
+ * brand-matched inline styles so the moment before React hydrates looks
+ * intentional. React replaces the root content on mount; sighted users see
+ * the full interactive site.
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
@@ -33,30 +33,27 @@ const allServiceLinks = [
   { slug: 'commonwealth-26', label: 'Commonwealth Games 2026 Hospitality Glasgow' },
 ];
 
-function buildCrawlerBlock(route) {
+const linkStyle = "color:#c5a366;text-decoration:none;margin-right:1rem;display:inline-block;padding:0.25rem 0";
+
+function buildPageBlock(route) {
+  const h1Html = `<h1 style="font-family:Georgia,serif;font-size:2rem;font-weight:500;letter-spacing:0.05em;color:#c5a366;margin:0 0 1.5rem">${route.h1}</h1>`;
+
   const paragraphsHtml = (route.paragraphs || [])
-    .map(p => `<p>${esc(p)}</p>`)
-    .join('\n    ');
+    .map(p => `<p style="font-size:1.05rem;margin:0 0 1.25rem">${esc(p)}</p>`)
+    .join('');
 
   const highlightsHtml = (route.highlights || []).length
-    ? `<ul>\n      ${(route.highlights).map(h => `<li>${esc(h)}</li>`).join('\n      ')}\n    </ul>`
+    ? `<ul style="margin:1.5rem 0;padding:0;list-style:none">${(route.highlights).map(h => `<li style="padding:0.4rem 0 0.4rem 1.25rem;position:relative;font-size:1rem">&middot; ${esc(h)}</li>`).join('')}</ul>`
     : '';
 
   const serviceLinksHtml = allServiceLinks
     .filter(s => route.path !== `services/${s.slug}`)
-    .map(s => `<a href="https://ardire.co.uk/services/${s.slug}">${esc(s.label)}</a>`)
-    .join('\n      ');
+    .map(s => `<a href="https://ardire.co.uk/services/${s.slug}" style="${linkStyle}">${esc(s.label)}</a>`)
+    .join('');
 
-  return `<div style="display:none" aria-hidden="true">
-    ${paragraphsHtml}
-    ${highlightsHtml}
-    <nav>
-      <a href="https://ardire.co.uk/">Ardire Hospitality Group</a>
-      ${serviceLinksHtml}
-      <a href="https://ardire.co.uk/privacy">Privacy Policy</a>
-      <a href="https://ardire.co.uk/#contact">Contact Ardire Hospitality Group</a>
-    </nav>
-  </div>`;
+  const navHtml = `<nav style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid rgba(197,163,102,0.25);font-size:0.95rem"><a href="https://ardire.co.uk/" style="${linkStyle}">Árdíre Home</a>${serviceLinksHtml}${route.path !== 'privacy' ? `<a href="https://ardire.co.uk/privacy" style="${linkStyle}">Privacy Policy</a>` : ''}<a href="https://ardire.co.uk/#contact" style="color:#c5a366;text-decoration:none;display:inline-block;padding:0.25rem 0">Contact Árdíre</a></nav>`;
+
+  return `<div data-page-content style="max-width:760px;margin:0 auto;padding:3rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7">${h1Html}${paragraphsHtml}${highlightsHtml}${navHtml}</div>`;
 }
 
 const routes = [
@@ -245,12 +242,20 @@ for (const route of routes) {
   mkdirSync(routeDir, { recursive: true });
 
   const canonicalUrl = `https://ardire.co.uk/${route.path}`;
-  const crawlerBlock = buildCrawlerBlock(route);
+  const pageBlock = buildPageBlock(route);
 
   let html = indexHtml
     .replace(
       '<link rel="canonical" href="https://ardire.co.uk/" />',
       `<link rel="canonical" href="${canonicalUrl}" />`
+    )
+    .replace(
+      '<link rel="alternate" hreflang="en-GB" href="https://ardire.co.uk/" />',
+      `<link rel="alternate" hreflang="en-GB" href="${canonicalUrl}" />`
+    )
+    .replace(
+      '<link rel="alternate" hreflang="x-default" href="https://ardire.co.uk/" />',
+      `<link rel="alternate" hreflang="x-default" href="${canonicalUrl}" />`
     )
     .replace(
       /<title>[^<]*<\/title>/,
@@ -281,12 +286,8 @@ for (const route of routes) {
       `<meta name="twitter:description" content="${route.description}" />`
     )
     .replace(
-      /<h1 data-crawler-h1[^>]*>[^<]*<\/h1>/,
-      `<h1 data-crawler-h1 style="font-family:serif;font-size:1.5rem;padding:1rem;color:#0d2b1f">${route.h1}</h1>`
-    )
-    .replace(
-      '<div data-page-content></div>',
-      crawlerBlock
+      /<div data-page-content[^>]*>[\s\S]*?<\/div><\/div>(?=\s*<script)/,
+      `${pageBlock}</div>`
     );
 
   writeFileSync(join(routeDir, 'index.html'), html);
