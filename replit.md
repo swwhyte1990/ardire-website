@@ -10,21 +10,20 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **Node.js version**: 24
 - **Package manager**: pnpm
 - **TypeScript version**: 5.9
-- **API framework**: Express 5
-- **Database**: PostgreSQL + Drizzle ORM
+- **Database**: PostgreSQL + Drizzle ORM (available via `@workspace/db`, currently no models)
 - **Validation**: Zod (`zod/v4`), `drizzle-zod`
 - **API codegen**: Orval (from OpenAPI spec)
-- **Build**: esbuild (CJS bundle)
 
 ## Structure
 
 ```text
 artifacts-monorepo/
 ├── artifacts/              # Deployable applications
-│   └── api-server/         # Express API server
+│   ├── ardire/             # Luxury brochure website (React + Vite)
+│   └── mockup-sandbox/     # Canvas mockup preview server
 ├── lib/                    # Shared libraries
 │   ├── api-spec/           # OpenAPI spec + Orval codegen config
-│   ├── api-client-react/   # Generated React Query hooks
+│   ├── api-client-react/   # Generated React Query hooks (currently unused)
 │   ├── api-zod/            # Generated Zod schemas from OpenAPI
 │   └── db/                 # Drizzle ORM schema + DB connection
 ├── scripts/                # Utility scripts (single workspace package)
@@ -50,25 +49,19 @@ Every package extends `tsconfig.base.json` which sets `composite: true`. The roo
 
 ## Ardire Website (`artifacts/ardire`)
 
-Luxury brochure website for Árd Íre Hospitality Group (trading as Ardire). React + Vite + Wouter + Tailwind + shadcn/ui.
+Luxury brochure website for Árd Íre Hospitality Group (trading as Ardire). React + Vite + Wouter + Tailwind + shadcn/ui. Static deploy.
 
-- **Email**: Contact form POSTs to `POST /api/enquiry` on the API server, which sends via Resend.
-- **Resend**: API key stored as `RESEND_API_KEY` secret (added manually — NOT via Replit Resend integration connector). Do not attempt to set up the Resend connector; use the existing secret directly.
-- **Sending domain**: Emails sent from `enquiries@ardire.co.uk` — this domain must be verified in the Resend dashboard for delivery to work.
+- **Contact form**: posts directly to **Web3Forms** (`https://api.web3forms.com/submit`) — third-party hosted form service. Access key in `VITE_WEB3FORMS_KEY` (in `.replit` userenv). No backend involved.
+- **Branding**: single gold tone `hsl(43 80% 65%)` for `--primary` and `--accent`. Background `hsl(155 58% 7%)` (deep bottle green). Fonts: Cinzel (display) + Raleway (sans).
+- **Pages**: Home (Hero/About/Services/Contact), ServiceDetail (9 services), Privacy, NotFound. Pre-rendered at build via `scripts/generate-routes.mjs` for SEO.
+- **Images**: all served as WebP from `public/images/` (~240KB total). Logo, hero, about, texture.
+- **Build size**: ~580KB JS / ~52KB CSS gzipped to ~184KB / ~9KB.
+
+### UI components kept (10 of original 55)
+
+`button, card, form, input, label, select, textarea, toast, toaster, tooltip` — only the components actually used by the app. Other shadcn/ui components (accordion, dialog, dropdown-menu, sidebar, etc.) and their Radix UI dependencies were removed during the May 2026 audit.
 
 ## Packages
-
-### `artifacts/api-server` (`@workspace/api-server`)
-
-Express 5 API server. Routes live in `src/routes/` and use `@workspace/api-zod` for request and response validation and `@workspace/db` for persistence.
-
-- Entry: `src/index.ts` — reads `PORT`, starts Express
-- App setup: `src/app.ts` — mounts CORS, JSON/urlencoded parsing, routes at `/api`
-- Routes: `src/routes/index.ts` mounts sub-routers; `src/routes/health.ts` exposes `GET /health` (full path: `/api/health`)
-- Depends on: `@workspace/db`, `@workspace/api-zod`
-- `pnpm --filter @workspace/api-server run dev` — run the dev server
-- `pnpm --filter @workspace/api-server run build` — production esbuild bundle (`dist/index.cjs`)
-- Build bundles an allowlist of deps (express, cors, pg, drizzle-orm, zod, etc.) and externalizes the rest
 
 ### `lib/db` (`@workspace/db`)
 
@@ -76,7 +69,7 @@ Database layer using Drizzle ORM with PostgreSQL. Exports a Drizzle client insta
 
 - `src/index.ts` — creates a `Pool` + Drizzle instance, exports schema
 - `src/schema/index.ts` — barrel re-export of all models
-- `src/schema/<modelname>.ts` — table definitions with `drizzle-zod` insert schemas (no models definitions exist right now)
+- `src/schema/<modelname>.ts` — table definitions with `drizzle-zod` insert schemas (no models defined right now)
 - `drizzle.config.ts` — Drizzle Kit config (requires `DATABASE_URL`, automatically provided by Replit)
 - Exports: `.` (pool, db, schema), `./schema` (schema only)
 
@@ -91,13 +84,15 @@ Owns the OpenAPI 3.1 spec (`openapi.yaml`) and the Orval config (`orval.config.t
 
 Run codegen: `pnpm --filter @workspace/api-spec run codegen`
 
+Note: there is no API server in the workspace at the moment, so these libraries are scaffold-only.
+
 ### `lib/api-zod` (`@workspace/api-zod`)
 
-Generated Zod schemas from the OpenAPI spec (e.g. `HealthCheckResponse`). Used by `api-server` for response validation.
+Generated Zod schemas from the OpenAPI spec.
 
 ### `lib/api-client-react` (`@workspace/api-client-react`)
 
-Generated React Query hooks and fetch client from the OpenAPI spec (e.g. `useHealthCheck`, `healthCheck`).
+Generated React Query hooks and fetch client from the OpenAPI spec.
 
 ### `scripts` (`@workspace/scripts`)
 
