@@ -14,7 +14,7 @@ export function Hero() {
           loading="eager"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/65 to-background z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/80 to-background z-10" />
       </div>
 
       <div className="relative z-20 text-center max-w-5xl mx-auto px-6 mt-16">
@@ -23,10 +23,10 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-white leading-[1.15] mb-8 drop-shadow-2xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display leading-[1.15] mb-8 drop-shadow-2xl" style={{ color: 'hsl(43 90% 80%)' }}>
             Luxury Tours of Scotland
           </h1>
-          <p className="font-sans text-white/85 text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="font-sans text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed" style={{ color: 'hsl(43 75% 72%)' }}>
             Bespoke concierge and event planning services to elevate your holiday, corporate incentive or major event, blending your inspiration with our expertise.
           </p>
 
