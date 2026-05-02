@@ -23,9 +23,6 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
         >
-          <p className="font-sans tracking-[0.3em] uppercase text-primary mb-6 text-xs">
-            Bespoke Scottish Experiences
-          </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-foreground leading-[1.15] mb-8 drop-shadow-2xl">
             Luxury Tours of Scotland
           </h1>
