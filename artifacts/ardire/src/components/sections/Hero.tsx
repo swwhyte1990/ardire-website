@@ -9,8 +9,7 @@ export function Hero() {
         <img
           src={`${import.meta.env.BASE_URL}images/hero-home.webp`}
           alt="Scottish Castle on a Loch"
-          className="w-full h-full object-cover scale-105 origin-center animate-[pulse_20s_ease-in-out_infinite_alternate]"
-          style={{ animationName: 'kenburns' }}
+          className="kenburns-img w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
         />
@@ -23,10 +22,10 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-foreground leading-[1.15] mb-8 drop-shadow-2xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-foreground leading-[1.15] mb-4 md:mb-8 drop-shadow-2xl">
             Luxury Tours of Scotland
           </h1>
-          <p className="font-sans text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="font-sans text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed">
             Bespoke concierge and event planning services to elevate your holiday, corporate incentive or major event, blending your inspiration with our expertise.
           </p>
 
@@ -69,8 +68,18 @@ export function Hero() {
 
       <style>{`
         @keyframes kenburns {
-          0% { transform: scale(1.02); }
-          100% { transform: scale(1.08); }
+          from { transform: scale(1.02); }
+          to   { transform: scale(1.08); }
+        }
+        .kenburns-img {
+          animation: kenburns 20s ease-in-out 1 forwards;
+          transform-origin: center;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .kenburns-img {
+            animation: none;
+            transform: scale(1.05);
+          }
         }
       `}</style>
     </section>

@@ -51,7 +51,7 @@ export default function ServiceDetail() {
     >
       <Navbar />
       {/* Hero */}
-      <section className="relative min-h-[50vh] flex items-end overflow-hidden">
+      <section id="main-content" className="relative min-h-[50vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={`${import.meta.env.BASE_URL}images/hero.webp`}

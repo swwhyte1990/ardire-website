@@ -1,5 +1,5 @@
-import { lazy, Suspense } from "react";
-import { Switch, Route, Router as WouterRouter } from "wouter";
+import { lazy, Suspense, useEffect } from "react";
+import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/Home";
@@ -7,6 +7,16 @@ import NotFound from "@/pages/not-found";
 
 const ServiceDetail = lazy(() => import("@/pages/ServiceDetail"));
 const Privacy = lazy(() => import("@/pages/Privacy"));
+
+function ScrollToTop() {
+  const [location] = useLocation();
+  useEffect(() => {
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+  return null;
+}
 
 function Router() {
   return (
@@ -24,7 +34,14 @@ function Router() {
 function App() {
   return (
     <TooltipProvider>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-background focus:text-primary focus:border focus:border-primary focus:px-4 focus:py-2 focus:font-sans focus:text-xs focus:tracking-widest focus:uppercase"
+      >
+        Skip to main content
+      </a>
       <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+        <ScrollToTop />
         <Router />
       </WouterRouter>
       <Toaster />

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { motion } from "framer-motion";
@@ -12,10 +13,21 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 );
 
 export default function Privacy() {
+  useEffect(() => {
+    document.title = "Privacy Policy | Árdíre Hospitality Group";
+    const desc = document.querySelector('meta[name="description"]');
+    const prev = desc?.getAttribute("content") ?? null;
+    desc?.setAttribute("content", "Privacy Policy for Árdíre Hospitality Group — Scotland's luxury private tour and concierge specialists based in Glasgow.");
+    return () => {
+      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
+      if (desc && prev) desc.setAttribute("content", prev);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <Navbar />
-      <main className="flex-1 w-full py-24 md:py-32">
+      <main id="main-content" className="flex-1 w-full py-24 md:py-32">
         <div className="max-w-3xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -83,7 +95,7 @@ export default function Privacy() {
 
             <Section title="How We Process Your Enquiry">
               <p>
-                Messages submitted via our contact form are delivered to us by Resend, a third-party email delivery service. Resend processes your message data solely to transmit the email on our behalf and does not retain or use it for any other purpose. Resend operates in compliance with GDPR. You can review their privacy practices at <a href="https://resend.com/privacy" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">resend.com/privacy</a>.
+                Messages submitted via our contact form are delivered to us by Web3Forms, a third-party form submission service. Web3Forms processes your message data solely to transmit the enquiry on our behalf and does not retain or use it for any other purpose. You can review their privacy practices at <a href="https://web3forms.com/privacy" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">web3forms.com/privacy</a>.
               </p>
             </Section>
 

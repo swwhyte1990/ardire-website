@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { useRef, useState } from "react";
 import {
   Form,
   FormControl,
@@ -13,7 +14,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { useToast } from "@/hooks/use-toast";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const formSchema = z.object({
@@ -24,18 +24,20 @@ const formSchema = z.object({
 });
 
 export function Contact() {
-  const { toast } = useToast();
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const honeypotRef = useRef<HTMLInputElement>(null);
+  const loadTimeRef = useRef(Date.now());
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      service: "",
-      message: "",
-    },
+    defaultValues: { name: "", email: "", service: "", message: "" },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    if (honeypotRef.current?.value) return;
+    if (Date.now() - loadTimeRef.current < 3000) return;
+
     try {
       const accessKey = import.meta.env.VITE_WEB3FORMS_KEY as string | undefined;
       if (!accessKey) {
@@ -56,22 +58,12 @@ export function Contact() {
       });
 
       const data = await res.json() as { success: boolean; message?: string };
-      if (!data.success) {
-        throw new Error(data.message || "Submission failed");
-      }
+      if (!data.success) throw new Error(data.message || "Submission failed");
 
-      toast({
-        title: "Enquiry Received",
-        description: "Our team will be in touch to arrange a private consultation.",
-        variant: "default",
-      });
-      form.reset();
+      setSubmitted(true);
+      setSubmitError(null);
     } catch (err) {
-      toast({
-        title: "Something went wrong",
-        description: err instanceof Error ? err.message : "Please try again or email us directly.",
-        variant: "destructive",
-      });
+      setSubmitError(err instanceof Error ? err.message : "Please try again or email us directly.");
     }
   }
 
@@ -121,90 +113,123 @@ export function Contact() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="bg-card p-8 md:p-10 border border-border/50"
           >
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Full Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Your name..." className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary h-12" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Email Address</FormLabel>
-                        <FormControl>
-                          <Input placeholder="your@email.com" className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary h-12" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <FormField
-                  control={form.control}
-                  name="service"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Area of Interest</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger className="bg-background/50 border-border/50 rounded-none focus:ring-primary h-12">
-                            <SelectValue placeholder="Select a service" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent className="bg-card border-border rounded-none">
-                          <SelectItem value="luxury-tours">Luxury Tours</SelectItem>
-                          <SelectItem value="corporate-incentives">Corporate Incentives</SelectItem>
-                          <SelectItem value="self-guided">Self-Guided Tours</SelectItem>
-                          <SelectItem value="staffing">Event Staffing</SelectItem>
-                          <SelectItem value="concierge">Concierge</SelectItem>
-                          <SelectItem value="commonwealth">Commonwealth '26</SelectItem>
-                          <SelectItem value="other">Other / General</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Your Requirements</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Tell us about what you have in mind..."
-                          className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary min-h-[120px] resize-none"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <Button
-                  type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-sans tracking-widest uppercase text-xs h-14 rounded-none transition-all duration-300"
+            {submitted ? (
+              <div className="flex flex-col items-start justify-center h-full min-h-[360px] space-y-6">
+                <div className="w-10 h-px bg-primary" />
+                <h3 className="font-display text-2xl text-foreground">
+                  Enquiry Received
+                </h3>
+                <p className="text-muted-foreground font-sans font-light text-base leading-relaxed max-w-sm">
+                  Thank you for reaching out. Our team will be in touch within 24 hours to arrange a private consultation.
+                </p>
+                <button
+                  onClick={() => { setSubmitted(false); form.reset(); loadTimeRef.current = Date.now(); }}
+                  className="font-sans text-xs tracking-widest uppercase text-primary hover:text-primary/70 transition-colors underline-offset-4 hover:underline"
                 >
-                  Submit Enquiry
-                </Button>
-              </form>
-            </Form>
+                  Send another enquiry
+                </button>
+              </div>
+            ) : (
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" noValidate>
+                  <input
+                    ref={honeypotRef}
+                    type="text"
+                    name="_gotcha"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    style={{ display: "none" }}
+                  />
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Full Name</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Your name..." className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary h-12" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Email Address</FormLabel>
+                          <FormControl>
+                            <Input placeholder="your@email.com" className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary h-12" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <FormField
+                    control={form.control}
+                    name="service"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Area of Interest</FormLabel>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger className="bg-background/50 border-border/50 rounded-none focus:ring-primary h-12">
+                              <SelectValue placeholder="Select a service" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent className="bg-card border-border rounded-none">
+                            <SelectItem value="luxury-tours">Luxury Tours</SelectItem>
+                            <SelectItem value="corporate-incentives">Corporate Incentives</SelectItem>
+                            <SelectItem value="self-guided">Self-Guided Tours</SelectItem>
+                            <SelectItem value="staffing">Event Staffing</SelectItem>
+                            <SelectItem value="concierge">Concierge</SelectItem>
+                            <SelectItem value="commonwealth">Commonwealth '26</SelectItem>
+                            <SelectItem value="other">Other / General</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Your Requirements</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Tell us about what you have in mind..."
+                            className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary min-h-[120px] resize-none"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  {submitError && (
+                    <p className="text-destructive font-sans text-sm">{submitError}</p>
+                  )}
+
+                  <Button
+                    type="submit"
+                    disabled={form.formState.isSubmitting}
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-sans tracking-widest uppercase text-xs h-14 rounded-none transition-all duration-300 disabled:opacity-60"
+                  >
+                    {form.formState.isSubmitting ? "Sending…" : "Submit Enquiry"}
+                  </Button>
+                </form>
+              </Form>
+            )}
           </motion.div>
 
         </div>
