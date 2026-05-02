@@ -77,9 +77,6 @@ export default function ServiceDetail() {
               <ArrowLeft size={14} />
               Back to Services
             </a>
-            <p className="font-sans tracking-[0.3em] uppercase text-primary mb-4 text-xs">
-              Our Services
-            </p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-4">
               {service.title}
             </h1>
