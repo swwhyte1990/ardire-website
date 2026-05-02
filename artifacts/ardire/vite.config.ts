@@ -39,6 +39,35 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes("node_modules")) return;
+          if (id.includes("framer-motion") || id.includes("motion-dom") || id.includes("motion-utils")) {
+            return "framer-motion";
+          }
+          if (
+            id.includes("react-hook-form") ||
+            id.includes("@hookform") ||
+            id.includes("/zod/")
+          ) {
+            return "forms";
+          }
+          if (id.includes("@radix-ui")) {
+            return "radix";
+          }
+          if (
+            id.includes("/react/") ||
+            id.includes("/react-dom/") ||
+            id.includes("/scheduler/") ||
+            id.includes("/wouter/") ||
+            id.includes("/use-sync-external-store/")
+          ) {
+            return "react-vendor";
+          }
+        },
+      },
+    },
   },
   server: {
     port,
