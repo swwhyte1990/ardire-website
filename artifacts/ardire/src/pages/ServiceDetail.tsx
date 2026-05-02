@@ -83,7 +83,7 @@ export default function ServiceDetail() {
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-4">
               {service.title}
             </h1>
-            <p className="font-display italic text-xl md:text-2xl text-primary/80">
+            <p className="font-display italic text-xl md:text-2xl text-foreground">
               {service.subtitle}
             </p>
           </motion.div>
