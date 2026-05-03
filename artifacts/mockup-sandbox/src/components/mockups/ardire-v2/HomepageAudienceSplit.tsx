@@ -87,8 +87,13 @@ export default function HomepageAudienceSplit() {
       <section className="relative h-[640px] flex items-start justify-center pt-32 overflow-hidden">
         <div className="absolute inset-0">
           <img src="/images/hero-home.webp" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(155_58%_7%)] via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(155_58%_7%)] via-transparent to-transparent" />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, hsl(155 58% 7%) 0%, hsl(155 58% 7% / 0) 28%, hsl(155 58% 7% / 0) 65%, hsl(155 58% 7%) 100%)",
+            }}
+          />
         </div>
         <div className="relative z-10 text-center max-w-3xl px-6">
           <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/80 mb-6">
