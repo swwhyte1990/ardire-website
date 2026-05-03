@@ -84,7 +84,7 @@ export default function HomepageAudienceSplit() {
       </header>
 
       {/* Hero */}
-      <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[640px] flex items-start justify-center pt-32 overflow-hidden">
         <div className="absolute inset-0">
           <img src="/images/hero-home.webp" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-[hsl(155_58%_7%)]/70 via-[hsl(155_58%_7%)]/40 to-[hsl(155_58%_7%)]" />
@@ -101,17 +101,14 @@ export default function HomepageAudienceSplit() {
             Glasgow and delivered across Scotland.
           </p>
         </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/60">
-          Scroll
-        </div>
       </section>
 
       {/* Twin Image Gateways — replaces text buttons */}
-      <section className="relative -mt-32 z-20 px-6 md:px-10 pb-24">
+      <section className="relative -mt-40 z-20 px-6 md:px-10 pb-24">
         <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-6">
           <a
             href="#"
-            className="group relative block aspect-[4/3] md:aspect-[5/6] overflow-hidden border border-[hsl(43_80%_65%)]/15 hover:border-[hsl(43_80%_65%)]/50 transition-colors"
+            className="group relative block aspect-[4/3] md:aspect-[4/5] overflow-hidden border border-[hsl(43_80%_65%)]/15 hover:border-[hsl(43_80%_65%)]/50 transition-colors"
           >
             <img
               src="/images/hero.webp"
@@ -139,7 +136,7 @@ export default function HomepageAudienceSplit() {
 
           <a
             href="#"
-            className="group relative block aspect-[4/3] md:aspect-[5/6] overflow-hidden border border-[hsl(43_80%_65%)]/15 hover:border-[hsl(43_80%_65%)]/50 transition-colors"
+            className="group relative block aspect-[4/3] md:aspect-[4/5] overflow-hidden border border-[hsl(43_80%_65%)]/15 hover:border-[hsl(43_80%_65%)]/50 transition-colors"
           >
             <img
               src="/images/about.webp"
