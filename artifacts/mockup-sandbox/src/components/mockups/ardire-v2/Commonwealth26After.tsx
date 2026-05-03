@@ -1,58 +1,40 @@
 import { useState } from "react";
-import { ChevronDown, ArrowRight, Phone, Mail, Check, Trophy, Sparkles, Building2 } from "lucide-react";
-
-const packages = [
-  {
-    icon: Sparkles,
-    label: "Single Day Hospitality",
-    desc: "VIP day at a Games venue with curated dining, premium seating, and a host. For one to twelve guests.",
-    indicative: "Indicative from £950 per guest",
-  },
-  {
-    icon: Trophy,
-    label: "Multi-Day Programme",
-    desc: "Three to seven days across multiple Games venues with accommodation, transfers, and side experiences in Glasgow.",
-    indicative: "Indicative from £4,500 per guest",
-  },
-  {
-    icon: Building2,
-    label: "Corporate Programme",
-    desc: "Bespoke corporate hospitality for client engagement — branded lounge, dressed venues, gala night, fully staffed.",
-    indicative: "Indicative from £45,000 per programme",
-  },
-];
+import { ChevronDown, ArrowRight, Phone, Mail, Check, Home, Plane, Sparkles } from "lucide-react";
 
 const sample = [
   {
-    title: "Three-Day Client Hospitality · Glasgow",
-    indicative: "Indicative £36,000 for 8 guests",
-    blurb: "Three Games sessions, two private dinners, accommodation in the city centre.",
+    title: "Ten Days · Private Estate, Highland Touring & Games Days",
+    indicative: "Indicative £180,000+ for a party of 8",
+    blurb: "Whole-house estate hire as a base. Helicopter to selected Games sessions. Touring, dining, and Highland life around the action.",
     detail: [
-      "Three days of Games sessions across athletics, swimming, and a closing event.",
-      "Two private dinners — one at a Glasgow institution, one at a hidden chef's table.",
-      "Boutique five-star accommodation, walking distance to the action.",
-      "Chauffeured transfers throughout, branded welcome on arrival.",
-      "On-call host across the programme, briefed on each guest.",
+      "Whole-house hire of a private Highland estate for the duration.",
+      "Private chef in residence, sommelier on call.",
+      "Helicopter transfers to two selected Games sessions in Glasgow.",
+      "Two private touring days — distillery, falconry, fly-fishing.",
+      "Reservations at three of Scotland's most sought-after restaurants.",
+      "Resident host and concierge throughout, briefed to each guest.",
+      "Inbound and outbound private transfers from international arrival.",
     ],
   },
   {
-    title: "Single Day VIP · Hampden",
-    indicative: "Indicative £8,400 for 6 guests",
-    blurb: "Premier event-day with curated dining and a host. A statement client thank-you.",
+    title: "Five Days · Glasgow City Stay With Two Games Days",
+    indicative: "Indicative £62,000 for a party of 4",
+    blurb: "Boutique five-star city stay with two Games days woven into a curated Glasgow week — dining, culture, a day on the west coast.",
     detail: [
-      "Premium seating at a marquee Hampden event.",
-      "Pre-event lunch in a private dining room.",
-      "Drinks reception with a celebrated chef-host.",
-      "Chauffeur transfers to and from the venue.",
-      "Bespoke gifts presented at the close of play.",
+      "Five nights at a boutique five-star Glasgow hotel — full suite floor.",
+      "Two Games days with premium seating and chauffeured transfers.",
+      "Three private dinners — including a hidden chef's table off the Royal Mile.",
+      "A day on the west coast: lunch on Loch Lomond, return for evening play.",
+      "On-call host across the programme and 24/7 concierge line.",
+      "Bespoke gifting curated to each guest.",
     ],
   },
 ];
 
 const faqs = [
-  { q: "Do you have ticket allocation?", a: "We work with the official Glasgow 2026 hospitality programme and supplementary partners. Ticketed access is confirmed in writing as part of every package, before you commit." },
-  { q: "Can you build a programme around our brand?", a: "Yes. Branded lounges, dressed venues, custom gifting, and tailored content are part of how we deliver corporate Games programmes. We brief and produce them as full events." },
-  { q: "When is the latest you can build a programme?", a: "Capacity gets tight as the Games approach. The earlier we engage, the better the position we can secure for you. After early 2026 we will only take on programmes we are confident we can deliver to standard." },
+  { q: "Do you arrange tickets to the Games themselves?", a: "Yes. We work with the official Glasgow 2026 hospitality programme and supplementary partners to confirm ticketed access in writing as part of your programme. Tickets are one part of the picture — most of what we do is the experience around them." },
+  { q: "Why not a standard hospitality package?", a: "Off-the-shelf packages tend to be designed around a single venue and a single day. Our guests are visiting Scotland — the Games is the reason for the trip, not the whole of it. We design the rest of the experience to match the calibre of the visit." },
+  { q: "When is the latest you can build a programme?", a: "Capacity gets tight as the Games approach. The earlier we engage, the better the position we can secure for accommodation, transport, and the venues around it. After early 2026 we will only take on programmes we are confident we can deliver to standard." },
 ];
 
 function FaqItem({ q, a }: { q: string; a: string }) {
@@ -93,6 +75,12 @@ function SampleCard({ item }: { item: typeof sample[number] }) {
   );
 }
 
+const around = [
+  { icon: Home, label: "Where you stay", desc: "Whole-house estate hire, suite floors at five-star city hotels, or a Highland castle with private staff in residence." },
+  { icon: Sparkles, label: "What you do around it", desc: "Private touring, distillery experiences, fly-fishing, falconry, golf, fine dining — the Scotland your visit deserves." },
+  { icon: Plane, label: "How you move", desc: "Private chauffeur, helicopter, and transfer logistics across the entire stay — into the Games and back out again." },
+];
+
 export default function Commonwealth26After() {
   return (
     <div className="min-h-screen bg-[hsl(155_58%_7%)] text-[hsl(43_80%_65%)] font-['Raleway'] pb-20">
@@ -117,51 +105,78 @@ export default function Commonwealth26After() {
         <div className="relative z-10 text-center max-w-3xl px-6">
           <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/80 mb-5">Events &amp; Hospitality / Glasgow 2026</p>
           <h1 className="font-['Cinzel'] text-5xl md:text-6xl text-[hsl(43_80%_65%)] leading-[1.05] mb-5">Glasgow 2026</h1>
-          <p className="text-base text-[hsl(43_80%_65%)]/85">Commonwealth Games. Experienced Properly.</p>
+          <p className="text-base text-[hsl(43_80%_65%)]/85">In Scotland for the Games. Hosted for everything else.</p>
         </div>
       </section>
 
       <section className="py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-5">A Generation in the Making</p>
-          <p className="font-['Cinzel'] text-3xl md:text-4xl text-[hsl(43_80%_65%)] leading-snug mb-6">Glasgow's biggest moment in a generation.</p>
+          <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-5">For Visiting Guests</p>
+          <p className="font-['Cinzel'] text-3xl md:text-4xl text-[hsl(43_80%_65%)] leading-snug mb-6">The Games is your reason for the trip. Not the whole of it.</p>
           <p className="text-base text-[hsl(43_80%_65%)]/85 leading-relaxed">
-            The Glasgow 2026 Commonwealth Games will be one of the most significant
-            sporting events ever hosted in Scotland. Árdíre delivers bespoke visitor
-            programmes, VIP hospitality packages, and corporate experiences that allow
-            businesses and private guests to make the very most of this landmark occasion.
+            For private guests travelling to Scotland for the Glasgow 2026 Commonwealth
+            Games, Árdíre delivers everything that surrounds the event — the residence,
+            the touring, the dining, the people, and the transport that turns a sporting
+            visit into a Scottish stay worthy of the journey. We handle the Games access
+            as part of the programme. We design the rest of it to match.
           </p>
         </div>
       </section>
 
-      <section id="packages" className="border-t border-b border-[hsl(43_80%_65%)]/15 py-20 px-6">
+      <section className="border-t border-b border-[hsl(43_80%_65%)]/15 py-20 px-6">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-4">Three Shapes of Programme</p>
-            <h2 className="font-['Cinzel'] text-3xl md:text-4xl text-[hsl(43_80%_65%)]">From a single day to a full week</h2>
+            <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-4">What We Take On</p>
+            <h2 className="font-['Cinzel'] text-3xl md:text-4xl text-[hsl(43_80%_65%)]">Everything around the action</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {packages.map((p) => {
-              const Icon = p.icon;
+            {around.map((a) => {
+              const Icon = a.icon;
               return (
-                <div key={p.label} className="border border-[hsl(43_80%_65%)]/15 bg-[hsl(155_55%_10%)] p-7">
+                <div key={a.label} className="border border-[hsl(43_80%_65%)]/15 bg-[hsl(155_55%_10%)] p-7">
                   <Icon className="w-6 h-6 text-[hsl(43_80%_65%)] mb-5" />
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-[hsl(43_80%_65%)]/70 mb-3">{p.label}</p>
-                  <p className="text-sm text-[hsl(43_80%_65%)]/80 leading-relaxed mb-5">{p.desc}</p>
-                  <p className="text-[11px] uppercase tracking-[0.25em] text-[hsl(43_80%_65%)]/85">{p.indicative}</p>
+                  <h3 className="font-['Cinzel'] text-xl text-[hsl(43_80%_65%)] mb-3">{a.label}</h3>
+                  <p className="text-sm text-[hsl(43_80%_65%)]/80 leading-relaxed">{a.desc}</p>
                 </div>
               );
             })}
           </div>
-          <p className="text-center text-[11px] uppercase tracking-[0.3em] text-[hsl(43_80%_65%)]/50 mt-8">Indicative figures · every programme is quoted to its shape and confirmed in writing</p>
         </div>
       </section>
 
       <section className="py-20 px-6">
+        <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14">
+          <div className="space-y-5 text-[hsl(43_80%_65%)]/85 leading-relaxed">
+            <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70">On Pricing</p>
+            <p className="font-['Cinzel'] text-2xl text-[hsl(43_80%_65%)] leading-snug">Built around your stay.</p>
+            <p>Every Glasgow 2026 programme is private, bespoke, and quoted in writing — no off-the-shelf packages. The shape depends on how long you are with us, where you stay, and how much of Scotland you want woven around the Games.</p>
+            <p>The <a href="#sample" className="underline underline-offset-4 decoration-[hsl(43_80%_65%)]/40 hover:decoration-[hsl(43_80%_65%)]">sample programmes</a> opposite show real arrangements at real scale, so you can see the shape of what an Árdíre Games stay tends to cost.</p>
+          </div>
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-5">What's Included</p>
+            <ul className="space-y-3">
+              {[
+                "Confirmed Games access — tickets and venue hospitality",
+                "Private accommodation: estate hire, suite floors, castle stays",
+                "Resident host and 24/7 concierge across the programme",
+                "Chauffeur, helicopter, and transfer logistics",
+                "Private dining, restaurant reservations, in-residence chef",
+                "Side experiences — distilleries, golf, touring, fishing, falconry",
+                "Discreet protective and personal staff where required",
+              ].map((h) => (
+                <li key={h} className="flex gap-3 text-sm text-[hsl(43_80%_65%)]/85"><Check className="w-4 h-4 mt-0.5 shrink-0 text-[hsl(43_80%_65%)]" /><span>{h}</span></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="sample" className="border-t border-[hsl(43_80%_65%)]/15 py-20 px-6">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-12">
             <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-4">Sample Programmes</p>
-            <h2 className="font-['Cinzel'] text-4xl md:text-5xl text-[hsl(43_80%_65%)]">Two we are building</h2>
+            <h2 className="font-['Cinzel'] text-4xl md:text-5xl text-[hsl(43_80%_65%)] mb-4">Two we are building</h2>
+            <p className="text-sm text-[hsl(43_80%_65%)]/80 max-w-2xl mx-auto leading-relaxed">For an honest sense of scale and budget. Yours will be entirely its own thing.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {sample.map((s) => <SampleCard key={s.title} item={s} />)}
@@ -185,7 +200,7 @@ export default function Commonwealth26After() {
             <a href="tel:+441410000000" className="flex items-center gap-2 hover:text-[hsl(43_80%_65%)]"><Phone className="w-3.5 h-3.5" />+44 (0) 141 000 0000</a>
             <a href="mailto:enquiries@ardire.co.uk" className="hidden sm:flex items-center gap-2 hover:text-[hsl(43_80%_65%)]"><Mail className="w-3.5 h-3.5" />enquiries@ardire.co.uk</a>
           </div>
-          <a href="#" className="bg-[hsl(43_80%_65%)] text-[hsl(155_58%_7%)] text-xs uppercase tracking-[0.25em] px-6 py-3 hover:bg-[hsl(43_80%_65%)]/90 inline-flex items-center gap-2">Get Involved<ArrowRight className="w-3.5 h-3.5" /></a>
+          <a href="#" className="bg-[hsl(43_80%_65%)] text-[hsl(155_58%_7%)] text-xs uppercase tracking-[0.25em] px-6 py-3 hover:bg-[hsl(43_80%_65%)]/90 inline-flex items-center gap-2">Open a Conversation<ArrowRight className="w-3.5 h-3.5" /></a>
         </div>
       </div>
     </div>
