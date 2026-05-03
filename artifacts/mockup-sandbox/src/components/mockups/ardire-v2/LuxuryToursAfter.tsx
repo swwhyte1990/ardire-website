@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "wouter";
+
 import {
   Accordion,
   AccordionContent,
@@ -18,14 +18,14 @@ export default function LuxuryToursAfter() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[hsl(155_58%_7%)]/95 backdrop-blur-md border-b border-[hsl(155_50%_16%)]">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-12">
-            <Link href="/" className="flex items-center gap-3">
+            <a href="/" className="flex items-center gap-3">
               <img src="/images/logo.webp" alt="Árdíre" className="h-10 w-auto" />
               <span className="font-['Cinzel'] text-xl tracking-widest hidden sm:block">Árdíre</span>
-            </Link>
+            </a>
             <div className="hidden md:flex gap-8 text-xs uppercase tracking-widest">
-              <Link href="#" className="hover:text-[hsl(43_80%_65%)]/70 transition-colors">Travel</Link>
-              <Link href="#" className="hover:text-[hsl(43_80%_65%)]/70 transition-colors">Events</Link>
-              <Link href="#" className="hover:text-[hsl(43_80%_65%)]/70 transition-colors">Journal</Link>
+              <a href="#" className="hover:text-[hsl(43_80%_65%)]/70 transition-colors">Travel</a>
+              <a href="#" className="hover:text-[hsl(43_80%_65%)]/70 transition-colors">Events</a>
+              <a href="#" className="hover:text-[hsl(43_80%_65%)]/70 transition-colors">Journal</a>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -132,9 +132,9 @@ export default function LuxuryToursAfter() {
                   <li><strong>Day 2:</strong> Glencoe and Rannoch Moor by Range Rover, picnic lunch on the moor, evening whisky tasting.</li>
                   <li><strong>Day 3:</strong> Stirling Castle, return transfer.</li>
                 </ul>
-                <Link href="#" className="inline-flex items-center gap-2 text-sm uppercase tracking-widest hover:text-white transition-colors">
+                <a href="#" className="inline-flex items-center gap-2 text-sm uppercase tracking-widest hover:text-white transition-colors">
                   Plan a version of this <ArrowRight className="w-4 h-4" />
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -152,9 +152,9 @@ export default function LuxuryToursAfter() {
                   <li><strong>Day 3:</strong> Round at Kingsbarns, afternoon at the British Golf Museum, dinner.</li>
                   <li><strong>Day 4:</strong> Round at Carnoustie, return transfer.</li>
                 </ul>
-                <Link href="#" className="inline-flex items-center gap-2 text-sm uppercase tracking-widest hover:text-white transition-colors">
+                <a href="#" className="inline-flex items-center gap-2 text-sm uppercase tracking-widest hover:text-white transition-colors">
                   Plan a version of this <ArrowRight className="w-4 h-4" />
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -170,9 +170,9 @@ export default function LuxuryToursAfter() {
                   <li><strong>Highlights:</strong> Inverness, Dornoch, John o'Groats, Durness, Ullapool, Applecross, Skye.</li>
                   <li className="italic">"Castle hotels, helicopter side-trips, and the world's most scenic drive — at our pace."</li>
                 </ul>
-                <Link href="#" className="inline-flex items-center gap-2 text-sm uppercase tracking-widest hover:text-white transition-colors">
+                <a href="#" className="inline-flex items-center gap-2 text-sm uppercase tracking-widest hover:text-white transition-colors">
                   Plan a version of this <ArrowRight className="w-4 h-4" />
-                </Link>
+                </a>
               </div>
             </div>
 
@@ -351,14 +351,14 @@ export default function LuxuryToursAfter() {
           <div className="grid grid-cols-2 gap-8">
             <div className="flex flex-col gap-4 text-[hsl(43_80%_65%)]/70 uppercase tracking-widest text-xs">
               <span className="text-[hsl(43_80%_65%)] mb-2 font-semibold">Travel</span>
-              <Link href="#" className="hover:text-white transition-colors">Luxury Tours</Link>
-              <Link href="#" className="hover:text-white transition-colors">Golf</Link>
-              <Link href="#" className="hover:text-white transition-colors">Concierge</Link>
+              <a href="#" className="hover:text-white transition-colors">Luxury Tours</a>
+              <a href="#" className="hover:text-white transition-colors">Golf</a>
+              <a href="#" className="hover:text-white transition-colors">Concierge</a>
             </div>
             <div className="flex flex-col gap-4 text-[hsl(43_80%_65%)]/70 uppercase tracking-widest text-xs">
               <span className="text-[hsl(43_80%_65%)] mb-2 font-semibold">Events</span>
-              <Link href="#" className="hover:text-white transition-colors">Corporate</Link>
-              <Link href="#" className="hover:text-white transition-colors">Private Retreats</Link>
+              <a href="#" className="hover:text-white transition-colors">Corporate</a>
+              <a href="#" className="hover:text-white transition-colors">Private Retreats</a>
             </div>
           </div>
           <div className="flex flex-col gap-4 text-[hsl(43_80%_65%)]/70 text-xs tracking-widest uppercase">
