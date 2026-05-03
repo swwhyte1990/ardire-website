@@ -2,6 +2,11 @@
 type ModuleMap = Record<string, () => Promise<Record<string, unknown>>>;
 export const modules: ModuleMap = {
   "./components/mockups/ardire-v2/ChauffeurAfter.tsx": () => import("../components/mockups/ardire-v2/ChauffeurAfter.tsx"),
+  "./components/mockups/ardire-v2/ConciergeAfter.tsx": () => import("../components/mockups/ardire-v2/ConciergeAfter.tsx"),
+  "./components/mockups/ardire-v2/EventManagementAfter.tsx": () => import("../components/mockups/ardire-v2/EventManagementAfter.tsx"),
+  "./components/mockups/ardire-v2/EventsLandingAfter.tsx": () => import("../components/mockups/ardire-v2/EventsLandingAfter.tsx"),
+  "./components/mockups/ardire-v2/GolfToursAfter.tsx": () => import("../components/mockups/ardire-v2/GolfToursAfter.tsx"),
   "./components/mockups/ardire-v2/HomepageAudienceSplit.tsx": () => import("../components/mockups/ardire-v2/HomepageAudienceSplit.tsx"),
-  "./components/mockups/ardire-v2/LuxuryToursAfter.tsx": () => import("../components/mockups/ardire-v2/LuxuryToursAfter.tsx")
+  "./components/mockups/ardire-v2/LuxuryToursAfter.tsx": () => import("../components/mockups/ardire-v2/LuxuryToursAfter.tsx"),
+  "./components/mockups/ardire-v2/SelfGuidedAfter.tsx": () => import("../components/mockups/ardire-v2/SelfGuidedAfter.tsx")
 };
