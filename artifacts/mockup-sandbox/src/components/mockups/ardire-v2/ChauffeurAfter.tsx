@@ -224,47 +224,16 @@ export default function ChauffeurAfter() {
         </div>
       </section>
 
-      {/* Pricing Bands — appropriate here because service is more standardised */}
-      <section className="border-b border-[hsl(43_80%_65%)]/15 py-16 px-6">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-4">
-              Indicative Rates
-            </p>
-            <h2 className="font-['Cinzel'] text-3xl md:text-4xl text-[hsl(43_80%_65%)] mb-3">
-              Clear, honest pricing
-            </h2>
-            <p className="text-sm text-[hsl(43_80%_65%)]/80 max-w-2xl mx-auto leading-relaxed">
-              Chauffeur work is more predictable than a multi-day tour, so we can publish
-              guide rates. Final figures depend on vehicle, distance, and timings — and
-              are always confirmed in writing before the journey.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {priceBands.map((b) => {
-              const Icon = b.icon;
-              return (
-                <div
-                  key={b.label}
-                  className="border border-[hsl(43_80%_65%)]/15 bg-[hsl(155_55%_10%)] p-6 flex flex-col"
-                >
-                  <Icon className="w-6 h-6 text-[hsl(43_80%_65%)] mb-5" />
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-[hsl(43_80%_65%)]/70 mb-2">
-                    {b.label}
-                  </p>
-                  <p className="font-['Cinzel'] text-2xl text-[hsl(43_80%_65%)] leading-tight">
-                    {b.price}
-                  </p>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-[hsl(43_80%_65%)]/60 mb-4">
-                    {b.unit}
-                  </p>
-                  <p className="text-sm text-[hsl(43_80%_65%)]/80 leading-relaxed">{b.desc}</p>
-                </div>
-              );
-            })}
-          </div>
-          <p className="text-center text-[11px] uppercase tracking-[0.3em] text-[hsl(43_80%_65%)]/50 mt-8">
-            ⚑ Placeholder rates · please replace with your published figures before launch
+      {/* Bespoke pricing line — sample journeys give the indication */}
+      <section className="border-b border-[hsl(43_80%_65%)]/15 py-12 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-4">On Pricing</p>
+          <p className="font-['Cinzel'] text-2xl md:text-3xl text-[hsl(43_80%_65%)] leading-snug mb-4">A driver, a vehicle, a journey.</p>
+          <p className="text-base text-[hsl(43_80%_65%)]/85 leading-relaxed">
+            Every booking is shaped around the route, the vehicle, and the time you need —
+            airport runs, half-days, full-days, or multi-day touring drivers. We quote in
+            writing before the journey. The <a href="#journeys" className="underline underline-offset-4 decoration-[hsl(43_80%_65%)]/40 hover:decoration-[hsl(43_80%_65%)]">sample journeys below</a> use real bookings,
+            so you can see the shape of what an arrangement of that scope tends to cost.
           </p>
         </div>
       </section>
@@ -312,7 +281,7 @@ export default function ChauffeurAfter() {
       </section>
 
       {/* Sample Journeys */}
-      <section className="border-t border-[hsl(43_80%_65%)]/15 py-20 px-6">
+      <section id="journeys" className="border-t border-[hsl(43_80%_65%)]/15 py-20 px-6">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-12">
             <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-4">

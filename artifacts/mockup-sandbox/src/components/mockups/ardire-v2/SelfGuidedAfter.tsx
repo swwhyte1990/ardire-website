@@ -1,17 +1,10 @@
 import { useState } from "react";
-import { ChevronDown, ArrowRight, Phone, Mail, Check, Map, Compass, Mountain, Wine } from "lucide-react";
-
-const routes = [
-  { icon: Map, name: "North Coast 500", days: "7 days", price: "from £3,200", unit: "per traveller", desc: "Inverness loop · castle hotels · fully pre-booked." },
-  { icon: Mountain, name: "West Highland Way", days: "8 days", price: "from £2,400", unit: "per walker", desc: "Milngavie to Fort William · luggage transferred · breakfast included." },
-  { icon: Wine, name: "Whisky Trail", days: "5 days", price: "from £2,800", unit: "per traveller", desc: "Speyside distilleries · driver transfers · tastings booked." },
-  { icon: Compass, name: "Bespoke Route", days: "Your dates", price: "Quoted", unit: "to the journey", desc: "Tell us where, how long, and how. We build the route." },
-];
+import { ChevronDown, ArrowRight, Phone, Mail, Check } from "lucide-react";
 
 const sampleItineraries = [
   {
     title: "North Coast 500 — 7 Day Self-Drive",
-    indicative: "From £3,200 per traveller (twin)",
+    indicative: "Indicative £3,200 per traveller (twin)",
     detail: [
       "Day 1 — Inverness arrival, hire car collection, evening at a Highland country house.",
       "Day 2 — Drive west to Applecross via Bealach na Bà, sea-view stay.",
@@ -24,7 +17,7 @@ const sampleItineraries = [
   },
   {
     title: "Speyside Whisky Trail — 5 Day with Driver",
-    indicative: "From £2,800 per traveller (twin)",
+    indicative: "Indicative £2,800 per traveller (twin)",
     detail: [
       "Day 1 — Edinburgh or Inverness arrival, transfer to Speyside, welcome dinner.",
       "Day 2 — Two distillery tours, lunch at a private dining room.",
@@ -87,30 +80,17 @@ export default function SelfGuidedAfter() {
         </div>
       </section>
 
-      <section className="border-b border-[hsl(43_80%_65%)]/15 py-16 px-6">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-10">
-            <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-4">Indicative Packages</p>
-            <h2 className="font-['Cinzel'] text-3xl md:text-4xl text-[hsl(43_80%_65%)] mb-3">Routes, fully arranged</h2>
-            <p className="text-sm text-[hsl(43_80%_65%)]/80 max-w-2xl mx-auto leading-relaxed">
-              We pre-book your accommodation, transport, key reservations, and luggage transfers — then hand over a route pack and a 24/7 support line. Below are starting prices for our most-requested routes; bespoke routes are quoted to your shape.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {routes.map((r) => {
-              const Icon = r.icon;
-              return (
-                <div key={r.name} className="border border-[hsl(43_80%_65%)]/15 bg-[hsl(155_55%_10%)] p-6">
-                  <Icon className="w-6 h-6 text-[hsl(43_80%_65%)] mb-5" />
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-[hsl(43_80%_65%)]/70 mb-2">{r.name}</p>
-                  <p className="font-['Cinzel'] text-2xl text-[hsl(43_80%_65%)] leading-tight">{r.price}</p>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-[hsl(43_80%_65%)]/60 mb-3">{r.days} · {r.unit}</p>
-                  <p className="text-sm text-[hsl(43_80%_65%)]/80 leading-relaxed">{r.desc}</p>
-                </div>
-              );
-            })}
-          </div>
-          <p className="text-center text-[11px] uppercase tracking-[0.3em] text-[hsl(43_80%_65%)]/50 mt-8">⚑ Placeholder rates · please replace with your published figures before launch</p>
+      <section className="border-b border-[hsl(43_80%_65%)]/15 py-12 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-4">On Pricing</p>
+          <p className="font-['Cinzel'] text-2xl md:text-3xl text-[hsl(43_80%_65%)] leading-snug mb-4">Your route. Your pace. Your cost.</p>
+          <p className="text-base text-[hsl(43_80%_65%)]/85 leading-relaxed">
+            We design every self-guided journey around the route you want, the standard
+            of stay you expect, and the season you're travelling. Accommodation, key
+            reservations, luggage transfers, and a 24/7 support line are all included.
+            We quote in writing before you commit. The <a href="#itineraries" className="underline underline-offset-4 decoration-[hsl(43_80%_65%)]/40 hover:decoration-[hsl(43_80%_65%)]">sample itineraries below</a> use
+            real bookings to give you an honest indication of cost.
+          </p>
         </div>
       </section>
 
@@ -138,11 +118,11 @@ export default function SelfGuidedAfter() {
         </div>
       </section>
 
-      <section className="border-t border-[hsl(43_80%_65%)]/15 py-20 px-6">
+      <section id="itineraries" className="border-t border-[hsl(43_80%_65%)]/15 py-20 px-6">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-12">
-            <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-4">Sample Itineraries</p>
-            <h2 className="font-['Cinzel'] text-4xl md:text-5xl text-[hsl(43_80%_65%)]">Two journeys in detail</h2>
+            <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-4">For Inspiration</p>
+            <h2 className="font-['Cinzel'] text-4xl md:text-5xl text-[hsl(43_80%_65%)]">Sample Itineraries</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {sampleItineraries.map((i) => <ItineraryCard key={i.title} item={i} />)}
