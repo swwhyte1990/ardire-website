@@ -232,20 +232,22 @@ export default function LuxuryToursAfter() {
         </div>
       </section>
 
-      {/* Bespoke pricing line — replaces the price band */}
+      {/* Bespoke pricing line — no starting price; refers to sample itineraries */}
       <section className="border-b border-[hsl(43_80%_65%)]/15 py-12 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-4">
-            Pricing
+            On Pricing
           </p>
           <p className="font-['Cinzel'] text-2xl md:text-3xl text-[hsl(43_80%_65%)] leading-snug mb-4">
-            Every tour is bespoke.
+            We don't sell from a price list.
           </p>
           <p className="text-base text-[hsl(43_80%_65%)]/85 leading-relaxed max-w-2xl mx-auto">
-            Indicative budgets begin around <span className="text-[hsl(43_80%_65%)]">£950 per guest, per day</span>,
-            fully inclusive of guide, vehicle, accommodation, dining, and access. Your final
-            quotation is shaped around the season, your party, and the access you require — and
-            given to you in writing before you commit to anything.
+            Every tour is built from scratch around what you want to do, where you want
+            to stay, and how you want to travel. We book what you want — it costs what
+            it costs — and we price it at the end, in writing, before you commit to
+            anything. The <a href="#itineraries" className="underline underline-offset-4 decoration-[hsl(43_80%_65%)]/40 hover:decoration-[hsl(43_80%_65%)]">sample itineraries below</a> use real
+            accommodation, transport, and access, so they give you an honest sense of
+            what a journey of that shape might cost.
           </p>
           <a
             href="#enquire"
@@ -303,7 +305,7 @@ export default function LuxuryToursAfter() {
       </section>
 
       {/* Itineraries for Inspiration */}
-      <section className="border-t border-[hsl(43_80%_65%)]/15 py-20 px-6">
+      <section id="itineraries" className="border-t border-[hsl(43_80%_65%)]/15 py-20 px-6">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-14">
             <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-4">
