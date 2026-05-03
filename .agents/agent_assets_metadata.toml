@@ -1,5 +1,58 @@
 uploads = []
-generated = []
+
+[[generated]]
+id = "tAQAs-HpatNiRU0VVZHdG"
+uri = "file://artifacts/mockup-sandbox/public/images/salonprive-hero.png"
+type = "image"
+title = "Scottish castle misty golden hour"
+
+[[generated]]
+id = "mKyx4GEInHROmHDyAF_oR"
+uri = "file://artifacts/mockup-sandbox/public/images/salonprive-car.png"
+type = "image"
+title = "Vintage car on highland road"
+
+[[generated]]
+id = "YZ12ASBZ4TSU863aNgKLR"
+uri = "file://artifacts/mockup-sandbox/public/images/cinematicatelier-hero.png"
+type = "image"
+title = "Castle on loch golden hour"
+
+[[generated]]
+id = "I2P3zz2u_JjsGHrYgeYL6"
+uri = "file://artifacts/mockup-sandbox/public/images/cinematicatelier-whisky.png"
+type = "image"
+title = "Whisky dark oak gold rim"
+
+[[generated]]
+id = "Jn4BPt7sSBeQ_2mtJuENf"
+uri = "file://artifacts/mockup-sandbox/public/images/cinematicatelier-rover.png"
+type = "image"
+title = "Vintage Range Rover Highland road"
+
+[[generated]]
+id = "J14MgHxBhKalHidy6y7Iw"
+uri = "file://artifacts/mockup-sandbox/public/images/cinematicatelier-glencoe.png"
+type = "image"
+title = "Glencoe autumn low sun"
+
+[[generated]]
+id = "DhoUNt4n_AB5GORbayzk9"
+uri = "file://artifacts/mockup-sandbox/public/images/editorialheritage-hero.png"
+type = "image"
+title = "Scottish castle misty golden hour"
+
+[[generated]]
+id = "UoJfrjvR4_enDVDBBy79N"
+uri = "file://artifacts/mockup-sandbox/public/images/editorialheritage-whisky.png"
+type = "image"
+title = "Whisky glass dark oak gold"
+
+[[generated]]
+id = "xtEiJ2AR5_PO1ulv5IPFD"
+uri = "file://artifacts/mockup-sandbox/public/images/editorialheritage-landscape.png"
+type = "image"
+title = "Glencoe autumn vintage car landscape"
 
 [[outputs]]
 id = "BXnbOjJ2hle4s4NDOZCC9"
