@@ -50,13 +50,13 @@ function Dropdown({ label, items }: { label: string; items: { label: string; hre
 export default function HomepageAudienceSplit() {
   return (
     <div className="min-h-screen bg-[hsl(155_58%_7%)] text-[hsl(43_80%_65%)] font-['Raleway']">
+
+      {/* Nav — sits over hero */}
       <header className="absolute top-0 inset-x-0 z-40">
         <div className="max-w-[1400px] mx-auto px-8 py-6 flex items-center justify-between">
           <a href="#" className="flex items-baseline gap-2">
             <span className="font-['Cinzel'] text-2xl tracking-[0.15em] text-[hsl(43_80%_65%)]">ÁRDÍRE</span>
-            <span className="text-[10px] uppercase tracking-[0.3em] text-[hsl(43_80%_65%)]/60 hidden sm:inline">
-              Hospitality Group
-            </span>
+            <span className="text-[10px] uppercase tracking-[0.3em] text-[hsl(43_80%_65%)]/60 hidden sm:inline">Hospitality Group</span>
           </a>
           <nav className="hidden lg:flex items-center gap-8">
             <Dropdown label="Travel" items={travelLinks} />
@@ -69,59 +69,92 @@ export default function HomepageAudienceSplit() {
         </div>
       </header>
 
-      <section className="relative h-[640px] flex items-start justify-center pt-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src="/images/hero-home.webp" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(155_58%_7%)] via-[hsl(155_58%_7%)]/40 to-transparent" />
-        </div>
-        <div className="relative z-10 text-center max-w-3xl px-6">
+      {/* Hero — full-bleed, stands alone, fades cleanly at bottom into page bg */}
+      <section className="relative h-[60vh] min-h-[480px] overflow-hidden">
+        <img src="/images/hero-home.webp" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        {/* Top: dark for nav legibility, using neutral black */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent" style={{ backgroundSize: "100% 50%" }} />
+        {/* Bottom: fades into the page bg colour so no seam */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to top, hsl(155 58% 7%) 0%, hsl(155 58% 7% / 0.7) 25%, transparent 55%)" }}
+        />
+        {/* Copy sits in the vertical centre */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pt-16">
           <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/80 mb-6">Árd Íre Hospitality Group · Glasgow</p>
           <h1 className="font-['Cinzel'] text-5xl md:text-7xl text-[hsl(43_80%_65%)] leading-[1.05] mb-6">
             Privately Guided<br />Scotland
           </h1>
-          <p className="text-base md:text-lg text-[hsl(43_80%_65%)]/85 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-[hsl(43_80%_65%)]/85 max-w-xl leading-relaxed">
             Bespoke private tours, concierge and event hospitality, crafted in Glasgow and delivered across Scotland.
           </p>
         </div>
       </section>
 
-      <section className="relative -mt-40 z-20 px-6 md:px-10 pb-24">
-        <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-6">
-          <a href="#" className="group relative block aspect-[4/3] md:aspect-[4/5] overflow-hidden border border-[hsl(43_80%_65%)]/15 hover:border-[hsl(43_80%_65%)]/50 transition-colors">
-            <img src="/images/hero.webp" alt="Travel & Tours" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-            <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
+      {/* Gateway cards — sit cleanly on the dark page bg, no overlap */}
+      <section className="px-6 md:px-10 pb-24 -mt-32">
+        <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-px bg-[hsl(43_80%_65%)]/10">
+          {/* Travel */}
+          <a
+            href="#"
+            className="group relative block h-[520px] overflow-hidden bg-[hsl(155_58%_7%)]"
+          >
+            <img
+              src="/images/hero.webp"
+              alt="Travel & Tours"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+            />
+            {/* Single gradient — bottom only, for text */}
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 35%, transparent 65%)" }} />
+            <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
               <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-3">For Private Travellers</p>
               <h2 className="font-['Cinzel'] text-3xl md:text-4xl text-[hsl(43_80%_65%)] mb-3">Travel &amp; Tours</h2>
-              <p className="text-sm text-[hsl(43_80%_65%)]/80 leading-relaxed mb-5 max-w-md">Privately guided tours, championship golf, chauffeur, self-guided journeys and 24/7 concierge across Scotland.</p>
-              <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[hsl(43_80%_65%)] group-hover:gap-3 transition-all">Plan a Private Tour <ArrowRight className="w-4 h-4" /></span>
+              <p className="text-sm text-[hsl(43_80%_65%)]/80 leading-relaxed mb-5 max-w-md">
+                Privately guided tours, championship golf, chauffeur, self-guided journeys and 24/7 concierge across Scotland.
+              </p>
+              <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[hsl(43_80%_65%)] group-hover:gap-3 transition-all">
+                Plan a Private Tour <ArrowRight className="w-4 h-4" />
+              </span>
             </div>
           </a>
 
-          <a href="#" className="group relative block aspect-[4/3] md:aspect-[4/5] overflow-hidden border border-[hsl(43_80%_65%)]/15 hover:border-[hsl(43_80%_65%)]/50 transition-colors">
-            <img src="/images/about.webp" alt="Events & Hospitality" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-            <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
+          {/* Events */}
+          <a
+            href="#"
+            className="group relative block h-[520px] overflow-hidden bg-[hsl(155_58%_7%)]"
+          >
+            <img
+              src="/images/about.webp"
+              alt="Events & Hospitality"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+            />
+            <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 35%, transparent 65%)" }} />
+            <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
               <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-3">For Companies &amp; Organisers</p>
               <h2 className="font-['Cinzel'] text-3xl md:text-4xl text-[hsl(43_80%_65%)] mb-3">Events &amp; Hospitality</h2>
-              <p className="text-sm text-[hsl(43_80%_65%)]/80 leading-relaxed mb-5 max-w-md">Corporate incentives, end-to-end event management, professional event staffing, and Glasgow 2026 hospitality.</p>
-              <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[hsl(43_80%_65%)] group-hover:gap-3 transition-all">Discuss an Event <ArrowRight className="w-4 h-4" /></span>
+              <p className="text-sm text-[hsl(43_80%_65%)]/80 leading-relaxed mb-5 max-w-md">
+                Corporate incentives, end-to-end event management, professional event staffing, and Glasgow 2026 hospitality.
+              </p>
+              <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-[hsl(43_80%_65%)] group-hover:gap-3 transition-all">
+                Discuss an Event <ArrowRight className="w-4 h-4" />
+              </span>
             </div>
           </a>
         </div>
       </section>
 
+      {/* Intro strip */}
       <section className="border-t border-[hsl(43_80%_65%)]/15 py-20 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-6">Glasgow · Highlands · Islands</p>
           <h3 className="font-['Cinzel'] text-3xl md:text-4xl text-[hsl(43_80%_65%)] mb-6">Two doors. One standard.</h3>
-          <p className="text-base text-[hsl(43_80%_65%)]/80 leading-relaxed">Whether you are arriving as a private guest or organising on behalf of a company, every Árdíre experience is shaped around you — privately guided, fully managed, and delivered with the same attention to detail.</p>
+          <p className="text-base text-[hsl(43_80%_65%)]/80 leading-relaxed">
+            Whether you are arriving as a private guest or organising on behalf of a company, every Árdíre experience is shaped around you — privately guided, fully managed, and delivered with the same attention to detail.
+          </p>
         </div>
       </section>
 
+      {/* Footer */}
       <footer className="border-t border-[hsl(43_80%_65%)]/15 py-10 px-6">
         <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-[hsl(43_80%_65%)]/60">
           <div className="flex items-center gap-6">
