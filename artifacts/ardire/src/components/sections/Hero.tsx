@@ -30,7 +30,7 @@ export function Hero() {
             Árd Íre Group · Glasgow
           </p>
           <h1 className="font-display text-5xl md:text-7xl text-foreground leading-[1.05] mb-6">
-            Privately Guided<br />Scotland
+            Luxury Tours of Scotland &amp; Event Services
           </h1>
           <p className="font-sans text-base md:text-lg text-foreground/85 max-w-xl mx-auto leading-relaxed">
             Bespoke private tours, concierge and event hospitality, crafted in Glasgow and delivered across Scotland.
