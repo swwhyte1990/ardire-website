@@ -16,7 +16,6 @@ export default function Home() {
       <Navbar />
       <main id="main-content" className="flex-1 w-full">
         <Hero />
-        {/* Gateway cards overlap the hero via -mt-24 in Services */}
         <Services />
         <About />
         <LazyOnVisible id="contact" minHeight="900px">
