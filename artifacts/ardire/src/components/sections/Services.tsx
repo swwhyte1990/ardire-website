@@ -67,10 +67,10 @@ export function Services() {
               For Companies &amp; Organisers
             </p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3">
-              Events &amp; Hospitality
+              Events &amp; Corporate
             </h2>
             <p className="font-sans text-sm text-foreground/80 leading-relaxed mb-5 max-w-md">
-              Corporate incentives, end-to-end event management, professional event staffing, and Glasgow 2026 hospitality.
+              Corporate incentives, end-to-end event management, professional event staffing, and Glasgow 2026 support.
             </p>
             <span className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.25em] text-foreground group-hover:gap-3 transition-all duration-300">
               Discuss an Event <ArrowRight className="w-4 h-4" />
