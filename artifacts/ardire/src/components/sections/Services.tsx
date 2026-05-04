@@ -15,13 +15,13 @@ export function Services() {
   }
 
   return (
-    <section id="services" className="px-6 md:px-10 pb-24 -mt-24 relative z-20">
-      <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-1 bg-background">
+    <section id="services" className="px-6 md:px-10 pb-20 -mt-20 relative z-20">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-1 bg-background">
 
         {/* Travel & Tours */}
         <button
           onClick={goToTravel}
-          className="group relative block w-full h-[520px] overflow-hidden text-left"
+          className="group relative block w-full h-[360px] md:h-[420px] overflow-hidden text-left"
         >
           <img
             src={`${import.meta.env.BASE_URL}images/hero.webp`}
@@ -51,7 +51,7 @@ export function Services() {
         {/* Events & Hospitality */}
         <button
           onClick={goToEvents}
-          className="group relative block w-full h-[520px] overflow-hidden text-left"
+          className="group relative block w-full h-[360px] md:h-[420px] overflow-hidden text-left"
         >
           <img
             src={`${import.meta.env.BASE_URL}images/about.webp`}
