@@ -95,3 +95,39 @@ id = "y_A0icnw463voErouVcPp"
 uri = "file://attached_assets/image_search/events_2_chandelier_gala.jpg"
 type = "image"
 title = "Events B — Chandelier Gala Evening"
+
+[[outputs]]
+id = "c4gn_5k0JnhmzwSbhw6br"
+uri = "file://attached_assets/image_search/travel_edin_1_arthurs_seat.jpg"
+type = "image"
+title = "Travel A — Edinburgh Cityscape from Arthur's Seat"
+
+[[outputs]]
+id = "Avje5JTkbTCVljA5y0SbO"
+uri = "file://attached_assets/image_search/travel_edin_2_oldtown.jpg"
+type = "image"
+title = "Travel B — Edinburgh Old Town (wide)"
+
+[[outputs]]
+id = "NTxMchJUg_hb-sjRXWcBR"
+uri = "file://attached_assets/image_search/travel_edin_3_chauffeur.jpg"
+type = "image"
+title = "Travel C — Luxury Chauffeur, Edinburgh"
+
+[[outputs]]
+id = "Bp5yYclo-osxSvbyZBzEw"
+uri = "file://attached_assets/image_search/events_corp_1_awards.jpg"
+type = "image"
+title = "Events A — Awards Dinner at Elegant Venue"
+
+[[outputs]]
+id = "ZgPo3RKbqvQHwQyJ30v7f"
+uri = "file://attached_assets/image_search/events_corp_2_gala_dinner.jpg"
+type = "image"
+title = "Events B — Elegant Gala Dinner"
+
+[[outputs]]
+id = "IiDSLAQUdRiz-q0SwPVJy"
+uri = "file://attached_assets/image_search/events_corp_3_blacktie.jpg"
+type = "image"
+title = "Events C — Black Tie Gala Evening"
