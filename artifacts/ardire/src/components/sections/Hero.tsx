@@ -29,7 +29,7 @@ export function Hero() {
           <p className="font-sans text-[11px] uppercase tracking-[0.4em] text-foreground/80 mb-6">
             Árd Íre Group · Glasgow
           </p>
-          <h1 className="font-display text-5xl md:text-7xl text-foreground leading-[1.05] mb-6">
+          <h1 className="font-display text-4xl md:text-6xl text-foreground leading-[1.05] mb-6">
             Luxury Tours of Scotland &amp; Event Services
           </h1>
           <p className="font-sans text-base md:text-lg text-foreground/85 max-w-xl mx-auto leading-relaxed">
