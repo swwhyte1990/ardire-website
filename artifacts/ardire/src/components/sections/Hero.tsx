@@ -27,7 +27,7 @@ export function Hero() {
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
         >
           <p className="font-sans text-[11px] uppercase tracking-[0.4em] text-foreground/80 mb-6">
-            Árd Íre Hospitality Group · Glasgow
+            Árd Íre Group · Glasgow
           </p>
           <h1 className="font-display text-5xl md:text-7xl text-foreground leading-[1.05] mb-6">
             Privately Guided<br />Scotland

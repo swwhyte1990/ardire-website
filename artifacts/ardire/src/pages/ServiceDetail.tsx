@@ -16,7 +16,7 @@ export default function ServiceDetail() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
     if (service) {
-      document.title = `${service.title} | Árdíre Hospitality Group`;
+      document.title = `${service.title} | Árdíre Group`;
     }
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";

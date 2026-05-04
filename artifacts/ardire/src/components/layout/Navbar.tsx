@@ -246,7 +246,7 @@ export function Navbar() {
         </ul>
 
         <div className="mt-auto px-8 pb-10 pt-8 border-t border-border/30">
-          <p className="font-sans text-xs tracking-widest uppercase text-muted-foreground mb-3">Árd Íre Hospitality Group</p>
+          <p className="font-sans text-xs tracking-widest uppercase text-muted-foreground mb-3">Árd Íre Group</p>
           <a href="mailto:enquiries@ardire.co.uk" className="font-sans text-xs text-muted-foreground hover:text-primary transition-colors block mb-1">enquiries@ardire.co.uk</a>
           <a href="tel:+441412550796" className="font-sans text-xs text-muted-foreground hover:text-primary transition-colors block">+44 (0)141 255 0796</a>
         </div>

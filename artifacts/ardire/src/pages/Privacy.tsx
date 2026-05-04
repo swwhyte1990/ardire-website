@@ -14,10 +14,10 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 
 export default function Privacy() {
   useEffect(() => {
-    document.title = "Privacy Policy | Árdíre Hospitality Group";
+    document.title = "Privacy Policy | Árdíre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Privacy Policy for Árdíre Hospitality Group — Scotland's luxury private tour and concierge specialists based in Glasgow.");
+    desc?.setAttribute("content", "Privacy Policy for Árdíre Group — Scotland's luxury private tour and concierge specialists based in Glasgow.");
     return () => {
       document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
       if (desc && prev) desc.setAttribute("content", prev);
@@ -47,13 +47,13 @@ export default function Privacy() {
 
             <Section title="Who We Are">
               <p>
-                This Privacy Policy explains how Árd Íre Hospitality Group (&ldquo;Árdíre&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) collects, uses, and protects your personal data when you visit our website or contact us regarding our services.
+                This Privacy Policy explains how Árd Íre Group (&ldquo;Árdíre&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) collects, uses, and protects your personal data when you visit our website or contact us regarding our services.
               </p>
               <p>
                 We are the data controller for the purposes of the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
               </p>
               <p>
-                <span className="text-foreground font-normal">Árd Íre Hospitality Group</span><br />
+                <span className="text-foreground font-normal">Árd Íre Group</span><br />
                 Clyde Offices, 2nd Floor<br />
                 48 West George Street<br />
                 Glasgow, G2 1BP<br />

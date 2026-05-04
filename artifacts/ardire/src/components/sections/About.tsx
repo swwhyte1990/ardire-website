@@ -39,7 +39,7 @@ export function About() {
           >
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-8">
               The Árd Íre<br/>
-              <span className="italic text-primary">Hospitality Group.</span>
+              <span className="italic text-primary">Group.</span>
             </h2>
 
             <div className="space-y-6 text-muted-foreground font-sans text-base leading-relaxed font-light">
