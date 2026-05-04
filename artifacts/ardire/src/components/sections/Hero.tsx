@@ -1,10 +1,8 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden pb-28">
+    <section className="relative h-[60vh] min-h-[480px] w-full flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
           src={`${import.meta.env.BASE_URL}images/hero-home.webp`}
@@ -13,58 +11,32 @@ export function Hero() {
           loading="eager"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/75 via-background/80 to-background z-10" />
+        {/* Black at top — no green cast over the image */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/60 via-transparent to-transparent" />
+        {/* Brand green at bottom — dissolves cleanly into the page background */}
+        <div
+          className="absolute inset-0 z-10"
+          style={{ background: "linear-gradient(to top, hsl(155 58% 7%) 0%, hsl(155 58% 7% / 0.7) 25%, transparent 55%)" }}
+        />
       </div>
 
-      <div className="relative z-20 text-center max-w-5xl mx-auto px-6 mt-16">
+      <div className="relative z-20 text-center max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display text-foreground leading-[1.15] mb-4 md:mb-8 drop-shadow-2xl">
-            Luxury Tours of Scotland
-          </h1>
-          <p className="font-sans text-muted-foreground text-base md:text-lg max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed">
-            Bespoke concierge and event planning services to elevate your holiday, corporate incentive or major event, blending your inspiration with our expertise.
+          <p className="font-sans text-[11px] uppercase tracking-[0.4em] text-foreground/80 mb-6">
+            Árd Íre Hospitality Group · Glasgow
           </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-sans tracking-widest uppercase text-xs px-8 h-14 rounded-none border border-primary transition-all duration-300 hover:shadow-[0_0_20px_rgba(184,134,11,0.3)]"
-            >
-              <a href="#services">Explore Our Services</a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="bg-transparent hover:bg-background/50 border-border text-foreground font-sans tracking-widest uppercase text-xs px-8 h-14 rounded-none backdrop-blur-sm transition-all duration-300"
-            >
-              <a href="#contact">Private Enquiries</a>
-            </Button>
-          </div>
+          <h1 className="font-display text-5xl md:text-7xl text-foreground leading-[1.05] mb-6">
+            Privately Guided<br />Scotland
+          </h1>
+          <p className="font-sans text-base md:text-lg text-foreground/85 max-w-xl mx-auto leading-relaxed">
+            Bespoke private tours, concierge and event hospitality, crafted in Glasgow and delivered across Scotland.
+          </p>
         </motion.div>
       </div>
-
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-      >
-        <a href="#about" className="text-muted-foreground hover:text-primary transition-colors flex flex-col items-center gap-2">
-          <span className="text-[10px] uppercase tracking-widest font-sans">Scroll</span>
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          >
-            <ChevronDown size={20} strokeWidth={1} />
-          </motion.div>
-        </a>
-      </motion.div>
 
       <style>{`
         @keyframes kenburns {

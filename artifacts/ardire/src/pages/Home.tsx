@@ -2,8 +2,8 @@ import { lazy, Suspense } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
-import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
+import { About } from "@/components/sections/About";
 import { LazyOnVisible } from "@/components/LazyOnVisible";
 
 const Contact = lazy(() =>
@@ -16,8 +16,9 @@ export default function Home() {
       <Navbar />
       <main id="main-content" className="flex-1 w-full">
         <Hero />
-        <About />
+        {/* Gateway cards overlap the hero via -mt-24 in Services */}
         <Services />
+        <About />
         <LazyOnVisible id="contact" minHeight="900px">
           <Suspense fallback={null}>
             <Contact />

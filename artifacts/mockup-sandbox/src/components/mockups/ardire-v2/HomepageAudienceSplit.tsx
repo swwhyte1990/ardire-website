@@ -93,8 +93,8 @@ export default function HomepageAudienceSplit() {
         </div>
       </section>
 
-      <section className="px-6 md:px-10 pb-24 mt-4">
-        <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-px bg-[hsl(43_80%_65%)]/10">
+      <section className="px-6 md:px-10 pb-24 -mt-24">
+        <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-1 bg-[hsl(155_58%_7%)]">
           <a
             href="#"
             className="group relative block h-[520px] overflow-hidden bg-[hsl(155_58%_7%)]"
