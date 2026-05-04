@@ -12,7 +12,7 @@ export function Hero() {
           fetchPriority="high"
         />
         {/* Black at top — no green cast over the image */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-black/20 to-transparent" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/35 to-transparent" />
         {/* Brand green at bottom — dissolves cleanly into the page background */}
         <div
           className="absolute inset-0 z-10"
