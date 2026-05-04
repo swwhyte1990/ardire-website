@@ -72,7 +72,8 @@ export default function HomepageAudienceSplit() {
       <section className="relative h-[640px] flex items-start justify-center pt-32 overflow-hidden">
         <div className="absolute inset-0">
           <img src="/images/hero-home.webp" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[hsl(155_58%_7%)] to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[hsl(155_58%_7%)] via-[hsl(155_58%_7%)]/40 to-transparent" />
         </div>
         <div className="relative z-10 text-center max-w-3xl px-6">
           <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/80 mb-6">Árd Íre Hospitality Group · Glasgow</p>
@@ -89,7 +90,8 @@ export default function HomepageAudienceSplit() {
         <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-6">
           <a href="#" className="group relative block aspect-[4/3] md:aspect-[4/5] overflow-hidden border border-[hsl(43_80%_65%)]/15 hover:border-[hsl(43_80%_65%)]/50 transition-colors">
             <img src="/images/hero.webp" alt="Travel & Tours" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[hsl(155_58%_7%)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
             <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
               <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-3">For Private Travellers</p>
               <h2 className="font-['Cinzel'] text-3xl md:text-4xl text-[hsl(43_80%_65%)] mb-3">Travel &amp; Tours</h2>
@@ -100,7 +102,8 @@ export default function HomepageAudienceSplit() {
 
           <a href="#" className="group relative block aspect-[4/3] md:aspect-[4/5] overflow-hidden border border-[hsl(43_80%_65%)]/15 hover:border-[hsl(43_80%_65%)]/50 transition-colors">
             <img src="/images/about.webp" alt="Events & Hospitality" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[hsl(155_58%_7%)] to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
             <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
               <p className="text-[11px] uppercase tracking-[0.4em] text-[hsl(43_80%_65%)]/70 mb-3">For Companies &amp; Organisers</p>
               <h2 className="font-['Cinzel'] text-3xl md:text-4xl text-[hsl(43_80%_65%)] mb-3">Events &amp; Hospitality</h2>
