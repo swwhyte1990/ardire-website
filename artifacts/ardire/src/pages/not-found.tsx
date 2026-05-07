@@ -21,7 +21,7 @@ export default function NotFound() {
         </p>
         <div className="pt-8">
           <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 font-sans tracking-widest uppercase text-xs rounded-none px-8 h-12">
-            <Link href="/">Return to Ardire</Link>
+            <Link href="/">Return to ÁrdÍre</Link>
           </Button>
         </div>
       </div>

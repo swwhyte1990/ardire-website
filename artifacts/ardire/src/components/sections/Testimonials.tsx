@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
-    quote: "Ardire delivered the impossible. They secured a private tasting with a master distiller that money simply cannot buy, followed by a helicopter transit to a castle we had entirely to ourselves. Flawless execution.",
+    quote: "ÁrdÍre delivered the impossible. They secured a private tasting with a master distiller that money simply cannot buy, followed by a helicopter transit to a castle we had entirely to ourselves. Flawless execution.",
     author: "James M.",
     title: "Private Client, New York"
   },
@@ -15,7 +15,7 @@ const testimonials = [
     title: "CEO, Tech Enterprise"
   },
   {
-    quote: "Discreet, deeply connected, and intuitively preemptive of our every need. Ardire is not just a concierge; they are the ultimate custodians of Scottish luxury.",
+    quote: "Discreet, deeply connected, and intuitively preemptive of our every need. ÁrdÍre is not just a concierge; they are the ultimate custodians of Scottish luxury.",
     author: "Lord & Lady B.",
     title: "London"
   }

@@ -43,7 +43,7 @@ export function Experiences() {
               Curated <span className="italic text-primary">Experiences</span>
             </h2>
             <p className="text-muted-foreground font-sans max-w-xl font-light">
-              A glimpse into the world of Árd Íre. Each moment is tailored entirely to your preferences, blending your inspiration with our expertise to ensure no two journeys are ever the same.
+              A glimpse into the world of ÁrdÍre. Each moment is tailored entirely to your preferences, blending your inspiration with our expertise to ensure no two journeys are ever the same.
             </p>
           </motion.div>
         </div>

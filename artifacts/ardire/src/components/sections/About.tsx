@@ -38,13 +38,13 @@ export function About() {
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           >
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-8">
-              The Árd Íre<br/>
+              The ÁrdÍre<br/>
               <span className="italic text-primary">Group.</span>
             </h2>
 
             <div className="space-y-6 text-muted-foreground font-sans text-base leading-relaxed font-light">
               <p>
-                Árd Íre, meaning "high place" in Scottish Gaelic, was founded on a belief that truly exceptional experiences require more than a booking; they require vision, deep local knowledge, and a team that treats every detail as a privilege.
+                ÁrdÍre, meaning "high place" in Scottish Gaelic, was founded on a belief that truly exceptional experiences require more than a booking; they require vision, deep local knowledge, and a team that treats every detail as a privilege.
               </p>
               <p>
                 We provide bespoke concierge and event planning services to elevate your holiday, corporate incentive or major event. Tour Scotland and beyond, blending your inspiration with our expertise to create unforgettable experiences.

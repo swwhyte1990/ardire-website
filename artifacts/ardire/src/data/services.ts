@@ -43,7 +43,7 @@ export const services: ServiceData[] = [
       "Scotland is the birthplace of golf, and no destination on earth rivals it for the sheer quality and variety of its courses. We arrange exclusive access to some of the world's most prestigious links, from St Andrews and Carnoustie on the east coast to Turnberry and Royal Troon in the west. Whether you're teeing off at a celebrated championship venue or discovering a hidden gem in the Highlands, our golf tours are crafted for those who demand excellence on and off the course.",
     introRich: [
       { type: "heading", text: "Bespoke Golf Tours in Scotland" },
-      { type: "paragraph", text: "Play the courses that defined the game. Árdíre designs fully bespoke golf tours across Scotland for individuals, pairs, and groups who want more than a tee time — they want an experience. From the legendary Old Course at St Andrews to the dramatic links of the Outer Hebrides, we handle every detail so you can focus entirely on your game." },
+      { type: "paragraph", text: "Play the courses that defined the game. The ÁrdÍre Group designs fully bespoke golf tours across Scotland for individuals, pairs, and groups who want more than a tee time — they want an experience. From the legendary Old Course at St Andrews to the dramatic links of the Outer Hebrides, we handle every detail so you can focus entirely on your game." },
       { type: "heading", text: "Championship Links & Hidden Gems" },
       { type: "paragraph", text: "Scotland boasts some of the finest golf courses in the world. We can secure access to celebrated venues including St Andrews, Carnoustie, Turnberry, Royal Troon, Muirfield, and Kingsbarns, as well as spectacular lesser-known courses where the scenery is as memorable as the golf. Every round is arranged in advance, with tee times, caddies, and transport all confirmed before you arrive." },
       { type: "heading", text: "Beyond the Fairway" },
@@ -66,7 +66,7 @@ export const services: ServiceData[] = [
       "From airport arrivals to full-day touring, our private chauffeur service sets the benchmark for discreet, professional ground transportation across Scotland. Every journey is handled with precision, punctuality, and an unwavering attention to comfort.",
     introRich: [
       { type: "heading", text: "Private Chauffeur Services Across Scotland" },
-      { type: "paragraph", text: "Árdíre provides a premium chauffeur service for private individuals, corporate clients, and visiting guests throughout Scotland. Whether you require a seamless airport transfer, a chauffeured day of meetings across Glasgow and Edinburgh, or a multi-day touring driver for a leisurely exploration of the country, our experienced chauffeurs deliver an impeccable standard of service every time." },
+      { type: "paragraph", text: "The ÁrdÍre Group provides a premium chauffeur service for private individuals, corporate clients, and visiting guests throughout Scotland. Whether you require a seamless airport transfer, a chauffeured day of meetings across Glasgow and Edinburgh, or a multi-day touring driver for a leisurely exploration of the country, our experienced chauffeurs deliver an impeccable standard of service every time." },
       { type: "heading", text: "Comfort, Discretion & Reliability" },
       { type: "paragraph", text: "Our chauffeurs are carefully selected for their professionalism, local knowledge, and calm composure. They are immaculately presented, punctual to the minute, and trained to anticipate your needs without being intrusive. All journeys are conducted in premium vehicles, maintained to the highest standard and specified for comfort on Scotland's varied roads." },
       { type: "heading", text: "Bespoke Ground Transportation" },
@@ -139,10 +139,10 @@ export const services: ServiceData[] = [
     title: "Event Management",
     subtitle: "Conceived, Managed, Delivered.",
     intro:
-      "From the first concept to the final curtain, we take full ownership of your event. Árdíre provides end-to-end event management for private occasions, corporate functions, product launches, gala dinners, and high-profile gatherings across Scotland and beyond. We don't just supply the team — we lead the entire production.",
+      "From the first concept to the final curtain, we take full ownership of your event. The ÁrdÍre Group provides end-to-end event management for private occasions, corporate functions, product launches, gala dinners, and high-profile gatherings across Scotland and beyond. We don't just supply the team — we lead the entire production.",
     introRich: [
       { type: "heading", text: "Full-Service Event Management Scotland" },
-      { type: "paragraph", text: "Whether you're hosting an intimate private dinner for twenty or a corporate gala for five hundred, Árdíre manages every element of your event from initial concept through to post-event debrief. Our event management team brings creative vision, logistical precision, and an unwavering commitment to excellence to every occasion we take on." },
+      { type: "paragraph", text: "Whether you're hosting an intimate private dinner for twenty or a corporate gala for five hundred, The ÁrdÍre Group manages every element of your event from initial concept through to post-event debrief. Our event management team brings creative vision, logistical precision, and an unwavering commitment to excellence to every occasion we take on." },
       { type: "heading", text: "From Concept to Execution" },
       { type: "paragraph", text: "We work closely with you to understand your objectives, brand, and vision, then develop a bespoke event strategy around them. Venue sourcing and negotiation, supplier management, catering, entertainment, AV and technical production, décor, guest management, and on-the-day coordination — all handled seamlessly under one roof." },
       { type: "heading", text: "Corporate Events & Private Functions" },
@@ -177,7 +177,7 @@ export const services: ServiceData[] = [
     title: "Commonwealth '26",
     subtitle: "Glasgow 2026. Experience It Properly.",
     intro:
-      "The Glasgow 2026 Commonwealth Games is set to be one of the most significant sporting events ever hosted in Scotland. Árdíre is offering it's support, delivering bespoke visitor programmes, VIP hospitality packages, and corporate experiences that allow businesses and private guests to make the very most of this landmark occasion.",
+      "The Glasgow 2026 Commonwealth Games is set to be one of the most significant sporting events ever hosted in Scotland. The ÁrdÍre Group is offering its support, delivering bespoke visitor programmes, VIP hospitality packages, and corporate experiences that allow businesses and private guests to make the very most of this landmark occasion.",
     highlights: [
       "VIP hospitality packages for Games events",
       "Bespoke visitor experiences and itinerary planning",
