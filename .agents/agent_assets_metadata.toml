@@ -149,3 +149,27 @@ id = "1dcAsNNBk2QZcSU2-NF75"
 uri = "file://attached_assets/image_search/glenfinnan_3_landscape.jpg"
 type = "image"
 title = "C — Classic Landscape"
+
+[[outputs]]
+id = "asKauvn7T164BXBFK-bPj"
+uri = "file://attached_assets/image_search/jacobite_1_wide.jpg"
+type = "image"
+title = "A — Jacobite crossing Glenfinnan (wide)"
+
+[[outputs]]
+id = "gHwBZqbFFBw4jgs7ICZmv"
+uri = "file://attached_assets/image_search/jacobite_2_kathi.jpg"
+type = "image"
+title = "B — Jacobite crossing by Kathi Kamleitner"
+
+[[outputs]]
+id = "Z9QDFb1jKP1Empr5_kWIw"
+uri = "file://attached_assets/image_search/jacobite_3_squarespace.jpg"
+type = "image"
+title = "C — Glenfinnan train, classic view"
+
+[[outputs]]
+id = "ytJwMLthLM1S98xPBleAx"
+uri = "file://attached_assets/image_search/jacobite_4_greatbig.jpg"
+type = "image"
+title = "D — Jon Arnold: Jacobite on the viaduct"
