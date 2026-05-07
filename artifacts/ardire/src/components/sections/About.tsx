@@ -38,8 +38,7 @@ export function About() {
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           >
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-8">
-              The ÁrdÍre<br/>
-              <span className="italic text-primary">Group.</span>
+              The ÁrdÍre Group<span className="italic text-primary">.</span>
             </h2>
 
             <div className="space-y-6 text-muted-foreground font-sans text-base leading-relaxed font-light">

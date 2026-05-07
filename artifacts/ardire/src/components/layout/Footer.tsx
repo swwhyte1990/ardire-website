@@ -28,6 +28,7 @@ export function Footer() {
               style={{ filter: "brightness(0.86) saturate(1.45)" }}
             />
             <div>
+              <span className="font-sans text-[10px] text-muted-foreground tracking-widest uppercase block mb-0.5">The</span>
               <span className="font-display text-xl tracking-widest uppercase text-foreground block">ÁRDÍRE</span>
               <span className="font-sans text-xs text-muted-foreground tracking-widest uppercase">
                 Group
