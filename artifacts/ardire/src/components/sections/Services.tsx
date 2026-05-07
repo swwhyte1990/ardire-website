@@ -24,8 +24,8 @@ export function Services() {
           className="group relative block w-full h-[320px] md:h-[360px] overflow-hidden text-left"
         >
           <img
-            src={`${import.meta.env.BASE_URL}images/hero.webp`}
-            alt="Travel & Tours — Scottish Highlands"
+            src={`${import.meta.env.BASE_URL}images/travel-glenfinnan.jpg`}
+            alt="Glenfinnan Viaduct — Travel & Tours across Scotland"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
           />
           <div

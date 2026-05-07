@@ -131,3 +131,21 @@ id = "IiDSLAQUdRiz-q0SwPVJy"
 uri = "file://attached_assets/image_search/events_corp_3_blacktie.jpg"
 type = "image"
 title = "Events C — Black Tie Gala Evening"
+
+[[outputs]]
+id = "g9oeiQ9sX3Xtf9eCPXAyr"
+uri = "file://attached_assets/image_search/glenfinnan_1_aerial_loch.jpg"
+type = "image"
+title = "A — Aerial: Viaduct & Loch Shiel"
+
+[[outputs]]
+id = "QkU1_CixynVzKd-dRnKfz"
+uri = "file://attached_assets/image_search/glenfinnan_2_autumn.jpg"
+type = "image"
+title = "B — Autumn Aerial View"
+
+[[outputs]]
+id = "1dcAsNNBk2QZcSU2-NF75"
+uri = "file://attached_assets/image_search/glenfinnan_3_landscape.jpg"
+type = "image"
+title = "C — Classic Landscape"
