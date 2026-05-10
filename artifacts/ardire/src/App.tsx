@@ -7,6 +7,8 @@ import NotFound from "@/pages/not-found";
 
 const ServiceDetail = lazy(() => import("@/pages/ServiceDetail"));
 const Privacy = lazy(() => import("@/pages/Privacy"));
+const TravelPage = lazy(() => import("@/pages/TravelPage"));
+const EventsPage = lazy(() => import("@/pages/EventsPage"));
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -23,6 +25,8 @@ function Router() {
     <Suspense fallback={null}>
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/travel" component={TravelPage} />
+        <Route path="/events" component={EventsPage} />
         <Route path="/services/:slug" component={ServiceDetail} />
         <Route path="/privacy" component={Privacy} />
         <Route component={NotFound} />

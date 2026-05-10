@@ -5,12 +5,12 @@ export function Services() {
   const [, navigate] = useLocation();
 
   function goToTravel() {
-    navigate("/services/luxury-tours");
+    navigate("/travel");
     window.scrollTo({ top: 0, behavior: "auto" });
   }
 
   function goToEvents() {
-    navigate("/services/event-management");
+    navigate("/events");
     window.scrollTo({ top: 0, behavior: "auto" });
   }
 
