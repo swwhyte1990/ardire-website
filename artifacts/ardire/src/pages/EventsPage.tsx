@@ -20,7 +20,7 @@ export default function EventsPage() {
     const prev = desc?.getAttribute("content") ?? null;
     desc?.setAttribute("content", "Corporate incentives, end-to-end event management, professional staffing and Glasgow 2026 support — delivered by The ÁrdÍre Group.");
     return () => {
-      document.title = "Luxury Private Tours & Event Management | The ÁrdÍre Group";
+      document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev) desc.setAttribute("content", prev);
     };
   }, []);
