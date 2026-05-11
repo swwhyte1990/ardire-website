@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, type MouseEvent } from "react";
 import { useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { setPendingScroll } from "@/lib/pendingScroll";
 
 const travelServices = [
   { slug: "luxury-tours",     title: "Luxury Tours" },
@@ -123,8 +124,8 @@ export function Navbar() {
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     } else {
+      setPendingScroll(sectionId);
       navigate("/");
-      setTimeout(() => document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" }), 300);
     }
   }
 

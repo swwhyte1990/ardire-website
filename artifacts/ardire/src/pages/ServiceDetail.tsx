@@ -7,6 +7,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { getServiceBySlug } from "@/data/services";
 import NotFound from "@/pages/not-found";
+import { setPendingScroll } from "@/lib/pendingScroll";
 
 export default function ServiceDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -25,18 +26,14 @@ export default function ServiceDetail() {
 
   function goToContact(e: MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
+    setPendingScroll("contact");
     navigate("/");
-    setTimeout(() => {
-      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-    }, 300);
   }
 
   function goToServices(e: MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
+    setPendingScroll("services");
     navigate("/");
-    setTimeout(() => {
-      document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
-    }, 300);
   }
 
   if (!service) return <NotFound />;

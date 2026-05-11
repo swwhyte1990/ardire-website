@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { services } from "@/data/services";
+import { setPendingScroll } from "@/lib/pendingScroll";
 
 const eventsSlugs = ["corporate-incentives", "event-management", "event-staffing", "commonwealth-26"];
 const eventsServices = eventsSlugs.map((slug) => services.find((s) => s.slug === slug)!).filter(Boolean);
@@ -32,10 +33,8 @@ export default function EventsPage() {
 
   function goToEnquiry(e: MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
+    setPendingScroll("enquiry");
     navigate("/");
-    setTimeout(() => {
-      document.getElementById("enquiry")?.scrollIntoView({ behavior: "smooth" });
-    }, 300);
   }
 
   return (

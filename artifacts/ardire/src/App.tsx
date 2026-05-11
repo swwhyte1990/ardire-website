@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
+import { takePendingScroll } from "@/lib/pendingScroll";
 
 const ServiceDetail = lazy(() => import("@/pages/ServiceDetail"));
 const Privacy = lazy(() => import("@/pages/Privacy"));
@@ -13,6 +14,19 @@ const EventsPage = lazy(() => import("@/pages/EventsPage"));
 function ScrollToTop() {
   const [location] = useLocation();
   useEffect(() => {
+    const target = takePendingScroll();
+    if (target) {
+      const tryScroll = () => {
+        const el = document.getElementById(target);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        } else {
+          setTimeout(() => document.getElementById(target)?.scrollIntoView({ behavior: "smooth" }), 150);
+        }
+      };
+      requestAnimationFrame(tryScroll);
+      return;
+    }
     if (!window.location.hash) {
       window.scrollTo(0, 0);
     }
