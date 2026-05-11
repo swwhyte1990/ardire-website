@@ -21,7 +21,7 @@ export default function TravelPage() {
     desc?.setAttribute("content", "Bespoke private tours, championship golf, chauffeur services and 24/7 concierge across Scotland — crafted by The ÁrdÍre Group.");
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
-      if (desc && prev) desc.setAttribute("content", prev);
+      if (desc && prev !== null) desc.setAttribute("content", prev);
     };
   }, []);
 
