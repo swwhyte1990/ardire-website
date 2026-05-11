@@ -186,7 +186,7 @@ export function Navbar() {
       {/* Full-screen mobile overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-50 bg-background flex flex-col md:hidden transition-all duration-500 ease-in-out",
+          "fixed inset-0 z-50 bg-background/80 backdrop-blur-md flex flex-col md:hidden transition-all duration-500 ease-in-out",
           mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
       >
