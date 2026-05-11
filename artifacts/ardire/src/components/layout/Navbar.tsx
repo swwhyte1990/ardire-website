@@ -91,8 +91,6 @@ function NavDropdown({
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileTravel, setMobileTravel] = useState(false);
-  const [mobileEvents, setMobileEvents] = useState(false);
   const [, navigate] = useLocation();
 
   useEffect(() => {
@@ -103,7 +101,6 @@ export function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
-    if (!mobileMenuOpen) { setMobileTravel(false); setMobileEvents(false); }
     return () => { document.body.style.overflow = ""; };
   }, [mobileMenuOpen]);
 
@@ -186,100 +183,112 @@ export function Navbar() {
         </div>
       </nav>
 
-      {/* Backdrop */}
+      {/* Full-screen mobile overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity duration-400 md:hidden",
+          "fixed inset-0 z-50 bg-background flex flex-col md:hidden transition-all duration-500 ease-in-out",
           mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
-        onClick={() => setMobileMenuOpen(false)}
-      />
-
-      {/* Slide-in drawer */}
-      <div
-        className={cn(
-          "fixed top-0 right-0 h-full w-72 z-50 bg-background flex flex-col transition-transform duration-500 ease-in-out md:hidden shadow-2xl",
-          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        )}
       >
-        <div className="flex items-center justify-between px-8 py-6 border-b border-border/30">
-          <span className="font-display text-base tracking-[0.25em] uppercase text-foreground">Menu</span>
-          <button onClick={() => setMobileMenuOpen(false)} className="text-muted-foreground hover:text-primary transition-colors" aria-label="Close menu">
-            <X size={22} strokeWidth={1.5} />
+        {/* Header */}
+        <div className="flex items-center justify-between px-6 py-5 border-b border-border/20 shrink-0">
+          <button
+            onClick={() => { setMobileMenuOpen(false); navigate("/"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+            className="flex items-center gap-3 group"
+            aria-label="Go to homepage"
+          >
+            <img
+              src={`${import.meta.env.BASE_URL}images/logo.webp`}
+              alt="Árdíre Logo"
+              className="h-10 w-10 object-contain"
+              style={{ filter: "brightness(0.86) saturate(1.45)" }}
+            />
+            <span className="font-display text-base tracking-widest uppercase text-foreground">ÁRDÍRE</span>
+          </button>
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-muted-foreground hover:text-primary transition-colors p-1"
+            aria-label="Close menu"
+          >
+            <X size={24} strokeWidth={1.5} />
           </button>
         </div>
 
-        <ul className="flex flex-col px-8 pt-10 gap-7 overflow-y-auto">
-          {/* Travel */}
-          <li>
-            <button
-              type="button"
-              onClick={() => setMobileTravel((v) => !v)}
-              className="w-full flex items-center justify-between font-display text-xl italic text-foreground hover:text-primary transition-colors"
-            >
-              <span>For Private Travellers</span>
-              <ChevronDown size={18} strokeWidth={1.5} className={cn("transition-transform duration-300", mobileTravel && "rotate-180")} />
-            </button>
-            <div className={cn("grid transition-all duration-400 ease-in-out", mobileTravel ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0")}>
-              <ul className="overflow-hidden flex flex-col gap-3 pl-4 border-l border-border/40">
-                <li>
-                  <button onClick={() => { setMobileMenuOpen(false); goToHub("/travel"); }} className="font-display text-base text-primary font-semibold hover:text-primary/80 transition-colors block py-0.5 text-left w-full">
-                    View All Travel
-                  </button>
-                </li>
-                <li className="-ml-4 border-t border-border/40" />
-                {travelServices.map((s) => (
-                  <li key={s.slug}>
-                    <button onClick={() => { setMobileMenuOpen(false); goToService(s.slug); }} className="font-display text-base text-muted-foreground hover:text-primary transition-colors block py-0.5 text-left w-full">
-                      {s.title}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </li>
+        {/* Scrollable nav body */}
+        <div className="flex-1 overflow-y-auto px-6 py-8 flex flex-col gap-10">
 
-          {/* Events */}
-          <li>
+          {/* Travel section */}
+          <div>
+            <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-primary mb-4">Travel &amp; Tours</p>
             <button
-              type="button"
-              onClick={() => setMobileEvents((v) => !v)}
-              className="w-full flex items-center justify-between font-display text-xl italic text-foreground hover:text-primary transition-colors"
+              onClick={() => { setMobileMenuOpen(false); goToHub("/travel"); }}
+              className="group flex items-center gap-2 font-display text-2xl italic text-foreground hover:text-primary transition-colors duration-300 mb-5 text-left"
             >
-              <span>For Business &amp; Events</span>
-              <ChevronDown size={18} strokeWidth={1.5} className={cn("transition-transform duration-300", mobileEvents && "rotate-180")} />
+              For Private Travellers
+              <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-lg">→</span>
             </button>
-            <div className={cn("grid transition-all duration-400 ease-in-out", mobileEvents ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0")}>
-              <ul className="overflow-hidden flex flex-col gap-3 pl-4 border-l border-border/40">
-                <li>
-                  <button onClick={() => { setMobileMenuOpen(false); goToHub("/events"); }} className="font-display text-base text-primary font-semibold hover:text-primary/80 transition-colors block py-0.5 text-left w-full">
-                    View All Events
-                  </button>
-                </li>
-                <li className="-ml-4 border-t border-border/40" />
-                {eventsServices.map((s) => (
-                  <li key={s.slug}>
-                    <button onClick={() => { setMobileMenuOpen(false); goToService(s.slug); }} className="font-display text-base text-muted-foreground hover:text-primary transition-colors block py-0.5 text-left w-full">
-                      {s.title}
-                    </button>
-                  </li>
-                ))}
-              </ul>
+            <div className="flex flex-col border-t border-border/20">
+              {travelServices.map((s) => (
+                <button
+                  key={s.slug}
+                  onClick={() => { setMobileMenuOpen(false); goToService(s.slug); }}
+                  className="py-3.5 text-left font-sans text-[11px] uppercase tracking-[0.25em] text-muted-foreground hover:text-primary border-b border-border/10 transition-colors duration-200"
+                >
+                  {s.title}
+                </button>
+              ))}
             </div>
-          </li>
+          </div>
+
+          {/* Events section */}
+          <div>
+            <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-primary mb-4">Events &amp; Corporate</p>
+            <button
+              onClick={() => { setMobileMenuOpen(false); goToHub("/events"); }}
+              className="group flex items-center gap-2 font-display text-2xl italic text-foreground hover:text-primary transition-colors duration-300 mb-5 text-left"
+            >
+              For Business &amp; Events
+              <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-lg">→</span>
+            </button>
+            <div className="flex flex-col border-t border-border/20">
+              {eventsServices.map((s) => (
+                <button
+                  key={s.slug}
+                  onClick={() => { setMobileMenuOpen(false); goToService(s.slug); }}
+                  className="py-3.5 text-left font-sans text-[11px] uppercase tracking-[0.25em] text-muted-foreground hover:text-primary border-b border-border/10 transition-colors duration-200"
+                >
+                  {s.title}
+                </button>
+              ))}
+            </div>
+          </div>
 
           {/* Contact */}
-          <li>
-            <a href="/#enquiry" onClick={(e) => handleNavLinkClick(e, "contact")} className="font-display text-xl italic text-foreground hover:text-primary transition-colors">
+          <div>
+            <a
+              href="/#enquiry"
+              onClick={(e) => handleNavLinkClick(e, "contact")}
+              className="font-display text-2xl italic text-foreground hover:text-primary transition-colors duration-300"
+            >
               Contact
             </a>
-          </li>
-        </ul>
+          </div>
+        </div>
 
-        <div className="mt-auto px-8 pb-10 pt-8 border-t border-border/30">
-          <p className="font-sans text-xs tracking-widest uppercase text-muted-foreground mb-3">The ÁrdÍre Group</p>
-          <a href="mailto:enquiries@ardire.co.uk" className="font-sans text-xs text-muted-foreground hover:text-primary transition-colors block mb-1">enquiries@ardire.co.uk</a>
-          <a href="tel:+441412550796" className="font-sans text-xs text-muted-foreground hover:text-primary transition-colors block">+44 (0)141 255 0796</a>
+        {/* Footer CTA */}
+        <div className="shrink-0 px-6 pb-10 pt-6 border-t border-border/20 flex flex-col gap-5">
+          <a
+            href="/#enquiry"
+            onClick={(e) => handleNavLinkClick(e, "contact")}
+            className="block bg-primary hover:bg-primary/90 text-primary-foreground font-sans text-xs uppercase tracking-[0.3em] py-4 text-center transition-colors duration-300"
+          >
+            Enquire Now
+          </a>
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-[11px] font-sans text-muted-foreground">
+            <a href="mailto:enquiries@ardire.co.uk" className="hover:text-primary transition-colors">enquiries@ardire.co.uk</a>
+            <span className="text-border">·</span>
+            <a href="tel:+441412550796" className="hover:text-primary transition-colors">+44 (0)141 255 0796</a>
+          </div>
         </div>
       </div>
     </>
