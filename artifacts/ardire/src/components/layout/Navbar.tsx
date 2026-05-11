@@ -156,8 +156,8 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            <NavDropdown label="Travel" items={travelServices} onItemClick={goToService} hubHref="/travel" hubLabel="View All Travel" onHubClick={goToHub} />
-            <NavDropdown label="Events" items={eventsServices} onItemClick={goToService} hubHref="/events" hubLabel="View All Events" onHubClick={goToHub} />
+            <NavDropdown label="For Private Travellers" items={travelServices} onItemClick={goToService} hubHref="/travel" hubLabel="View All Travel" onHubClick={goToHub} />
+            <NavDropdown label="For Business & Events" items={eventsServices} onItemClick={goToService} hubHref="/events" hubLabel="View All Events" onHubClick={goToHub} />
             <a
               href="/#enquiry"
               onClick={(e) => handleNavLinkClick(e, "contact")}
@@ -216,7 +216,7 @@ export function Navbar() {
               onClick={() => setMobileTravel((v) => !v)}
               className="w-full flex items-center justify-between font-display text-xl italic text-foreground hover:text-primary transition-colors"
             >
-              <span>Travel</span>
+              <span>For Private Travellers</span>
               <ChevronDown size={18} strokeWidth={1.5} className={cn("transition-transform duration-300", mobileTravel && "rotate-180")} />
             </button>
             <div className={cn("grid transition-all duration-400 ease-in-out", mobileTravel ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0")}>
@@ -245,7 +245,7 @@ export function Navbar() {
               onClick={() => setMobileEvents((v) => !v)}
               className="w-full flex items-center justify-between font-display text-xl italic text-foreground hover:text-primary transition-colors"
             >
-              <span>Events</span>
+              <span>For Business &amp; Events</span>
               <ChevronDown size={18} strokeWidth={1.5} className={cn("transition-transform duration-300", mobileEvents && "rotate-180")} />
             </button>
             <div className={cn("grid transition-all duration-400 ease-in-out", mobileEvents ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0")}>
