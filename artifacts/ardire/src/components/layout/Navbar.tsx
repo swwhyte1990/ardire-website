@@ -159,13 +159,6 @@ export function Navbar() {
             <a
               href="/#enquiry"
               onClick={(e) => handleNavLinkClick(e, "contact")}
-              className="text-xs font-sans uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors duration-300"
-            >
-              Contact
-            </a>
-            <a
-              href="/#enquiry"
-              onClick={(e) => handleNavLinkClick(e, "contact")}
               className="bg-primary text-primary-foreground text-xs font-sans uppercase tracking-[0.2em] px-5 py-2.5 hover:bg-primary/90 transition-colors"
             >
               Enquire
@@ -263,16 +256,7 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* Contact */}
-          <div>
-            <a
-              href="/#enquiry"
-              onClick={(e) => handleNavLinkClick(e, "contact")}
-              className="font-display text-2xl italic text-foreground hover:text-primary transition-colors duration-300"
-            >
-              Contact
-            </a>
-          </div>
+          {/* Contact removed — Enquire CTA handles all inquiries */}
         </div>
 
         {/* Footer CTA */}
