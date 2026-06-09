@@ -6,6 +6,16 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://ardire.co.uk/travel</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ardire.co.uk/events</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://ardire.co.uk/services/luxury-tours</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -87,6 +87,14 @@ export const services: ServiceData[] = [
     subtitle: "Performance. Rewarded. Unforgettably.",
     intro:
       "The best incentive is one your team still talks about years later. We design and deliver high-impact corporate incentive programmes that go far beyond the ordinary, creating moments of genuine awe, team connection, and cultural immersion across Scotland's most spectacular settings.",
+    introRich: [
+      { type: "heading", text: "Corporate Incentive Travel in Scotland" },
+      { type: "paragraph", text: "Scotland offers one of the most compelling natural backdrops for corporate incentive travel anywhere in the world. Ancient castles, dramatic Highland landscapes, private sporting estates, and world-class whisky culture combine to create an environment that inspires, motivates, and rewards in equal measure. The ÁrdÍre Group designs bespoke incentive programmes for businesses who want their people to feel genuinely extraordinary." },
+      { type: "heading", text: "Experiences That Drive Performance" },
+      { type: "paragraph", text: "We move well beyond the standard team-building itinerary. Whether it's a private Highland challenge followed by a castle dinner, a whisky blending masterclass at an exclusive distillery, a falconry experience on a private estate, or a clay shooting day in the Borders, every element is selected for its ability to create real connection and lasting memory. Your team's achievement deserves recognition that matches it." },
+      { type: "heading", text: "Seamless from Brief to Debrief" },
+      { type: "paragraph", text: "From initial brief through to post-event debrief, we manage every logistical and creative detail. Group travel coordination, accommodation at exclusive estate hotels, bespoke dining experiences, entertainment, AV and décor, photography, and on-the-ground coordination are all handled by our team. You arrive, and we take care of everything else." },
+    ],
     highlights: [
       "Bespoke programmes aligned to your business objectives",
       "Highland challenges, outdoor adventures, and team-building",
@@ -125,6 +133,14 @@ export const services: ServiceData[] = [
     subtitle: "Every Detail. Impeccably Handled.",
     intro:
       "The impression your event makes starts with the people running it. Our event staffing team brings professionalism, warmth, and composure to every occasion, from intimate private dinners to large-scale corporate events and major public gatherings. We are discreet, well-presented, and completely reliable.",
+    introRich: [
+      { type: "heading", text: "Professional Event Staffing Across Scotland" },
+      { type: "paragraph", text: "The ÁrdÍre Group provides experienced, professionally trained event staff for a wide range of occasions across Scotland. From front-of-house teams and reception staff to hospitality managers and guest liaison officers, our people bring the right combination of warmth, discretion, and polish to every event they work." },
+      { type: "heading", text: "Front-of-House & Hospitality Expertise" },
+      { type: "paragraph", text: "Our staff are selected for their composure under pressure, natural warmth with guests, and ability to represent your brand impeccably. They arrive fully briefed, uniformed to your specification, and ready to deliver. Whether you need a single host for a private dining experience or a full team for a large-scale corporate gala, we build the right team around your event." },
+      { type: "heading", text: "Flexible, Reliable, and Fully Insured" },
+      { type: "paragraph", text: "We understand that events rarely run exactly to plan. Our staff are trained to adapt, remain calm, and keep the guest experience seamless regardless of what happens behind the scenes. All of our event staff are background-checked, fully insured, and managed by a senior ÁrdÍre coordinator throughout your event." },
+    ],
     highlights: [
       "Trained, experienced staff across a range of event disciplines",
       "Front-of-house, hospitality, and guest management roles",
@@ -163,6 +179,14 @@ export const services: ServiceData[] = [
     subtitle: "Nothing Is Too Much.",
     intro:
       "We are the people you call when the usual avenues simply will not do. Our concierge service offers round-the-clock lifestyle management for private individuals, executives, and visiting guests, securing the impossible, coordinating the complex, and delivering everything with complete discretion.",
+    introRich: [
+      { type: "heading", text: "Private Concierge Service Scotland" },
+      { type: "paragraph", text: "The ÁrdÍre concierge service is a personal, always-available service for private individuals, visiting executives, and high-net-worth guests who expect more than the standard can provide. We operate discreetly, move quickly, and maintain a network of relationships across Scotland and beyond that allows us to secure what others cannot." },
+      { type: "heading", text: "When Ordinary Channels Won't Do" },
+      { type: "paragraph", text: "Fully-booked restaurants secured at short notice. Access to restricted events and private members' clubs. Last-minute helicopter charters. Theatre and sporting events that have long since sold out. Personal shopping and bespoke gift procurement. Arrangements made for visiting dignitaries and UHNW guests. If it exists, we can usually arrange it. If it doesn't exist yet, we have been known to create it." },
+      { type: "heading", text: "Discreet, Trusted, and Always Available" },
+      { type: "paragraph", text: "Our concierge clients are provided with a dedicated point of contact available 24 hours a day. We treat every request with the same level of care and confidentiality, whether it is a complex multi-day itinerary or a single urgent favour. Discretion is not a feature — it is a founding principle of everything we do." },
+    ],
     highlights: [
       "24/7 availability wherever you are in the world",
       "Reservations at fully-booked restaurants and exclusive venues",
@@ -178,6 +202,14 @@ export const services: ServiceData[] = [
     subtitle: "Glasgow 2026. Experience It Properly.",
     intro:
       "The Glasgow 2026 Commonwealth Games is set to be one of the most significant sporting events ever hosted in Scotland. The ÁrdÍre Group is offering its support, delivering bespoke visitor programmes, VIP hospitality packages, and corporate experiences that allow businesses and private guests to make the very most of this landmark occasion.",
+    introRich: [
+      { type: "heading", text: "Glasgow 2026 Commonwealth Games" },
+      { type: "paragraph", text: "Glasgow 2026 will bring together athletes and visitors from over seventy nations for one of the most celebrated events in world sport. For businesses and private guests, it represents a rare and time-limited opportunity to entertain clients, reward teams, and create memories against the backdrop of a truly global occasion in one of Britain's most vibrant cities." },
+      { type: "heading", text: "VIP Hospitality & Bespoke Visitor Packages" },
+      { type: "paragraph", text: "The ÁrdÍre Group is assembling a curated set of hospitality packages for the 2026 Games. These range from premium ticketed event attendance with private pre-match dining, to multi-day visitor programmes combining sporting events with Highland excursions, distillery visits, and private cultural experiences. Whether you are hosting a group of ten or a delegation of one hundred, we design the programme around your objectives." },
+      { type: "heading", text: "Corporate Entertainment & Client Hosting" },
+      { type: "paragraph", text: "The Commonwealth Games provides an outstanding framework for client entertainment. The combination of world-class sport, Scottish culture, and summer hospitality creates a naturally compelling proposition for corporate hosts. We take care of all logistics — accommodation, transport, event access, catering, and guest management — so you can focus entirely on your guests." },
+    ],
     highlights: [
       "VIP hospitality packages for Games events",
       "Bespoke visitor experiences and itinerary planning",
