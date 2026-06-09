@@ -43,13 +43,13 @@ export function About() {
 
             <div className="space-y-6 text-muted-foreground font-sans text-base leading-relaxed font-light">
               <p>
-                ÁrdÍre, meaning "high place" in Scottish Gaelic, was founded on a belief that truly exceptional experiences require more than a booking; they require vision, deep local knowledge, and a team that treats every detail as a privilege.
+                Truly exceptional experiences are rarely about what is arranged. They are about how it feels to arrive, to settle in, to be genuinely looked after. The difference between an impressive itinerary and an unforgettable one comes down to something far more personal.
               </p>
               <p>
-                We provide bespoke concierge and event planning services to elevate your holiday, corporate incentive or major event. Tour Scotland and beyond, blending your inspiration with our expertise to create unforgettable experiences.
+                ÁrdÍre was founded by people who had spent their careers as butlers, working at the highest levels of private service in households, luxury hotels, and aboard private vessels. In those roles they developed something rare: an intimate, human understanding of what people from different cultures and backgrounds actually want when they finally have time to relax and enjoy the company of those around them.
               </p>
               <p>
-                From intimate private tours to large-scale corporate incentive programmes, we blend your ambitions with our network, creativity, and on-the-ground expertise, seamlessly delivering moments that matter.
+                That understanding is what we bring to every experience we create. The network, the creativity, and the expertise you would expect from a premium Scottish concierge group, combined with a genuine instinct for people. We know what makes a moment feel looked after. That is what makes it unforgettable.
               </p>
             </div>
 
