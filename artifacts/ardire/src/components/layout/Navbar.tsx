@@ -158,7 +158,7 @@ export function Navbar() {
             <NavDropdown label="For Business & Events" items={eventsServices} onItemClick={goToService} hubHref="/events" hubLabel="View All Events" onHubClick={goToHub} />
             <a
               href="/#enquiry"
-              onClick={(e) => handleNavLinkClick(e, "contact")}
+              onClick={(e) => handleNavLinkClick(e, "enquiry")}
               className="bg-primary text-primary-foreground text-xs font-sans uppercase tracking-[0.2em] px-5 py-2.5 hover:bg-primary/90 transition-colors"
             >
               Enquire
@@ -263,7 +263,7 @@ export function Navbar() {
         <div className="shrink-0 px-6 pb-10 pt-6 border-t border-border/20 flex flex-col gap-5">
           <a
             href="/#enquiry"
-            onClick={(e) => handleNavLinkClick(e, "contact")}
+            onClick={(e) => handleNavLinkClick(e, "enquiry")}
             className="block bg-primary hover:bg-primary/90 text-primary-foreground font-sans text-xs uppercase tracking-[0.3em] py-4 text-center transition-colors duration-300"
           >
             Enquire Now

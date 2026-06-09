@@ -26,7 +26,7 @@ export default function ServiceDetail() {
 
   function goToContact(e: MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
-    setPendingScroll("contact");
+    setPendingScroll("enquiry");
     navigate("/");
   }
 
@@ -121,7 +121,7 @@ export default function ServiceDetail() {
                   asChild
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-sans tracking-widest uppercase text-xs px-8 h-14 rounded-none transition-all duration-300"
                 >
-                  <a href="/#contact" onClick={goToContact} className="inline-flex items-center gap-2">
+                  <a href="/#enquiry" onClick={goToContact} className="inline-flex items-center gap-2">
                     {service.cta}
                     <ArrowRight size={14} />
                   </a>
@@ -176,7 +176,7 @@ export default function ServiceDetail() {
             asChild
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-sans tracking-widest uppercase text-xs px-10 h-14 rounded-none transition-all duration-300"
           >
-            <a href="/#contact" onClick={goToContact}>Get in Touch</a>
+            <a href="/#enquiry" onClick={goToContact}>Get in Touch</a>
           </Button>
         </div>
       </motion.section>

@@ -185,10 +185,13 @@ export function Contact() {
                           </FormControl>
                           <SelectContent className="bg-card border-border rounded-none">
                             <SelectItem value="luxury-tours">Luxury Tours</SelectItem>
-                            <SelectItem value="corporate-incentives">Corporate Incentives</SelectItem>
+                            <SelectItem value="golf-tours">Golf Tours</SelectItem>
+                            <SelectItem value="private-chauffeur">Private Chauffeur</SelectItem>
                             <SelectItem value="self-guided">Self-Guided Tours</SelectItem>
-                            <SelectItem value="staffing">Event Staffing</SelectItem>
                             <SelectItem value="concierge">Concierge</SelectItem>
+                            <SelectItem value="corporate-incentives">Corporate Incentives</SelectItem>
+                            <SelectItem value="event-management">Event Management</SelectItem>
+                            <SelectItem value="staffing">Event Staffing</SelectItem>
                             <SelectItem value="commonwealth">Commonwealth '26</SelectItem>
                             <SelectItem value="other">Other / General</SelectItem>
                           </SelectContent>
