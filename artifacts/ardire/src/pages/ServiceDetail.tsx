@@ -16,11 +16,15 @@ export default function ServiceDetail() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
+    const desc = document.querySelector('meta[name="description"]');
+    const prevDesc = desc?.getAttribute("content") ?? null;
     if (service) {
       document.title = `${service.title} | The ÁrdÍre Group`;
+      desc?.setAttribute("content", service.intro.slice(0, 155).trimEnd() + (service.intro.length > 155 ? "…" : ""));
     }
     return () => {
-      document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
+      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
+      if (desc && prevDesc !== null) desc.setAttribute("content", prevDesc);
     };
   }, [slug, service]);
 
@@ -52,7 +56,7 @@ export default function ServiceDetail() {
         <div className="absolute inset-0 z-0">
           <img
             src={`${import.meta.env.BASE_URL}images/hero.webp`}
-            alt="Scotland"
+            alt={`${service.title} — The ÁrdÍre Group`}
             className="w-full h-full object-cover"
             loading="eager"
             fetchPriority="high"
@@ -100,9 +104,9 @@ export default function ServiceDetail() {
                 <div className="space-y-4">
                   {service.introRich.map((block, i) =>
                     block.type === "heading" ? (
-                      <h3 key={i} className="font-display text-xl text-foreground mt-8 first:mt-0">
+                      <h2 key={i} className="font-display text-xl text-foreground mt-8 first:mt-0">
                         {block.text}
-                      </h3>
+                      </h2>
                     ) : (
                       <p key={i} className="text-foreground font-sans text-base leading-relaxed font-light">
                         {block.text}

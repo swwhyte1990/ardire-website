@@ -45,7 +45,7 @@ export default function EventsPage() {
       <section id="main-content" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/events-hero.jpg`}
+            src={`${import.meta.env.BASE_URL}images/events-hero.webp`}
             alt="Luxury Corporate Events & Gala Dining"
             className="w-full h-full object-cover"
             loading="eager"

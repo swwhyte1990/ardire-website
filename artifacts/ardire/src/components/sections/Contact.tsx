@@ -87,18 +87,18 @@ export function Contact() {
 
             <div className="space-y-8">
               <div>
-                <h4 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Headquarters</h4>
+                <h3 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Headquarters</h3>
                 <p className="font-display text-lg text-foreground">The ÁrdÍre Group</p>
                 <p className="text-muted-foreground font-sans mt-1">Clyde Offices, 2nd Floor<br />48 West George Street<br />Glasgow G2 1BP</p>
               </div>
               <div>
-                <h4 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Direct Enquiries</h4>
+                <h3 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Direct Enquiries</h3>
                 <a href="mailto:enquiries@ardire.co.uk" className="font-display text-lg text-foreground hover:text-primary transition-colors block">
                   enquiries@ardire.co.uk
                 </a>
               </div>
               <div>
-                <h4 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Telephone</h4>
+                <h3 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Telephone</h3>
                 <a href="tel:+441412550796" className="font-display text-lg text-foreground hover:text-primary transition-colors">
                   +44 (0)141 255 0796
                 </a>

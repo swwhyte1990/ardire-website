@@ -54,6 +54,8 @@ function NavDropdown({
     >
       <button
         onClick={() => setOpen((v) => !v)}
+        aria-haspopup="true"
+        aria-expanded={open}
         className="flex items-center gap-1.5 text-xs font-sans uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors duration-300 py-2"
       >
         {label}
@@ -102,6 +104,15 @@ export function Navbar() {
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setMobileMenuOpen(false);
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
   }, [mobileMenuOpen]);
 
   function goToService(slug: string) {
