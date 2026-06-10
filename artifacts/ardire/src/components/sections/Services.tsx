@@ -21,7 +21,7 @@ export function Services() {
         {/* Travel & Tours */}
         <button
           onClick={goToTravel}
-          className="group relative block w-full h-[320px] md:h-[360px] overflow-hidden text-left"
+          className="group relative block w-full h-[300px] md:h-[360px] overflow-hidden text-left"
         >
           <img
             src={`${import.meta.env.BASE_URL}images/travel-glenfinnan.webp`}
@@ -32,14 +32,14 @@ export function Services() {
             className="absolute inset-0"
             style={{ background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 35%, transparent 65%)" }}
           />
-          <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
-            <p className="font-sans text-[11px] uppercase tracking-[0.4em] text-foreground/70 mb-3">
+          <div className="absolute inset-x-0 bottom-0 p-6 md:p-10">
+            <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-foreground/70 mb-2">
               For Private Travellers
             </p>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3">
+            <h2 className="font-display text-2xl md:text-4xl text-foreground mb-2">
               Travel &amp; Tours
             </h2>
-            <p className="font-sans text-sm text-foreground/80 leading-relaxed mb-5 max-w-md">
+            <p className="font-sans text-sm text-foreground/80 leading-relaxed mb-4 max-w-md hidden sm:block">
               Privately guided tours, championship golf, chauffeur, self-guided journeys and 24/7 concierge across Scotland.
             </p>
             <span className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.25em] text-foreground group-hover:gap-3 transition-all duration-300">
@@ -51,7 +51,7 @@ export function Services() {
         {/* Events & Hospitality */}
         <button
           onClick={goToEvents}
-          className="group relative block w-full h-[320px] md:h-[360px] overflow-hidden text-left"
+          className="group relative block w-full h-[300px] md:h-[360px] overflow-hidden text-left"
         >
           <img
             src={`${import.meta.env.BASE_URL}images/about.webp`}
@@ -62,14 +62,14 @@ export function Services() {
             className="absolute inset-0"
             style={{ background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 35%, transparent 65%)" }}
           />
-          <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
-            <p className="font-sans text-[11px] uppercase tracking-[0.4em] text-foreground/70 mb-3">
-              For Companies &amp; Organisers
+          <div className="absolute inset-x-0 bottom-0 p-6 md:p-10">
+            <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-foreground/70 mb-2">
+              For Businesses &amp; Organisers
             </p>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-3">
+            <h2 className="font-display text-2xl md:text-4xl text-foreground mb-2">
               Events &amp; Corporate
             </h2>
-            <p className="font-sans text-sm text-foreground/80 leading-relaxed mb-5 max-w-md">
+            <p className="font-sans text-sm text-foreground/80 leading-relaxed mb-4 max-w-md hidden sm:block">
               Corporate incentives, end-to-end event management, professional event staffing, and Glasgow 2026 support.
             </p>
             <span className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.25em] text-foreground group-hover:gap-3 transition-all duration-300">

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function About() {
   return (
-    <section id="about" className="py-24 md:py-32 relative bg-background overflow-hidden">
+    <section id="about" className="py-16 md:py-32 relative bg-background overflow-hidden">
       <div
         className="absolute inset-0 opacity-10 pointer-events-none mix-blend-overlay"
         style={{
