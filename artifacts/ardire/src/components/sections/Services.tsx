@@ -54,7 +54,7 @@ export function Services() {
           className="group relative block w-full h-[300px] md:h-[360px] overflow-hidden text-left"
         >
           <img
-            src={`${import.meta.env.BASE_URL}images/about.webp`}
+            src={`${import.meta.env.BASE_URL}images/events-hero.webp`}
             alt="Events & Hospitality"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
           />
