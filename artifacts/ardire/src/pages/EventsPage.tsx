@@ -8,7 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import { services } from "@/data/services";
 import { setPendingScroll } from "@/lib/pendingScroll";
 
-const eventsSlugs = ["corporate-incentives", "event-management", "event-staffing", "commonwealth-26"];
+const eventsSlugs = ["corporate-incentives", "event-management", "event-staffing"];
 const eventsServices = eventsSlugs.map((slug) => services.find((s) => s.slug === slug)!).filter(Boolean);
 
 export default function EventsPage() {

@@ -196,29 +196,6 @@ export const services: ServiceData[] = [
     ],
     cta: "Enquire Now",
   },
-  {
-    slug: "commonwealth-26",
-    title: "Commonwealth '26",
-    subtitle: "Glasgow 2026. Experience It Properly.",
-    intro:
-      "The Glasgow 2026 Commonwealth Games is set to be one of the most significant sporting events ever hosted in Scotland. The ÁrdÍre Group is offering its support, delivering bespoke visitor programmes, VIP hospitality packages, and corporate experiences that allow businesses and private guests to make the very most of this landmark occasion.",
-    introRich: [
-      { type: "heading", text: "Glasgow 2026 Commonwealth Games" },
-      { type: "paragraph", text: "Glasgow 2026 will bring together athletes and visitors from over seventy nations for one of the most celebrated events in world sport. For businesses and private guests, it represents a rare and time-limited opportunity to entertain clients, reward teams, and create memories against the backdrop of a truly global occasion in one of Britain's most vibrant cities." },
-      { type: "heading", text: "VIP Hospitality & Bespoke Visitor Packages" },
-      { type: "paragraph", text: "The ÁrdÍre Group is assembling a curated set of hospitality packages for the 2026 Games. These range from premium ticketed event attendance with private pre-match dining, to multi-day visitor programmes combining sporting events with Highland excursions, distillery visits, and private cultural experiences. Whether you are hosting a group of ten or a delegation of one hundred, we design the programme around your objectives." },
-      { type: "heading", text: "Corporate Entertainment & Client Hosting" },
-      { type: "paragraph", text: "The Commonwealth Games provides an outstanding framework for client entertainment. The combination of world-class sport, Scottish culture, and summer hospitality creates a naturally compelling proposition for corporate hosts. We take care of all logistics — accommodation, transport, event access, catering, and guest management — so you can focus entirely on your guests." },
-    ],
-    highlights: [
-      "VIP hospitality packages for Games events",
-      "Bespoke visitor experiences and itinerary planning",
-      "Corporate entertainment and client engagement programmes",
-      "Accommodation sourcing and travel logistics",
-      "Event staffing for Games-adjacent functions and receptions",
-    ],
-    cta: "Get Involved",
-  },
 ];
 
 export function getServiceBySlug(slug: string): ServiceData | undefined {

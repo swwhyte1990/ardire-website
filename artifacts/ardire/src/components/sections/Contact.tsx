@@ -192,7 +192,6 @@ export function Contact() {
                             <SelectItem value="corporate-incentives">Corporate Incentives</SelectItem>
                             <SelectItem value="event-management">Event Management</SelectItem>
                             <SelectItem value="staffing">Event Staffing</SelectItem>
-                            <SelectItem value="commonwealth">Commonwealth '26</SelectItem>
                             <SelectItem value="other">Other / General</SelectItem>
                           </SelectContent>
                         </Select>

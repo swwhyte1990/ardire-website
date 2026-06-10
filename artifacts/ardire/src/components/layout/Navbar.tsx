@@ -16,7 +16,6 @@ const eventsServices = [
   { slug: "corporate-incentives", title: "Corporate Incentives" },
   { slug: "event-management",     title: "Event Management" },
   { slug: "event-staffing",       title: "Event Staffing" },
-  { slug: "commonwealth-26",      title: "Commonwealth '26" },
 ];
 
 function NavDropdown({
