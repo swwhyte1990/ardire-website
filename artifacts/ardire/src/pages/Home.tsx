@@ -18,7 +18,7 @@ export default function Home() {
         <Hero />
         <Services />
         <About />
-        <LazyOnVisible id="contact" minHeight="900px">
+        <LazyOnVisible id="enquiry" minHeight="900px">
           <Suspense fallback={null}>
             <Contact />
           </Suspense>

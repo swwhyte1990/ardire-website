@@ -68,7 +68,7 @@ export function Contact() {
   }
 
   return (
-    <section id="enquiry" className="py-16 md:py-32 bg-background relative border-t border-border/30">
+    <section className="py-16 md:py-32 bg-background relative border-t border-border/30">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24">
 
