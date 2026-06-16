@@ -10,45 +10,45 @@ import { setPendingScroll } from "@/lib/pendingScroll";
 const itinerary = [
   {
     day: "Day 1",
-    location: "Arrival",
+    location: "Arrival, Edinburgh to Angus",
     description:
-      "We meet you at the airport. Your driver is waiting at arrivals. You are taken directly to your hotel, checked in, and given a full briefing on the week ahead over a welcome dinner.",
+      "Your driver meets you at Edinburgh Airport. Transfer north to Kinnettles Mansion, a private estate near Carnoustie. Time to settle in, take a walk, and decompress from the journey. The evening is a private dinner prepared by the house chef, followed by a full briefing on the week ahead.",
   },
   {
     day: "Day 2",
     location: "St Andrews",
     description:
-      "Your first round is at Kingsbarns, one of the finest links in Scotland, with views across the North Sea on almost every hole. Afternoon is yours. Evening dinner is at a restaurant where they know us.",
+      "Morning transfer to St Andrews. A visit to the R&A Golf Museum before tee time on the Castle Course, perched on the cliffs above the North Sea. Eighteen holes with views that will distract you from your score. Dinner at the Rock and Spindle. Transfer back to the Mansion.",
   },
   {
     day: "Day 3",
-    location: "St Andrews",
+    location: "Carnoustie",
     description:
-      "The Old Course. Tee time confirmed. Caddie arranged. You play the most famous 18 holes in golf. We do not oversell this one. You will know what it means when you are standing on the first tee.",
+      "Breakfast at the Mansion, then a short transfer to Carnoustie Golf Links. Your morning includes a historical talk on the course and its Championship history before your round begins. Lunch at the Rookery Restaurant. Carnoustie is harder than it looks on television and we warn clients of this in advance. It is also one of the finest tests of links golf in the world.",
   },
   {
     day: "Day 4",
-    location: "Carnoustie",
+    location: "Cruden Bay, transfer north",
     description:
-      "Transfer south to Carnoustie. Private afternoon round on the Championship Course. Carnoustie is harder than it looks on television. Your caddie will help. Overnight at a nearby estate hotel.",
+      "Cases packed and departure from Kinnettles. En route north, a stop at Dunnottar Castle on the Aberdeenshire cliff edge, one of the most dramatic ruins in Scotland. Arrival at Cruden Bay Golf Course for an afternoon tee time, then onward transfer to Manar House in Aberdeenshire. Evening whisky tasting at the house, dinner, and a briefing for the following day.",
   },
   {
     day: "Day 5",
-    location: "Turnberry",
+    location: "Royal Aberdeen",
     description:
-      "Long transfer west across Scotland to Turnberry. Evening arrival, dinner at the hotel. The Ailsa Course is tomorrow. Tonight you look out at the lighthouse and the island beyond.",
+      "Morning tour of Aberdeen city, with lunch at The Silver Darling on the harbour front. Afternoon tee time at Royal Aberdeen Golf Links, one of the oldest clubs in the world and a course that rewards patience. Evening gin tasting masterclass back in the city before transfer to Manar House for dinner.",
   },
   {
     day: "Day 6",
-    location: "Turnberry",
+    location: "Braemar",
     description:
-      "The Ailsa Course. Arguably the most dramatic links setting in Scotland. Afternoon at leisure. Optional whisky tasting in the hotel bar if the group is willing. Most groups are.",
+      "A day away from the course. Transfer to the Braemar Highland Gathering, the largest and most prestigious Highland Games in Scotland, held annually in the presence of the Royal Family. A genuinely extraordinary afternoon. Transfer back to Manar House for a final evening dinner.",
   },
   {
     day: "Day 7",
-    location: "Departure",
+    location: "Edinburgh, departure",
     description:
-      "Transfer to the airport of your choice. We handle the luggage logistics. You travel home having played four of the greatest courses in the world, with caddies, transfers, and accommodation all handled from the moment you arrived.",
+      "Breakfast at Manar House, then transfer south to Edinburgh for a final morning in the city. Lunch, a chosen afternoon activity, and check-in at the Scotsman Hotel on the Royal Mile. Dinner at the Tolbooth Tavern, Edinburgh's oldest pub, before a restful last night. Departure transfer to the airport at your chosen time the following morning.",
   },
 ];
 
@@ -279,7 +279,7 @@ export default function GolfToursPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-8 font-sans font-light text-sm text-muted-foreground italic max-w-2xl"
           >
-            Yours will differ. This is one version of a week that we have run in various forms for several clients. The courses, order, and accommodation change based on your group size, dates, and preferences. We use this to show you the shape and quality of what we put together, not to sell you a fixed product.
+            This is a version of a tour we ran. The courses, order, accommodation, and cultural stops all change depending on your group, your dates, and what matters to you. We use this to show the shape and standard of what we put together, not to sell you a fixed product.
           </motion.p>
         </div>
       </section>
