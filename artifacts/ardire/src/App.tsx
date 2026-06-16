@@ -4,13 +4,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
-import GolfToursPage from "@/pages/GolfToursPage";
 import { takePendingScroll } from "@/lib/pendingScroll";
 
 const ServiceDetail = lazy(() => import("@/pages/ServiceDetail"));
 const Privacy = lazy(() => import("@/pages/Privacy"));
 const TravelPage = lazy(() => import("@/pages/TravelPage"));
 const EventsPage = lazy(() => import("@/pages/EventsPage"));
+const GolfToursPage = lazy(() => import("@/pages/GolfToursPage"));
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -37,7 +37,7 @@ function ScrollToTop() {
 
 function Router() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/travel" component={TravelPage} />
