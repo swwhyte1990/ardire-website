@@ -38,9 +38,9 @@ export const services: ServiceData[] = [
   {
     slug: "golf-tours",
     title: "Golf Tours",
-    subtitle: "The Home of Golf. Played Properly.",
+    subtitle: "The Home of Golf. Planned and Run End to End.",
     intro:
-      "Scotland is the birthplace of golf, and no destination on earth rivals it for the sheer quality and variety of its courses. We arrange exclusive access to some of the world's most prestigious links, from St Andrews and Carnoustie on the east coast to Turnberry and Royal Troon in the west. Whether you're teeing off at a celebrated championship venue or discovering a hidden gem in the Highlands, our golf tours are crafted for those who demand excellence on and off the course.",
+      "We design and run private golf tours across Scotland for small groups and individual travellers, from championship links on the east coast to Highland gems in the north. You tell us how you want to play. We build the week around it.",
     introRich: [
       { type: "heading", text: "Bespoke Golf Tours in Scotland" },
       { type: "paragraph", text: "Play the courses that defined the game. The ÁrdÍre Group designs fully bespoke golf tours across Scotland for individuals, pairs, and groups who want more than a tee time — they want an experience. From the legendary Old Course at St Andrews to the dramatic links of the Outer Hebrides, we handle every detail so you can focus entirely on your game." },
