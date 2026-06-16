@@ -12,7 +12,7 @@ const itinerary = [
     day: "Day 1",
     location: "Arrival, Edinburgh to Angus",
     description:
-      "Your driver meets you at Edinburgh Airport. Transfer north to exclusive private accommodation near Carnoustie. Time to settle in, take a walk, and decompress from the journey. The evening is a private dinner prepared by the house chef, followed by a full briefing on the week ahead.",
+      "Your driver meets you at Edinburgh Airport. Transfer north to exclusive private accommodation near St Andrews. Time to settle in, take a walk, and decompress from the journey. The evening is a private dinner prepared by the house chef, followed by a full briefing on the week ahead.",
   },
   {
     day: "Day 2",
@@ -30,7 +30,7 @@ const itinerary = [
     day: "Day 4",
     location: "Cruden Bay, transfer north",
     description:
-      "Cases packed and departure from your Angus base. En route north, a stop at Dunnottar Castle on the Aberdeenshire cliff edge, one of the most dramatic ruins in Scotland. Arrival at Cruden Bay Golf Course for an afternoon tee time, then onward transfer to exclusive private accommodation in Aberdeenshire. Evening whisky tasting at the house, dinner, and a briefing for the following day.",
+      "Cases packed and departure from your St Andrews base. En route north, a stop at Dunnottar Castle on the Aberdeenshire cliff edge, one of the most dramatic ruins in Scotland. Arrival at Cruden Bay Golf Course for an afternoon tee time, then onward transfer to exclusive private accommodation in Aberdeenshire. Evening whisky tasting at the house, dinner, and a briefing for the following day.",
   },
   {
     day: "Day 5",
