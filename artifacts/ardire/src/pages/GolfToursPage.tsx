@@ -48,7 +48,7 @@ const itinerary = [
     day: "Day 7",
     location: "Edinburgh, departure",
     description:
-      "Breakfast at Manar House, then transfer south to Edinburgh for a final morning in the city. Lunch, a chosen afternoon activity, and check-in at the Scotsman Hotel on the Royal Mile. Dinner at the Tolbooth Tavern, Edinburgh's oldest pub, before a restful last night. Departure transfer to the airport at your chosen time the following morning.",
+      "Breakfast at the house, then transfer south to Edinburgh for a final morning in the city. Lunch, a chosen afternoon activity, and check-in at a landmark hotel on the Royal Mile. Dinner at the Tolbooth Tavern, Edinburgh's oldest pub, before a restful last night. Departure transfer to the airport at your chosen time the following morning.",
   },
 ];
 
