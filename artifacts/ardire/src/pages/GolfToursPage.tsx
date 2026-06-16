@@ -73,7 +73,7 @@ export default function GolfToursPage() {
     const prev = desc?.getAttribute("content") ?? null;
     desc?.setAttribute(
       "content",
-      "Bespoke private golf tours across Scotland's finest championship links. Tee times, caddies, transfers, and accommodation — all arranged by The ÁrdÍre Group."
+      "Bespoke private golf tours across Scotland's finest championship links. Tee times, caddies, transfers, and accommodation all arranged by The ÁrdÍre Group."
     );
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
@@ -94,15 +94,22 @@ export default function GolfToursPage() {
       {/* Hero */}
       <section id="main-content" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
-            src={`${import.meta.env.BASE_URL}images/hero.webp`}
-            alt="Private Golf Tours of Scotland — The ÁrdÍre Group"
-            className="w-full h-full object-cover"
-            width={1920}
-            height={1080}
-            loading="eager"
-            fetchPriority="high"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcSet={`${import.meta.env.BASE_URL}images/golf-hero-sm.webp`}
+              type="image/webp"
+            />
+            <img
+              src={`${import.meta.env.BASE_URL}images/golf-hero.webp`}
+              alt="Golfer silhouette at sunset on a Scottish links course"
+              className="w-full h-full object-cover"
+              width={1920}
+              height={1358}
+              loading="eager"
+              fetchPriority="high"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background z-10" />
         </div>
         <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 pb-20 pt-44 w-full">
