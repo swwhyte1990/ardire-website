@@ -1,7 +1,7 @@
-import { useEffect, type MouseEvent } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { useLocation } from "wouter";
-import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -64,6 +64,7 @@ const included = [
 
 export default function GolfToursPage() {
   const [, navigate] = useLocation();
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -253,7 +254,7 @@ export default function GolfToursPage() {
             </h2>
           </motion.div>
 
-          <div className="space-y-4">
+          <div className="space-y-2">
             {itinerary.map((item, i) => (
               <motion.div
                 key={item.day}
@@ -261,13 +262,37 @@ export default function GolfToursPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.06 }}
-                className="bg-card border-l-2 border-primary p-6 md:p-8"
+                className="bg-card border-l-2 border-primary"
               >
-                <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 mb-3">
-                  <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary">{item.day}</span>
-                  <h3 className="font-display text-lg text-foreground">{item.location}</h3>
-                </div>
-                <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                <button
+                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                  className="w-full flex items-center justify-between gap-4 p-6 md:p-8 text-left"
+                  aria-expanded={openIndex === i}
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+                    <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary">{item.day}</span>
+                    <h3 className="font-display text-lg text-foreground">{item.location}</h3>
+                  </div>
+                  <ChevronDown
+                    className="w-4 h-4 text-primary shrink-0 transition-transform duration-300"
+                    style={{ transform: openIndex === i ? "rotate(180deg)" : "rotate(0deg)" }}
+                  />
+                </button>
+                <AnimatePresence initial={false}>
+                  {openIndex === i && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed px-6 md:px-8 pb-6 md:pb-8">
+                        {item.description}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             ))}
           </div>
