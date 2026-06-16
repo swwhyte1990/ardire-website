@@ -64,7 +64,7 @@ const included = [
 
 export default function GolfToursPage() {
   const [, navigate] = useLocation();
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [itineraryOpen, setItineraryOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -254,48 +254,46 @@ export default function GolfToursPage() {
             </h2>
           </motion.div>
 
-          <div className="space-y-2">
-            {itinerary.map((item, i) => (
+          <button
+            onClick={() => setItineraryOpen(!itineraryOpen)}
+            className="flex items-center gap-4 mb-6 group"
+            aria-expanded={itineraryOpen}
+          >
+            <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary group-hover:text-primary/70 transition-colors">
+              {itineraryOpen ? "Close itinerary" : "View full itinerary"}
+            </span>
+            <ChevronDown
+              className="w-4 h-4 text-primary transition-transform duration-300"
+              style={{ transform: itineraryOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+            />
+          </button>
+
+          <AnimatePresence initial={false}>
+            {itineraryOpen && (
               <motion.div
-                key={item.day}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.06 }}
-                className="bg-card border-l-2 border-primary"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="overflow-hidden"
               >
-                <button
-                  onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                  className="w-full flex items-center justify-between gap-4 p-6 md:p-8 text-left"
-                  aria-expanded={openIndex === i}
-                >
-                  <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
-                    <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary">{item.day}</span>
-                    <h3 className="font-display text-lg text-foreground">{item.location}</h3>
-                  </div>
-                  <ChevronDown
-                    className="w-4 h-4 text-primary shrink-0 transition-transform duration-300"
-                    style={{ transform: openIndex === i ? "rotate(180deg)" : "rotate(0deg)" }}
-                  />
-                </button>
-                <AnimatePresence initial={false}>
-                  {openIndex === i && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
-                      className="overflow-hidden"
+                <div className="space-y-2">
+                  {itinerary.map((item, i) => (
+                    <div
+                      key={item.day}
+                      className="bg-card border-l-2 border-primary p-6 md:p-8"
                     >
-                      <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed px-6 md:px-8 pb-6 md:pb-8">
-                        {item.description}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                      <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 mb-3">
+                        <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary">{item.day}</span>
+                        <h3 className="font-display text-lg text-foreground">{item.location}</h3>
+                      </div>
+                      <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                    </div>
+                  ))}
+                </div>
               </motion.div>
-            ))}
-          </div>
+            )}
+          </AnimatePresence>
 
           <motion.p
             initial={{ opacity: 0 }}
