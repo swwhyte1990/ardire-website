@@ -51,10 +51,10 @@ const itinerary = [
 
 const included = [
   "Airport meet and greet on arrival",
-  "Private chauffeured transfers and butler service throughout the week",
-  "A dedicated ÁrdÍre contact throughout the week",
-  "Five-star and boutique private estate and luxury hotel accommodation",
-  "All food and drink throughout the week",
+  "Private chauffeured transfers and butler service throughout",
+  "A dedicated ÁrdÍre contact",
+  "Two private castle stays and a five-star hotel in the heart of Edinburgh",
+  "All food and drink",
   "All tee times",
   "Caddies and extras (dependent on availability)",
 ];
