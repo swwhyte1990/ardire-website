@@ -12,7 +12,6 @@ const TravelPage = lazy(() => import("@/pages/TravelPage"));
 const EventsPage = lazy(() => import("@/pages/EventsPage"));
 const GolfToursPage = lazy(() => import("@/pages/GolfToursPage"));
 const LuxuryToursPage = lazy(() => import("@/pages/LuxuryToursPage"));
-const LuxuryToursPage = lazy(() => import("@/pages/LuxuryToursPage"));
 
 function ScrollToTop() {
   const [location] = useLocation();
