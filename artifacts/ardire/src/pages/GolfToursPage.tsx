@@ -237,8 +237,8 @@ export default function GolfToursPage() {
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 className="overflow-hidden"
               >
-                <div className="space-y-2">
-                  {itinerary.map((item, i) => (
+                <div className="space-y-2 mb-10">
+                  {itinerary.map((item) => (
                     <div
                       key={item.day}
                       className="bg-card border-l-2 border-primary p-6 md:p-8"
@@ -251,63 +251,28 @@ export default function GolfToursPage() {
                     </div>
                   ))}
                 </div>
+
+                <div className="border-t border-border/30 pt-10">
+                  <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-6">What's Included</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-6">
+                    {included.map((item, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                        <span className="font-sans font-light text-sm text-muted-foreground">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="font-sans font-light text-sm text-muted-foreground max-w-2xl">
+                    You arrange your own flights into Scotland. From the arrivals hall onward, the week is ours to run.
+                  </p>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-8 font-sans font-light text-sm text-muted-foreground italic max-w-2xl"
-          >
+          <p className="mt-8 font-sans font-light text-sm text-muted-foreground italic max-w-2xl">
             This is a version of a tour we ran. The courses, order, accommodation, and cultural stops all change depending on your group, your dates, and what matters to you. We use this to show the shape and standard of what we put together, not to sell you a fixed product.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* What's Included */}
-      <section className="py-24 md:py-32 bg-card border-t border-border/30">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mb-12"
-          >
-            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">What's Included</p>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Everything from arrival to departure except your flights.
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-8">
-            {included.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -12 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.07 }}
-                className="flex items-start gap-3"
-              >
-                <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                <span className="font-sans font-light text-sm text-muted-foreground">{item}</span>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="font-sans font-light text-sm text-muted-foreground max-w-2xl"
-          >
-            You arrange your own flights into Scotland. From the arrivals hall onward, the week is ours to run.
-          </motion.p>
+          </p>
         </div>
       </section>
 
