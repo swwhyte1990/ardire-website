@@ -149,60 +149,23 @@ export default function GolfToursPage() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-              className="lg:col-span-3 space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
-            >
-              <p>
-                We design and run private golf tours across Scotland for small groups and individual travellers. Most of our clients are serious golfers who have always wanted to play the great Scottish links but have never had the time or inclination to organise it themselves. That is where we come in.
-              </p>
-              <p>
-                Scotland is not a straightforward destination for golf. The Old Course ballot at St Andrews is genuinely unpredictable. Carnoustie and Muirfield have specific guest policies. The logistics of moving between the east coast, Ayrshire, and the Highlands while staying somewhere decent at each stop require real knowledge of what works and what looks good on paper but disappoints in practice.
-              </p>
-              <p>
-                We have done this enough times that we know what to avoid and who to call. Our clients arrive, play exceptional golf on courses they have watched on television for years, and go home having had an experience that would have taken months to arrange themselves and would not have been as good.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-              className="lg:col-span-2"
-            >
-              <div className="bg-card border border-border/50 p-8 h-full">
-                <div className="w-8 h-px bg-primary mb-8" />
-                <div className="space-y-6">
-                  <div>
-                    <p className="font-sans text-xs uppercase tracking-[0.3em] text-primary mb-3">You bring</p>
-                    <ul className="space-y-2 font-sans font-light text-sm text-muted-foreground">
-                      <li>Your clubs (or we hire them)</li>
-                      <li>Your flights into Scotland</li>
-                      <li>Your list of courses</li>
-                      <li>Your group</li>
-                    </ul>
-                  </div>
-                  <div className="w-full h-px bg-border/40" />
-                  <div>
-                    <p className="font-sans text-xs uppercase tracking-[0.3em] text-primary mb-3">We do</p>
-                    <ul className="space-y-2 font-sans font-light text-sm text-muted-foreground">
-                      <li>Tee times and club access</li>
-                      <li>Caddies at every round</li>
-                      <li>All transfers and logistics</li>
-                      <li>Hotels and dining</li>
-                      <li>Airport pickup and drop-off</li>
-                      <li>Everything else</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
+          >
+            <p>
+              We design and run private golf tours across Scotland for small groups and individual travellers. Most of our clients are serious golfers who have always wanted to play the great Scottish links but have never had the time or inclination to organise it themselves. That is where we come in.
+            </p>
+            <p>
+              Scotland is not a straightforward destination for golf. The Old Course ballot at St Andrews is genuinely unpredictable. Carnoustie and Muirfield have specific guest policies. The logistics of moving between the east coast, Ayrshire, and the Highlands while staying somewhere decent at each stop require real knowledge of what works and what looks good on paper but disappoints in practice.
+            </p>
+            <p>
+              We have done this enough times that we know what to avoid and who to call. Our clients arrive, play exceptional golf on courses they have watched on television for years, and go home having had an experience that would have taken months to arrange themselves and would not have been as good.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -257,7 +220,7 @@ export default function GolfToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Sample Itinerary</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              A seven-day tour, written to show the shape and standard.
+              A seven-day tour, based on a budget of <span className="italic text-primary">£10,000 (+VAT) per person.</span>
             </h2>
           </motion.div>
 
@@ -355,71 +318,6 @@ export default function GolfToursPage() {
           >
             You arrange your own flights into Scotland. From the arrivals hall onward, the week is ours to run.
           </motion.p>
-        </div>
-      </section>
-
-      {/* Courses & Pricing */}
-      <section className="py-24 md:py-32 bg-background border-t border-border/30">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-
-            {/* Courses & Timing */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Courses &amp; Access</p>
-              <h3 className="font-display text-2xl md:text-3xl text-foreground mb-8">
-                Courses and timing, honestly.
-              </h3>
-              <div className="space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-sm">
-                <p>
-                  The Old Course at St Andrews operates a public ballot for unaffiliated visitors. We enter on your behalf, and the success rate varies by time of year. Between October and March, the chances are good. In peak summer, they are lower. We will tell you honestly what the likelihood is for your specific dates, and we always have alternatives lined up so that your trip does not hinge on a single outcome.
-                </p>
-                <p>
-                  Courses such as Muirfield and Royal Troon have their own guest policies, some of which require advance planning of several months. Carnoustie, Kingsbarns, Dundonald Links, Royal Dornoch, and Askernish on South Uist are accessible with the right contacts and enough notice. We know which ones to approach and how.
-                </p>
-                <p>
-                  We do not promise courses we cannot deliver. If a course is unavailable for your dates, we will tell you and offer a genuine alternative that is worth the visit in its own right. There are more outstanding links in Scotland than most visitors ever get to play.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Pricing */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
-            >
-              <div className="bg-card border border-border/50 p-8 md:p-10">
-                <p className="font-sans text-xs uppercase tracking-[0.3em] text-primary mb-2">From</p>
-                <p className="font-display text-4xl md:text-5xl text-foreground mb-2">£10,000</p>
-                <p className="font-sans font-light text-sm text-muted-foreground mb-8">Per person, seven-day private tour</p>
-
-                <div className="w-full h-px bg-border/40 mb-8" />
-
-                <div className="space-y-4 font-sans font-light text-sm text-muted-foreground leading-relaxed mb-8">
-                  <p>
-                    Pricing reflects the scope of what is arranged: tee times at championship venues, caddies, private transfers, five-star accommodation, and a dedicated contact from arrival to departure. The figure varies based on group size, course selection, and the standard of hotel you want.
-                  </p>
-                  <p>
-                    We provide a full, itemised quote once we know the details of your trip. Nothing is added afterwards that we have not discussed upfront. If the budget needs to flex in either direction, we are straightforward about what that means for the itinerary.
-                  </p>
-                </div>
-
-                <Button
-                  asChild
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-sans tracking-widest uppercase text-xs h-14 rounded-none transition-all duration-300"
-                >
-                  <a href="/#enquiry" onClick={goToEnquiry}>Plan Your Golf Tour</a>
-                </Button>
-              </div>
-            </motion.div>
-
-          </div>
         </div>
       </section>
 
