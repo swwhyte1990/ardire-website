@@ -11,6 +11,7 @@ const Privacy = lazy(() => import("@/pages/Privacy"));
 const TravelPage = lazy(() => import("@/pages/TravelPage"));
 const EventsPage = lazy(() => import("@/pages/EventsPage"));
 const GolfToursPage = lazy(() => import("@/pages/GolfToursPage"));
+const LuxuryToursPage = lazy(() => import("@/pages/LuxuryToursPage"));
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -42,6 +43,7 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/travel" component={TravelPage} />
         <Route path="/events" component={EventsPage} />
+        <Route path="/services/luxury-tours" component={LuxuryToursPage} />
         <Route path="/services/golf-tours" component={GolfToursPage} />
         <Route path="/services/:slug" component={ServiceDetail} />
         <Route path="/privacy" component={Privacy} />

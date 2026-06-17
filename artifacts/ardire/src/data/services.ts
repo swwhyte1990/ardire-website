@@ -17,9 +17,9 @@ export const services: ServiceData[] = [
   {
     slug: "luxury-tours",
     title: "Luxury Tours",
-    subtitle: "Scotland. Expertly Guided.",
+    subtitle: "Scotland, Built Around You.",
     intro:
-      "Every landscape tells a story; our guides know them all. We design private, fully guided journeys across Scotland's most dramatic and exclusive locations, from the ancient glens of the Highlands to the whisky distilleries of Speyside and the wild shores of the Outer Hebrides. Each tour is crafted around your interests, pace, and vision, never from a template.",
+      "We design and run private tours across Scotland for individuals and small groups. Tell us what you want the trip to be. We plan the days, arrange everything, and run the whole journey from arrival to departure.",
     introRich: [
       { type: "heading", text: "Bespoke Luxury Tours in Scotland" },
       { type: "paragraph", text: "Discover Scotland on your own terms with our handcrafted luxury tour experiences, designed exclusively around you. Whether you're drawn to the dramatic landscapes of the Highlands, the cobbled streets of Edinburgh's Old Town, the rugged beauty of the North Coast 500, or the rolling countryside of the Scottish Borders, we create personalised itineraries that go far beyond the ordinary." },
