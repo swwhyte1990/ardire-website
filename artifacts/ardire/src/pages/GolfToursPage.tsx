@@ -1,11 +1,8 @@
-import { useEffect, useState, type MouseEvent } from "react";
-import { useLocation } from "wouter";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { setPendingScroll } from "@/lib/pendingScroll";
 
 const itinerary = [
   {
@@ -63,7 +60,6 @@ const included = [
 ];
 
 export default function GolfToursPage() {
-  const [, navigate] = useLocation();
   const [itineraryOpen, setItineraryOpen] = useState(false);
 
   useEffect(() => {
@@ -80,12 +76,6 @@ export default function GolfToursPage() {
       if (desc && prev) desc.setAttribute("content", prev);
     };
   }, []);
-
-  function goToEnquiry(e: MouseEvent<HTMLAnchorElement | HTMLButtonElement>) {
-    e.preventDefault();
-    setPendingScroll("enquiry");
-    navigate("/");
-  }
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-primary/30">
@@ -318,35 +308,6 @@ export default function GolfToursPage() {
           >
             You arrange your own flights into Scotland. From the arrivals hall onward, the week is ours to run.
           </motion.p>
-        </div>
-      </section>
-
-      {/* For Companies */}
-      <section className="py-24 md:py-32 bg-card border-t border-border/30">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Corporate &amp; Incentive Groups</p>
-              <h2 className="font-display text-3xl md:text-4xl text-foreground mb-8">
-                The same operation. A different goal.
-              </h2>
-              <p className="font-sans font-light text-muted-foreground leading-relaxed text-base mb-10">
-                We run corporate golf tours for companies who want to reward their people or entertain clients at a level that leaves a genuine impression. The logistics are identical to our private tours, but the brief is different: we build in the elements that make a group trip memorable rather than just functional. Gala dinners, whisky experiences, and team moments alongside the golf itself. If you are looking at this as an incentive programme or a client entertainment trip, contact us and we will talk through what that looks like for your group.
-              </p>
-              <Button
-                asChild
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-sans tracking-widest uppercase text-xs px-10 h-14 rounded-none transition-all duration-300"
-              >
-                <a href="/#enquiry" onClick={goToEnquiry}>Talk to us about a corporate trip</a>
-              </Button>
-            </motion.div>
-          </div>
         </div>
       </section>
 
