@@ -387,59 +387,31 @@ export default function LuxuryToursPage() {
         </div>
       </section>
 
-      {/* What's Included + Pricing */}
+      {/* What's Included */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-2">What's Included</p>
-              <p className="font-sans font-light text-sm text-muted-foreground mb-6">
-                From the moment you land to the moment you leave, everything is taken care of:
-              </p>
-              <div className="space-y-4 mb-8">
-                {included.map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                    <span className="font-sans font-light text-sm text-muted-foreground">{item}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="font-sans font-light text-sm text-muted-foreground">
-                You simply arrive. We take care of the rest.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
-            >
-              <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-6">Pricing</p>
-              <div className="space-y-4 mb-8">
-                {[
-                  { label: "Three days", price: "From £4,500 (+VAT) per person" },
-                  { label: "Five days", price: "From £7,500 (+VAT) per person" },
-                  { label: "Seven days", price: "From £10,000 (+VAT) per person" },
-                ].map((tier) => (
-                  <div key={tier.label} className="flex items-baseline justify-between border-b border-border/30 pb-4">
-                    <span className="font-sans font-light text-sm text-muted-foreground">{tier.label}</span>
-                    <span className="font-display text-base text-primary">{tier.price}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed">
-                Each based on a small group travelling together. Where your own trip settles depends on the choices you make along the way. Travelling as a group brings the per-person figure down, since the car, the driver and the planning are shared across more of you. We will put together a full proposal, costed in detail, before anything is confirmed.
-              </p>
-            </motion.div>
-
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-2">What's Included</p>
+            <p className="font-sans font-light text-sm text-muted-foreground mb-6">
+              From the moment you land to the moment you leave, everything is taken care of:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-8">
+              {included.map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span className="font-sans font-light text-sm text-muted-foreground">{item}</span>
+                </div>
+              ))}
+            </div>
+            <p className="font-sans font-light text-sm text-muted-foreground">
+              You simply arrive. We take care of the rest.
+            </p>
+          </motion.div>
         </div>
       </section>
 
