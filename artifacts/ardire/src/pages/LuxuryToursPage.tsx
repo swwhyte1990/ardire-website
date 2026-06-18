@@ -117,9 +117,49 @@ const included = [
   "Someone looking after your trip on the ground throughout, whenever you need them",
 ];
 
+const luxuryFaqs = [
+  {
+    q: "How does the planning work?",
+    a: "It starts with a conversation. You might want to plan the whole trip with us in detail, or simply give us a sense of what you are looking for and let us put together a draft itinerary to react to. Either way, everything we plan is discussed with you, and nothing is booked without your approval.",
+  },
+  {
+    q: "Can the trip be fully tailored to us?",
+    a: "Yes. The sample journeys on this page are there to give you a feel and to spark ideas, but nothing is fixed. We build every trip around your interests, your pace and the things you most want to do.",
+  },
+  {
+    q: "What does the price include?",
+    a: "From the moment you land to the moment you leave, everything is taken care of: a private driver and transfers, accommodation, meals and dining, guides and experiences, and every booking handled ahead of time, with someone looking after your trip throughout.",
+  },
+  {
+    q: "How does pricing work for a group?",
+    a: "There is no set price, because every trip is built around what you would like to do. We show an indicative per-person figure so you can picture the scale at different group sizes, with the cost reflecting the number of people travelling. Once we know your plans and your numbers, we cost the whole trip in full before anything is confirmed.",
+  },
+  {
+    q: "What do the prices on your sample journeys mean?",
+    a: "They are guidelines drawn from real trips, there to show the kind of cost a journey like that involves. Your own trip is priced around the choices you make, so something like private transport in place of a coach, or a higher standard of stay, will shape the final figure. We cost everything in full once your plans take shape.",
+  },
+  {
+    q: "How far ahead should we book?",
+    a: "The more notice you can give us, the more we can arrange, particularly for the best rooms and experiences in the busy summer months. That said, we are well used to shaping memorable trips at shorter notice too.",
+  },
+  {
+    q: "Can you arrange things that are not in your sample itineraries?",
+    a: "Almost certainly. The samples are a starting point, not a menu. If there is something you have always wanted to do in Scotland, tell us, and the chances are we can build it in.",
+  },
+  {
+    q: "What parts of Scotland do you cover?",
+    a: "All of it, from Edinburgh and the Borders to the Highlands, Skye and the islands, Speyside and the far north, with the route built around what you want to see rather than a fixed circuit. Scotland is our home and our main focus, though where a trip calls for it we can plan beyond its borders too.",
+  },
+  {
+    q: "Can you look after families, special occasions and particular requirements?",
+    a: "Yes. We plan trips for couples, families and groups marking something special, and we take care of the details that matter to you, from how the days are paced to dining and anything else you need along the way.",
+  },
+];
+
 export default function LuxuryToursPage() {
   const [, navigate] = useLocation();
   const [openItinerary, setOpenItinerary] = useState<string | null>(null);
+  const [faqOpen, setFaqOpen] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -130,9 +170,23 @@ export default function LuxuryToursPage() {
       "content",
       "Bespoke private tours of Scotland designed around you. Highlands, islands, whisky, castles and more, planned and run end to end by The ÁrdÍre Group."
     );
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.id = "faq-schema-luxury";
+    faqScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": luxuryFaqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.a },
+      })),
+    });
+    document.head.appendChild(faqScript);
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev) desc.setAttribute("content", prev);
+      document.getElementById("faq-schema-luxury")?.remove();
     };
   }, []);
 
@@ -411,6 +465,64 @@ export default function LuxuryToursPage() {
             <p className="font-sans font-light text-sm text-muted-foreground">
               You simply arrive. We take care of the rest.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-12"
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Questions</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
+              Things people ask us.
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="max-w-3xl divide-y divide-border/30"
+          >
+            {luxuryFaqs.map((faq, i) => {
+              const key = `luxury-faq-${i}`;
+              const open = faqOpen === key;
+              return (
+                <div key={key}>
+                  <button
+                    onClick={() => setFaqOpen(open ? null : key)}
+                    className="w-full flex items-center justify-between gap-6 py-5 text-left group"
+                    aria-expanded={open}
+                  >
+                    <span className="font-display text-base text-foreground group-hover:text-primary transition-colors duration-200">{faq.q}</span>
+                    <ChevronDown
+                      className="w-4 h-4 text-primary shrink-0 transition-transform duration-300"
+                      style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {open && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed pb-5">{faq.a}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
           </motion.div>
         </div>
       </section>

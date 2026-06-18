@@ -59,8 +59,48 @@ const included = [
   "Caddies and extras (dependent on availability)",
 ];
 
+const golfFaqs = [
+  {
+    q: "Can you get us onto the Old Course at St Andrews?",
+    a: "The Old Course is allocated mainly through a daily public ballot, so a place on it can never be guaranteed. What we do is enter the ballot for you and build your St Andrews day around a confirmed round on one of the other Links courses, so the day is wonderful either way and a place on the Old Course is the bonus.",
+  },
+  {
+    q: "How far in advance should we book?",
+    a: "As early as you can. Tee times at most courses tend to open around the autumn before the year you want to play, so booking ahead gives you the most flexibility on dates and times, particularly for the well-known courses in summer. Shorter notice is still workable; it simply means fewer options on the busiest tee sheets.",
+  },
+  {
+    q: "Which courses can you arrange?",
+    a: "We can arrange rounds at the great majority of Scotland's championship and best-loved courses. A small number can only be played as the guest of a member, and we will always be straight with you about which those are rather than promise something we cannot deliver.",
+  },
+  {
+    q: "What does a golf tour include?",
+    a: "From the moment we meet you at the airport to the day you leave, everything is taken care of: private transfers throughout, green fees for your rounds, caddies and clubs where you want them, accommodation chosen for where you are playing next, meals and dining, and any experiences you would like around the golf. You simply play.",
+  },
+  {
+    q: "How many rounds will we play in a week?",
+    a: "A typical week runs to four or five rounds, with the other days left for rest, a distillery, sightseeing, or whatever suits the group. We build the pace around you rather than packing the schedule.",
+  },
+  {
+    q: "Do you arrange caddies, clubs and transport between courses?",
+    a: "Yes. A private driver looks after you for the whole trip, so you are never finding your own way to an early tee time, and we arrange caddies and club hire wherever you would like them.",
+  },
+  {
+    q: "Can non-golfers come along?",
+    a: "Absolutely. We are just as happy planning the days for anyone travelling with you who would rather be at a distillery, a spa, a castle or the coast while the golf is on.",
+  },
+  {
+    q: "How much does a Scotland golf tour cost?",
+    a: "Prices vary depending on what you decide to do, so the best guide is our sample itinerary, which is based on a real trip and shows the kind of week you can expect along with its cost. Once we know your plans, we put together a full, itemised proposal before anything is booked.",
+  },
+  {
+    q: "Do you arrange tours for corporate or company groups?",
+    a: "Yes. We plan golf trips for companies looking to reward a team or host clients, taking care of the group logistics, the hospitality and the evenings as well as the golf.",
+  },
+];
+
 export default function GolfToursPage() {
   const [itineraryOpen, setItineraryOpen] = useState(false);
+  const [faqOpen, setFaqOpen] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -71,9 +111,23 @@ export default function GolfToursPage() {
       "content",
       "Bespoke private golf tours across Scotland's finest championship links. Tee times, caddies, transfers, and accommodation all arranged by The ÁrdÍre Group."
     );
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.id = "faq-schema-golf";
+    faqScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": golfFaqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.a },
+      })),
+    });
+    document.head.appendChild(faqScript);
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev) desc.setAttribute("content", prev);
+      document.getElementById("faq-schema-golf")?.remove();
     };
   }, []);
 
@@ -273,6 +327,64 @@ export default function GolfToursPage() {
           <p className="mt-8 font-sans font-light text-sm text-muted-foreground italic max-w-2xl">
             This is a version of a tour we ran. The courses, order, accommodation, and cultural stops all change depending on your group, your dates, and what matters to you. We use this to show the shape and standard of what we put together, not to sell you a fixed product.
           </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 md:py-32 bg-card border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-12"
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Questions</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
+              Things people ask us.
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="max-w-3xl divide-y divide-border/30"
+          >
+            {golfFaqs.map((faq, i) => {
+              const key = `golf-faq-${i}`;
+              const open = faqOpen === key;
+              return (
+                <div key={key}>
+                  <button
+                    onClick={() => setFaqOpen(open ? null : key)}
+                    className="w-full flex items-center justify-between gap-6 py-5 text-left group"
+                    aria-expanded={open}
+                  >
+                    <span className="font-display text-base text-foreground group-hover:text-primary transition-colors duration-200">{faq.q}</span>
+                    <ChevronDown
+                      className="w-4 h-4 text-primary shrink-0 transition-transform duration-300"
+                      style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {open && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed pb-5">{faq.a}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </motion.div>
         </div>
       </section>
 
