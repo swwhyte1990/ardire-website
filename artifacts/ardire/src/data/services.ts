@@ -84,9 +84,9 @@ export const services: ServiceData[] = [
   {
     slug: "corporate-incentives",
     title: "Corporate Incentives",
-    subtitle: "Performance. Rewarded. Unforgettably.",
+    subtitle: "Built Around What the Trip Is Meant to Achieve.",
     intro:
-      "The best incentive is one your team still talks about years later. We design and deliver high-impact corporate incentive programmes that go far beyond the ordinary, creating moments of genuine awe, team connection, and cultural immersion across Scotland's most spectacular settings.",
+      "We design and run corporate incentive trips across Scotland for companies who want to reward their people, motivate their teams, or bring clients somewhere genuinely memorable. You tell us what the trip is meant to achieve, and we build a programme around it.",
     introRich: [
       { type: "heading", text: "Corporate Incentive Travel in Scotland" },
       { type: "paragraph", text: "Scotland offers one of the most compelling natural backdrops for corporate incentive travel anywhere in the world. Ancient castles, dramatic Highland landscapes, private sporting estates, and world-class whisky culture combine to create an environment that inspires, motivates, and rewards in equal measure. The ÁrdÍre Group designs bespoke incentive programmes for businesses who want their people to feel genuinely extraordinary." },
