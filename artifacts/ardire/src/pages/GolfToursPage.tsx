@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
+import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { setPendingScroll } from "@/lib/pendingScroll";
 
 const itinerary = [
   {
@@ -90,8 +93,15 @@ const golfFaqs = [
 ];
 
 export default function GolfToursPage() {
+  const [, navigate] = useLocation();
   const [itineraryOpen, setItineraryOpen] = useState(false);
   const [faqOpen, setFaqOpen] = useState<string | null>(null);
+
+  function goToEnquiry(e: MouseEvent<HTMLAnchorElement>) {
+    e.preventDefault();
+    setPendingScroll("enquiry");
+    navigate("/");
+  }
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -160,7 +170,7 @@ export default function GolfToursPage() {
               Private Golf Tours of Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              A week of championship golf, planned and run end to end. You arrive at the airport. We handle everything between that and your flight home.
+              A week on the country's great courses, planned and looked after from the moment we meet you at the airport. You play. We take care of everything around it.
             </p>
           </motion.div>
         </div>
@@ -192,13 +202,10 @@ export default function GolfToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              We design and run private golf tours across Scotland for small groups and individual travellers. Most of our clients are serious golfers who have always wanted to play the great Scottish links but have never had the time or inclination to organise it themselves. That is where we come in.
+              We plan and run private golf tours across Scotland for small groups and individual golfers who want to play the country's finest courses without a thing to organise. You tell us how you like to play and the courses you have always wanted to tick off, and we shape the week around it: the rounds, the cars, the rooms, the dinners and the evenings, all looked after as the days unfold.
             </p>
             <p>
-              Scotland is not a straightforward destination for golf. The Old Course ballot at St Andrews is genuinely unpredictable. Carnoustie and Muirfield have specific guest policies. The logistics of moving between the east coast, Ayrshire, and the Highlands while staying somewhere decent at each stop require real knowledge of what works and what looks good on paper but disappoints in practice.
-            </p>
-            <p>
-              We have done this enough times that we know what to avoid and who to call. Our clients arrive, play exceptional golf on courses they have watched on television for years, and go home having had an experience that would have taken months to arrange themselves and would not have been as good.
+              Scotland is the home of golf, and showing it off is one of the things we love most. Whether you are here to play a lifetime's list of courses or to give a team a few days they will always remember, the week is built around you. You bring your clubs, and we look after the rest.
             </p>
           </motion.div>
         </div>
@@ -216,7 +223,7 @@ export default function GolfToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">The Process</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              We plan the whole trip before you land, then run it while you are here.
+              We plan the whole trip before you arrive, then look after it while you are here.
             </h2>
           </motion.div>
 
@@ -228,16 +235,42 @@ export default function GolfToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              We begin with a conversation. You tell us who is coming, how many days you have, which courses matter most to you, and how much you want organised versus how much you want to handle yourselves. Some clients want every evening planned. Others want tee times and transfers and nothing else. We build around what you actually want.
+              Your tee times are booked in the right order and early enough to get you onto the courses that matter most to you, a private driver takes care of getting you there, and your accommodation is chosen for where you are playing the next morning. Someone is with you through the week who knows your plans, so if the weather turns or you feel like changing something, it is easily done and never yours to worry about.
             </p>
             <p>
-              From there, we secure the tee times. This is the part that requires the most lead time, and where local relationships matter most. The Old Course ballot is genuinely uncertain, but we have access to priority windows and preferred visitor slots at most major venues that are not available through direct booking. We are honest about what we can guarantee and what we cannot.
+              What you bring is the golf you want to play. We bring everything it takes to make the week run beautifully around it.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-10"
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Pricing</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
+              Built around what you want to play.
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
+          >
+            <p>
+              There is no set price for a tour, since every week is built around the courses you want to play and the way you want to travel. To give you a sense of what is possible, we have put together a sample itinerary priced as a real example, showing the kind of week you can expect and what it comes to.
             </p>
             <p>
-              Once the golf is confirmed, we build the accommodation and transfers around it. We use hotels and estate properties that we know well, which means you get honest recommendations rather than whatever happens to be available. Transport between venues is handled by our own drivers.
-            </p>
-            <p>
-              On the day you arrive, one of our team meets you. From that point until your departure transfer, you have a single contact for anything that comes up. If a tee time shifts, we adjust. If you want to add a dinner or change a plan, we sort it. The point is that you are golfing, not managing logistics.
+              It is shown per person so you can picture the cost at any group size. Your own figure will reflect the choices you make: the courses, the number of rounds, the standard of where you stay, and the experiences you add around the golf. We put together a full, itemised proposal before anything is booked.
             </p>
           </motion.div>
         </div>
@@ -361,6 +394,32 @@ export default function GolfToursPage() {
                 </div>
               );
             })}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-background border-t border-border/30">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-6">Begin Here</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
+              Plan your golf tour.
+            </h2>
+            <p className="text-muted-foreground font-sans font-light text-base mb-10 max-w-xl mx-auto">
+              Tell us when you would like to come, who is travelling, and the courses you have always wanted to play. We will come back to you with a proposal built around it.
+            </p>
+            <Button
+              asChild
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-sans tracking-widest uppercase text-xs px-10 h-14 rounded-none transition-all duration-300"
+            >
+              <a href="/#enquiry" onClick={goToEnquiry}>Enquire</a>
+            </Button>
           </motion.div>
         </div>
       </section>
