@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
@@ -49,15 +49,6 @@ const itinerary = [
   },
 ];
 
-const included = [
-  "Airport meet and greet on arrival",
-  "Private chauffeured transfers and butler service throughout",
-  "A dedicated ÁrdÍre contact",
-  "Two private castle stays and a five-star hotel in the heart of Edinburgh",
-  "All food and drink",
-  "All tee times",
-  "Caddies and extras (dependent on availability)",
-];
 
 const golfFaqs = [
   {
@@ -306,20 +297,6 @@ export default function GolfToursPage() {
                   ))}
                 </div>
 
-                <div className="border-t border-border/30 pt-10">
-                  <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-6">What Was Included</p>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-6">
-                    {included.map((item, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                        <span className="font-sans font-light text-sm text-muted-foreground">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="font-sans font-light text-sm text-muted-foreground max-w-2xl">
-                    Flights to Scotland are arranged separately. Everything from the moment you land is taken care of.
-                  </p>
-                </div>
               </motion.div>
             )}
           </AnimatePresence>
