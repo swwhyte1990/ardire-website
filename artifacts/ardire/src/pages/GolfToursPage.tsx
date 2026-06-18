@@ -277,7 +277,7 @@ export default function GolfToursPage() {
       </section>
 
       {/* Sample Itinerary */}
-      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+      <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -355,7 +355,7 @@ export default function GolfToursPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 md:py-32 bg-card border-t border-border/30">
+      <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -413,7 +413,7 @@ export default function GolfToursPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-background border-t border-border/30">
+      <section className="py-20 bg-card border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
