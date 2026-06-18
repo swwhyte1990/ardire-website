@@ -17,17 +17,17 @@ const itineraries = [
       {
         day: "Day 1",
         description:
-          "We collect you from Edinburgh airport and settle you into a suite in the Old Town. An afternoon walking the closes and wynds with a guide who knows the history that the tour groups miss, then a private evening visit to Edinburgh Castle before a Michelin-level dinner in the city.",
+          "We meet you at Edinburgh airport and settle you into the heart of the Old Town. The afternoon is spent wandering its closes and wynds with a guide who knows the stories the crowds walk past, followed by a private evening at Edinburgh Castle and dinner at one of the city's finest tables.",
       },
       {
         day: "Day 2",
         description:
-          "North for the day: Stirling and its castle, the Trossachs, and the shores of Loch Lomond, with a stop on a private estate for lunch and a Highland experience chosen to suit you, whether that is falconry, a stalk, or a quiet afternoon on the water. Back to Edinburgh for the evening.",
+          "A day to the north, taking in Stirling, the Trossachs and the shores of Loch Lomond, with lunch on a private estate and an afternoon to suit you, whether that is falconry, time on the water, or simply the view. Back to the city for the evening.",
       },
       {
         day: "Day 3",
         description:
-          "A relaxed morning, a final experience to your taste (a private whisky blending session, time with the city's best independent shops, or simply rest), and a transfer to your flight.",
+          "A gentle morning, a last experience chosen to your taste, perhaps a private whisky blending or an hour with the city's best independent shops, and then to your flight.",
       },
     ],
   },
@@ -40,27 +40,27 @@ const itineraries = [
       {
         day: "Day 1",
         description:
-          "Collected from Glasgow or Edinburgh and driven north into Glencoe, one of the most dramatic landscapes in Britain. A night at a Highland estate, dinner by the fire.",
+          "We collect you and head north into Glencoe, one of the most striking landscapes in Britain, and settle you at a Highland estate for the night.",
       },
       {
         day: "Day 2",
         description:
-          "Through Fort William and along the Road to the Isles, with the Glenfinnan Viaduct on the way. Onward to Skye, crossing under the shadow of Eilean Donan Castle. A night on the island.",
+          "On through Fort William and along the Road to the Isles, with the Glenfinnan Viaduct along the way, and across to Skye beneath the walls of Eilean Donan.",
       },
       {
         day: "Day 3",
         description:
-          "A full day on Skye with a private guide: the Trotternish ridge, the Quiraing, the Fairy Pools, and a tasting at Talisker arranged away from the crowds. The kind of day that ends with you understanding why people never forget this island.",
+          "A full day on Skye with a guide who knows it intimately: the Trotternish ridge, the Quiraing, the Fairy Pools, and a tasting at Talisker arranged in your own time rather than the crowd's.",
       },
       {
         day: "Day 4",
         description:
-          "East toward Loch Ness and Inverness, then into Speyside, with a castle hotel for the night and a dinner to match it.",
+          "East toward Loch Ness and Inverness, then into Speyside, with a castle for the night and a dinner to match the setting.",
       },
       {
         day: "Day 5",
         description:
-          "A private morning at a distillery that opens its doors for you rather than the public, and a transfer from Inverness to your flight.",
+          "A quiet morning at a distillery that opens its doors for you, and then to your flight from Inverness.",
       },
     ],
   },
@@ -73,48 +73,48 @@ const itineraries = [
       {
         day: "Day 1",
         description:
-          "Arrival in Edinburgh, the Old Town by private guide, the castle, and a dinner that sets the tone for the week.",
+          "Arrival in Edinburgh, the Old Town with a private guide, the castle, and a dinner to set the tone for the week.",
       },
       {
         day: "Day 2",
         description:
-          "North through Stirling and Glencoe into the Highlands, a private estate for the night, and the first proper sense of the scale of the place.",
+          "North through Stirling and Glencoe into the Highlands, a private estate for the night, and the first real sense of the scale of the place.",
       },
       {
         day: "Day 3",
         description:
-          "Skye: the Trotternish, the Quiraing, Talisker, and a night on the island.",
+          "Skye, with its ridges and pools and a tasting at Talisker, and a night on the island.",
       },
       {
         day: "Day 4",
         description:
-          "Onto the far northwest and the start of the great coastal road, through Torridon and Ullapool, mountains on one side and sea on the other, with the best room on the route waiting at the end of the drive.",
+          "Onto the great coastal road of the northwest, through Torridon and Ullapool, with mountains on one side and sea on the other, and the best room on the route waiting at the end of the drive.",
       },
       {
         day: "Day 5",
         description:
-          "The north coast itself: empty white beaches, Dunrobin Castle, and distilleries that see few visitors, before turning south toward Speyside.",
+          "The north coast itself, its empty beaches and Dunrobin Castle and the distilleries few visitors reach, before turning south toward Speyside.",
       },
       {
         day: "Day 6",
         description:
-          "A Speyside whisky day done the way it should be, private tastings and a cask or two the public never reach, then a castle dinner in the Cairngorms to close the week.",
+          "A day of Speyside whisky done the way it should be, with private tastings and a cask or two off the usual path, and a castle dinner in the Cairngorms to close the week.",
       },
       {
         day: "Day 7",
-        description: "A final morning at leisure and the drive south to your flight.",
+        description: "A final morning at leisure and the journey south to your flight.",
       },
     ],
   },
 ];
 
 const included = [
-  "Private transfers throughout, with a driver for the full trip",
-  "Accommodation across the stay, chosen for standard and for location",
-  "Meals, including booked restaurants and a private chef where you want one",
+  "A private driver and transfers throughout",
+  "Accommodation chosen for its standard and its setting",
+  "Meals and dining, with a private chef whenever you would like one",
   "Guides, experiences and access arranged around your interests",
-  "All bookings, tickets and entries handled in advance",
-  "One dedicated coordinator on the ground, reachable at any hour",
+  "Every booking, ticket and reservation handled ahead of time",
+  "Someone looking after your trip on the ground throughout, whenever you need them",
 ];
 
 export default function LuxuryToursPage() {
@@ -173,7 +173,7 @@ export default function LuxuryToursPage() {
               Private Tours of Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              You decide what Scotland means to you. We design the days around it, arrange everything worth arranging, and run the whole trip from arrival to departure. You travel. We handle the rest.
+              Tell us the Scotland you have always wanted to see, and we will build it around you. From the moment we meet you at the airport, every day is ours to plan and yours to enjoy.
             </p>
           </motion.div>
         </div>
@@ -202,10 +202,10 @@ export default function LuxuryToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              A private tour is built entirely around you: what you want to see, the pace you want to keep, and the kind of days you want to have. We plan the itinerary, secure every booking, arrange the transport, the rooms, the meals and the experiences, and manage all of it on the ground so that for the length of your stay there is nothing to organise and nothing to chase.
+              We design private tours of Scotland for people who want to see it properly, at their own pace, with everything taken care of. You tell us what matters to you, the places, the kind of days, the things you have always meant to do, and we shape a journey around it.
             </p>
             <p>
-              Most of our travellers come from abroad for a trip they have been meaning to take for years. Some know exactly what they want. Most have a few ideas and trust us to build the rest. Both are how it should start.
+              This is a country we know well and love showing off, and most of that love is in the detail: the right glen on the right morning, the dinner worth driving for, the distillery that will open a door for you. Some of our guests arrive knowing exactly what they want. Most come with a few ideas and let us fill in the rest. Either way is the right way to begin.
             </p>
           </motion.div>
         </div>
@@ -223,7 +223,7 @@ export default function LuxuryToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">The Process</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              We plan the trip before you arrive and run it while you are here.
+              From the moment we greet you to the day you head home.
             </h2>
           </motion.div>
           <motion.div
@@ -234,10 +234,10 @@ export default function LuxuryToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              You get one coordinator for the whole stay, one person who knows your itinerary, your preferences and your plans for tomorrow. A private driver moves you between places, so you are never navigating, parking, or watching the clock. Accommodation is chosen for where you are the next morning and for the standard you expect. When something changes, the weather, your mood, a booking, we adjust it and you barely notice.
+              We take care of the itinerary, the bookings, the rooms, the meals and the experiences, and we look after all of it as the days unfold. You will have someone with you who knows your plans and your preferences, a private driver between places, and the freedom to change your mind whenever you like. If the weather turns or a mood takes you somewhere new, we simply rework the day around it.
             </p>
             <p>
-              We collect you from the airport. From that point until we drive you back, the days are ours to run and yours to enjoy.
+              What you bring is the sense of what you want. We bring everything it takes to make it happen.
             </p>
           </motion.div>
         </div>
@@ -258,15 +258,20 @@ export default function LuxuryToursPage() {
               Bring the idea. <span className="italic text-primary">We build around it.</span>
             </h2>
           </motion.div>
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-            className="max-w-3xl font-sans font-light text-muted-foreground leading-relaxed text-base"
+            className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
-            The best trips start with something you already want: a place you have seen in a film, a whisky you have always drunk, a castle, a coastline, a name on a map. Bring that, and our job is to build outward from it with things you would not have known to ask for. You want to see Skye; we know the hour to be at the Quiraing before the coaches. You want a whisky day; we know which distillery will open a room and a cask that the public never see. You want somewhere memorable for an anniversary dinner; we know the table, the view, and the chef worth the detour. The idea is yours. The knowledge around it is what you are paying for.
-          </motion.p>
+            <p>
+              The best trips tend to start with something you already love: a place you have seen in a film, a whisky you have always drunk, a castle, a coastline, a name on a map. Bring that to us, and we will build outward from it with the things you would not have thought to ask for.
+            </p>
+            <p>
+              You want to see Skye, and we know the hour to be at the Quiraing before the crowds arrive. You want a day of whisky, and we know the distillery that will set aside a quiet room and a cask the public never reach. You want somewhere to remember for an anniversary, and we know the table, the view and the chef worth the journey. The idea is yours. The knowledge around it is ours to add.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -282,7 +287,7 @@ export default function LuxuryToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Sample Itineraries</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Three journeys written to show the range and the standard.
+              Three journeys written to give you a feel for the range.
             </h2>
           </motion.div>
           <motion.p
@@ -292,7 +297,7 @@ export default function LuxuryToursPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-sans font-light text-sm text-muted-foreground max-w-2xl mb-12"
           >
-            These are real, buildable itineraries written to show the range and the standard, not to be taken exactly as they are. Lengths, places and pace are all yours to set.
+            These are real journeys we can build, written to spark a few ideas of your own. Nothing here is fixed. The length, the places and the pace are all yours to shape.
           </motion.p>
 
           <div className="space-y-3">
@@ -373,10 +378,10 @@ export default function LuxuryToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              A private chef in a castle you have to yourselves. A helicopter to skip a long drive. A distillery opened after hours. A table that is not taking bookings. A guide who is the leading authority on the thing you care about.
+              There is very little we cannot arrange when it matters to you. A private chef in a castle you have to yourselves. A helicopter to turn a long drive into a short hop. A distillery opened after hours. The leading authority on the one thing you most want to understand.
             </p>
             <p>
-              As we grow, our relationships deepen, and that raises what is possible at the very top end. It does not lower the price, because what you are paying for is not a discount someone passed to us. It is that we can make these things happen at all, quietly, reliably, and to a standard you would not reach on your own. That capability is the product. The exclusivity is the point.
+              As we grow, those possibilities only widen, and the ceiling rises at the very top end. What you are paying for is not a list of suppliers but the fact that we can make these things happen at all, quietly and well, to a standard that would be hard to reach on your own.
             </p>
           </motion.div>
         </div>
@@ -393,7 +398,10 @@ export default function LuxuryToursPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-6">What's Included</p>
+              <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-2">What's Included</p>
+              <p className="font-sans font-light text-sm text-muted-foreground mb-6">
+                From the moment you land to the moment you leave, everything is taken care of:
+              </p>
               <div className="space-y-4 mb-8">
                 {included.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
@@ -403,7 +411,7 @@ export default function LuxuryToursPage() {
                 ))}
               </div>
               <p className="font-sans font-light text-sm text-muted-foreground">
-                Flights to Scotland are arranged separately. Everything from the moment you land is taken care of.
+                You simply arrive. We take care of the rest.
               </p>
             </motion.div>
 
@@ -427,7 +435,7 @@ export default function LuxuryToursPage() {
                 ))}
               </div>
               <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed">
-                Based on a small group travelling together. A larger party brings the per-person figure down, because the car, the driver and the planning are shared across more of you. Every trip is quoted in full and itemised before anything is booked.
+                Each based on a small group travelling together. Where your own trip settles depends on the choices you make along the way. Travelling as a group brings the per-person figure down, since the car, the driver and the planning are shared across more of you. We will put together a full proposal, costed in detail, before anything is confirmed.
               </p>
             </motion.div>
 
@@ -449,7 +457,7 @@ export default function LuxuryToursPage() {
               Start with an idea.
             </h2>
             <p className="text-muted-foreground font-sans font-light text-base mb-10 max-w-xl mx-auto">
-              Tell us when you want to come, who is travelling, and the one thing you most want this trip to be. We will design the rest around it and come back with a proposal.
+              Tell us when you would like to come, who is travelling, and the one thing you most want this trip to be. We will design the rest around it and come back to you with a proposal.
             </p>
             <Button
               asChild
