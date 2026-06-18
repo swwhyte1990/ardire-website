@@ -364,7 +364,7 @@ export default function GolfToursPage() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="mb-12"
           >
-            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Questions</p>
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Things people ask us.
             </h2>

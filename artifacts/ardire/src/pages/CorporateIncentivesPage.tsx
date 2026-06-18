@@ -49,9 +49,49 @@ const experiences = [
   "Dinners with a real sense of occasion, a gala evening and a ceilidh among them",
 ];
 
+const corpFaqs = [
+  {
+    q: "How far in advance should we start planning?",
+    a: "The more notice you give us, the more options we have, particularly for the most sought-after locations and experiences in the summer months. For a trip of three days or more, we recommend coming to us at least four to six months ahead of when you want to travel. That said, we are used to working at shorter notice and can generally put something strong together even with a tighter timeline.",
+  },
+  {
+    q: "How many people can you accommodate?",
+    a: "We work with groups of all sizes, from small leadership teams to larger company-wide reward trips. The size of the group shapes some of the choices we make on venues and transport, and we will tell you honestly if something works better at a certain scale.",
+  },
+  {
+    q: "Can the trip be themed around our company or its goals?",
+    a: "Yes. If there is a theme, a goal or a message you want the trip to carry, we build it into the experience rather than just the brief. That might mean the welcome, the choice of activities, the way evenings are framed, or the small details that connect the days to each other. A well-designed incentive trip feels purposeful throughout, not just at the gala dinner.",
+  },
+  {
+    q: "Do you handle everything from the moment the group lands?",
+    a: "Yes. From the airport welcome to the final transfer home, every part of the trip is ours to plan and run. Flights to Scotland are arranged separately, and everything from arrival onward is taken care of.",
+  },
+  {
+    q: "How does pricing work for a corporate trip?",
+    a: "Every programme is priced around what you want to do, so there is no set figure. We work out the cost per person based on group size, the experiences you choose, where you stay, and how you travel. Once we understand your brief, we put together a full, itemised proposal before anything is confirmed.",
+  },
+  {
+    q: "Can you accommodate a mixed group, including people who do not play golf?",
+    a: "Absolutely. Most of our programmes are designed for groups with a range of interests, and we plan the days so that everyone has something they would choose to do. Golf, distillery visits, wildlife, walking, spa time and cultural experiences can all sit alongside each other in a well-built week.",
+  },
+  {
+    q: "Can you arrange photography, video or branded elements for the trip?",
+    a: "Yes. We can arrange a photographer for key moments, branded welcome gifts or printed materials, and any touches that make the trip feel like it belongs to your company rather than a generic package. Tell us what matters and we will make it work.",
+  },
+  {
+    q: "What if our numbers change between booking and travel?",
+    a: "We build flexibility into the planning wherever we can, and we manage changes as they come up. Some elements, particularly exclusive-use venues, are harder to adjust at short notice, which is why we are honest about what is fixed and what is not from the start.",
+  },
+  {
+    q: "Do you work with incentive travel agencies as well as directly with companies?",
+    a: "Yes, we work both ways. If you are coming to us through an agency or working with a travel manager, we are happy to work within that structure. If you are coming to us directly, we handle everything in house from brief to delivery.",
+  },
+];
+
 export default function CorporateIncentivesPage() {
   const [, navigate] = useLocation();
   const [programmeOpen, setProgrammeOpen] = useState<string | null>(null);
+  const [faqOpen, setFaqOpen] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -62,9 +102,23 @@ export default function CorporateIncentivesPage() {
       "content",
       "Bespoke corporate incentive trips across Scotland. Golf, whisky, castles and Highland experiences, designed around your goals and run end to end by The ÁrdÍre Group."
     );
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.id = "faq-schema-corp";
+    faqScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": corpFaqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.a },
+      })),
+    });
+    document.head.appendChild(faqScript);
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev) desc.setAttribute("content", prev);
+      document.getElementById("faq-schema-corp")?.remove();
     };
   }, []);
 
@@ -367,8 +421,66 @@ export default function CorporateIncentivesPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-12"
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
+              Things people ask us.
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="max-w-3xl divide-y divide-border/30"
+          >
+            {corpFaqs.map((faq, i) => {
+              const key = `corp-faq-${i}`;
+              const open = faqOpen === key;
+              return (
+                <div key={key}>
+                  <button
+                    onClick={() => setFaqOpen(open ? null : key)}
+                    className="w-full flex items-center justify-between gap-6 py-5 text-left group"
+                    aria-expanded={open}
+                  >
+                    <span className="font-display text-base text-foreground group-hover:text-primary transition-colors duration-200">{faq.q}</span>
+                    <ChevronDown
+                      className="w-4 h-4 text-primary shrink-0 transition-transform duration-300"
+                      style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {open && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed pb-5">{faq.a}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-20 bg-background border-t border-border/30">
+      <section className="py-20 bg-card border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
