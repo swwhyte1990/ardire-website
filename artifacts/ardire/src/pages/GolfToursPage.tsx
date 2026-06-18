@@ -94,7 +94,7 @@ const golfFaqs = [
 
 export default function GolfToursPage() {
   const [, navigate] = useLocation();
-  const [itineraryOpen, setItineraryOpen] = useState(false);
+  const [itineraryOpen, setItineraryOpen] = useState<string | null>(null);
   const [faqOpen, setFaqOpen] = useState<string | null>(null);
 
   function goToEnquiry(e: MouseEvent<HTMLAnchorElement>) {
@@ -276,7 +276,7 @@ export default function GolfToursPage() {
         </div>
       </section>
 
-      {/* Sample Week */}
+      {/* Sample Itinerary */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
@@ -284,59 +284,73 @@ export default function GolfToursPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mb-12"
+            className="mb-4"
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Sample Itinerary</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              A seven-day tour, guide price <span className="italic text-primary">£10,000 (+VAT) per person.</span>
+              A real week of golf, written to show the shape and the standard.
             </h2>
           </motion.div>
-
-          <button
-            onClick={() => setItineraryOpen(!itineraryOpen)}
-            className="flex items-center gap-4 mb-6 group"
-            aria-expanded={itineraryOpen}
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-sans font-light text-sm text-muted-foreground max-w-2xl mb-12"
           >
-            <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary group-hover:text-primary/70 transition-colors">
-              {itineraryOpen ? "Close itinerary" : "View full itinerary"}
-            </span>
-            <ChevronDown
-              className="w-4 h-4 text-primary transition-transform duration-300"
-              style={{ transform: itineraryOpen ? "rotate(180deg)" : "rotate(0deg)" }}
-            />
-          </button>
+            This is a version of a tour we ran. The courses, order, accommodation, and cultural stops all change depending on your group, your dates, and what matters to you.
+          </motion.p>
 
-          <AnimatePresence initial={false}>
-            {itineraryOpen && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="overflow-hidden"
-              >
-                <div className="space-y-2 mb-10">
-                  {itinerary.map((item) => (
-                    <div
-                      key={item.day}
-                      className="bg-card border-l-2 border-primary p-6 md:p-8"
-                    >
-                      <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 mb-3">
-                        <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary">{item.day}</span>
-                        <h3 className="font-display text-lg text-foreground">{item.location}</h3>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="bg-background border-l-2 border-primary"
+          >
+            <button
+              onClick={() => setItineraryOpen(itineraryOpen === "golf-7day" ? null : "golf-7day")}
+              className="w-full flex items-center justify-between gap-4 p-6 md:p-8 text-left"
+              aria-expanded={itineraryOpen === "golf-7day"}
+            >
+              <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 min-w-0">
+                <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary shrink-0">Seven Days</span>
+                <h3 className="font-display text-lg text-foreground">The East Coast Championship Circuit</h3>
+              </div>
+              <div className="flex items-center gap-4 shrink-0">
+                <span className="hidden sm:block font-sans text-xs text-muted-foreground">Guide price £10,000 (+VAT) per person</span>
+                <ChevronDown
+                  className="w-4 h-4 text-primary transition-transform duration-300"
+                  style={{ transform: itineraryOpen === "golf-7day" ? "rotate(180deg)" : "rotate(0deg)" }}
+                />
+              </div>
+            </button>
+
+            <AnimatePresence initial={false}>
+              {itineraryOpen === "golf-7day" && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 md:px-8 pb-6 md:pb-8 space-y-2">
+                    {itinerary.map((item) => (
+                      <div key={item.day} className="bg-card border-l border-primary/40 p-4 md:p-6">
+                        <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 mb-2">
+                          <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary shrink-0">{item.day}</span>
+                          <span className="font-display text-sm text-foreground">{item.location}</span>
+                        </div>
+                        <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                       </div>
-                      <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                    </div>
-                  ))}
-                </div>
-
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          <p className="mt-8 font-sans font-light text-sm text-muted-foreground italic max-w-2xl">
-            This is a version of a tour we ran. The courses, order, accommodation, and cultural stops all change depending on your group, your dates, and what matters to you. We use this to show the shape and standard of what we put together, not to sell you a fixed product.
-          </p>
+                    ))}
+                    <p className="font-sans font-light text-sm text-primary pt-2">Guide price £10,000 (+VAT) per person</p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </motion.div>
         </div>
       </section>
 
