@@ -210,7 +210,7 @@ export default function GolfToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Sample Itinerary</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              A seven-day tour, based on a budget of <span className="italic text-primary">£10,000 (+VAT) per person.</span>
+              A seven-day tour, guide price <span className="italic text-primary">£10,000 (+VAT) per person.</span>
             </h2>
           </motion.div>
 

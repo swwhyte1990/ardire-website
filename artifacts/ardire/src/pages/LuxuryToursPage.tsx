@@ -12,7 +12,7 @@ const itineraries = [
     id: "3-day",
     duration: "Three Days",
     title: "Edinburgh and the Heart of Scotland",
-    price: "From £4,500 (+VAT) per person",
+    price: "Guide price £4,500 (+VAT) per person",
     days: [
       {
         day: "Day 1",
@@ -35,7 +35,7 @@ const itineraries = [
     id: "5-day",
     duration: "Five Days",
     title: "The West Highlands and Skye",
-    price: "From £7,500 (+VAT) per person",
+    price: "Guide price £7,500 (+VAT) per person",
     days: [
       {
         day: "Day 1",
@@ -68,7 +68,7 @@ const itineraries = [
     id: "7-day",
     duration: "Seven Days",
     title: "The Grand Sweep, South to Far North",
-    price: "From £10,000 (+VAT) per person",
+    price: "Guide price £10,000 (+VAT) per person",
     days: [
       {
         day: "Day 1",
