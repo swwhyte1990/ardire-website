@@ -71,8 +71,8 @@ const corpFaqs = [
     a: "Every programme is priced around what you want to do, so there is no set figure. We work out the cost per person based on group size, the experiences you choose, where you stay, and how you travel. Once we understand your brief, we put together a full, itemised proposal before anything is confirmed.",
   },
   {
-    q: "Can you accommodate a mixed group, including people who do not play golf?",
-    a: "Absolutely. Most of our programmes are designed for groups with a range of interests, and we plan the days so that everyone has something they would choose to do. Golf, distillery visits, wildlife, walking, spa time and cultural experiences can all sit alongside each other in a well-built week.",
+    q: "Can you accommodate a mixed group with different interests?",
+    a: "Absolutely. Most of our programmes are designed for groups with a range of interests, and we plan the days so that everyone has something they would choose to do. Distillery visits, Highland activities, wildlife, walking, spa time and cultural experiences can all sit alongside each other in a well-built week.",
   },
   {
     q: "Can you arrange photography, video or branded elements for the trip?",
