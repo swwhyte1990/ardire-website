@@ -8,7 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import { services } from "@/data/services";
 import { setPendingScroll } from "@/lib/pendingScroll";
 
-const travelSlugs = ["luxury-tours", "golf-tours", "private-chauffeur", "self-guided-tours", "concierge"];
+const travelSlugs = ["luxury-tours", "golf-tours", "private-chauffeur", "self-guided-tours"];
 const travelServices = travelSlugs.map((slug) => services.find((s) => s.slug === slug)!).filter(Boolean);
 
 export default function TravelPage() {

@@ -29,7 +29,6 @@ const allServiceLinks = [
   { slug: 'self-guided-tours', label: 'Self-Guided Tours Scotland' },
   { slug: 'event-staffing', label: 'Event Staffing Scotland' },
   { slug: 'event-management', label: 'Event Management Scotland' },
-  { slug: 'concierge', label: 'Private Concierge Scotland' },
   { slug: 'commonwealth-26', label: 'Commonwealth Games 2026 Hospitality Glasgow' },
 ];
 
@@ -185,24 +184,6 @@ const routes = [
       'Supplier and contractor management including catering, AV, and entertainment',
       'Creative concept development and event styling',
       'On-the-day management with a dedicated senior event producer',
-    ],
-  },
-  {
-    path: 'services/concierge',
-    title: 'Private Concierge Services in Scotland.',
-    description: 'A discreet, personal concierge service for every detail of your Scottish visit. Ardire handles everything so you can focus on the experience.',
-    h1: 'Private Concierge Glasgow &amp; Scotland',
-    paragraphs: [
-      'We are the people you call when the usual avenues simply will not do. Our concierge service offers round-the-clock lifestyle management for private individuals, executives, and visiting guests, securing the impossible, coordinating the complex, and delivering everything with complete discretion.',
-      'Ardire\'s concierge team is available 24 hours a day, seven days a week, wherever you are in the world. From securing last-minute reservations at fully-booked restaurants and exclusive members\' clubs, to sourcing rare items, arranging private hire vehicles and helicopters, managing complex travel itineraries, and handling every detail of your time in Scotland, we do whatever needs to be done.',
-      'Our private concierge service is trusted by high-net-worth individuals, corporate executives, visiting dignitaries, and guests of the world\'s finest hotels. Discretion is absolute. Every request is handled with the same quiet efficiency and personal attention that defines everything Ardire does.',
-    ],
-    highlights: [
-      '24/7 availability wherever you are in the world',
-      'Reservations at fully-booked restaurants and exclusive venues',
-      'Private hire including vehicles, helicopters, yachts, and beyond',
-      'Accommodation, travel logistics, and itinerary management',
-      'Gifts, personal shopping, and bespoke arrangements',
     ],
   },
   {

@@ -9,7 +9,6 @@ const travelServices = [
   { slug: "golf-tours",       title: "Golf Tours" },
   { slug: "private-chauffeur",title: "Private Chauffeur" },
   { slug: "self-guided-tours",title: "Self-Guided Tours" },
-  { slug: "concierge",        title: "Concierge" },
 ];
 
 const eventsServices = [

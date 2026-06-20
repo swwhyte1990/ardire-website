@@ -173,29 +173,6 @@ export const services: ServiceData[] = [
     ],
     cta: "Start Planning Your Event",
   },
-  {
-    slug: "concierge",
-    title: "Concierge",
-    subtitle: "Nothing Is Too Much.",
-    intro:
-      "We are the people you call when the usual avenues simply will not do. Our concierge service offers round-the-clock lifestyle management for private individuals, executives, and visiting guests, securing the impossible, coordinating the complex, and delivering everything with complete discretion.",
-    introRich: [
-      { type: "heading", text: "Private Concierge Service Scotland" },
-      { type: "paragraph", text: "The ÁrdÍre concierge service is a personal, always-available service for private individuals, visiting executives, and high-net-worth guests who expect more than the standard can provide. We operate discreetly, move quickly, and maintain a network of relationships across Scotland and beyond that allows us to secure what others cannot." },
-      { type: "heading", text: "When Ordinary Channels Won't Do" },
-      { type: "paragraph", text: "Fully-booked restaurants secured at short notice. Access to restricted events and private members' clubs. Last-minute helicopter charters. Theatre and sporting events that have long since sold out. Personal shopping and bespoke gift procurement. Arrangements made for visiting dignitaries and UHNW guests. If it exists, we can usually arrange it. If it doesn't exist yet, we have been known to create it." },
-      { type: "heading", text: "Discreet, Trusted, and Always Available" },
-      { type: "paragraph", text: "Our concierge clients are provided with a dedicated point of contact available 24 hours a day. We treat every request with the same level of care and confidentiality, whether it is a complex multi-day itinerary or a single urgent favour. Discretion is not a feature — it is a founding principle of everything we do." },
-    ],
-    highlights: [
-      "24/7 availability wherever you are in the world",
-      "Reservations at fully-booked restaurants and exclusive venues",
-      "Private hire including vehicles, helicopters, yachts, and beyond",
-      "Accommodation, travel logistics, and itinerary management",
-      "Gifts, personal shopping, and bespoke arrangements",
-    ],
-    cta: "Enquire Now",
-  },
 ];
 
 export function getServiceBySlug(slug: string): ServiceData | undefined {
