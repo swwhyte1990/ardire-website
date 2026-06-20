@@ -1,7 +1,7 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { CheckCircle, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -12,7 +12,8 @@ const itineraries = [
     id: "3-day",
     duration: "Three Days",
     title: "Edinburgh and the Heart of Scotland",
-    price: "Guide price £4,500 (+VAT) per person",
+    intro: "A short and rich introduction to the country, built around its capital with a day reaching into the Highlands.",
+    price: "Guide price, around £4,500 (+VAT) per person, drawn from a real trip",
     days: [
       {
         day: "Day 1",
@@ -35,7 +36,8 @@ const itineraries = [
     id: "5-day",
     duration: "Five Days",
     title: "The West Highlands and Skye",
-    price: "Guide price £7,500 (+VAT) per person",
+    intro: "The Scotland most people picture, the mountains, the sea lochs and the islands, taken at a pace that lets you feel it.",
+    price: "Guide price, around £7,500 (+VAT) per person, drawn from a real trip",
     days: [
       {
         day: "Day 1",
@@ -68,7 +70,8 @@ const itineraries = [
     id: "7-day",
     duration: "Seven Days",
     title: "The Grand Sweep, South to Far North",
-    price: "Guide price £10,000 (+VAT) per person",
+    intro: "A full week from the capital to the open roads of the far north, the trip people take once and remember for good.",
+    price: "Guide price, around £10,000 (+VAT) per person, drawn from a real trip",
     days: [
       {
         day: "Day 1",
@@ -108,6 +111,14 @@ const itineraries = [
   },
 ];
 
+const included = [
+  "A private driver and transfers throughout",
+  "Accommodation chosen for its standard and its setting",
+  "Meals and dining, with a private chef whenever you would like one",
+  "Guides, experiences and access arranged around your interests",
+  "Every booking, ticket and reservation handled ahead of time",
+  "A dedicated concierge looking after your trip on the ground throughout, whenever you need them",
+];
 
 const luxuryFaqs = [
   {
@@ -155,12 +166,12 @@ export default function LuxuryToursPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Private Tours of Scotland | The ÁrdÍre Group";
+    document.title = "Luxury Scotland Tours & Travel Concierge | The ÁrdÍre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
     desc?.setAttribute(
       "content",
-      "Bespoke private tours of Scotland designed around you. Highlands, islands, whisky, castles and more, planned and run end to end by The ÁrdÍre Group."
+      "Private luxury tours of Scotland with a full travel concierge service. One point of contact to plan, book and look after every part of your trip, from castles and whisky to the Highlands and islands."
     );
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
@@ -219,7 +230,7 @@ export default function LuxuryToursPage() {
               Private Tours of Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              Tell us the Scotland you have always wanted to see, and we will build it around you. From the moment we meet you at the airport, every day is ours to plan and yours to enjoy.
+              A private tour designed around you, with a travel concierge to arrange and look after every part of it. From the moment we meet you at the airport, every day is ours to plan and yours to enjoy.
             </p>
           </motion.div>
         </div>
@@ -237,7 +248,7 @@ export default function LuxuryToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Private Touring</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Built entirely <span className="italic text-primary">around you.</span>
+              A private tour and a travel concierge <span className="italic text-primary">in one.</span>
             </h2>
           </motion.div>
           <motion.div
@@ -248,7 +259,7 @@ export default function LuxuryToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              We design private tours of Scotland for people who want to see it properly, at their own pace, with everything taken care of. You tell us what matters to you, the places, the kind of days, the things you have always meant to do, and we shape a journey around it.
+              A private tour is built entirely around you: what you want to see, the pace you want to keep, and the kind of days you want to have. We plan the itinerary, secure every booking, arrange the transport, the rooms, the meals and the experiences, and manage all of it on the ground so that for the length of your stay there is nothing to organise and nothing to chase. It is a private tour and a travel concierge in one, the trip designed and every part of it looked after.
             </p>
             <p>
               This is a country we know well and love showing off, and most of that love is in the detail: the right glen on the right morning, the dinner worth driving for, the distillery that will open a door for you. Some of our guests arrive knowing exactly what they want. Most come with a few ideas and let us fill in the rest. Either way is the right way to begin.
@@ -257,8 +268,40 @@ export default function LuxuryToursPage() {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Travel Concierge */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-10"
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Travel Concierge</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
+              Your travel concierge <span className="italic text-primary">in Scotland.</span>
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
+          >
+            <p>
+              Beyond the trips we design, we act as your travel concierge for the whole of your time in Scotland. That means one person to arrange, book and look after everything, whether you would like a complete journey planned and run for you, or simply the harder parts taken care of and someone on call while you are here.
+            </p>
+            <p>
+              Some guests hand us the trip from the first idea. Others have much of it in place already and want us to arrange the bookings, open a few doors, and be there for whatever comes up. Both are exactly what we are here for, whether you are visiting for a few days or settling in for a longer stay.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -280,7 +323,10 @@ export default function LuxuryToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              We take care of the itinerary, the bookings, the rooms, the meals and the experiences, and we look after all of it as the days unfold. You will have someone with you who knows your plans and your preferences, a private driver between places, and the freedom to change your mind whenever you like. If the weather turns or a mood takes you somewhere new, we simply rework the day around it.
+              From the moment we greet you at the airport to the day you head home, the planning is in our hands and the trip is yours to enjoy.
+            </p>
+            <p>
+              We take care of the itinerary, the bookings, the rooms, the meals and the experiences, and we look after all of it as the days unfold. You will have a dedicated concierge who knows your plans and your preferences, a private driver between places, and the freedom to change your mind whenever you like. If the weather turns or a mood takes you somewhere new, we simply rework the day around it.
             </p>
             <p>
               What you bring is the sense of what you want. We bring everything it takes to make it happen.
@@ -290,7 +336,7 @@ export default function LuxuryToursPage() {
       </section>
 
       {/* Come With an Idea */}
-      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+      <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -322,7 +368,7 @@ export default function LuxuryToursPage() {
       </section>
 
       {/* Three Sample Journeys */}
-      <section className="py-24 md:py-32 bg-card border-t border-border/30">
+      <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -343,7 +389,7 @@ export default function LuxuryToursPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-sans font-light text-sm text-muted-foreground max-w-2xl mb-12"
           >
-            These are real journeys we can build, written to spark a few ideas of your own. Nothing here is fixed. The length, the places and the pace are all yours to shape.
+            These are real journeys we can build, written to give you a feel for the range and to spark a few ideas of your own. Nothing here is fixed. The length, the places and the pace are all yours to shape, and we would happily reimagine any of them around what you have in mind.
           </motion.p>
 
           <div className="space-y-3">
@@ -354,7 +400,7 @@ export default function LuxuryToursPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.07 }}
-                className="bg-background border-l-2 border-primary"
+                className="bg-card border-l-2 border-primary"
               >
                 <button
                   onClick={() => setOpenItinerary(openItinerary === itin.id ? null : itin.id)}
@@ -384,8 +430,11 @@ export default function LuxuryToursPage() {
                       className="overflow-hidden"
                     >
                       <div className="px-6 md:px-8 pb-6 md:pb-8 space-y-2">
+                        {itin.intro && (
+                          <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed pb-2 italic">{itin.intro}</p>
+                        )}
                         {itin.days.map((item) => (
-                          <div key={item.day} className="bg-card border-l border-primary/40 p-4 md:p-6">
+                          <div key={item.day} className="bg-background border-l border-primary/40 p-4 md:p-6">
                             <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary block mb-2">{item.day}</span>
                             <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                           </div>
@@ -402,7 +451,7 @@ export default function LuxuryToursPage() {
       </section>
 
       {/* What We Can Arrange */}
-      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+      <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -424,7 +473,7 @@ export default function LuxuryToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              There is very little we cannot arrange when it matters to you. A private chef in a castle you have to yourselves. A helicopter to turn a long drive into a short hop. A distillery opened after hours. The leading authority on the one thing you most want to understand.
+              There is very little we cannot arrange when it matters to you. A private chef in a castle you have to yourselves. A helicopter to turn a long drive into a short hop. A ghillie for a day's fishing on the river or a stalk on the hill. A distillery opened after the public have gone. The leading authority on the one thing you most want to understand.
             </p>
             <p>
               As we grow, those possibilities only widen, and the ceiling rises at the very top end. What you are paying for is not a list of suppliers but the fact that we can make these things happen at all, quietly and well, to a standard that would be hard to reach on your own.
@@ -433,6 +482,88 @@ export default function LuxuryToursPage() {
         </div>
       </section>
 
+      {/* What's Included */}
+      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-10"
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">What's Included</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
+              From the moment you land to the moment you leave.
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+          >
+            <p className="font-sans font-light text-sm text-muted-foreground mb-8 max-w-2xl">
+              Everything is taken care of:
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-8">
+              {included.map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span className="font-sans font-light text-sm text-muted-foreground">{item}</span>
+                </div>
+              ))}
+            </div>
+            <p className="font-sans font-light text-sm text-muted-foreground">
+              You simply arrive. We take care of the rest.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="py-24 md:py-32 bg-card border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-10"
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Pricing</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
+              Guide figures drawn from real trips.
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="max-w-3xl"
+          >
+            <p className="font-sans font-light text-sm text-muted-foreground mb-8 leading-relaxed">
+              There is no set price for a trip, because every journey is built around what you would like to do. To give you a sense of scale:
+            </p>
+            <div className="space-y-4 mb-8 max-w-sm">
+              {[
+                { label: "Three days", price: "around £4,500 (+VAT) per person" },
+                { label: "Five days", price: "around £7,500 (+VAT) per person" },
+                { label: "Seven days", price: "around £10,000 (+VAT) per person" },
+              ].map((tier) => (
+                <div key={tier.label} className="flex items-baseline justify-between border-b border-border/30 pb-4">
+                  <span className="font-sans font-light text-sm text-muted-foreground">{tier.label}</span>
+                  <span className="font-display text-sm text-primary">{tier.price}</span>
+                </div>
+              ))}
+            </div>
+            <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed">
+              We show these per person so you can picture the cost at any group size: a larger party simply needs transport, accommodation and tickets for more people. Your own figure will reflect the choices you make, the places, the pace, the style of where you stay, and the experiences you add along the way. We put together a full proposal, costed in detail, before anything is confirmed.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* FAQ */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
@@ -493,7 +624,7 @@ export default function LuxuryToursPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-background border-t border-border/30">
+      <section className="py-20 bg-card border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
