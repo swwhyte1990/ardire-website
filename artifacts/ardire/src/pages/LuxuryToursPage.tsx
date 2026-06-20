@@ -207,7 +207,7 @@ export default function LuxuryToursPage() {
       <section id="main-content" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/hero.webp`}
+            src={`${import.meta.env.BASE_URL}images/tours-hero.webp`}
             alt="Private Tours of Scotland — The ÁrdÍre Group"
             className="w-full h-full object-cover"
             width={1920}
