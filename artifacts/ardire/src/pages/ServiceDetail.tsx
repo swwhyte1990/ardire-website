@@ -62,6 +62,8 @@ export default function ServiceDetail() {
             src={`${import.meta.env.BASE_URL}images/${heroImages[slug] ?? "hero.webp"}`}
             alt={`${service.title} — The ÁrdÍre Group`}
             className="w-full h-full object-cover"
+            width={1920}
+            height={1080}
             loading="eager"
             fetchPriority="high"
           />

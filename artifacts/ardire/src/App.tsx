@@ -1,6 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
-import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
@@ -68,7 +67,6 @@ function App() {
         <ScrollToTop />
         <Router />
       </WouterRouter>
-      <Toaster />
     </TooltipProvider>
   );
 }
