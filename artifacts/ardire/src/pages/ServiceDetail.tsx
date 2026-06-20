@@ -9,6 +9,10 @@ import { getServiceBySlug } from "@/data/services";
 import NotFound from "@/pages/not-found";
 import { setPendingScroll } from "@/lib/pendingScroll";
 
+const heroImages: Record<string, string> = {
+  "self-guided-tours": "self-guided-hero.webp",
+};
+
 export default function ServiceDetail() {
   const { slug } = useParams<{ slug: string }>();
   const [, navigate] = useLocation();
@@ -55,7 +59,7 @@ export default function ServiceDetail() {
       <section id="main-content" className="relative min-h-[50vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/hero.webp`}
+            src={`${import.meta.env.BASE_URL}images/${heroImages[slug] ?? "hero.webp"}`}
             alt={`${service.title} — The ÁrdÍre Group`}
             className="w-full h-full object-cover"
             loading="eager"
