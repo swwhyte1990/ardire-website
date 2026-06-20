@@ -521,52 +521,8 @@ export default function LuxuryToursPage() {
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="py-24 md:py-32 bg-card border-t border-border/30">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mb-10"
-          >
-            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Pricing</p>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Guide figures drawn from real trips.
-            </h2>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-            className="max-w-3xl"
-          >
-            <p className="font-sans font-light text-sm text-muted-foreground mb-8 leading-relaxed">
-              There is no set price for a trip, because every journey is built around what you would like to do. To give you a sense of scale:
-            </p>
-            <div className="space-y-4 mb-8 max-w-sm">
-              {[
-                { label: "Three days", price: "around £4,500 (+VAT) per person" },
-                { label: "Five days", price: "around £7,500 (+VAT) per person" },
-                { label: "Seven days", price: "around £10,000 (+VAT) per person" },
-              ].map((tier) => (
-                <div key={tier.label} className="flex items-baseline justify-between border-b border-border/30 pb-4">
-                  <span className="font-sans font-light text-sm text-muted-foreground">{tier.label}</span>
-                  <span className="font-display text-sm text-primary">{tier.price}</span>
-                </div>
-              ))}
-            </div>
-            <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed">
-              We show these per person so you can picture the cost at any group size: a larger party simply needs transport, accommodation and tickets for more people. Your own figure will reflect the choices you make, the places, the pace, the style of where you stay, and the experiences you add along the way. We put together a full proposal, costed in detail, before anything is confirmed.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* FAQ */}
-      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+      <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -624,7 +580,7 @@ export default function LuxuryToursPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-card border-t border-border/30">
+      <section className="py-20 bg-background border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
