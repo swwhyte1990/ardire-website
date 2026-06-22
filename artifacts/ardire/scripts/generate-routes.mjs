@@ -29,7 +29,6 @@ const allServiceLinks = [
   { slug: 'self-guided-tours', label: 'Self-Guided Tours Scotland' },
   { slug: 'event-staffing', label: 'Event Staffing Scotland' },
   { slug: 'event-management', label: 'Event Management Scotland' },
-  { slug: 'commonwealth-26', label: 'Commonwealth Games 2026 Hospitality Glasgow' },
 ];
 
 const linkStyle = "color:#c5a366;text-decoration:none;margin-right:1rem;display:inline-block;padding:0.25rem 0";
@@ -184,24 +183,6 @@ const routes = [
       'Supplier and contractor management including catering, AV, and entertainment',
       'Creative concept development and event styling',
       'On-the-day management with a dedicated senior event producer',
-    ],
-  },
-  {
-    path: 'services/commonwealth-26',
-    title: 'Commonwealth Games 2026 Services',
-    description: 'Premium hospitality packages for the Glasgow 2026 Commonwealth Games. Accommodation, transfers, tickets and experiences by Ardire.',
-    h1: 'Commonwealth Games 2026 Hospitality Glasgow',
-    paragraphs: [
-      'The Glasgow 2026 Commonwealth Games is set to be one of the most significant sporting events ever hosted in Scotland. Ardire is delivering bespoke visitor programmes, VIP hospitality packages, and corporate experiences that allow businesses and private guests to make the very most of this landmark occasion.',
-      'Glasgow will welcome athletes, officials, and visitors from across the Commonwealth nations for the 2026 Games. Ardire is positioned to help corporate clients, private guests, and international visitors experience the Games and the city at the highest level — from VIP ticketing and venue hospitality to private accommodation, executive transfers, and curated cultural programmes.',
-      'Our Commonwealth 2026 packages are tailored to each client. Whether you are entertaining key clients, rewarding your team, or simply want to experience one of the world\'s great sporting occasions in style, Ardire designs the programme around you — with the same attention to detail and standard of service that defines everything we do.',
-    ],
-    highlights: [
-      'VIP hospitality packages for Games events',
-      'Bespoke visitor experiences and itinerary planning',
-      'Corporate entertainment and client engagement programmes',
-      'Accommodation sourcing and travel logistics',
-      'Event staffing for Games-adjacent functions and receptions',
     ],
   },
   {
