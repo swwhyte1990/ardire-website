@@ -50,6 +50,8 @@ export default function EventsPage() {
             className="w-full h-full object-cover"
             loading="eager"
             fetchPriority="high"
+            width={1920}
+            height={1281}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background z-10" />
         </div>

@@ -10,6 +10,8 @@ export function Hero() {
           className="kenburns-img w-full h-full object-cover"
           loading="eager"
           fetchPriority="high"
+          width={1280}
+          height={853}
         />
         {/* Black at top — no green cast over the image */}
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/35 to-transparent" />
@@ -24,7 +26,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0 }}
         >
           <p className="font-sans text-[11px] uppercase tracking-[0.4em] text-foreground/80 mb-6">
             The ÁrdÍre Group · Glasgow

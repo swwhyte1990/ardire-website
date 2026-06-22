@@ -26,6 +26,8 @@ export function Footer() {
               alt="Árd Íre Logo"
               className="h-24 w-24 object-contain"
               style={{ filter: "brightness(0.86) saturate(1.45)" }}
+              width={96}
+              height={96}
             />
             <div>
               <span className="font-sans text-[10px] text-muted-foreground tracking-widest uppercase block mb-0.5">The</span>

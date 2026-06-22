@@ -94,8 +94,17 @@ export function Navbar() {
   const [, navigate] = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -157,6 +166,8 @@ export function Navbar() {
               alt="Ardire Logo"
               className="h-14 w-14 object-contain transition-transform duration-500 group-hover:scale-105"
               style={{ filter: "brightness(0.86) saturate(1.45)" }}
+              width={56}
+              height={56}
             />
             <span className="font-display text-xl font-medium tracking-widest uppercase text-foreground">ÁRDÍRE</span>
           </a>

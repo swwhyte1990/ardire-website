@@ -27,6 +27,9 @@ export function Services() {
             src={`${import.meta.env.BASE_URL}images/travel-glenfinnan.webp`}
             alt="Glenfinnan Viaduct — Travel & Tours across Scotland"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+            loading="lazy"
+            width={1920}
+            height={1081}
           />
           <div
             className="absolute inset-0"
@@ -57,6 +60,9 @@ export function Services() {
             src={`${import.meta.env.BASE_URL}images/events-hero.webp`}
             alt="Events & Hospitality"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
+            loading="lazy"
+            width={1920}
+            height={1281}
           />
           <div
             className="absolute inset-0"
