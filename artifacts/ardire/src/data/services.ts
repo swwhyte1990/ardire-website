@@ -155,7 +155,7 @@ export const services: ServiceData[] = [
     title: "Event Management",
     subtitle: "Conceived, Managed, Delivered.",
     intro:
-      "From the first concept to the final curtain, we take full ownership of your event. The ÁrdÍre Group provides end-to-end event management for private occasions, corporate functions, product launches, gala dinners, and high-profile gatherings across Scotland and beyond. We don't just supply the team — we lead the entire production.",
+      "We plan, produce and run events from start to finish. One team manages the whole production — from venue and suppliers to on-the-day coordination — so you can hand the event over and trust that it will be handled properly.",
     introRich: [
       { type: "heading", text: "Full-Service Event Management Scotland" },
       { type: "paragraph", text: "Whether you're hosting an intimate private dinner for twenty or a corporate gala for five hundred, The ÁrdÍre Group manages every element of your event from initial concept through to post-event debrief. Our event management team brings creative vision, logistical precision, and an unwavering commitment to excellence to every occasion we take on." },
