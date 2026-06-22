@@ -107,9 +107,9 @@ export const services: ServiceData[] = [
   {
     slug: "self-guided-tours",
     title: "Self-Guided Tours",
-    subtitle: "Your Pace. Our Expertise.",
+    subtitle: "Your Pace. Your Route.",
     intro:
-      "For those who love to explore independently but want the confidence of expert planning behind them. We build the perfect itinerary, secure every booking, and prepare detailed route notes, then hand the keys over to you. Enjoy the freedom of self-guided travel with round-the-clock support on standby.",
+      "A bespoke self-guided tour, planned and booked around you. Tell us where you would like to go, how long you have, and how you like to travel. We design the route, arrange the bookings, and hand the trip over to you to lead.",
     introRich: [
       { type: "heading", text: "Self-Guided Tours in Scotland" },
       { type: "paragraph", text: "Experience Scotland at your own pace with our thoughtfully planned self-guided tours. Perfect for independent travellers who want the freedom to explore without a fixed schedule, each tour comes with everything you need to make the most of your journey, from detailed route notes and maps to hand-picked accommodation and local tips along the way." },
