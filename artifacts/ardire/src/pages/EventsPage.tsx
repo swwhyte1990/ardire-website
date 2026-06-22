@@ -11,6 +11,12 @@ import { setPendingScroll } from "@/lib/pendingScroll";
 const eventsSlugs = ["corporate-incentives", "event-management", "event-staffing"];
 const eventsServices = eventsSlugs.map((slug) => services.find((s) => s.slug === slug)!).filter(Boolean);
 
+const cardImages: Record<string, string> = {
+  "corporate-incentives": "hero.webp",
+  "event-management":     "hero.webp",
+  "event-staffing":       "hero.webp",
+};
+
 export default function EventsPage() {
   const [, navigate] = useLocation();
 
@@ -75,13 +81,13 @@ export default function EventsPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 md:py-32 bg-background">
+      <section className="py-16 md:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-            className="mb-16"
+            className="mb-10"
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Our Services</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
@@ -89,33 +95,40 @@ export default function EventsPage() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border/30">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[calc(1px+2mm)] bg-background">
             {eventsServices.map((service, i) => (
-              <motion.div
+              <motion.button
                 key={service.slug}
+                onClick={() => goToService(service.slug)}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.35 + i * 0.08 }}
-                className="bg-background p-8 md:p-10 flex flex-col group"
+                className={`group relative h-[260px] md:h-[320px] overflow-hidden text-left w-full${i === 2 ? " md:col-span-2" : ""}`}
               >
-                <div className="mb-6">
-                  <div className="w-8 h-px bg-primary mb-6 transition-all duration-500 group-hover:w-16" />
-                  <h3 className="font-display text-2xl text-foreground mb-2">{service.title}</h3>
-                  <p className="font-display italic text-primary text-base mb-4">{service.subtitle}</p>
-                  <p className="font-sans text-sm text-muted-foreground leading-relaxed font-light line-clamp-4">
-                    {service.intro}
+                <img
+                  src={`${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"}`}
+                  alt={`${service.title} — The ÁrdÍre Group`}
+                  className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  width={960}
+                  height={640}
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.5) 35%, transparent 65%)" }}
+                />
+                <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                  <p className="font-sans text-[10px] uppercase tracking-[0.35em] text-foreground/70 mb-1">
+                    {service.subtitle}
                   </p>
+                  <h3 className="font-display text-xl md:text-2xl text-foreground mb-3">
+                    {service.title}
+                  </h3>
+                  <span className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.25em] text-foreground group-hover:gap-3 transition-all duration-300">
+                    {service.cta} <ArrowRight className="w-4 h-4" />
+                  </span>
                 </div>
-                <div className="mt-auto pt-6">
-                  <button
-                    onClick={() => goToService(service.slug)}
-                    className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.25em] text-foreground hover:text-primary transition-colors duration-300 group/btn"
-                  >
-                    {service.cta}
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-                  </button>
-                </div>
-              </motion.div>
+              </motion.button>
             ))}
           </div>
         </div>
