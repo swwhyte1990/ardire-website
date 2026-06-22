@@ -132,7 +132,7 @@ export const services: ServiceData[] = [
     title: "Event Staffing",
     subtitle: "Every Detail. Impeccably Handled.",
     intro:
-      "The impression your event makes starts with the people running it. Our event staffing team brings professionalism, warmth, and composure to every occasion, from intimate private dinners to large-scale corporate events and major public gatherings. We are discreet, well-presented, and completely reliable.",
+      "Professional waiting staff, butlers and hospitality teams for events of any size, briefed and well presented. Staff on their own for an event you are running, or as part of a full event management service.",
     introRich: [
       { type: "heading", text: "Professional Event Staffing Across Scotland" },
       { type: "paragraph", text: "The ÁrdÍre Group provides experienced, professionally trained event staff for a wide range of occasions across Scotland. From front-of-house teams and reception staff to hospitality managers and guest liaison officers, our people bring the right combination of warmth, discretion, and polish to every event they work." },
