@@ -1,11 +1,46 @@
-import { useEffect, type MouseEvent } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { useLocation } from "wouter";
-import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { setPendingScroll } from "@/lib/pendingScroll";
+
+const selfGuidedFaqs = [
+  {
+    q: "What is a self-guided tour?",
+    a: "It is a trip you travel independently, at your own pace and with your own company, but with the planning and booking taken care of by us. We design the route, recommend and reserve the places to stay and the things worth doing, and you set off and enjoy it your own way, with us on hand if you need anything.",
+  },
+  {
+    q: "What exactly do you arrange?",
+    a: "We build the itinerary and book the parts you would like handled: your accommodation, restaurants, tastings, activities and experiences, along with detailed recommendations for each day. If you would like us to arrange car hire or a private guide for a day, we can add that too. The travelling itself is yours to do at your own pace.",
+  },
+  {
+    q: "Do you provide transport or move our luggage?",
+    a: "You travel in your own way, in whatever transport suits you, with your own luggage. We focus on planning the trip and making the bookings rather than driving you or moving your bags. If you would prefer a car arranged or a driver for part of the trip, just ask and we will look after it.",
+  },
+  {
+    q: "How is this different from planning the trip myself?",
+    a: "The difference is in the knowledge and the access behind it. We know which places are worth your time, which to avoid, and how to put a route together that flows. We can hold the right rooms and restaurants before they fill, and arrange things that are harder to reach on your own. You get a trip shaped around you rather than pieced together from scratch.",
+  },
+  {
+    q: "Can we still change things once we are travelling?",
+    a: "Yes. The pace and the days are yours, and if something needs to shift while you are away, we are on hand to help rework it. A self-guided trip is meant to leave room for spontaneity.",
+  },
+  {
+    q: "Can we add a driver or guide for part of the trip?",
+    a: "At any time. Some people travel the whole route independently, others like a private guide for a particular day or a driver for a stretch they would rather not drive. We can build that in wherever it suits you.",
+  },
+  {
+    q: "How far ahead should we book?",
+    a: "The earlier the better, since the best accommodation and experiences are booked well in advance, especially through the summer. Give us a good run at it and we can hold the places that make a trip, though shorter notice is still workable.",
+  },
+  {
+    q: "How much does a self-guided tour cost?",
+    a: "There is no set price, since it depends on your route, how long you travel and what you would like us to book. Tell us what you have in mind and we will put together a proposal, with a sample route to show what a trip can look like.",
+  },
+];
 
 const whatWeArrange = [
   "A bespoke route and itinerary, built around what you want to see and how far you would like to travel each day",
@@ -18,6 +53,7 @@ const whatWeArrange = [
 
 export default function SelfGuidedToursPage() {
   const [, navigate] = useLocation();
+  const [faqOpen, setFaqOpen] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -28,9 +64,23 @@ export default function SelfGuidedToursPage() {
       "content",
       "A bespoke self-guided tour of Scotland, planned and booked around you. Ardire designs the route and makes the bookings. You travel independently, at your own pace."
     );
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.id = "faq-schema-self-guided";
+    faqScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": selfGuidedFaqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.a },
+      })),
+    });
+    document.head.appendChild(faqScript);
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev !== null) desc.setAttribute("content", prev);
+      document.getElementById("faq-schema-self-guided")?.remove();
     };
   }, []);
 
@@ -207,8 +257,66 @@ export default function SelfGuidedToursPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-12"
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
+              Things people ask us.
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="max-w-3xl divide-y divide-border/30"
+          >
+            {selfGuidedFaqs.map((faq, i) => {
+              const key = `sg-faq-${i}`;
+              const open = faqOpen === key;
+              return (
+                <div key={key}>
+                  <button
+                    onClick={() => setFaqOpen(open ? null : key)}
+                    className="w-full flex items-center justify-between gap-6 py-5 text-left group"
+                    aria-expanded={open}
+                  >
+                    <span className="font-display text-base text-foreground group-hover:text-primary transition-colors duration-200">{faq.q}</span>
+                    <ChevronDown
+                      className="w-4 h-4 text-primary shrink-0 transition-transform duration-300"
+                      style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {open && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed pb-5">{faq.a}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA with pricing note */}
-      <section className="py-20 bg-background border-t border-border/30">
+      <section className="py-20 bg-card border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
