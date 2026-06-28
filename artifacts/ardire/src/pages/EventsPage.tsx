@@ -13,8 +13,8 @@ const eventsServices = eventsSlugs.map((slug) => services.find((s) => s.slug ===
 
 const cardImages: Record<string, string> = {
   "corporate-incentives": "corporate-hero.webp",
-  "event-management":     "hero.webp",
-  "event-staffing":       "hero.webp",
+  "event-management":     "events-hero.webp",
+  "event-staffing":       "corporate-hero.webp",
 };
 
 export default function EventsPage() {

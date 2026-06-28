@@ -106,7 +106,7 @@ export default function EventManagementPage() {
       <section id="main-content" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/hero.webp`}
+            src={`${import.meta.env.BASE_URL}images/events-hero.webp`}
             alt="Event Management Scotland — The ÁrdÍre Group"
             className="w-full h-full object-cover"
             width={1920}
