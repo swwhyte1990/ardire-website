@@ -54,9 +54,7 @@ export default function Privacy() {
               </p>
               <p>
                 <span className="text-foreground font-normal">The ÁrdÍre Group</span><br />
-                Clyde Offices, 2nd Floor<br />
-                48 West George Street<br />
-                Glasgow, G2 1BP<br />
+                Glasgow, Scotland<br />
                 <a href="mailto:enquiries@ardire.co.uk" className="text-primary hover:underline">enquiries@ardire.co.uk</a><br />
                 +44 (0)141 255 0796
               </p>

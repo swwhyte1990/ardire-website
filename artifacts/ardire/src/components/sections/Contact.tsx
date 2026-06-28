@@ -87,9 +87,9 @@ export function Contact() {
 
             <div className="space-y-8">
               <div>
-                <h3 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Headquarters</h3>
+                <h3 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Based In</h3>
                 <p className="font-display text-lg text-foreground">The ÁrdÍre Group</p>
-                <p className="text-muted-foreground font-sans mt-1">Clyde Offices, 2nd Floor<br />48 West George Street<br />Glasgow G2 1BP</p>
+                <p className="text-muted-foreground font-sans mt-1">Glasgow, Scotland</p>
               </div>
               <div>
                 <h3 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Direct Enquiries</h3>
