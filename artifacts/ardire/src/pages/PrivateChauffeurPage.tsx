@@ -222,8 +222,26 @@ export default function PrivateChauffeurPage() {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* Pricing */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-10"
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Pricing</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
+              Coming soon.
+            </h2>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -281,7 +299,7 @@ export default function PrivateChauffeurPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-background border-t border-border/30">
+      <section className="py-20 bg-card border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
