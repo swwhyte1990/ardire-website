@@ -112,10 +112,12 @@ export default function PrivateChauffeurPage() {
         <div className="absolute inset-0 z-0">
           <img
             src={`${import.meta.env.BASE_URL}images/chauffeur-hero.webp`}
+            srcSet={`${import.meta.env.BASE_URL}images/chauffeur-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/chauffeur-hero.webp 1440w`}
+            sizes="100vw"
             alt="Private Chauffeur Service Scotland — The ÁrdÍre Group"
             className="w-full h-full object-cover"
-            width={1920}
-            height={1080}
+            width={1440}
+            height={810}
             loading="eager"
             fetchPriority="high"
           />

@@ -18,6 +18,13 @@ const cardImages: Record<string, string> = {
   "private-chauffeur": "chauffeur-hero.webp",
 };
 
+const cardImagesSm: Record<string, string> = {
+  "luxury-tours":      "tours-hero-sm.webp",
+  "golf-tours":        "golf-hero-sm.webp",
+  "self-guided-tours": "self-guided-hero-sm.webp",
+  "private-chauffeur": "chauffeur-hero-sm.webp",
+};
+
 export default function TravelPage() {
   const [, navigate] = useLocation();
 
@@ -53,12 +60,14 @@ export default function TravelPage() {
         <div className="absolute inset-0 z-0">
           <img
             src={`${import.meta.env.BASE_URL}images/travel-glenfinnan.webp`}
+            srcSet={`${import.meta.env.BASE_URL}images/travel-glenfinnan-sm.webp 800w, ${import.meta.env.BASE_URL}images/travel-glenfinnan.webp 1440w`}
+            sizes="100vw"
             alt="Glenfinnan Viaduct, Scottish Highlands"
             className="w-full h-full object-cover"
             loading="eager"
             fetchPriority="high"
-            width={1920}
-            height={1081}
+            width={1440}
+            height={811}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background z-10" />
         </div>
@@ -108,6 +117,8 @@ export default function TravelPage() {
               >
                 <img
                   src={`${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"}`}
+                  srcSet={`${import.meta.env.BASE_URL}images/${cardImagesSm[service.slug] ?? cardImages[service.slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"} 1440w`}
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   alt={`${service.title} — The ÁrdÍre Group`}
                   className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"

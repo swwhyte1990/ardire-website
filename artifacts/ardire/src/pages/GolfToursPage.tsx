@@ -156,7 +156,7 @@ export default function GolfToursPage() {
         <div className="absolute inset-0 z-0">
           <picture>
             <source
-              media="(max-width: 768px)"
+              media="(max-width: 800px)"
               srcSet={`${import.meta.env.BASE_URL}images/golf-hero-sm.webp`}
               type="image/webp"
             />

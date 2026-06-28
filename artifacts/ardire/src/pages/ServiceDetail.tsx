@@ -10,8 +10,25 @@ import NotFound from "@/pages/not-found";
 import { setPendingScroll } from "@/lib/pendingScroll";
 
 const heroImages: Record<string, string> = {
-  "self-guided-tours": "self-guided-hero.webp",
-  "private-chauffeur": "chauffeur-hero.webp",
+  "luxury-tours":         "tours-hero.webp",
+  "golf-tours":           "golf-hero.webp",
+  "private-chauffeur":    "chauffeur-hero.webp",
+  "corporate-incentives": "corporate-hero.webp",
+  "self-guided-tours":    "self-guided-hero.webp",
+  "event-management":     "events-hero.webp",
+  "event-staffing":       "events-hero.webp",
+  "concierge":            "hero.webp",
+};
+
+const heroImagesSm: Record<string, string> = {
+  "luxury-tours":         "tours-hero-sm.webp",
+  "golf-tours":           "golf-hero-sm.webp",
+  "private-chauffeur":    "chauffeur-hero-sm.webp",
+  "corporate-incentives": "corporate-hero-sm.webp",
+  "self-guided-tours":    "self-guided-hero-sm.webp",
+  "event-management":     "events-hero-sm.webp",
+  "event-staffing":       "events-hero-sm.webp",
+  "concierge":            "hero.webp",
 };
 
 export default function ServiceDetail() {
@@ -61,10 +78,12 @@ export default function ServiceDetail() {
         <div className="absolute inset-0 z-0">
           <img
             src={`${import.meta.env.BASE_URL}images/${heroImages[slug] ?? "hero.webp"}`}
+            srcSet={`${import.meta.env.BASE_URL}images/${heroImagesSm[slug] ?? heroImages[slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${heroImages[slug] ?? "hero.webp"} 1440w`}
+            sizes="100vw"
             alt={`${service.title} — The ÁrdÍre Group`}
             className="w-full h-full object-cover"
-            width={1920}
-            height={1080}
+            width={1440}
+            height={960}
             loading="eager"
             fetchPriority="high"
           />

@@ -25,11 +25,13 @@ export function Services() {
         >
           <img
             src={`${import.meta.env.BASE_URL}images/travel-glenfinnan.webp`}
+            srcSet={`${import.meta.env.BASE_URL}images/travel-glenfinnan-sm.webp 800w, ${import.meta.env.BASE_URL}images/travel-glenfinnan.webp 1440w`}
+            sizes="(min-width: 768px) 50vw, 100vw"
             alt="Glenfinnan Viaduct — Travel & Tours across Scotland"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
             loading="lazy"
-            width={1920}
-            height={1081}
+            width={1440}
+            height={811}
           />
           <div
             className="absolute inset-0"
@@ -58,6 +60,8 @@ export function Services() {
         >
           <img
             src={`${import.meta.env.BASE_URL}images/events-hero.webp`}
+            srcSet={`${import.meta.env.BASE_URL}images/events-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/events-hero.webp 1920w`}
+            sizes="(min-width: 768px) 50vw, 100vw"
             alt="Events & Hospitality"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
             loading="lazy"

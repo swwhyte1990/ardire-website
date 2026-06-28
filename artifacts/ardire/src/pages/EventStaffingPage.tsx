@@ -84,10 +84,12 @@ export default function EventStaffingPage() {
         <div className="absolute inset-0 z-0">
           <img
             src={`${import.meta.env.BASE_URL}images/events-hero.webp`}
+            srcSet={`${import.meta.env.BASE_URL}images/events-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/events-hero.webp 1920w`}
+            sizes="100vw"
             alt="Event Staffing Scotland — The ÁrdÍre Group"
             className="w-full h-full object-cover"
             width={1920}
-            height={1080}
+            height={1281}
             loading="eager"
             fetchPriority="high"
           />

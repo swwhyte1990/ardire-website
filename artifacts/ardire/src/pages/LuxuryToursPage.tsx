@@ -223,10 +223,12 @@ export default function LuxuryToursPage() {
         <div className="absolute inset-0 z-0">
           <img
             src={`${import.meta.env.BASE_URL}images/tours-hero.webp`}
+            srcSet={`${import.meta.env.BASE_URL}images/tours-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/tours-hero.webp 1440w`}
+            sizes="100vw"
             alt="Private Tours of Scotland — The ÁrdÍre Group"
             className="w-full h-full object-cover"
-            width={1920}
-            height={1080}
+            width={1440}
+            height={960}
             loading="eager"
             fetchPriority="high"
           />
