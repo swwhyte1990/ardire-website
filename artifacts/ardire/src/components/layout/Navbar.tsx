@@ -163,7 +163,7 @@ export function Navbar() {
           >
             <img
               src={`${import.meta.env.BASE_URL}images/logo.webp`}
-              alt="Árdíre Logo"
+              alt="Ardire Logo"
               className="h-14 w-14 object-contain transition-transform duration-500 group-hover:scale-105"
               style={{ filter: "brightness(0.86) saturate(1.45)" }}
               width={56}
@@ -215,8 +215,6 @@ export function Navbar() {
               alt="Árdíre Logo"
               className="h-10 w-10 object-contain"
               style={{ filter: "brightness(0.86) saturate(1.45)" }}
-              width={40}
-              height={40}
             />
             <span className="font-display text-base tracking-widest uppercase text-foreground">ÁRDÍRE</span>
           </button>

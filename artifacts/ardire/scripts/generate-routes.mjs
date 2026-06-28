@@ -57,7 +57,6 @@ function buildPageBlock(route) {
 const routes = [
   {
     path: 'services/luxury-tours',
-    heroImage: 'hero.webp',
     title: 'Luxury Private Tours Scotland | Ardire Hospitality Group',
     description: 'Fully escorted private touring across Scotland\'s most breathtaking landscapes. Bespoke itineraries crafted by Ardire Hospitality Group, Glasgow.',
     h1: 'Luxury Private Tours Scotland',
@@ -76,7 +75,6 @@ const routes = [
   },
   {
     path: 'services/golf-tours',
-    heroImage: 'golf-hero.webp',
     title: 'Golf Tours Scotland | St Andrews, Turnberry & Beyond',
     description: 'Play St Andrews, Carnoustie, and Turnberry on a luxury private golf tour of Scotland with private transport and luxury accomodation.',
     h1: 'Golf Tours Scotland',
@@ -96,7 +94,6 @@ const routes = [
   },
   {
     path: 'services/private-chauffeur',
-    heroImage: 'chauffeur-hero.webp',
     title: 'Private Chauffeurs in Scotland | Glasgow, Edinburgh, Beyond.',
     description: 'Premium private chauffeur hire across Scotland. Airport transfers, executive transport, and bespoke touring by Ardire Hospitality Group, Glasgow.',
     h1: 'Private Chauffeur Scotland',
@@ -116,7 +113,6 @@ const routes = [
   },
   {
     path: 'services/corporate-incentives',
-    heroImage: 'corporate-hero.webp',
     title: 'Corporate Incentivisation in Scotland',
     description: 'Reward your top performers with world-class Scottish experiences. Corporate incentive programmes designed by Ardire Hospitality Group.',
     h1: 'Corporate Incentive Travel Scotland',
@@ -135,7 +131,6 @@ const routes = [
   },
   {
     path: 'services/self-guided-tours',
-    heroImage: 'self-guided-hero.webp',
     title: 'Self-Guided Tours Scotland | Ardire Hospitality Group',
     description: 'Explore Scotland at your own pace with curated self-guided itineraries, pre-booked accommodations and 24/7 support from Ardire.',
     h1: 'Self-Guided Tours Scotland',
@@ -155,7 +150,6 @@ const routes = [
   },
   {
     path: 'services/event-staffing',
-    heroImage: 'events-hero.webp',
     title: 'Event Staffing Scotland | Ardire Hospitality Group',
     description: 'Professional hospitality and event staffing for Scotland\'s most prestigious events. Sourced and managed by Ardire Hospitality Group.',
     h1: 'Event Staffing Scotland',
@@ -174,7 +168,6 @@ const routes = [
   },
   {
     path: 'services/event-management',
-    heroImage: 'events-hero.webp',
     title: 'Event Management Scotland | Ardire Hospitality Group',
     description: 'Full-service event management for corporate functions, gala dinners, and private occasions across Scotland. Conceived, managed, and delivered by Ardire.',
     h1: 'Event Management Scotland',
@@ -194,9 +187,8 @@ const routes = [
   },
   {
     path: 'privacy',
-    heroImage: null,
     title: 'Privacy Policy | Ardire Hospitality Group',
-    description: 'Privacy policy for Árdíre Hospitality Group. How we collect, use and protect your personal data.',
+    description: 'Privacy policy for Ard Ire Hospitality Group trading as Ardire. How we collect, use and protect your personal data.',
     h1: 'Privacy Policy',
     paragraphs: [
       'This privacy policy explains how Ard Ire Hospitality Group, trading as Ardire, collects, uses, stores, and protects your personal data when you visit our website or contact us about our services.',
@@ -254,12 +246,6 @@ for (const route of routes) {
     .replace(
       /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/>/,
       `<meta name="twitter:description" content="${route.description}" />`
-    )
-    .replace(
-      '<link rel="preload" as="image" href="/images/hero-home.webp" />',
-      route.heroImage
-        ? `<link rel="preload" as="image" href="/images/${route.heroImage}" fetchpriority="high" />`
-        : ''
     )
     .replace(
       /<div data-page-content[^>]*>[\s\S]*?<\/div><\/div>(?=\s*<script)/,
