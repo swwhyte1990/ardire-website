@@ -68,7 +68,7 @@ export default function ServiceDetail() {
             loading="eager"
             fetchPriority="high"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-background z-10" />
         </div>
 
         <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 pb-20 pt-40 w-full">
