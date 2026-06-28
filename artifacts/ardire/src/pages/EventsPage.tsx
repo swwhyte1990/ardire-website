@@ -23,6 +23,12 @@ const cardImagesSm: Record<string, string> = {
   "event-staffing":       "events-hero-sm.webp",
 };
 
+const cardImageDesktopW: Record<string, number> = {
+  "corporate-incentives": 1200,
+  "event-management":     1440,
+  "event-staffing":       1440,
+};
+
 export default function EventsPage() {
   const [, navigate] = useLocation();
 
@@ -64,8 +70,8 @@ export default function EventsPage() {
             className="w-full h-full object-cover"
             loading="eager"
             fetchPriority="high"
-            width={1920}
-            height={1281}
+            width={1440}
+            height={961}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background z-10" />
         </div>
@@ -115,7 +121,7 @@ export default function EventsPage() {
               >
                 <img
                   src={`${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"}`}
-                  srcSet={`${import.meta.env.BASE_URL}images/${cardImagesSm[service.slug] ?? cardImages[service.slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"} 1440w`}
+                  srcSet={`${import.meta.env.BASE_URL}images/${cardImagesSm[service.slug] ?? cardImages[service.slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"} ${cardImageDesktopW[service.slug] ?? 1440}w`}
                   sizes="(min-width: 768px) 50vw, 100vw"
                   alt={`${service.title} — The ÁrdÍre Group`}
                   className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"

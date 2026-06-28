@@ -25,6 +25,13 @@ const cardImagesSm: Record<string, string> = {
   "private-chauffeur": "chauffeur-hero-sm.webp",
 };
 
+const cardImageDesktopW: Record<string, number> = {
+  "luxury-tours":      1200,
+  "golf-tours":        1920,
+  "self-guided-tours": 1200,
+  "private-chauffeur": 1200,
+};
+
 export default function TravelPage() {
   const [, navigate] = useLocation();
 
@@ -117,7 +124,7 @@ export default function TravelPage() {
               >
                 <img
                   src={`${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"}`}
-                  srcSet={`${import.meta.env.BASE_URL}images/${cardImagesSm[service.slug] ?? cardImages[service.slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"} 1440w`}
+                  srcSet={`${import.meta.env.BASE_URL}images/${cardImagesSm[service.slug] ?? cardImages[service.slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"} ${cardImageDesktopW[service.slug] ?? 1200}w`}
                   sizes="(min-width: 768px) 50vw, 100vw"
                   alt={`${service.title} — The ÁrdÍre Group`}
                   className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"

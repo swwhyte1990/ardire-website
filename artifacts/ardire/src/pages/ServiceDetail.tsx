@@ -31,6 +31,17 @@ const heroImagesSm: Record<string, string> = {
   "concierge":            "hero.webp",
 };
 
+const heroImageDims: Record<string, [number, number]> = {
+  "luxury-tours":         [1200, 800],
+  "golf-tours":           [1920, 1358],
+  "private-chauffeur":    [1200, 675],
+  "corporate-incentives": [1200, 800],
+  "self-guided-tours":    [1200, 800],
+  "event-management":     [1440, 961],
+  "event-staffing":       [1440, 961],
+  "concierge":            [1920, 1080],
+};
+
 export default function ServiceDetail() {
   const { slug } = useParams<{ slug: string }>();
   const [, navigate] = useLocation();
@@ -78,12 +89,12 @@ export default function ServiceDetail() {
         <div className="absolute inset-0 z-0">
           <img
             src={`${import.meta.env.BASE_URL}images/${heroImages[slug] ?? "hero.webp"}`}
-            srcSet={`${import.meta.env.BASE_URL}images/${heroImagesSm[slug] ?? heroImages[slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${heroImages[slug] ?? "hero.webp"} 1440w`}
+            srcSet={`${import.meta.env.BASE_URL}images/${heroImagesSm[slug] ?? heroImages[slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${heroImages[slug] ?? "hero.webp"} ${heroImageDims[slug]?.[0] ?? 1440}w`}
             sizes="100vw"
             alt={`${service.title} — The ÁrdÍre Group`}
             className="w-full h-full object-cover"
-            width={1440}
-            height={960}
+            width={heroImageDims[slug]?.[0] ?? 1440}
+            height={heroImageDims[slug]?.[1] ?? 960}
             loading="eager"
             fetchPriority="high"
           />
