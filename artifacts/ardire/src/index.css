@@ -127,9 +127,9 @@
   --chart-5: 175 30% 25%;
 
   /* Typography */
-  --app-font-sans: 'Raleway', sans-serif;
-  --app-font-display: 'Cinzel', serif;
-  --app-font-serif: 'Cinzel', serif;
+  --app-font-sans: 'Raleway Variable', sans-serif;
+  --app-font-display: 'Cinzel Variable', serif;
+  --app-font-serif: 'Cinzel Variable', serif;
   --app-font-mono: Menlo, monospace;
   
   --radius: 0.25rem; /* Slightly sharper corners for a more refined look */

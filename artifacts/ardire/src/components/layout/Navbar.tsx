@@ -163,7 +163,7 @@ export function Navbar() {
           >
             <img
               src={`${import.meta.env.BASE_URL}images/logo.webp`}
-              alt="Ardire Logo"
+              alt="Árdíre Logo"
               className="h-14 w-14 object-contain transition-transform duration-500 group-hover:scale-105"
               style={{ filter: "brightness(0.86) saturate(1.45)" }}
               width={56}

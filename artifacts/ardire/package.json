@@ -39,6 +39,8 @@
     "zod": "catalog:"
   },
   "dependencies": {
+    "@fontsource-variable/cinzel": "^5.2.8",
+    "@fontsource-variable/raleway": "^5.2.8",
     "@fontsource/cinzel": "^5.2.8",
     "@fontsource/raleway": "^5.2.8"
   }
