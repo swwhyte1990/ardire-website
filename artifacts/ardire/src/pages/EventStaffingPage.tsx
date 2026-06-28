@@ -68,7 +68,7 @@ export default function EventStaffingPage() {
       <section id="main-content" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/corporate-hero.webp`}
+            src={`${import.meta.env.BASE_URL}images/events-hero.webp`}
             alt="Event Staffing Scotland — The ÁrdÍre Group"
             className="w-full h-full object-cover"
             width={1920}
