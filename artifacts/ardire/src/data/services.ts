@@ -63,7 +63,7 @@ export const services: ServiceData[] = [
     title: "Private Chauffeur",
     subtitle: "Driven to a Different Standard.",
     intro:
-      "From airport arrivals to full-day touring, our private chauffeur service sets the benchmark for discreet, professional ground transportation across Scotland. Every journey is handled with precision, punctuality, and an unwavering attention to comfort.",
+      "A private chauffeur service across Scotland, for a single transfer or as long as you need a car and driver. Airport runs, days out, golf and event transfers, and group transport — planned around you.",
     introRich: [
       { type: "heading", text: "Private Chauffeur Services Across Scotland" },
       { type: "paragraph", text: "The ÁrdÍre Group provides a premium chauffeur service for private individuals, corporate clients, and visiting guests throughout Scotland. Whether you require a seamless airport transfer, a chauffeured day of meetings across Glasgow and Edinburgh, or a multi-day touring driver for a leisurely exploration of the country, our experienced chauffeurs deliver an impeccable standard of service every time." },
