@@ -1,7 +1,7 @@
-import { useEffect, type MouseEvent } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { useLocation } from "wouter";
-import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -14,8 +14,44 @@ const howWeCanHelp = [
   "Reliable, considered transport for groups, occasions and corporate days",
 ];
 
+const chauffeurFaqs = [
+  {
+    q: "What areas of Scotland do you cover?",
+    a: "We are based in Glasgow and cover the whole of Scotland, from the cities to the Highlands and islands, travelling wherever suits you. Whether it is a short transfer in town or a day's drive across the country, we plan the journey around where you need to be.",
+  },
+  {
+    q: "What kind of vehicles do you provide?",
+    a: "We provide a vehicle to suit your party, from an executive saloon for one or two passengers, to a larger luxury car or SUV, to a people carrier for a group with luggage. Tell us how many of you there are and what you have planned, and we will match the right car to it.",
+  },
+  {
+    q: "How many passengers can you take?",
+    a: "Anything from a single passenger to a group of seven, depending on the vehicle. For larger parties, we can arrange more than one car so everyone travels together.",
+  },
+  {
+    q: "Will you meet us at the airport?",
+    a: "Yes. On airport pickups we meet you on arrival, keep an eye on your flight in case it lands early or late, and look after you and your luggage all the way to the car. You step off the plane and the rest is taken care of.",
+  },
+  {
+    q: "Can we hire a car and driver for a full day, or longer?",
+    a: "Of course. As well as transfers, we provide a car and driver by the day, or for several, so you can explore at your own pace with nothing to plan and no route to navigate. We simply take you where you would like to go.",
+  },
+  {
+    q: "Do you provide transfers for golf trips and events?",
+    a: "Yes. We look after getting you between courses, dinners and events comfortably and on time, so nobody is watching the clock or finding their own way to an early tee. It often works alongside our golf tours and event services, whether as part of a trip we have planned for you or simply the driving for one you are running yourself.",
+  },
+  {
+    q: "What is included?",
+    a: "Your driver, the vehicle, fuel and parking, and on airport pickups, the meet and greet and flight tracking. There is water and refreshments in the car, and the journey is planned around your day rather than a fixed timetable.",
+  },
+  {
+    q: "How far ahead should we book?",
+    a: "The more notice you can give us, the better, particularly in the busy summer months and around major events, when cars are in demand. Shorter notice is often workable too, so it is always worth asking.",
+  },
+];
+
 export default function PrivateChauffeurPage() {
   const [, navigate] = useLocation();
+  const [faqOpen, setFaqOpen] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -26,9 +62,23 @@ export default function PrivateChauffeurPage() {
       "content",
       "Private chauffeur service across Scotland. Airport transfers, days out and group transport, driven by professionals who know the country."
     );
+    const faqScript = document.createElement("script");
+    faqScript.type = "application/ld+json";
+    faqScript.id = "faq-schema-private-chauffeur";
+    faqScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": chauffeurFaqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.a },
+      })),
+    });
+    document.head.appendChild(faqScript);
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev !== null) desc.setAttribute("content", prev);
+      document.getElementById("faq-schema-private-chauffeur")?.remove();
     };
   }, []);
 
@@ -172,8 +222,66 @@ export default function PrivateChauffeurPage() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section className="py-24 md:py-32 bg-card border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-12"
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
+              Things people ask us.
+            </h2>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="max-w-3xl divide-y divide-border/30"
+          >
+            {chauffeurFaqs.map((faq, i) => {
+              const key = `ch-faq-${i}`;
+              const open = faqOpen === key;
+              return (
+                <div key={key}>
+                  <button
+                    onClick={() => setFaqOpen(open ? null : key)}
+                    className="w-full flex items-center justify-between gap-6 py-5 text-left group"
+                    aria-expanded={open}
+                  >
+                    <span className="font-display text-base text-foreground group-hover:text-primary transition-colors duration-200">{faq.q}</span>
+                    <ChevronDown
+                      className="w-4 h-4 text-primary shrink-0 transition-transform duration-300"
+                      style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {open && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed pb-5">{faq.a}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-20 bg-card border-t border-border/30">
+      <section className="py-20 bg-background border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
