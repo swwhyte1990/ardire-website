@@ -15,6 +15,7 @@ const SelfGuidedToursPage = lazy(() => import("@/pages/SelfGuidedToursPage"));
 const CorporateIncentivesPage = lazy(() => import("@/pages/CorporateIncentivesPage"));
 const EventManagementPage = lazy(() => import("@/pages/EventManagementPage"));
 const EventStaffingPage = lazy(() => import("@/pages/EventStaffingPage"));
+const PrivateChauffeurPage = lazy(() => import("@/pages/PrivateChauffeurPage"));
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -52,6 +53,7 @@ function Router() {
         <Route path="/services/corporate-incentives" component={CorporateIncentivesPage} />
         <Route path="/services/event-management" component={EventManagementPage} />
         <Route path="/services/event-staffing" component={EventStaffingPage} />
+        <Route path="/services/private-chauffeur" component={PrivateChauffeurPage} />
         <Route path="/services/:slug" component={ServiceDetail} />
         <Route path="/privacy" component={Privacy} />
         <Route component={NotFound} />
