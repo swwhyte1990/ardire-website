@@ -154,7 +154,7 @@ export default function CorporateIncentivesPage() {
             src={`${import.meta.env.BASE_URL}images/corporate-hero.webp`}
             srcSet={`${import.meta.env.BASE_URL}images/corporate-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/corporate-hero.webp 1200w`}
             sizes="100vw"
-            alt="Corporate Incentives Scotland — The ÁrdÍre Group"
+            alt="Corporate Incentives Scotland, The ÁrdÍre Group"
             className="w-full h-full object-cover"
             width={1200}
             height={800}

@@ -114,7 +114,7 @@ export default function PrivateChauffeurPage() {
             src={`${import.meta.env.BASE_URL}images/chauffeur-hero.webp`}
             srcSet={`${import.meta.env.BASE_URL}images/chauffeur-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/chauffeur-hero.webp 1200w`}
             sizes="100vw"
-            alt="Private Chauffeur Service Scotland — The ÁrdÍre Group"
+            alt="Private Chauffeur Service Scotland, The ÁrdÍre Group"
             className="w-full h-full object-cover"
             width={1200}
             height={675}

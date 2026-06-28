@@ -37,7 +37,7 @@ export default function EventsPage() {
     document.title = "Corporate Events & Incentive Travel in Scotland | The ÁrdÍre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Corporate incentives, end-to-end event management and professional staffing across Scotland — planned and delivered by The ÁrdÍre Group.");
+    desc?.setAttribute("content", "Corporate incentives, end-to-end event management and professional staffing across Scotland, planned and delivered by The ÁrdÍre Group.");
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev) desc.setAttribute("content", prev);
@@ -88,7 +88,7 @@ export default function EventsPage() {
               Corporate Events &amp; Incentive Travel in Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              Corporate incentives, full-service event management, professional staffing and bespoke experiences for Glasgow 2026 — conceived, managed and delivered.
+              Corporate incentives, full-service event management, professional staffing and bespoke experiences. Conceived, managed and delivered.
             </p>
           </motion.div>
         </div>
@@ -123,7 +123,7 @@ export default function EventsPage() {
                   src={`${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"}`}
                   srcSet={`${import.meta.env.BASE_URL}images/${cardImagesSm[service.slug] ?? cardImages[service.slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"} ${cardImageDesktopW[service.slug] ?? 1440}w`}
                   sizes="(min-width: 768px) 50vw, 100vw"
-                  alt={`${service.title} — The ÁrdÍre Group`}
+                  alt={`${service.title}, The ÁrdÍre Group`}
                   className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                   width={960}

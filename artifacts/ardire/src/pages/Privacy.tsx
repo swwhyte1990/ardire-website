@@ -17,7 +17,7 @@ export default function Privacy() {
     document.title = "Privacy Policy | The ÁrdÍre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Privacy Policy for The ÁrdÍre Group — Scotland's luxury private tour and concierge specialists based in Glasgow.");
+    desc?.setAttribute("content", "Privacy Policy for The ÁrdÍre Group, Scotland's luxury private tour and concierge specialists based in Glasgow.");
     return () => {
       document.title = "Luxury Private Tours & Event Management | ÁrdÍre - Scotland";
       if (desc && prev) desc.setAttribute("content", prev);
@@ -65,9 +65,9 @@ export default function Privacy() {
                 We collect personal data only when you choose to share it with us. The information we may collect includes:
               </p>
               <ul className="space-y-2 pl-5 list-disc">
-                <li><span className="text-foreground font-normal">Contact information</span> — your name, email address, and any details you include in your enquiry via our contact form.</li>
-                <li><span className="text-foreground font-normal">Communication records</span> — any correspondence between you and our team.</li>
-                <li><span className="text-foreground font-normal">Technical data</span> — basic information your browser sends automatically, such as your IP address and browser type. We do not use tracking cookies or third-party analytics on this website.</li>
+                <li><span className="text-foreground font-normal">Contact information:</span> your name, email address, and any details you include in your enquiry via our contact form.</li>
+                <li><span className="text-foreground font-normal">Communication records:</span> any correspondence between you and our team.</li>
+                <li><span className="text-foreground font-normal">Technical data:</span> basic information your browser sends automatically, such as your IP address and browser type. We do not use tracking cookies or third-party analytics on this website.</li>
               </ul>
               <p>
                 We do not collect sensitive personal data (such as health information or payment card details) through this website.
@@ -111,11 +111,11 @@ export default function Privacy() {
                 Under UK GDPR, you have the following rights in relation to your personal data:
               </p>
               <ul className="space-y-2 pl-5 list-disc">
-                <li><span className="text-foreground font-normal">Right of access</span> — to request a copy of the personal data we hold about you.</li>
-                <li><span className="text-foreground font-normal">Right to rectification</span> — to ask us to correct any inaccurate information.</li>
-                <li><span className="text-foreground font-normal">Right to erasure</span> — to request deletion of your personal data, where we have no lawful reason to retain it.</li>
-                <li><span className="text-foreground font-normal">Right to restrict processing</span> — to ask us to limit how we use your data in certain circumstances.</li>
-                <li><span className="text-foreground font-normal">Right to object</span> — to object to our processing of your data based on legitimate interests.</li>
+                <li><span className="text-foreground font-normal">Right of access:</span> request a copy of the personal data we hold about you.</li>
+                <li><span className="text-foreground font-normal">Right to rectification:</span> ask us to correct any inaccurate information.</li>
+                <li><span className="text-foreground font-normal">Right to erasure:</span> request deletion of your personal data, where we have no lawful reason to retain it.</li>
+                <li><span className="text-foreground font-normal">Right to restrict processing:</span> ask us to limit how we use your data in certain circumstances.</li>
+                <li><span className="text-foreground font-normal">Right to object:</span> object to our processing of your data based on legitimate interests.</li>
               </ul>
               <p>
                 To exercise any of these rights, please contact us at{" "}

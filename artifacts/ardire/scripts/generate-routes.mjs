@@ -82,7 +82,7 @@ const routes = [
     h1: 'Golf Tours Scotland',
     paragraphs: [
       'Scotland is the birthplace of golf, and no destination on earth rivals it for the sheer quality and variety of its courses. We arrange exclusive access to some of the world\'s most prestigious links, from St Andrews and Carnoustie on the east coast to Turnberry and Royal Troon in the west. Whether you\'re teeing off at a celebrated championship venue or discovering a hidden gem in the Highlands, our golf tours are crafted for those who demand excellence on and off the course.',
-      'Play the courses that defined the game. Ardire designs fully bespoke golf tours across Scotland for individuals, pairs, and groups who want more than a tee time — they want an experience. From the legendary Old Course at St Andrews to the dramatic links of the Outer Hebrides, we handle every detail so you can focus entirely on your game.',
+      'Play the courses that defined the game. Ardire designs fully bespoke golf tours across Scotland for individuals, pairs, and groups who want more than a tee time. They want an experience. From the legendary Old Course at St Andrews to the dramatic links of the Outer Hebrides, we handle every detail so you can focus entirely on your game.',
       'Scotland boasts some of the finest golf courses in the world. We can secure access to celebrated venues including St Andrews, Carnoustie, Turnberry, Royal Troon, Muirfield, and Kingsbarns, as well as spectacular lesser-known courses where the scenery is as memorable as the golf. Every round is arranged in advance, with tee times, caddies, and transport all confirmed before you arrive.',
       'A great golf tour is about more than the game. We arrange luxury accommodation at castle hotels and boutique retreats, whisky distillery visits, fine dining at acclaimed restaurants, and private transfers between venues. Every moment off the course is as carefully planned as every moment on it.',
     ],
@@ -122,7 +122,7 @@ const routes = [
     h1: 'Corporate Incentive Travel Scotland',
     paragraphs: [
       'The best incentive is one your team still talks about years later. We design and deliver high-impact corporate incentive programmes that go far beyond the ordinary, creating moments of genuine awe, team connection, and cultural immersion across Scotland\'s most spectacular settings.',
-      'From Highland challenges and outdoor adventure days to exclusive gala dinners at historic castle estates, our corporate incentive programmes are built around your business objectives and your people. We handle every element — venues, transport, accommodation, entertainment, staffing, and on-site coordination — so you can focus entirely on your team.',
+      'From Highland challenges and outdoor adventure days to exclusive gala dinners at historic castle estates, our corporate incentive programmes are built around your business objectives and your people. We handle every element: venues, transport, accommodation, entertainment, staffing, and on-site coordination. So you can focus entirely on your team.',
       'Scotland provides an unrivalled backdrop for corporate incentive travel. Its dramatic landscapes, world-class whisky, historic venues, and warm hospitality create the conditions for experiences that genuinely move people. Ardire brings that Scotland to your team, shaped around your brand and your goals.',
     ],
     highlights: [
@@ -179,9 +179,9 @@ const routes = [
     description: 'Full-service event management for corporate functions, gala dinners, and private occasions across Scotland. Conceived, managed, and delivered by Ardire.',
     h1: 'Event Management Scotland',
     paragraphs: [
-      'From the first concept to the final curtain, we take full ownership of your event. Ardire provides end-to-end event management for private occasions, corporate functions, product launches, gala dinners, and high-profile gatherings across Scotland and beyond. We do not just supply the team — we lead the entire production.',
+      'From the first concept to the final curtain, we take full ownership of your event. Ardire provides end-to-end event management for private occasions, corporate functions, product launches, gala dinners, and high-profile gatherings across Scotland and beyond. We do not just supply the team. We lead the entire production.',
       'Whether you\'re hosting an intimate private dinner for twenty or a corporate gala for five hundred, Ardire manages every element of your event from initial concept through to post-event debrief. Our event management team brings creative vision, logistical precision, and an unwavering commitment to excellence to every occasion we take on.',
-      'We work closely with you to understand your objectives, brand, and vision, then develop a bespoke event strategy around them. Venue sourcing and negotiation, supplier management, catering, entertainment, AV and technical production, decor, guest management, and on-the-day coordination — all handled seamlessly under one roof.',
+      'We work closely with you to understand your objectives, brand, and vision, then develop a bespoke event strategy around them. Venue sourcing and negotiation, supplier management, catering, entertainment, AV and technical production, decor, guest management, and on-the-day coordination, all handled seamlessly under one roof.',
       'Our portfolio spans product launches, awards ceremonies, corporate hospitality days, charity galas, private celebrations, and more. Whatever the occasion, we bring the same attention to detail and creative ambition, ensuring your guests leave with an experience that stays with them long after the evening ends.',
     ],
     highlights: [

@@ -60,6 +60,9 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Raleway:wght@300;400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Raleway:wght@300;400;600&display=swap" /></noscript>
 
+    <!-- Critical inline styles: prevents flash before async CSS arrives -->
+    <style>*,::after,::before{box-sizing:border-box}html{line-height:1.5;-webkit-text-size-adjust:100%}body{margin:0;background:#071a0e;color:#c5a366;font-family:Georgia,serif}#root{min-height:100vh}</style>
+
     <!-- Mobile browser chrome colour matches brand dark green -->
     <meta name="theme-color" content="#071a0e" />
     <!-- Preload above-fold images -->

@@ -116,7 +116,7 @@ export default function SelfGuidedToursPage() {
             src={`${import.meta.env.BASE_URL}images/self-guided-hero.webp`}
             srcSet={`${import.meta.env.BASE_URL}images/self-guided-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/self-guided-hero.webp 1200w`}
             sizes="100vw"
-            alt="Self-Guided Tours of Scotland — The ÁrdÍre Group"
+            alt="Self-Guided Tours of Scotland, The ÁrdÍre Group"
             className="w-full h-full object-cover"
             width={1200}
             height={800}

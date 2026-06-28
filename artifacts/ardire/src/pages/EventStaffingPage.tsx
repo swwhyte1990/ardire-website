@@ -86,7 +86,7 @@ export default function EventStaffingPage() {
             src={`${import.meta.env.BASE_URL}images/events-hero.webp`}
             srcSet={`${import.meta.env.BASE_URL}images/events-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/events-hero.webp 1440w`}
             sizes="100vw"
-            alt="Event Staffing Scotland — The ÁrdÍre Group"
+            alt="Event Staffing Scotland, The ÁrdÍre Group"
             className="w-full h-full object-cover"
             width={1440}
             height={961}
@@ -202,7 +202,7 @@ export default function EventStaffingPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              You tell us about the event — the kind of occasion, the number of guests, and the feel you are after — and we build the right team around it.
+              You tell us about the event: the kind of occasion, the number of guests, and the feel you are after. We build the right team around it.
             </p>
             <p>
               Our staff arrive briefed on your event, uniformed to your specification, and led by a senior coordinator who runs the team on the day, so you have one person to deal with rather than a roomful. We can provide staff on their own, for an event you or someone else is running, or as part of an event we are managing for you.

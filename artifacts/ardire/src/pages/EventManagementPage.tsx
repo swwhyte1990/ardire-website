@@ -124,7 +124,7 @@ export default function EventManagementPage() {
             src={`${import.meta.env.BASE_URL}images/events-hero.webp`}
             srcSet={`${import.meta.env.BASE_URL}images/events-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/events-hero.webp 1440w`}
             sizes="100vw"
-            alt="Event Management Scotland — The ÁrdÍre Group"
+            alt="Event Management Scotland, The ÁrdÍre Group"
             className="w-full h-full object-cover"
             width={1440}
             height={961}
@@ -175,7 +175,7 @@ export default function EventManagementPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              We take full responsibility for your event, from the first conversation about what you want to achieve to the moment the last guest leaves. That means we are not just coordinating between suppliers — we are managing the production, making the decisions on the day, and accountable for the result.
+              We take full responsibility for your event, from the first conversation about what you want to achieve to the moment the last guest leaves. That means we are not just coordinating between suppliers. We are managing the production, making the decisions on the day, and accountable for the result.
             </p>
             <p>
               The clients who come to us typically have one thing in common: they want to hand the event over and trust that it will be handled properly. Whether it is a private dinner for twenty or a corporate gala for three hundred, the level of attention is the same.
@@ -272,7 +272,7 @@ export default function EventManagementPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              We work across a wide range of occasions — private dinners, birthday celebrations and family gatherings on the smaller side; product launches, awards evenings, corporate hospitality days, charity galas and conference receptions at scale. The production challenge is different for each, but the approach is the same: plan thoroughly, staff well, and run it calmly.
+              We work across a wide range of occasions: private dinners, birthday celebrations and family gatherings on the smaller side; product launches, awards evenings, corporate hospitality days, charity galas and conference receptions at scale. The production challenge is different for each, but the approach is the same: plan thoroughly, staff well, and run it calmly.
             </p>
             <p>
               We have experience working with venues across Scotland, from city hotels and private members' clubs to country estates and non-traditional spaces that take more work to get right.
@@ -353,7 +353,7 @@ export default function EventManagementPage() {
               Tell us about your event.
             </h2>
             <p className="text-muted-foreground font-sans font-light text-base mb-10 max-w-xl mx-auto">
-              There is no standard price for event management — it depends on the scale, the venue, the suppliers involved and how much of the production you want us to own. We scope against the brief and come back with a clear proposal.
+              There is no standard price for event management. It depends on the scale, the venue, the suppliers involved and how much of the production you want us to own. We scope against the brief and come back with a clear proposal.
             </p>
             <Button
               asChild

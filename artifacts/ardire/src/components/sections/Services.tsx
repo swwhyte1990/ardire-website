@@ -27,7 +27,7 @@ export function Services() {
             src={`${import.meta.env.BASE_URL}images/travel-glenfinnan.webp`}
             srcSet={`${import.meta.env.BASE_URL}images/travel-glenfinnan-sm.webp 800w, ${import.meta.env.BASE_URL}images/travel-glenfinnan.webp 1440w`}
             sizes="(min-width: 768px) 50vw, 100vw"
-            alt="Glenfinnan Viaduct — Travel & Tours across Scotland"
+            alt="Glenfinnan Viaduct, Travel and Tours across Scotland"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
             loading="lazy"
             width={1440}

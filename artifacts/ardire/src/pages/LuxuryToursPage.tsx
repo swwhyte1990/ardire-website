@@ -171,7 +171,7 @@ export default function LuxuryToursPage() {
     const prev = desc?.getAttribute("content") ?? null;
     desc?.setAttribute(
       "content",
-      "Bespoke private tours of Scotland with a dedicated travel concierge. We plan, arrange and look after every part of your trip — from the Highlands and islands to whisky trails and castle stays."
+      "Bespoke private tours of Scotland with a dedicated travel concierge. We plan, arrange and look after every part of your trip, from the Highlands and islands to whisky trails and castle stays."
     );
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
@@ -225,7 +225,7 @@ export default function LuxuryToursPage() {
             src={`${import.meta.env.BASE_URL}images/tours-hero.webp`}
             srcSet={`${import.meta.env.BASE_URL}images/tours-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/tours-hero.webp 1200w`}
             sizes="100vw"
-            alt="Private Tours of Scotland — The ÁrdÍre Group"
+            alt="Private Tours of Scotland, The ÁrdÍre Group"
             className="w-full h-full object-cover"
             width={1200}
             height={800}

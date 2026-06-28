@@ -1,8 +1,45 @@
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+
+// Converts the blocking <link rel="stylesheet"> emitted by Vite into an async
+// preload so the CSS no longer sits on the critical path. Also injects
+// <link rel="preload"> for every WOFF2 font asset so fonts start downloading
+// in parallel with the CSS rather than waiting for the CSS to arrive first.
+function deferCssAndPreloadFonts(): Plugin {
+  const woff2Paths: string[] = [];
+  return {
+    name: "defer-css-preload-fonts",
+    apply: "build",
+    generateBundle(_opts, bundle) {
+      for (const key of Object.keys(bundle)) {
+        if (key.endsWith(".woff2")) woff2Paths.push(`/${key}`);
+      }
+    },
+    transformIndexHtml: {
+      order: "post",
+      handler(html) {
+        const fontPreloads = woff2Paths
+          .map(
+            (href) =>
+              `<link rel="preload" as="font" type="font/woff2" crossorigin href="${href}">`,
+          )
+          .join("\n    ");
+        return html
+          .replace(
+            /<link rel="stylesheet" crossorigin href="([^"]+)">/g,
+            (_, href) =>
+              `<link rel="preload" as="style" crossorigin ` +
+              `onload="this.onload=null;this.rel='stylesheet'" href="${href}">` +
+              `<noscript><link rel="stylesheet" crossorigin href="${href}"></noscript>`,
+          )
+          .replace("</head>", `    ${fontPreloads}\n  </head>`);
+      },
+    },
+  };
+}
 
 const rawPort = process.env.PORT ?? "18439";
 const port = Number(rawPort);
@@ -27,6 +64,7 @@ export default defineConfig({
           ),
         ]
       : []),
+    deferCssAndPreloadFonts(),
   ],
   resolve: {
     alias: {

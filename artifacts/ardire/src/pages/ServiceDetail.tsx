@@ -91,7 +91,7 @@ export default function ServiceDetail() {
             src={`${import.meta.env.BASE_URL}images/${heroImages[slug] ?? "hero.webp"}`}
             srcSet={`${import.meta.env.BASE_URL}images/${heroImagesSm[slug] ?? heroImages[slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${heroImages[slug] ?? "hero.webp"} ${heroImageDims[slug]?.[0] ?? 1440}w`}
             sizes="100vw"
-            alt={`${service.title} — The ÁrdÍre Group`}
+            alt={`${service.title}, The ÁrdÍre Group`}
             className="w-full h-full object-cover"
             width={heroImageDims[slug]?.[0] ?? 1440}
             height={heroImageDims[slug]?.[1] ?? 960}

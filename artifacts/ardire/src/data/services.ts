@@ -43,7 +43,7 @@ export const services: ServiceData[] = [
       "We design and run private golf tours across Scotland for small groups and individual travellers, from championship links on the east coast to Highland gems in the north. You tell us how you want to play. We build the week around it.",
     introRich: [
       { type: "heading", text: "Bespoke Golf Tours in Scotland" },
-      { type: "paragraph", text: "Play the courses that defined the game. The ÁrdÍre Group designs fully bespoke golf tours across Scotland for individuals, pairs, and groups who want more than a tee time — they want an experience. From the legendary Old Course at St Andrews to the dramatic links of the Outer Hebrides, we handle every detail so you can focus entirely on your game." },
+      { type: "paragraph", text: "Play the courses that defined the game. The ÁrdÍre Group designs fully bespoke golf tours across Scotland for individuals, pairs, and groups who want more than a tee time. They want an experience. From the legendary Old Course at St Andrews to the dramatic links of the Outer Hebrides, we handle every detail so you can focus entirely on your game." },
       { type: "heading", text: "Championship Links & Hidden Gems" },
       { type: "paragraph", text: "Scotland boasts some of the finest golf courses in the world. We can secure access to celebrated venues including St Andrews, Carnoustie, Turnberry, Royal Troon, Muirfield, and Kingsbarns, as well as spectacular lesser-known courses where the scenery is as memorable as the golf. Every round is arranged in advance, with tee times, caddies, and transport all confirmed before you arrive." },
       { type: "heading", text: "Beyond the Fairway" },
@@ -63,7 +63,7 @@ export const services: ServiceData[] = [
     title: "Private Chauffeur",
     subtitle: "Driven to a Different Standard.",
     intro:
-      "A private chauffeur service across Scotland, for a single transfer or as long as you need a car and driver. Airport runs, days out, golf and event transfers, and group transport — planned around you.",
+      "A private chauffeur service across Scotland, for a single transfer or as long as you need a car and driver. Airport runs, days out, golf and event transfers, and group transport, planned around you.",
     introRich: [
       { type: "heading", text: "Private Chauffeur Services Across Scotland" },
       { type: "paragraph", text: "The ÁrdÍre Group provides a premium chauffeur service for private individuals, corporate clients, and visiting guests throughout Scotland. Whether you require a seamless airport transfer, a chauffeured day of meetings across Glasgow and Edinburgh, or a multi-day touring driver for a leisurely exploration of the country, our experienced chauffeurs deliver an impeccable standard of service every time." },
@@ -155,12 +155,12 @@ export const services: ServiceData[] = [
     title: "Event Management",
     subtitle: "Conceived, Managed, Delivered.",
     intro:
-      "We plan, produce and run events from start to finish. One team manages the whole production — from venue and suppliers to on-the-day coordination — so you can hand the event over and trust that it will be handled properly.",
+      "We plan, produce and run events from start to finish. One team manages the whole production, from venue and suppliers to on-the-day coordination, so you can hand the event over and trust that it will be handled properly.",
     introRich: [
       { type: "heading", text: "Full-Service Event Management Scotland" },
       { type: "paragraph", text: "Whether you're hosting an intimate private dinner for twenty or a corporate gala for five hundred, The ÁrdÍre Group manages every element of your event from initial concept through to post-event debrief. Our event management team brings creative vision, logistical precision, and an unwavering commitment to excellence to every occasion we take on." },
       { type: "heading", text: "From Concept to Execution" },
-      { type: "paragraph", text: "We work closely with you to understand your objectives, brand, and vision, then develop a bespoke event strategy around them. Venue sourcing and negotiation, supplier management, catering, entertainment, AV and technical production, décor, guest management, and on-the-day coordination — all handled seamlessly under one roof." },
+      { type: "paragraph", text: "We work closely with you to understand your objectives, brand, and vision, then develop a bespoke event strategy around them. Venue sourcing and negotiation, supplier management, catering, entertainment, AV and technical production, décor, guest management, and on-the-day coordination, all handled seamlessly under one roof." },
       { type: "heading", text: "Corporate Events & Private Functions" },
       { type: "paragraph", text: "Our portfolio spans product launches, awards ceremonies, corporate hospitality days, charity galas, private celebrations, and more. Whatever the occasion, we bring the same attention to detail and creative ambition, ensuring your guests leave with an experience that stays with them long after the evening ends." },
     ],
