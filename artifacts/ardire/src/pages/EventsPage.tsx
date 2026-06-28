@@ -58,7 +58,7 @@ export default function EventsPage() {
         <div className="absolute inset-0 z-0">
           <img
             src={`${import.meta.env.BASE_URL}images/events-hero.webp`}
-            srcSet={`${import.meta.env.BASE_URL}images/events-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/events-hero.webp 1920w`}
+            srcSet={`${import.meta.env.BASE_URL}images/events-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/events-hero.webp 1440w`}
             sizes="100vw"
             alt="Luxury Corporate Events & Gala Dining"
             className="w-full h-full object-cover"
@@ -115,7 +115,7 @@ export default function EventsPage() {
               >
                 <img
                   src={`${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"}`}
-                  srcSet={`${import.meta.env.BASE_URL}images/${cardImagesSm[service.slug] ?? cardImages[service.slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"} 1920w`}
+                  srcSet={`${import.meta.env.BASE_URL}images/${cardImagesSm[service.slug] ?? cardImages[service.slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"} 1440w`}
                   sizes="(min-width: 768px) 50vw, 100vw"
                   alt={`${service.title} — The ÁrdÍre Group`}
                   className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
