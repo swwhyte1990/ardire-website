@@ -1,0 +1,1 @@
+- [Public form-service keys](public-form-service-keys.md) — Treat client-side Web3Forms-style access keys as public identifiers, not automatically as leaked secrets.
