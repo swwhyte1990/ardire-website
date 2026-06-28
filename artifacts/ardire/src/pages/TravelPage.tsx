@@ -15,6 +15,7 @@ const cardImages: Record<string, string> = {
   "luxury-tours":      "tours-hero.webp",
   "golf-tours":        "golf-hero.webp",
   "self-guided-tours": "self-guided-hero.webp",
+  "private-chauffeur": "chauffeur-hero.webp",
 };
 
 export default function TravelPage() {

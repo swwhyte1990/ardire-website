@@ -11,6 +11,7 @@ import { setPendingScroll } from "@/lib/pendingScroll";
 
 const heroImages: Record<string, string> = {
   "self-guided-tours": "self-guided-hero.webp",
+  "private-chauffeur": "chauffeur-hero.webp",
 };
 
 export default function ServiceDetail() {
