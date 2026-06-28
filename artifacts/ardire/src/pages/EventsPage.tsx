@@ -12,7 +12,7 @@ const eventsSlugs = ["corporate-incentives", "event-management", "event-staffing
 const eventsServices = eventsSlugs.map((slug) => services.find((s) => s.slug === slug)!).filter(Boolean);
 
 const cardImages: Record<string, string> = {
-  "corporate-incentives": "hero.webp",
+  "corporate-incentives": "corporate-hero.webp",
   "event-management":     "hero.webp",
   "event-staffing":       "hero.webp",
 };

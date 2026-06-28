@@ -136,11 +136,11 @@ export default function CorporateIncentivesPage() {
       <section id="main-content" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/hero.webp`}
-            alt="Corporate Incentive Trips in Scotland — The ÁrdÍre Group"
+            src={`${import.meta.env.BASE_URL}images/corporate-hero.webp`}
+            alt="Glenfinnan Viaduct, Scottish Highlands — The ÁrdÍre Group"
             className="w-full h-full object-cover"
             width={1920}
-            height={1080}
+            height={1280}
             loading="eager"
             fetchPriority="high"
           />
