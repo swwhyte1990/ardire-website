@@ -125,10 +125,25 @@ export default function GolfToursPage() {
       })),
     });
     document.head.appendChild(faqScript);
+    const serviceScript = document.createElement("script");
+    serviceScript.type = "application/ld+json";
+    serviceScript.id = "service-schema-golf";
+    serviceScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Private Golf Tours of Scotland",
+      "serviceType": "Golf Tour",
+      "provider": { "@type": "LocalBusiness", "name": "Árdíre Hospitality Group" },
+      "areaServed": "Scotland",
+      "description": "Bespoke private golf tours across Scotland's finest championship links. Tee times, caddies, transfers and accommodation all arranged end to end.",
+      "url": "https://ardire.co.uk/services/golf-tours",
+    });
+    document.head.appendChild(serviceScript);
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-golf")?.remove();
+      document.getElementById("service-schema-golf")?.remove();
     };
   }, []);
 

@@ -62,7 +62,7 @@ export default function SelfGuidedToursPage() {
     const prev = desc?.getAttribute("content") ?? null;
     desc?.setAttribute(
       "content",
-      "A bespoke self-guided tour of Scotland, planned and booked around you. Ardire designs the route and makes the bookings. You travel independently, at your own pace."
+      "A bespoke self-guided tour of Scotland, planned and booked around you. We design the route and make the bookings; you travel independently at your own pace."
     );
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
@@ -77,10 +77,25 @@ export default function SelfGuidedToursPage() {
       })),
     });
     document.head.appendChild(faqScript);
+    const serviceScript = document.createElement("script");
+    serviceScript.type = "application/ld+json";
+    serviceScript.id = "service-schema-self-guided";
+    serviceScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Self-Guided Tours of Scotland",
+      "serviceType": "Self-Guided Tour",
+      "provider": { "@type": "LocalBusiness", "name": "Árdíre Hospitality Group" },
+      "areaServed": "Scotland",
+      "description": "Bespoke self-guided tours of Scotland, planned and booked around you. We design the route and make the bookings; you travel independently at your own pace.",
+      "url": "https://ardire.co.uk/services/self-guided-tours",
+    });
+    document.head.appendChild(serviceScript);
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev !== null) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-self-guided")?.remove();
+      document.getElementById("service-schema-self-guided")?.remove();
     };
   }, []);
 

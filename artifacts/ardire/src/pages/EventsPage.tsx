@@ -22,10 +22,10 @@ export default function EventsPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Events & Corporate | The ÁrdÍre Group";
+    document.title = "Corporate Events & Incentive Travel in Scotland | The ÁrdÍre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Corporate incentives, end-to-end event management, professional staffing and Glasgow 2026 support — delivered by The ÁrdÍre Group.");
+    desc?.setAttribute("content", "Corporate incentives, end-to-end event management and professional staffing across Scotland — planned and delivered by The ÁrdÍre Group.");
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev) desc.setAttribute("content", prev);
@@ -71,7 +71,7 @@ export default function EventsPage() {
               For Companies &amp; Organisers
             </p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-4">
-              Events &amp; Corporate
+              Corporate Events &amp; Incentive Travel in Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               Corporate incentives, full-service event management, professional staffing and bespoke experiences for Glasgow 2026 — conceived, managed and delivered.

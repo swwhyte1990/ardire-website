@@ -171,7 +171,7 @@ export default function LuxuryToursPage() {
     const prev = desc?.getAttribute("content") ?? null;
     desc?.setAttribute(
       "content",
-      "Private luxury tours of Scotland with a full travel concierge service. One point of contact to plan, book and look after every part of your trip, from castles and whisky to the Highlands and islands."
+      "Bespoke private tours of Scotland with a dedicated travel concierge. We plan, arrange and look after every part of your trip — from the Highlands and islands to whisky trails and castle stays."
     );
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
@@ -186,10 +186,25 @@ export default function LuxuryToursPage() {
       })),
     });
     document.head.appendChild(faqScript);
+    const serviceScript = document.createElement("script");
+    serviceScript.type = "application/ld+json";
+    serviceScript.id = "service-schema-luxury";
+    serviceScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Private Luxury Tours of Scotland",
+      "serviceType": "Luxury Tour",
+      "provider": { "@type": "LocalBusiness", "name": "Árdíre Hospitality Group" },
+      "areaServed": "Scotland",
+      "description": "Bespoke private tours of Scotland with a dedicated travel concierge. We plan, arrange and look after every part of your trip.",
+      "url": "https://ardire.co.uk/services/luxury-tours",
+    });
+    document.head.appendChild(serviceScript);
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-luxury")?.remove();
+      document.getElementById("service-schema-luxury")?.remove();
     };
   }, []);
 

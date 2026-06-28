@@ -23,7 +23,7 @@ export default function TravelPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Travel & Tours | The ÁrdÍre Group";
+    document.title = "Private Tours & Travel in Scotland | The ÁrdÍre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
     desc?.setAttribute("content", "Bespoke private tours, championship golf, chauffeur services and 24/7 concierge across Scotland — crafted by The ÁrdÍre Group.");
@@ -72,7 +72,7 @@ export default function TravelPage() {
               For Private Travellers
             </p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-4">
-              Travel &amp; Tours
+              Private Tours &amp; Travel in Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               Privately guided journeys, championship golf, luxury chauffeur, self-guided adventures and round-the-clock concierge — all crafted around you.

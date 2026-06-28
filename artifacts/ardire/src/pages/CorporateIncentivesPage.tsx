@@ -115,10 +115,25 @@ export default function CorporateIncentivesPage() {
       })),
     });
     document.head.appendChild(faqScript);
+    const serviceScript = document.createElement("script");
+    serviceScript.type = "application/ld+json";
+    serviceScript.id = "service-schema-corp";
+    serviceScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Corporate Incentive Trips in Scotland",
+      "serviceType": "Corporate Incentive Travel",
+      "provider": { "@type": "LocalBusiness", "name": "Árdíre Hospitality Group" },
+      "areaServed": "Scotland",
+      "description": "Bespoke corporate incentive trips across Scotland. Golf, whisky, castles and Highland experiences, designed around your goals and run end to end.",
+      "url": "https://ardire.co.uk/services/corporate-incentives",
+    });
+    document.head.appendChild(serviceScript);
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-corp")?.remove();
+      document.getElementById("service-schema-corp")?.remove();
     };
   }, []);
 

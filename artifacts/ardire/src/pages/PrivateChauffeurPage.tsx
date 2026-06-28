@@ -75,10 +75,25 @@ export default function PrivateChauffeurPage() {
       })),
     });
     document.head.appendChild(faqScript);
+    const serviceScript = document.createElement("script");
+    serviceScript.type = "application/ld+json";
+    serviceScript.id = "service-schema-private-chauffeur";
+    serviceScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Private Chauffeur Service Scotland",
+      "serviceType": "Chauffeur Service",
+      "provider": { "@type": "LocalBusiness", "name": "Árdíre Hospitality Group" },
+      "areaServed": "Scotland",
+      "description": "Private chauffeur service across Scotland. Airport transfers, days out and group transport, driven by professionals who know the country.",
+      "url": "https://ardire.co.uk/services/private-chauffeur",
+    });
+    document.head.appendChild(serviceScript);
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev !== null) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-private-chauffeur")?.remove();
+      document.getElementById("service-schema-private-chauffeur")?.remove();
     };
   }, []);
 

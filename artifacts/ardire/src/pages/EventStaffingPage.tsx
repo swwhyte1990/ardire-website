@@ -46,11 +46,26 @@ export default function EventStaffingPage() {
     const prev = desc?.getAttribute("content") ?? null;
     desc?.setAttribute(
       "content",
-      "Professional waiting staff, butlers, hospitality teams and bar staff for events across Scotland. Briefed, well presented, and ready to make the evening run beautifully."
+      "Professional event staff for occasions across Scotland. Waiting staff, butlers and hospitality teams, briefed, well presented and ready to serve."
     );
+    const serviceScript = document.createElement("script");
+    serviceScript.type = "application/ld+json";
+    serviceScript.id = "service-schema-event-staffing";
+    serviceScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Professional Event Staffing Scotland",
+      "serviceType": "Event Staffing",
+      "provider": { "@type": "LocalBusiness", "name": "Árdíre Hospitality Group" },
+      "areaServed": "Scotland",
+      "description": "Professional event staff for occasions across Scotland. Waiting staff, butlers and hospitality teams, briefed, well presented and ready to serve.",
+      "url": "https://ardire.co.uk/services/event-staffing",
+    });
+    document.head.appendChild(serviceScript);
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev !== null) desc.setAttribute("content", prev);
+      document.getElementById("service-schema-event-staffing")?.remove();
     };
   }, []);
 

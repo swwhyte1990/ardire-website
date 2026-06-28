@@ -85,10 +85,25 @@ export default function EventManagementPage() {
       })),
     });
     document.head.appendChild(faqScript);
+    const serviceScript = document.createElement("script");
+    serviceScript.type = "application/ld+json";
+    serviceScript.id = "service-schema-event-management";
+    serviceScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Full-Service Event Management Scotland",
+      "serviceType": "Event Management",
+      "provider": { "@type": "LocalBusiness", "name": "Árdíre Hospitality Group" },
+      "areaServed": "Scotland",
+      "description": "Full-service event management across Scotland. Árdíre plans, produces and runs your event from brief to close, with one team accountable for the whole thing.",
+      "url": "https://ardire.co.uk/services/event-management",
+    });
+    document.head.appendChild(serviceScript);
     return () => {
       document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
       if (desc && prev !== null) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-event-management")?.remove();
+      document.getElementById("service-schema-event-management")?.remove();
     };
   }, []);
 
@@ -126,7 +141,7 @@ export default function EventManagementPage() {
               Full-Service Event Management
             </p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-4">
-              Event Management
+              Event Management in Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               We plan, produce and run events from start to finish. One team, one point of contact, the whole thing taken care of.
