@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section className="relative h-[70vh] min-h-[520px] w-full flex items-end md:items-center justify-center overflow-hidden">
+    <section className="relative h-[70vh] min-h-[520px] w-full flex items-end md:items-end justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
           src={`${import.meta.env.BASE_URL}images/hero-home.webp`}
@@ -22,7 +22,7 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative z-20 text-center max-w-4xl mx-auto px-6 pb-24 md:pb-0">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 pb-24 md:pb-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -31,10 +31,10 @@ export function Hero() {
           <p className="font-sans text-[11px] uppercase tracking-[0.4em] text-foreground/80 mb-6">
             The ÁrdÍre Group · Glasgow
           </p>
-          <h1 className="font-display text-4xl md:text-[3.4rem] text-foreground leading-[1.05] mb-6">
+          <h1 className="font-display text-4xl md:text-[3.4rem] text-foreground leading-[1.05] mb-6 max-w-2xl">
             Luxury Tours of Scotland &amp; Event Services
           </h1>
-          <p className="hidden sm:block font-sans text-base md:text-lg text-foreground/85 max-w-xl mx-auto leading-relaxed">
+          <p className="hidden sm:block font-sans text-base md:text-lg text-foreground/85 max-w-xl leading-relaxed">
             Bespoke private tours, concierge and event hospitality, crafted in Glasgow and delivered across Scotland.
           </p>
         </motion.div>
