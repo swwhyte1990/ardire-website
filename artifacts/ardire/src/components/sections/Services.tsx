@@ -15,7 +15,7 @@ export function Services() {
   }
 
   return (
-    <section id="services" className="px-6 md:px-10 pt-10 md:pt-16 pb-20 relative z-20">
+    <section id="services" className="px-6 md:px-10 pt-16 md:pt-32 pb-20 relative z-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-[calc(1px+2mm)] bg-background items-stretch">
 
         {/* Travel & Tours */}
