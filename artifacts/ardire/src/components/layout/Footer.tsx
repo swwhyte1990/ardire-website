@@ -22,7 +22,7 @@ export function Footer() {
         <div className="flex flex-col items-center md:items-start gap-4">
           <div className="flex items-center gap-4">
             <img
-              src={`${import.meta.env.BASE_URL}images/logo.webp`}
+              src={`${import.meta.env.BASE_URL}images/logo-crest.webp`}
               alt="Árdíre Logo"
               className="h-24 w-24 object-contain"
               width={96}

@@ -162,7 +162,7 @@ export function Navbar() {
             onClick={(e) => { e.preventDefault(); navigate("/"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
           >
             <img
-              src={`${import.meta.env.BASE_URL}images/logo.webp`}
+              src={`${import.meta.env.BASE_URL}images/logo-crest.webp`}
               alt="Árdíre Logo"
               className="h-14 w-14 object-contain transition-transform duration-500 group-hover:scale-105"
               width={56}
@@ -210,7 +210,7 @@ export function Navbar() {
             aria-label="Go to homepage"
           >
             <img
-              src={`${import.meta.env.BASE_URL}images/logo.webp`}
+              src={`${import.meta.env.BASE_URL}images/logo-crest.webp`}
               alt="Árdíre Logo"
               className="h-10 w-10 object-contain"
               width={40}
