@@ -25,7 +25,6 @@ export function Footer() {
               src={`${import.meta.env.BASE_URL}images/logo.webp`}
               alt="Árdíre Logo"
               className="h-24 w-24 object-contain"
-              style={{ filter: "brightness(0.86) saturate(1.45)" }}
               width={96}
               height={96}
             />
