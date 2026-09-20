@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { setPendingScroll } from "@/lib/pendingScroll";
+import corporateHeroSm from "@/assets/images/corporate-hero-sm.webp";
+import corporateHero from "@/assets/images/corporate-hero.webp";
 
 const programmeDays = [
   {
@@ -151,8 +153,8 @@ export default function CorporateIncentivesPage() {
       <section id="main-content" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/corporate-hero.webp`}
-            srcSet={`${import.meta.env.BASE_URL}images/corporate-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/corporate-hero.webp 1200w`}
+            src={corporateHero}
+            srcSet={`${corporateHeroSm} 800w, ${corporateHero} 1200w`}
             sizes="100vw"
             alt="Corporate Incentives Scotland, The ÁrdÍre Group"
             className="w-full h-full object-cover"

@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { setPendingScroll } from "@/lib/pendingScroll";
+import toursHeroSm from "@/assets/images/tours-hero-sm.webp";
+import toursHero from "@/assets/images/tours-hero.webp";
 
 const itineraries = [
   {
@@ -222,8 +224,8 @@ export default function LuxuryToursPage() {
       <section id="main-content" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/tours-hero.webp`}
-            srcSet={`${import.meta.env.BASE_URL}images/tours-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/tours-hero.webp 1200w`}
+            src={toursHero}
+            srcSet={`${toursHeroSm} 800w, ${toursHero} 1200w`}
             sizes="100vw"
             alt="Private Tours of Scotland, The ÁrdÍre Group"
             className="w-full h-full object-cover"

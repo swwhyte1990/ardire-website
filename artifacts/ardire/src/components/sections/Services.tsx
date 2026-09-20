@@ -1,5 +1,9 @@
 import { ArrowRight } from "lucide-react";
 import { useLocation } from "wouter";
+import eventsHeroSm from "@/assets/images/events-hero-sm.webp";
+import eventsHero from "@/assets/images/events-hero.webp";
+import travelGlenfinnanSm from "@/assets/images/travel-glenfinnan-sm.webp";
+import travelGlenfinnan from "@/assets/images/travel-glenfinnan.webp";
 
 export function Services() {
   const [, navigate] = useLocation();
@@ -24,8 +28,8 @@ export function Services() {
           className="group relative block w-full h-[300px] md:h-[360px] overflow-hidden text-left"
         >
           <img
-            src={`${import.meta.env.BASE_URL}images/travel-glenfinnan.webp`}
-            srcSet={`${import.meta.env.BASE_URL}images/travel-glenfinnan-sm.webp 800w, ${import.meta.env.BASE_URL}images/travel-glenfinnan.webp 1440w`}
+            src={travelGlenfinnan}
+            srcSet={`${travelGlenfinnanSm} 800w, ${travelGlenfinnan} 1440w`}
             sizes="(min-width: 768px) 50vw, 100vw"
             alt="Glenfinnan Viaduct, Travel and Tours across Scotland"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"
@@ -59,8 +63,8 @@ export function Services() {
           className="group relative block w-full h-[300px] md:h-[360px] overflow-hidden text-left"
         >
           <img
-            src={`${import.meta.env.BASE_URL}images/events-hero.webp`}
-            srcSet={`${import.meta.env.BASE_URL}images/events-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/events-hero.webp 1440w`}
+            src={eventsHero}
+            srcSet={`${eventsHeroSm} 800w, ${eventsHero} 1440w`}
             sizes="(min-width: 768px) 50vw, 100vw"
             alt="Events & Hospitality"
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80"

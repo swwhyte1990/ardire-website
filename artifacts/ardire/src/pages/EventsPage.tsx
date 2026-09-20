@@ -7,20 +7,25 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { services } from "@/data/services";
 import { setPendingScroll } from "@/lib/pendingScroll";
+import eventsHeroSm from "@/assets/images/events-hero-sm.webp";
+import eventsHero from "@/assets/images/events-hero.webp";
+import corporateHeroSm from "@/assets/images/corporate-hero-sm.webp";
+import corporateHero from "@/assets/images/corporate-hero.webp";
+import hero from "@/assets/images/hero.webp";
 
 const eventsSlugs = ["corporate-incentives", "event-management", "event-staffing"];
 const eventsServices = eventsSlugs.map((slug) => services.find((s) => s.slug === slug)!).filter(Boolean);
 
 const cardImages: Record<string, string> = {
-  "corporate-incentives": "corporate-hero.webp",
-  "event-management":     "events-hero.webp",
-  "event-staffing":       "events-hero.webp",
+  "corporate-incentives": corporateHero,
+  "event-management":     eventsHero,
+  "event-staffing":       eventsHero,
 };
 
 const cardImagesSm: Record<string, string> = {
-  "corporate-incentives": "corporate-hero-sm.webp",
-  "event-management":     "events-hero-sm.webp",
-  "event-staffing":       "events-hero-sm.webp",
+  "corporate-incentives": corporateHeroSm,
+  "event-management":     eventsHeroSm,
+  "event-staffing":       eventsHeroSm,
 };
 
 const cardImageDesktopW: Record<string, number> = {
@@ -63,8 +68,8 @@ export default function EventsPage() {
       <section id="main-content" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/events-hero.webp`}
-            srcSet={`${import.meta.env.BASE_URL}images/events-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/events-hero.webp 1440w`}
+            src={eventsHero}
+            srcSet={`${eventsHeroSm} 800w, ${eventsHero} 1440w`}
             sizes="100vw"
             alt="Luxury Corporate Events & Gala Dining"
             className="w-full h-full object-cover"
@@ -120,8 +125,8 @@ export default function EventsPage() {
                 className={`group relative h-[260px] md:h-[320px] overflow-hidden text-left w-full${i === 2 ? " md:col-span-2" : ""}`}
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"}`}
-                  srcSet={`${import.meta.env.BASE_URL}images/${cardImagesSm[service.slug] ?? cardImages[service.slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"} ${cardImageDesktopW[service.slug] ?? 1440}w`}
+                  src={cardImages[service.slug] ?? hero}
+                  srcSet={`${cardImagesSm[service.slug] ?? cardImages[service.slug] ?? hero} 800w, ${cardImages[service.slug] ?? hero} ${cardImageDesktopW[service.slug] ?? 1440}w`}
                   sizes="(min-width: 768px) 50vw, 100vw"
                   alt={`${service.title}, The ÁrdÍre Group`}
                   className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"

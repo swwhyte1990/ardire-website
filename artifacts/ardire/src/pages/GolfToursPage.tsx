@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { setPendingScroll } from "@/lib/pendingScroll";
+import golfHeroSm from "@/assets/images/golf-hero-sm.webp";
+import golfHero from "@/assets/images/golf-hero.webp";
 
 const itinerary = [
   {
@@ -157,11 +159,11 @@ export default function GolfToursPage() {
           <picture>
             <source
               media="(max-width: 800px)"
-              srcSet={`${import.meta.env.BASE_URL}images/golf-hero-sm.webp`}
+              srcSet={golfHeroSm}
               type="image/webp"
             />
             <img
-              src={`${import.meta.env.BASE_URL}images/golf-hero.webp`}
+              src={golfHero}
               alt="Golfer silhouette at sunset on a Scottish links course"
               className="w-full h-full object-cover"
               width={1920}

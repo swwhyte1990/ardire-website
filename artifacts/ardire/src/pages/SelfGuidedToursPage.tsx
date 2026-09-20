@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { setPendingScroll } from "@/lib/pendingScroll";
+import selfGuidedHeroSm from "@/assets/images/self-guided-hero-sm.webp";
+import selfGuidedHero from "@/assets/images/self-guided-hero.webp";
 
 const selfGuidedFaqs = [
   {
@@ -113,8 +115,8 @@ export default function SelfGuidedToursPage() {
       <section id="main-content" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/self-guided-hero.webp`}
-            srcSet={`${import.meta.env.BASE_URL}images/self-guided-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/self-guided-hero.webp 1200w`}
+            src={selfGuidedHero}
+            srcSet={`${selfGuidedHeroSm} 800w, ${selfGuidedHero} 1200w`}
             sizes="100vw"
             alt="Self-Guided Tours of Scotland, The ÁrdÍre Group"
             className="w-full h-full object-cover"

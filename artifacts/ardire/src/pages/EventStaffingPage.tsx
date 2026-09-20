@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { setPendingScroll } from "@/lib/pendingScroll";
+import eventsHeroSm from "@/assets/images/events-hero-sm.webp";
+import eventsHero from "@/assets/images/events-hero.webp";
 
 const staffProvided = [
   "Waiting staff for dinners, receptions and functions of every size",
@@ -83,8 +85,8 @@ export default function EventStaffingPage() {
       <section id="main-content" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/events-hero.webp`}
-            srcSet={`${import.meta.env.BASE_URL}images/events-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/events-hero.webp 1440w`}
+            src={eventsHero}
+            srcSet={`${eventsHeroSm} 800w, ${eventsHero} 1440w`}
             sizes="100vw"
             alt="Event Staffing Scotland, The ÁrdÍre Group"
             className="w-full h-full object-cover"

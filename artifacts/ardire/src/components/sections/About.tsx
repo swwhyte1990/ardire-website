@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import texture from "@/assets/images/texture.webp";
 
 export function About() {
   return (
@@ -6,7 +7,7 @@ export function About() {
       <div
         className="absolute inset-0 opacity-10 pointer-events-none mix-blend-overlay"
         style={{
-          backgroundImage: `url(${import.meta.env.BASE_URL}images/texture.webp)`,
+          backgroundImage: `url(${texture})`,
           backgroundSize: 'cover'
         }}
       />

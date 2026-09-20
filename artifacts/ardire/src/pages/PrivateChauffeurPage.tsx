@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { setPendingScroll } from "@/lib/pendingScroll";
+import chauffeurHeroSm from "@/assets/images/chauffeur-hero-sm.webp";
+import chauffeurHero from "@/assets/images/chauffeur-hero.webp";
 
 const howWeCanHelp = [
   "Airport transfers, where you are met on arrival and looked after all the way to the door",
@@ -111,8 +113,8 @@ export default function PrivateChauffeurPage() {
       <section id="main-content" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/chauffeur-hero.webp`}
-            srcSet={`${import.meta.env.BASE_URL}images/chauffeur-hero-sm.webp 800w, ${import.meta.env.BASE_URL}images/chauffeur-hero.webp 1200w`}
+            src={chauffeurHero}
+            srcSet={`${chauffeurHeroSm} 800w, ${chauffeurHero} 1200w`}
             sizes="100vw"
             alt="Private Chauffeur Service Scotland, The ÁrdÍre Group"
             className="w-full h-full object-cover"

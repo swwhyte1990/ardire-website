@@ -7,22 +7,33 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { services } from "@/data/services";
 import { setPendingScroll } from "@/lib/pendingScroll";
+import travelGlenfinnanSm from "@/assets/images/travel-glenfinnan-sm.webp";
+import travelGlenfinnan from "@/assets/images/travel-glenfinnan.webp";
+import chauffeurHeroSm from "@/assets/images/chauffeur-hero-sm.webp";
+import chauffeurHero from "@/assets/images/chauffeur-hero.webp";
+import golfHeroSm from "@/assets/images/golf-hero-sm.webp";
+import golfHero from "@/assets/images/golf-hero.webp";
+import hero from "@/assets/images/hero.webp";
+import selfGuidedHeroSm from "@/assets/images/self-guided-hero-sm.webp";
+import selfGuidedHero from "@/assets/images/self-guided-hero.webp";
+import toursHeroSm from "@/assets/images/tours-hero-sm.webp";
+import toursHero from "@/assets/images/tours-hero.webp";
 
 const travelSlugs = ["luxury-tours", "golf-tours", "private-chauffeur", "self-guided-tours"];
 const travelServices = travelSlugs.map((slug) => services.find((s) => s.slug === slug)!).filter(Boolean);
 
 const cardImages: Record<string, string> = {
-  "luxury-tours":      "tours-hero.webp",
-  "golf-tours":        "golf-hero.webp",
-  "self-guided-tours": "self-guided-hero.webp",
-  "private-chauffeur": "chauffeur-hero.webp",
+  "luxury-tours":      toursHero,
+  "golf-tours":        golfHero,
+  "self-guided-tours": selfGuidedHero,
+  "private-chauffeur": chauffeurHero,
 };
 
 const cardImagesSm: Record<string, string> = {
-  "luxury-tours":      "tours-hero-sm.webp",
-  "golf-tours":        "golf-hero-sm.webp",
-  "self-guided-tours": "self-guided-hero-sm.webp",
-  "private-chauffeur": "chauffeur-hero-sm.webp",
+  "luxury-tours":      toursHeroSm,
+  "golf-tours":        golfHeroSm,
+  "self-guided-tours": selfGuidedHeroSm,
+  "private-chauffeur": chauffeurHeroSm,
 };
 
 const cardImageDesktopW: Record<string, number> = {
@@ -66,8 +77,8 @@ export default function TravelPage() {
       <section id="main-content" className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/travel-glenfinnan.webp`}
-            srcSet={`${import.meta.env.BASE_URL}images/travel-glenfinnan-sm.webp 800w, ${import.meta.env.BASE_URL}images/travel-glenfinnan.webp 1440w`}
+            src={travelGlenfinnan}
+            srcSet={`${travelGlenfinnanSm} 800w, ${travelGlenfinnan} 1440w`}
             sizes="100vw"
             alt="Glenfinnan Viaduct, Scottish Highlands"
             className="w-full h-full object-cover"
@@ -123,8 +134,8 @@ export default function TravelPage() {
                 className="group relative h-[260px] md:h-[320px] overflow-hidden text-left w-full"
               >
                 <img
-                  src={`${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"}`}
-                  srcSet={`${import.meta.env.BASE_URL}images/${cardImagesSm[service.slug] ?? cardImages[service.slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${cardImages[service.slug] ?? "hero.webp"} ${cardImageDesktopW[service.slug] ?? 1200}w`}
+                  src={cardImages[service.slug] ?? hero}
+                  srcSet={`${cardImagesSm[service.slug] ?? cardImages[service.slug] ?? hero} 800w, ${cardImages[service.slug] ?? hero} ${cardImageDesktopW[service.slug] ?? 1200}w`}
                   sizes="(min-width: 768px) 50vw, 100vw"
                   alt={`${service.title}, The ÁrdÍre Group`}
                   className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"

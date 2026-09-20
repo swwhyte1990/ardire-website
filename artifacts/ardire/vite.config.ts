@@ -41,6 +41,48 @@ function deferCssAndPreloadFonts(): Plugin {
   };
 }
 
+
+// index.html still writes plain /images/... paths, but those files now live in
+// src/assets and are content-hashed by Vite, so the literal paths would 404.
+// Rewrite them to the emitted filenames. An absolute origin is preserved, since
+// the JSON-LD and social meta tags need fully-qualified URLs.
+function rewriteHtmlImagePaths(): Plugin {
+  let hashedByName = new Map<string, string>();
+  return {
+    name: "rewrite-html-image-paths",
+    apply: "build",
+    buildStart() {
+      hashedByName = new Map();
+    },
+    generateBundle(_opts, bundle) {
+      for (const output of Object.values(bundle)) {
+        if (output.type !== "asset") continue;
+        for (const source of output.originalFileNames) {
+          hashedByName.set(path.basename(source), output.fileName);
+        }
+      }
+    },
+    transformIndexHtml: {
+      order: "post",
+      handler(html) {
+        return html.replace(
+          /(https:\/\/[^/"]+)?\/images\/([a-z0-9-]+\.webp)/g,
+          (_match, origin: string | undefined, name: string) => {
+            const hashed = hashedByName.get(name);
+            if (!hashed) {
+              throw new Error(
+                `index.html references /images/${name}, which is not an emitted asset. ` +
+                  `Import it from src/assets/images/ so it gets hashed, or restore it to public/.`,
+              );
+            }
+            return `${origin ?? ""}${basePath}${hashed}`;
+          },
+        );
+      },
+    },
+  };
+}
+
 const rawPort = process.env.PORT ?? "18439";
 const port = Number(rawPort);
 const basePath = process.env.BASE_PATH ?? "/";
@@ -65,6 +107,7 @@ export default defineConfig({
         ]
       : []),
     deferCssAndPreloadFonts(),
+    rewriteHtmlImagePaths(),
   ],
   resolve: {
     alias: {
@@ -77,6 +120,8 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    // generate-routes.mjs reads the manifest to resolve hashed hero images.
+    manifest: true,
     rollupOptions: {
       output: {
         manualChunks(id) {

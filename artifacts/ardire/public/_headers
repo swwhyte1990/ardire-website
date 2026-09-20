@@ -1,14 +1,12 @@
 # Cache headers (honoured by Cloudflare Pages).
-# Vite content-hashes everything in /assets/, so a changed file always gets a new
-# filename and can be cached forever. Images keep stable filenames, so they use a
-# short TTL instead: a long one strands visitors on an old copy that no cache purge
-# can reach, because their browser will not re-request the file until it expires.
+# Everything Vite emits to /assets/ is content-hashed, images included, so a
+# changed file always arrives under a new URL and can be cached indefinitely.
+# The few files below stay in public/ at fixed paths and so need a short TTL:
+# favicon.svg is fetched by path regardless of the <link> tag, and opengraph.webp
+# is referenced by absolute URL in the social meta tags.
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
-
-/images/*
-  Cache-Control: public, max-age=300, stale-while-revalidate=86400
 
 /favicon.svg
   Cache-Control: public, max-age=300, stale-while-revalidate=86400

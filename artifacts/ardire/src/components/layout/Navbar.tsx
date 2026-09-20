@@ -3,6 +3,7 @@ import { useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { setPendingScroll } from "@/lib/pendingScroll";
+import logoCrest from "@/assets/images/logo-crest.webp";
 
 const travelServices = [
   { slug: "luxury-tours",     title: "Luxury Tours" },
@@ -162,7 +163,7 @@ export function Navbar() {
             onClick={(e) => { e.preventDefault(); navigate("/"); window.scrollTo({ top: 0, behavior: "smooth" }); }}
           >
             <img
-              src={`${import.meta.env.BASE_URL}images/logo-crest.webp`}
+              src={logoCrest}
               alt="Árdíre Logo"
               className="h-14 w-14 object-contain transition-transform duration-500 group-hover:scale-105"
               width={56}
@@ -210,7 +211,7 @@ export function Navbar() {
             aria-label="Go to homepage"
           >
             <img
-              src={`${import.meta.env.BASE_URL}images/logo-crest.webp`}
+              src={logoCrest}
               alt="Árdíre Logo"
               className="h-10 w-10 object-contain"
               width={40}

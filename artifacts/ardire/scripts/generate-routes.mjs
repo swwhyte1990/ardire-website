@@ -13,6 +13,26 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, '../dist/public');
 
+// Images are imported from src/assets and content-hashed by Vite, so their built
+// filenames are only knowable from the manifest.
+const manifest = JSON.parse(
+  readFileSync(join(distDir, '.vite/manifest.json'), 'utf8')
+);
+
+function hashedImage(name) {
+  const entry = manifest[`src/assets/images/${name}`];
+  if (!entry) {
+    throw new Error(
+      `generate-routes: no built asset for "${name}". Images must be imported ` +
+      `from src/assets/images/ so Vite emits and hashes them.`
+    );
+  }
+  return `/${entry.file}`;
+}
+
+// Matches whatever hashed URL the build produced, rather than a fixed filename.
+const HERO_PRELOAD = /<link rel="preload" as="image" href="[^"]*"[^>]*\/>/;
+
 function esc(str) {
   return str
     .replace(/&/g, '&amp;')
@@ -256,15 +276,24 @@ for (const route of routes) {
       `<meta name="twitter:description" content="${route.description}" />`
     )
     .replace(
-      '<link rel="preload" as="image" href="/images/hero-home.webp" />',
-      route.heroImage
-        ? `<link rel="preload" as="image" href="/images/${route.heroImage}" fetchpriority="high" />`
-        : ''
-    )
-    .replace(
       /<div data-page-content[^>]*>[\s\S]*?<\/div><\/div>(?=\s*<script)/,
       `${pageBlock}</div>`
     );
+
+  // A non-matching replace fails silently and would leave every route preloading
+  // the homepage hero, so require the match instead of hoping for it.
+  if (!HERO_PRELOAD.test(html)) {
+    throw new Error(
+      `generate-routes: hero preload tag not found for route "${route.path}". ` +
+      `Its shape in index.html changed, so per-route preloads would be wrong.`
+    );
+  }
+  html = html.replace(
+    HERO_PRELOAD,
+    route.heroImage
+      ? `<link rel="preload" as="image" href="${hashedImage(route.heroImage)}" fetchpriority="high" />`
+      : ''
+  );
 
   writeFileSync(join(routeDir, 'index.html'), html);
   console.log(`Generated: /${route.path}/index.html  [h1: ${route.h1}]`);

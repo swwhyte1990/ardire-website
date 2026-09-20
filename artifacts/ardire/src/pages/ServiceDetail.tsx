@@ -8,27 +8,40 @@ import { Footer } from "@/components/layout/Footer";
 import { getServiceBySlug } from "@/data/services";
 import NotFound from "@/pages/not-found";
 import { setPendingScroll } from "@/lib/pendingScroll";
+import chauffeurHeroSm from "@/assets/images/chauffeur-hero-sm.webp";
+import chauffeurHero from "@/assets/images/chauffeur-hero.webp";
+import corporateHeroSm from "@/assets/images/corporate-hero-sm.webp";
+import corporateHero from "@/assets/images/corporate-hero.webp";
+import eventsHeroSm from "@/assets/images/events-hero-sm.webp";
+import eventsHero from "@/assets/images/events-hero.webp";
+import golfHeroSm from "@/assets/images/golf-hero-sm.webp";
+import golfHero from "@/assets/images/golf-hero.webp";
+import hero from "@/assets/images/hero.webp";
+import selfGuidedHeroSm from "@/assets/images/self-guided-hero-sm.webp";
+import selfGuidedHero from "@/assets/images/self-guided-hero.webp";
+import toursHeroSm from "@/assets/images/tours-hero-sm.webp";
+import toursHero from "@/assets/images/tours-hero.webp";
 
 const heroImages: Record<string, string> = {
-  "luxury-tours":         "tours-hero.webp",
-  "golf-tours":           "golf-hero.webp",
-  "private-chauffeur":    "chauffeur-hero.webp",
-  "corporate-incentives": "corporate-hero.webp",
-  "self-guided-tours":    "self-guided-hero.webp",
-  "event-management":     "events-hero.webp",
-  "event-staffing":       "events-hero.webp",
-  "concierge":            "hero.webp",
+  "luxury-tours":         toursHero,
+  "golf-tours":           golfHero,
+  "private-chauffeur":    chauffeurHero,
+  "corporate-incentives": corporateHero,
+  "self-guided-tours":    selfGuidedHero,
+  "event-management":     eventsHero,
+  "event-staffing":       eventsHero,
+  "concierge":            hero,
 };
 
 const heroImagesSm: Record<string, string> = {
-  "luxury-tours":         "tours-hero-sm.webp",
-  "golf-tours":           "golf-hero-sm.webp",
-  "private-chauffeur":    "chauffeur-hero-sm.webp",
-  "corporate-incentives": "corporate-hero-sm.webp",
-  "self-guided-tours":    "self-guided-hero-sm.webp",
-  "event-management":     "events-hero-sm.webp",
-  "event-staffing":       "events-hero-sm.webp",
-  "concierge":            "hero.webp",
+  "luxury-tours":         toursHeroSm,
+  "golf-tours":           golfHeroSm,
+  "private-chauffeur":    chauffeurHeroSm,
+  "corporate-incentives": corporateHeroSm,
+  "self-guided-tours":    selfGuidedHeroSm,
+  "event-management":     eventsHeroSm,
+  "event-staffing":       eventsHeroSm,
+  "concierge":            hero,
 };
 
 const heroImageDims: Record<string, [number, number]> = {
@@ -88,8 +101,8 @@ export default function ServiceDetail() {
       <section id="main-content" className="relative min-h-[50vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={`${import.meta.env.BASE_URL}images/${heroImages[slug] ?? "hero.webp"}`}
-            srcSet={`${import.meta.env.BASE_URL}images/${heroImagesSm[slug] ?? heroImages[slug] ?? "hero.webp"} 800w, ${import.meta.env.BASE_URL}images/${heroImages[slug] ?? "hero.webp"} ${heroImageDims[slug]?.[0] ?? 1440}w`}
+            src={heroImages[slug] ?? hero}
+            srcSet={`${heroImagesSm[slug] ?? heroImages[slug] ?? hero} 800w, ${heroImages[slug] ?? hero} ${heroImageDims[slug]?.[0] ?? 1440}w`}
             sizes="100vw"
             alt={`${service.title}, The ÁrdÍre Group`}
             className="w-full h-full object-cover"

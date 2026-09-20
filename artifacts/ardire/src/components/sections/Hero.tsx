@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
+import heroHome from "@/assets/images/hero-home.webp";
 
 export function Hero() {
   return (
     <section className="relative h-[70vh] min-h-[520px] w-full flex items-end md:items-end justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img
-          src={`${import.meta.env.BASE_URL}images/hero-home.webp`}
+          src={heroHome}
           alt="Scottish Castle on a Loch"
           className="kenburns-img w-full h-full object-cover"
           loading="eager"
