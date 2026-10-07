@@ -1,6 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { useLocation } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { CheckCircle, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
@@ -126,7 +126,7 @@ export default function PrivateChauffeurPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-background z-10" />
         </div>
         <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 pb-20 pt-44 w-full">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
@@ -140,14 +140,14 @@ export default function PrivateChauffeurPage() {
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               A professional driver and a comfortable car whenever you want to be somewhere without thinking about how to get there. Airport transfers, days out, and everything in between.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* What This Is */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -158,8 +158,8 @@ export default function PrivateChauffeurPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               A car and driver whenever you need one.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -172,14 +172,14 @@ export default function PrivateChauffeurPage() {
             <p>
               Our drivers know the roads and the country, and they bring the same care and discretion we put into everything we do. The driving that looks after our private tours and golf trips is the same service we offer on its own here, so you are in experienced hands whether you need us for an hour or a week.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* How We Can Help */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -190,8 +190,8 @@ export default function PrivateChauffeurPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Whatever the journey, we plan it around you.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -208,14 +208,14 @@ export default function PrivateChauffeurPage() {
             <p className="font-sans font-light text-sm text-muted-foreground max-w-3xl">
               Wherever you are headed and however long you need us, we plan the journey around you rather than a timetable.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* What to Expect */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -226,8 +226,8 @@ export default function PrivateChauffeurPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               A journey that runs to your day, not ours.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -237,14 +237,14 @@ export default function PrivateChauffeurPage() {
             <p>
               A professional and discreet driver, a clean and comfortable vehicle suited to the size of your party, and a journey that runs to your day rather than ours. If plans change while you are out, that is no trouble; we simply adjust as we go.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Pricing */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -255,14 +255,14 @@ export default function PrivateChauffeurPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Coming soon.
             </h2>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -273,8 +273,8 @@ export default function PrivateChauffeurPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Things people ask us.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -299,7 +299,7 @@ export default function PrivateChauffeurPage() {
                   </button>
                   <AnimatePresence initial={false}>
                     {open && (
-                      <motion.div
+                      <m.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -307,20 +307,20 @@ export default function PrivateChauffeurPage() {
                         className="overflow-hidden"
                       >
                         <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed pb-5">{faq.a}</p>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
                 </div>
               );
             })}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-20 bg-card border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -339,7 +339,7 @@ export default function PrivateChauffeurPage() {
             >
               <a href="/#enquiry" onClick={goToEnquiry}>Enquire</a>
             </Button>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 

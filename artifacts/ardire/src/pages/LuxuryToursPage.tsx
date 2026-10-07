@@ -1,6 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { useLocation } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { CheckCircle, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
@@ -237,7 +237,7 @@ export default function LuxuryToursPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background z-10" />
         </div>
         <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 pb-20 pt-44 w-full">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
@@ -251,14 +251,14 @@ export default function LuxuryToursPage() {
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               A private tour designed around you, with a travel concierge to arrange and look after every part of it. From the moment we meet you at the airport, every day is ours to plan and yours to enjoy.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* What This Is */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -269,8 +269,8 @@ export default function LuxuryToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               A private tour and a travel concierge <span className="italic text-primary">in one.</span>
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -283,14 +283,14 @@ export default function LuxuryToursPage() {
             <p>
               This is a country we know well and love showing off, and most of that love is in the detail: the right glen on the right morning, the dinner worth driving for, the distillery that will open a door for you. Some of our guests arrive knowing exactly what they want. Most come with a few ideas and let us fill in the rest. Either way is the right way to begin.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Travel Concierge */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -301,8 +301,8 @@ export default function LuxuryToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Your travel concierge <span className="italic text-primary">in Scotland.</span>
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -315,14 +315,14 @@ export default function LuxuryToursPage() {
             <p>
               Some guests hand us the trip from the first idea. Others have much of it in place already and want us to arrange the bookings, open a few doors, and be there for whatever comes up. Both are exactly what we are here for, whether you are visiting for a few days or settling in for a longer stay.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* How It Works */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -333,8 +333,8 @@ export default function LuxuryToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               From the moment we greet you to the day you head home.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -350,14 +350,14 @@ export default function LuxuryToursPage() {
             <p>
               What you bring is the sense of what you want. We bring everything it takes to make it happen.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Come With an Idea */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -368,8 +368,8 @@ export default function LuxuryToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Bring the idea. <span className="italic text-primary">We build around it.</span>
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -382,14 +382,14 @@ export default function LuxuryToursPage() {
             <p>
               You want to see Skye, and we know the hour to be at the Quiraing before the crowds arrive. You want a day of whisky, and we know the distillery that will set aside a quiet room and a cask the public never reach. You want somewhere to remember for an anniversary, and we know the table, the view and the chef worth the journey. The idea is yours. The knowledge around it is ours to add.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Three Sample Journeys */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -400,8 +400,8 @@ export default function LuxuryToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Three journeys written to give you a feel for the range.
             </h2>
-          </motion.div>
-          <motion.p
+          </m.div>
+          <m.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -409,11 +409,11 @@ export default function LuxuryToursPage() {
             className="font-sans font-light text-sm text-muted-foreground max-w-2xl mb-12"
           >
             These are real journeys we can build, written to give you a feel for the range and to spark a few ideas of your own. Nothing here is fixed. The length, the places and the pace are all yours to shape, and we would happily reimagine any of them around what you have in mind.
-          </motion.p>
+          </m.p>
 
           <div className="space-y-3">
             {itineraries.map((itin, i) => (
-              <motion.div
+              <m.div
                 key={itin.id}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -441,7 +441,7 @@ export default function LuxuryToursPage() {
 
                 <AnimatePresence initial={false}>
                   {openItinerary === itin.id && (
-                    <motion.div
+                    <m.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -460,10 +460,10 @@ export default function LuxuryToursPage() {
                         ))}
                         <p className="font-sans font-light text-sm text-primary pt-2">{itin.price}</p>
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -472,7 +472,7 @@ export default function LuxuryToursPage() {
       {/* What We Can Arrange */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -483,8 +483,8 @@ export default function LuxuryToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               There is very little we cannot arrange.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -497,14 +497,14 @@ export default function LuxuryToursPage() {
             <p>
               As we grow, those possibilities only widen, and the ceiling rises at the very top end. What you are paying for is not a list of suppliers but the fact that we can make these things happen at all, quietly and well, to a standard that would be hard to reach on your own.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* What's Included */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -515,8 +515,8 @@ export default function LuxuryToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               From the moment you land to the moment you leave.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -536,14 +536,14 @@ export default function LuxuryToursPage() {
             <p className="font-sans font-light text-sm text-muted-foreground">
               You simply arrive. We take care of the rest.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -554,8 +554,8 @@ export default function LuxuryToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Things people ask us.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -580,7 +580,7 @@ export default function LuxuryToursPage() {
                   </button>
                   <AnimatePresence initial={false}>
                     {open && (
-                      <motion.div
+                      <m.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -588,20 +588,20 @@ export default function LuxuryToursPage() {
                         className="overflow-hidden"
                       >
                         <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed pb-5">{faq.a}</p>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
                 </div>
               );
             })}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-20 bg-background border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -620,7 +620,7 @@ export default function LuxuryToursPage() {
             >
               <a href="/#enquiry" onClick={goToEnquiry}>Enquire</a>
             </Button>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 

@@ -1,6 +1,6 @@
 import { useEffect, type MouseEvent } from "react";
 import { useLocation } from "wouter";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
@@ -98,7 +98,7 @@ export default function EventStaffingPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background z-10" />
         </div>
         <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 pb-20 pt-44 w-full">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
@@ -112,14 +112,14 @@ export default function EventStaffingPage() {
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               Professional waiting staff, butlers and hospitality teams for events of any size. Briefed, well presented, and ready to make the evening run beautifully.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* What This Is */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -130,8 +130,8 @@ export default function EventStaffingPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               The people who make an event feel effortless.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -141,14 +141,14 @@ export default function EventStaffingPage() {
             <p>
               The impression an event makes owes a great deal to the people running it. We provide trained, professional staff for events across Scotland, from a single butler for a private dinner to a full front-of-house team for a large gathering. They arrive briefed, well presented, and ready to look after your guests, so the occasion feels effortless from the door onward.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* The Staff We Provide */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -159,8 +159,8 @@ export default function EventStaffingPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Every role your event needs.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -177,14 +177,14 @@ export default function EventStaffingPage() {
             <p className="font-sans font-light text-sm text-muted-foreground max-w-3xl">
               If there is a role you need that is not listed here, ask. The chances are we can provide it.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* How It Works */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -195,8 +195,8 @@ export default function EventStaffingPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               You tell us what you need. We build the team.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -209,7 +209,7 @@ export default function EventStaffingPage() {
             <p>
               Our staff arrive briefed on your event, uniformed to your specification, and led by a senior coordinator who runs the team on the day, so you have one person to deal with rather than a roomful. We can provide staff on their own, for an event you or someone else is running, or as part of an event we are managing for you.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -217,7 +217,7 @@ export default function EventStaffingPage() {
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -230,8 +230,8 @@ export default function EventStaffingPage() {
               <p className="font-sans font-light text-muted-foreground leading-relaxed text-base">
                 Staff chosen for warmth and composure as much as for polish, who represent you well and stay calm when an event does what events sometimes do. Everyone we provide is experienced, background-checked and insured, and properly briefed before they arrive. The aim is a team your guests notice for all the right reasons, and never for the wrong ones.
               </p>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -244,7 +244,7 @@ export default function EventStaffingPage() {
               <p className="font-sans font-light text-muted-foreground leading-relaxed text-base">
                 Private hosts planning a dinner or a celebration, companies running corporate functions and hospitality, and families marking something special. Private households who need staff for an occasion or a season. And the venues and event planners who want a reliable, well-presented team for an event they are running themselves.
               </p>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -252,7 +252,7 @@ export default function EventStaffingPage() {
       {/* Pricing — product cards */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -263,8 +263,8 @@ export default function EventStaffingPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               By role and by the hour.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -295,14 +295,14 @@ export default function EventStaffingPage() {
             <p className="font-sans font-light text-sm text-muted-foreground max-w-2xl">
               The total comes down to the roles you need, how many staff, and the hours involved. Tell us about the event and we will put together a clear quote before anything is confirmed.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-20 bg-card border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -321,7 +321,7 @@ export default function EventStaffingPage() {
             >
               <a href="/#enquiry" onClick={goToEnquiry}>Enquire</a>
             </Button>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 

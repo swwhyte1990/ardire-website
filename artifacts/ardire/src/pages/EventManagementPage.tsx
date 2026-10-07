@@ -1,6 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { useLocation } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { CheckCircle, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
@@ -136,7 +136,7 @@ export default function EventManagementPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background z-10" />
         </div>
         <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 pb-20 pt-44 w-full">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
@@ -150,14 +150,14 @@ export default function EventManagementPage() {
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               We plan, produce and run events from start to finish. One team, one point of contact, the whole thing taken care of.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* What This Is */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -168,8 +168,8 @@ export default function EventManagementPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               One team. The whole event.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -182,14 +182,14 @@ export default function EventManagementPage() {
             <p>
               The clients who come to us typically have one thing in common: they want to hand the event over and trust that it will be handled properly. Whether it is a private dinner for twenty or a corporate gala for three hundred, the level of attention is the same.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* How It Works */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -200,8 +200,8 @@ export default function EventManagementPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Brief, plan, produce, run.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -214,14 +214,14 @@ export default function EventManagementPage() {
             <p>
               Most clients give us the whole project. Some come to us with a venue already chosen and want us to take the production from there. Either way works.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* What We Handle */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -232,8 +232,8 @@ export default function EventManagementPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Every part of the production.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -247,14 +247,14 @@ export default function EventManagementPage() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* The Kinds of Events */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -265,8 +265,8 @@ export default function EventManagementPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               From private dinners to large-scale productions.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -279,14 +279,14 @@ export default function EventManagementPage() {
             <p>
               We have experience working with venues across Scotland, from city hotels and private members' clubs to country estates and non-traditional spaces that take more work to get right.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -297,8 +297,8 @@ export default function EventManagementPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Things people ask us.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -323,7 +323,7 @@ export default function EventManagementPage() {
                   </button>
                   <AnimatePresence initial={false}>
                     {open && (
-                      <motion.div
+                      <m.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -331,20 +331,20 @@ export default function EventManagementPage() {
                         className="overflow-hidden"
                       >
                         <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed pb-5">{faq.a}</p>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
                 </div>
               );
             })}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* CTA with pricing note */}
       <section className="py-20 bg-card border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -363,7 +363,7 @@ export default function EventManagementPage() {
             >
               <a href="/#enquiry" onClick={goToEnquiry}>Start Planning Your Event</a>
             </Button>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 

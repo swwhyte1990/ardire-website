@@ -69,7 +69,7 @@ function buildPageBlock(route) {
     .map(s => `<a href="https://ardire.co.uk/services/${s.slug}" style="${linkStyle}">${esc(s.label)}</a>`)
     .join('');
 
-  const navHtml = `<nav style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid rgba(197,163,102,0.25);font-size:0.95rem"><a href="https://ardire.co.uk/" style="${linkStyle}">Árdíre Home</a>${serviceLinksHtml}${route.path !== 'privacy' ? `<a href="https://ardire.co.uk/privacy" style="${linkStyle}">Privacy Policy</a>` : ''}<a href="https://ardire.co.uk/#contact" style="color:#c5a366;text-decoration:none;display:inline-block;padding:0.25rem 0">Contact Árdíre</a></nav>`;
+  const navHtml = `<nav style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid rgba(197,163,102,0.25);font-size:0.95rem"><a href="https://ardire.co.uk/" style="${linkStyle}">Árdíre Home</a>${serviceLinksHtml}${route.path !== 'privacy' ? `<a href="https://ardire.co.uk/privacy" style="${linkStyle}">Privacy Policy</a>` : ''}<a href="https://ardire.co.uk/#enquiry" style="color:#c5a366;text-decoration:none;display:inline-block;padding:0.25rem 0">Contact Árdíre</a></nav>`;
 
   return `<div data-page-content style="max-width:760px;margin:0 auto;padding:3rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7">${h1Html}${paragraphsHtml}${highlightsHtml}${navHtml}</div>`;
 }
@@ -77,7 +77,7 @@ function buildPageBlock(route) {
 const routes = [
   {
     path: 'services/luxury-tours',
-    heroImage: 'hero.webp',
+    heroImage: 'tours-hero.webp',
     title: 'Luxury Private Tours Scotland | Ardire Hospitality Group',
     description: 'Fully escorted private touring across Scotland\'s most breathtaking landscapes. Bespoke itineraries crafted by Ardire Hospitality Group, Glasgow.',
     h1: 'Luxury Private Tours Scotland',
@@ -98,7 +98,7 @@ const routes = [
     path: 'services/golf-tours',
     heroImage: 'golf-hero.webp',
     title: 'Golf Tours Scotland | St Andrews, Turnberry & Beyond',
-    description: 'Play St Andrews, Carnoustie, and Turnberry on a luxury private golf tour of Scotland with private transport and luxury accomodation.',
+    description: 'Play St Andrews, Carnoustie, and Turnberry on a luxury private golf tour of Scotland with private transport and luxury accommodation.',
     h1: 'Golf Tours Scotland',
     paragraphs: [
       'Scotland is the birthplace of golf, and no destination on earth rivals it for the sheer quality and variety of its courses. We arrange exclusive access to some of the world\'s most prestigious links, from St Andrews and Carnoustie on the east coast to Turnberry and Royal Troon in the west. Whether you\'re teeing off at a celebrated championship venue or discovering a hidden gem in the Highlands, our golf tours are crafted for those who demand excellence on and off the course.',

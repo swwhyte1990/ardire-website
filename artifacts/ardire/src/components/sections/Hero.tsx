@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import heroHome from "@/assets/images/hero-home.webp";
 
 export function Hero() {
@@ -24,7 +24,7 @@ export function Hero() {
       </div>
 
       <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 pb-14 md:pb-16">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0 }}
@@ -38,7 +38,7 @@ export function Hero() {
           <p className="hidden sm:block font-sans text-base md:text-lg text-foreground/85 max-w-xl leading-relaxed">
             Bespoke private tours, concierge and event hospitality, crafted in Glasgow and delivered across Scotland.
           </p>
-        </motion.div>
+        </m.div>
       </div>
 
       <style>{`

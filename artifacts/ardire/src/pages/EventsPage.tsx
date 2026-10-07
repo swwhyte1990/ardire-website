@@ -1,6 +1,6 @@
 import { useEffect, type MouseEvent } from "react";
 import { useLocation } from "wouter";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
@@ -81,7 +81,7 @@ export default function EventsPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background z-10" />
         </div>
         <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 pb-20 pt-44 w-full">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
@@ -95,14 +95,14 @@ export default function EventsPage() {
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               Corporate incentives, full-service event management, professional staffing and bespoke experiences. Conceived, managed and delivered.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Services Grid */}
       <section className="py-16 md:py-24 bg-background">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
@@ -112,11 +112,11 @@ export default function EventsPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               From first concept to <span className="italic text-primary">final curtain.</span>
             </h2>
-          </motion.div>
+          </m.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[calc(1px+2mm)] bg-background">
             {eventsServices.map((service, i) => (
-              <motion.button
+              <m.button
                 key={service.slug}
                 onClick={() => goToService(service.slug)}
                 initial={{ opacity: 0, y: 20 }}
@@ -149,7 +149,7 @@ export default function EventsPage() {
                     {service.cta} <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
-              </motion.button>
+              </m.button>
             ))}
           </div>
         </div>
@@ -158,7 +158,7 @@ export default function EventsPage() {
       {/* CTA Banner */}
       <section className="py-20 bg-card border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -177,7 +177,7 @@ export default function EventsPage() {
             >
               <a href="/#enquiry" onClick={goToEnquiry}>Discuss Your Event</a>
             </Button>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 

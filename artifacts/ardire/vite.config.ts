@@ -4,38 +4,36 @@ import tailwindcss from "@tailwindcss/vite";
 import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
-// Converts the blocking <link rel="stylesheet"> emitted by Vite into an async
-// preload so the CSS no longer sits on the critical path. Also injects
-// <link rel="preload"> for every WOFF2 font asset so fonts start downloading
-// in parallel with the CSS rather than waiting for the CSS to arrive first.
-function deferCssAndPreloadFonts(): Plugin {
-  const woff2Paths: string[] = [];
+// Converts the blocking <link rel="stylesheet"> Vite emits into an async preload,
+// so CSS no longer sits on the critical path.
+function deferCss(): Plugin {
   return {
-    name: "defer-css-preload-fonts",
+    name: "defer-css",
     apply: "build",
-    generateBundle(_opts, bundle) {
-      for (const key of Object.keys(bundle)) {
-        if (key.endsWith(".woff2")) woff2Paths.push(`/${key}`);
-      }
-    },
     transformIndexHtml: {
       order: "post",
       handler(html) {
-        const fontPreloads = woff2Paths
-          .map(
-            (href) =>
-              `<link rel="preload" as="font" type="font/woff2" crossorigin href="${href}">`,
-          )
-          .join("\n    ");
-        return html
-          .replace(
-            /<link rel="stylesheet" crossorigin href="([^"]+)">/g,
-            (_, href) =>
-              `<link rel="preload" as="style" crossorigin ` +
+        let rewrote = 0;
+        const out = html.replace(
+          /<link rel="stylesheet"([^>]*?)href="([^"]+)">/g,
+          (_m, attrs, href) => {
+            rewrote++;
+            return (
+              `<link rel="preload" as="style"${attrs}` +
               `onload="this.onload=null;this.rel='stylesheet'" href="${href}">` +
-              `<noscript><link rel="stylesheet" crossorigin href="${href}"></noscript>`,
-          )
-          .replace("</head>", `    ${fontPreloads}\n  </head>`);
+              `<noscript><link rel="stylesheet"${attrs}href="${href}"></noscript>`
+            );
+          },
+        );
+        // Silently matching nothing would quietly put CSS back on the critical
+        // path with a green build, so require the rewrite instead.
+        if (rewrote === 0) {
+          throw new Error(
+            "defer-css: no <link rel=\"stylesheet\"> found in index.html. Vite's " +
+              "emitted markup changed, so CSS is still render-blocking.",
+          );
+        }
+        return out;
       },
     },
   };
@@ -83,6 +81,7 @@ function rewriteHtmlImagePaths(): Plugin {
   };
 }
 
+
 const rawPort = process.env.PORT ?? "18439";
 const port = Number(rawPort);
 const basePath = process.env.BASE_PATH ?? "/";
@@ -106,7 +105,7 @@ export default defineConfig({
           ),
         ]
       : []),
-    deferCssAndPreloadFonts(),
+    deferCss(),
     rewriteHtmlImagePaths(),
   ],
   resolve: {
@@ -128,16 +127,6 @@ export default defineConfig({
           if (!id.includes("node_modules")) return;
           if (id.includes("framer-motion") || id.includes("motion-dom") || id.includes("motion-utils")) {
             return "framer-motion";
-          }
-          if (
-            id.includes("react-hook-form") ||
-            id.includes("@hookform") ||
-            id.includes("/zod/")
-          ) {
-            return "forms";
-          }
-          if (id.includes("@radix-ui")) {
-            return "radix";
           }
           if (
             id.includes("/react/") ||

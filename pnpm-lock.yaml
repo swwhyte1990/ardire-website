@@ -174,19 +174,6 @@ importers:
         version: 5.9.3
 
   artifacts/ardire:
-    dependencies:
-      '@fontsource-variable/cinzel':
-        specifier: ^5.2.8
-        version: 5.2.8
-      '@fontsource-variable/raleway':
-        specifier: ^5.2.8
-        version: 5.2.8
-      '@fontsource/cinzel':
-        specifier: ^5.2.8
-        version: 5.2.8
-      '@fontsource/raleway':
-        specifier: ^5.2.8
-        version: 5.2.8
     devDependencies:
       '@hookform/resolvers':
         specifier: ^3.10.0
@@ -200,12 +187,6 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.2.0
         version: 1.2.4(@types/react@19.2.14)(react@19.1.0)
-      '@radix-ui/react-toast':
-        specifier: ^1.2.7
-        version: 1.2.15(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@radix-ui/react-tooltip':
-        specifier: ^1.2.0
-        version: 1.2.8(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@replit/vite-plugin-cartographer':
         specifier: 'catalog:'
         version: 0.5.1
@@ -649,18 +630,6 @@ packages:
 
   '@floating-ui/utils@0.2.11':
     resolution: {integrity: sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg==}
-
-  '@fontsource-variable/cinzel@5.2.8':
-    resolution: {integrity: sha512-62ddfR79tYNWxIZJPlyFGBusbnONbPL6d163mT/jZOGV4vV8so6Z3buRM5epqtiA6qcVVeF8OZijJJGeLABGJg==}
-
-  '@fontsource-variable/raleway@5.2.8':
-    resolution: {integrity: sha512-PahqGI7bkz4a80m91Jt65DRsuFQmRip5vGDbI9sChVSKjLrdDfXbeGIwnTPi/ZVCOoQrbLnqzBOLQpLohnz+WA==}
-
-  '@fontsource/cinzel@5.2.8':
-    resolution: {integrity: sha512-B9WeF/jPlOJOrcXfX96cy4KfM+s1QcU2C9W2hE3azBOBzPvzFkNpBovT5JmhAeicE/s4HZWKF9LF5hmEcqlbsw==}
-
-  '@fontsource/raleway@5.2.8':
-    resolution: {integrity: sha512-OATNM+J4XniKQRlI1e67v3euOnCUiXwpqgMofomKc5JNYOq0JPE6E5uTXMnFaZejKN1Z7s05JrHpmYB7/tg1Fw==}
 
   '@gerrit0/mini-shiki@3.23.0':
     resolution: {integrity: sha512-bEMORlG0cqdjVyCEuU0cDQbORWX+kYCeo0kV1lbxF5bt4r7SID2l9bqsxJEM0zndaxpOUT7riCyIVEuqq/Ynxg==}
@@ -2845,14 +2814,6 @@ snapshots:
       react-dom: 19.1.0(react@19.1.0)
 
   '@floating-ui/utils@0.2.11': {}
-
-  '@fontsource-variable/cinzel@5.2.8': {}
-
-  '@fontsource-variable/raleway@5.2.8': {}
-
-  '@fontsource/cinzel@5.2.8': {}
-
-  '@fontsource/raleway@5.2.8': {}
 
   '@gerrit0/mini-shiki@3.23.0':
     dependencies:

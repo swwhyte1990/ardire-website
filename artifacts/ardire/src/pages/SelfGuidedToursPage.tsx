@@ -1,6 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { useLocation } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { CheckCircle, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
@@ -128,7 +128,7 @@ export default function SelfGuidedToursPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background z-10" />
         </div>
         <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 pb-20 pt-44 w-full">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
@@ -142,14 +142,14 @@ export default function SelfGuidedToursPage() {
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               The freedom to explore Scotland your own way, with the itinerary planned and the bookings made for you. You travel independently. We take care of arranging it all beforehand.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* What This Is */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -160,8 +160,8 @@ export default function SelfGuidedToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Scotland on your own terms.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -174,14 +174,14 @@ export default function SelfGuidedToursPage() {
             <p>
               You bring the appetite for the open road. We bring the route worth taking, the right places to stay, and the knowledge of what to see and where the best days are quietly waiting.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* How It Works */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -192,8 +192,8 @@ export default function SelfGuidedToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               We plan the journey around you, then arrange the parts you want booked.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -203,14 +203,14 @@ export default function SelfGuidedToursPage() {
             <p>
               You tell us where you would like to go, how long you have and how you like to travel, and we design a route to suit, recommend the places worth staying and stopping, and book whatever you would like handled, from accommodation to tables and experiences. From there, the trip is yours. You travel in your own way, at your own pace, with everything already arranged and us on hand if you need anything along the way.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* What We Arrange */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -221,8 +221,8 @@ export default function SelfGuidedToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Everything in place before you set off.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -236,7 +236,7 @@ export default function SelfGuidedToursPage() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -244,7 +244,7 @@ export default function SelfGuidedToursPage() {
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -257,8 +257,8 @@ export default function SelfGuidedToursPage() {
               <p className="font-sans font-light text-muted-foreground leading-relaxed text-base">
                 Self-guided suits couples and families who would rather set their own rhythm than follow a guide. Confident travellers who love the drive and the discovery. And people who have toured Scotland with a guide before and want to come back and explore it their own way. Whether it is a few days or a fortnight, the trip is yours to lead.
               </p>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -271,7 +271,7 @@ export default function SelfGuidedToursPage() {
               <p className="font-sans font-light text-muted-foreground leading-relaxed text-base">
                 What you get with us is an itinerary built from real knowledge of the country, the right places held before they fill, and access you would struggle to arrange on your own, all shaped around you rather than pulled from a fixed catalogue. You travel independently, but never without a good plan and someone to call.
               </p>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -279,7 +279,7 @@ export default function SelfGuidedToursPage() {
       {/* FAQ */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -290,8 +290,8 @@ export default function SelfGuidedToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Things people ask us.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -316,7 +316,7 @@ export default function SelfGuidedToursPage() {
                   </button>
                   <AnimatePresence initial={false}>
                     {open && (
-                      <motion.div
+                      <m.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -324,20 +324,20 @@ export default function SelfGuidedToursPage() {
                         className="overflow-hidden"
                       >
                         <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed pb-5">{faq.a}</p>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
                 </div>
               );
             })}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* CTA with pricing note */}
       <section className="py-20 bg-card border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -359,7 +359,7 @@ export default function SelfGuidedToursPage() {
             >
               <a href="/#enquiry" onClick={goToEnquiry}>Enquire</a>
             </Button>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 

@@ -1,11 +1,10 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { LazyMotion, domAnimation } from "framer-motion";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 import { takePendingScroll } from "@/lib/pendingScroll";
 
-const ServiceDetail = lazy(() => import("@/pages/ServiceDetail"));
 const Privacy = lazy(() => import("@/pages/Privacy"));
 const TravelPage = lazy(() => import("@/pages/TravelPage"));
 const EventsPage = lazy(() => import("@/pages/EventsPage"));
@@ -54,7 +53,6 @@ function Router() {
         <Route path="/services/event-management" component={EventManagementPage} />
         <Route path="/services/event-staffing" component={EventStaffingPage} />
         <Route path="/services/private-chauffeur" component={PrivateChauffeurPage} />
-        <Route path="/services/:slug" component={ServiceDetail} />
         <Route path="/privacy" component={Privacy} />
         <Route component={NotFound} />
       </Switch>
@@ -64,7 +62,7 @@ function Router() {
 
 function App() {
   return (
-    <TooltipProvider>
+    <LazyMotion features={domAnimation} strict>
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-background focus:text-primary focus:border focus:border-primary focus:px-4 focus:py-2 focus:font-sans focus:text-xs focus:tracking-widest focus:uppercase"
@@ -75,7 +73,7 @@ function App() {
         <ScrollToTop />
         <Router />
       </WouterRouter>
-    </TooltipProvider>
+    </LazyMotion>
   );
 }
 

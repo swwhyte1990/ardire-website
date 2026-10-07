@@ -1,6 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { useLocation } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
@@ -175,7 +175,7 @@ export default function GolfToursPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background z-10" />
         </div>
         <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 pb-20 pt-44 w-full">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
@@ -189,14 +189,14 @@ export default function GolfToursPage() {
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               A week on the country's great courses, planned and looked after from the moment we meet you at the airport. You play. We take care of everything around it.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* What This Is */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -209,9 +209,9 @@ export default function GolfToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Scotland has the best golf in the world. <span className="italic text-primary">We arrange it properly.</span>
             </h2>
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -224,14 +224,14 @@ export default function GolfToursPage() {
             <p>
               Scotland is the home of golf, and showing it off is one of the things we love most. Whether you are here to play a lifetime's list of courses or to give a team a few days they will always remember, the week is built around you. You bring your clubs, and we look after the rest.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* How It Works */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -242,9 +242,9 @@ export default function GolfToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               We plan the whole trip before you arrive, then look after it while you are here.
             </h2>
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -257,14 +257,14 @@ export default function GolfToursPage() {
             <p>
               What you bring is the golf you want to play. We bring everything it takes to make the week run beautifully around it.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Pricing */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -275,8 +275,8 @@ export default function GolfToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Built around what you want to play.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -289,14 +289,14 @@ export default function GolfToursPage() {
             <p>
               It is shown per person so you can picture the cost at any group size. Your own figure will reflect the choices you make: the courses, the number of rounds, the standard of where you stay, and the experiences you add around the golf. We put together a full, itemised proposal before anything is booked.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Sample Itinerary */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -307,8 +307,8 @@ export default function GolfToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               A real week of golf, written to show the shape and the standard.
             </h2>
-          </motion.div>
-          <motion.p
+          </m.div>
+          <m.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -316,9 +316,9 @@ export default function GolfToursPage() {
             className="font-sans font-light text-sm text-muted-foreground max-w-2xl mb-12"
           >
             This is a version of a tour we ran. The courses, order, accommodation, and cultural stops all change depending on your group, your dates, and what matters to you.
-          </motion.p>
+          </m.p>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -345,7 +345,7 @@ export default function GolfToursPage() {
 
             <AnimatePresence initial={false}>
               {itineraryOpen === "golf-7day" && (
-                <motion.div
+                <m.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
@@ -364,17 +364,17 @@ export default function GolfToursPage() {
                     ))}
                     <p className="font-sans font-light text-sm text-primary pt-2">Guide price £10,000 (+VAT) per person</p>
                   </div>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -385,8 +385,8 @@ export default function GolfToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Things people ask us.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -411,7 +411,7 @@ export default function GolfToursPage() {
                   </button>
                   <AnimatePresence initial={false}>
                     {open && (
-                      <motion.div
+                      <m.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -419,20 +419,20 @@ export default function GolfToursPage() {
                         className="overflow-hidden"
                       >
                         <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed pb-5">{faq.a}</p>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
                 </div>
               );
             })}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-20 bg-card border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -451,7 +451,7 @@ export default function GolfToursPage() {
             >
               <a href="/#enquiry" onClick={goToEnquiry}>Enquire</a>
             </Button>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 

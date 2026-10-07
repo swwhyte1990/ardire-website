@@ -1,6 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { useLocation } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
@@ -166,7 +166,7 @@ export default function CorporateIncentivesPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-background z-10" />
         </div>
         <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 pb-20 pt-44 w-full">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
@@ -180,14 +180,14 @@ export default function CorporateIncentivesPage() {
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               Reward a team, motivate your top performers, or bring clients somewhere they will not forget. We design and run the whole trip, from the moment everyone arrives to the day they head home.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* What This Is */}
       <section className="py-24 md:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -198,8 +198,8 @@ export default function CorporateIncentivesPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Built around what the trip <span className="italic text-primary">is meant to achieve.</span>
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -212,14 +212,14 @@ export default function CorporateIncentivesPage() {
             <p>
               Scotland makes a strong case for itself here. There are few better places to make a group feel genuinely rewarded: world-famous golf, whisky at its source, castles to stay in rather than only visit, and scenery that does a great deal of the work before a single thing is planned. Our part is knowing how to turn all of that into days that run smoothly and land the way you intended.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* What It Is For */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -230,8 +230,8 @@ export default function CorporateIncentivesPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Start with the outcome. <span className="italic text-primary">We build from there.</span>
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -241,14 +241,14 @@ export default function CorporateIncentivesPage() {
             <p>
               The best incentive trips are built around an outcome rather than just an itinerary, and knowing yours shapes everything we plan. Some companies come to us to reward and recognise the people who have driven their year. Others want to motivate a team toward a shared goal, with something memorable waiting at the end of it, or to strengthen how a group works together away from the office. And some are here to host clients or partners in a way that deepens the relationship for years afterwards. Tell us which of these matters most, or the mix of them, and the trip takes its shape from there.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* How It Works */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -259,8 +259,8 @@ export default function CorporateIncentivesPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               We plan the programme before anyone travels, then run it while you are here.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -273,14 +273,14 @@ export default function CorporateIncentivesPage() {
             <p>
               From the welcome at the airport to the final farewell, the detail is ours: the travel between places, the accommodation, the dining, the experiences, and the small touches that make a trip feel considered rather than booked. Everything is planned with you and signed off before it is arranged, and someone is with you throughout, so if anything needs to flex on the day, it is taken care of quietly.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* What a Trip Can Include */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -291,8 +291,8 @@ export default function CorporateIncentivesPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               What a trip can include.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -302,8 +302,8 @@ export default function CorporateIncentivesPage() {
             <p>
               Every programme is different, but to give you a sense of what is possible:
             </p>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -315,8 +315,8 @@ export default function CorporateIncentivesPage() {
                 <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed">{item}</p>
               </div>
             ))}
-          </motion.div>
-          <motion.p
+          </m.div>
+          <m.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -324,14 +324,14 @@ export default function CorporateIncentivesPage() {
             className="font-sans font-light text-sm text-muted-foreground max-w-2xl"
           >
             We will suggest plenty you would not have thought of, and build in anything you already have in mind.
-          </motion.p>
+          </m.p>
         </div>
       </section>
 
       {/* Sample Programme */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -342,8 +342,8 @@ export default function CorporateIncentivesPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               A five-day trip, written to show how a programme comes together.
             </h2>
-          </motion.div>
-          <motion.p
+          </m.div>
+          <m.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -351,9 +351,9 @@ export default function CorporateIncentivesPage() {
             className="font-sans font-light text-sm text-muted-foreground max-w-2xl mb-12"
           >
             This is one example for a group of around twelve. It is there to show the shape and standard, not to be taken as a fixed plan. Every trip we build looks different.
-          </motion.p>
+          </m.p>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -380,7 +380,7 @@ export default function CorporateIncentivesPage() {
 
             <AnimatePresence initial={false}>
               {programmeOpen === "corp-5day" && (
-                <motion.div
+                <m.div
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
@@ -401,17 +401,17 @@ export default function CorporateIncentivesPage() {
                       Each day pairs one memorable thing by day with an evening that feels like an occasion, and the whole programme is planned and run on the ground, so the company can be a guest at its own trip rather than its organiser.
                     </p>
                   </div>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Pricing */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -422,8 +422,8 @@ export default function CorporateIncentivesPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Built around your goals, your group and the time you have.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -436,14 +436,14 @@ export default function CorporateIncentivesPage() {
             <p>
               Your own figure will reflect the choices you make: where you stay, how you travel, the experiences you build in, and the number of people coming. We put together a full, itemised proposal before anything is confirmed.
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -454,8 +454,8 @@ export default function CorporateIncentivesPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
               Things people ask us.
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -480,7 +480,7 @@ export default function CorporateIncentivesPage() {
                   </button>
                   <AnimatePresence initial={false}>
                     {open && (
-                      <motion.div
+                      <m.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -488,20 +488,20 @@ export default function CorporateIncentivesPage() {
                         className="overflow-hidden"
                       >
                         <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed pb-5">{faq.a}</p>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
                 </div>
               );
             })}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-20 bg-card border-t border-border/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -520,7 +520,7 @@ export default function CorporateIncentivesPage() {
             >
               <a href="/#enquiry" onClick={goToEnquiry}>Enquire</a>
             </Button>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
