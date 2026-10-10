@@ -54,7 +54,7 @@ const allServiceLinks = [
 const linkStyle = "color:#c5a366;text-decoration:none;margin-right:1rem;display:inline-block;padding:0.25rem 0";
 
 function buildPageBlock(route) {
-  const h1Html = `<h1 style="font-family:Georgia,serif;font-size:2rem;font-weight:500;letter-spacing:0.05em;color:#c5a366;margin:0 0 1.5rem">${route.h1}</h1>`;
+  const h1Html = `<h1 style="font-family:Georgia,serif;font-size:2rem;font-weight:500;letter-spacing:0.05em;color:#c5a366;margin:0 0 1.5rem">${esc(route.h1)}</h1>`;
 
   const paragraphsHtml = (route.paragraphs || [])
     .map(p => `<p style="font-size:1.05rem;margin:0 0 1.25rem">${esc(p)}</p>`)
@@ -75,6 +75,39 @@ function buildPageBlock(route) {
 }
 
 const routes = [
+  {
+    path: 'travel',
+    heroImage: 'travel-glenfinnan.webp',
+    title: 'Private Tours & Travel in Scotland | The \u00c1rd\u00cdre Group',
+    description: 'Bespoke private tours, championship golf, chauffeur services and 24/7 concierge across Scotland, crafted by The \u00c1rd\u00cdre Group.',
+    h1: 'Private Tours & Travel in Scotland',
+    paragraphs: [
+      'Privately guided journeys, championship golf, luxury chauffeur, self-guided adventures and round-the-clock concierge. All crafted around you.',
+      'Whether you want a fully escorted tour of the Highlands, a week on Scotland\'s championship links, a chauffeur on call for the duration of your stay, or a self-guided route with everything booked ahead of you, each journey is built around how you prefer to travel rather than a fixed itinerary.',
+    ],
+    highlights: [
+      'Luxury Tours - fully escorted private touring across Scotland',
+      'Golf Tours - St Andrews, Turnberry and the great championship links',
+      'Private Chauffeur - discreet, professional drivers across the country',
+      'Self-Guided Tours - routes, stays and access arranged in advance',
+    ],
+  },
+  {
+    path: 'events',
+    heroImage: 'events-hero.webp',
+    title: 'Corporate Events & Incentive Travel in Scotland | The \u00c1rd\u00cdre Group',
+    description: 'Corporate incentives, end-to-end event management and professional staffing across Scotland, planned and delivered by The \u00c1rd\u00cdre Group.',
+    h1: 'Corporate Events & Incentive Travel in Scotland',
+    paragraphs: [
+      'Corporate incentives, full-service event management, professional staffing and bespoke experiences. Conceived, managed and delivered.',
+      'From the first concept through to the final curtain, we plan and run events across Scotland: incentive programmes that reward the people who earned them, full event management for conferences, dinners and launches, and experienced hospitality staff for occasions of any scale.',
+    ],
+    highlights: [
+      'Corporate Incentives - programmes that reward and motivate teams',
+      'Event Management - conferences, dinners and launches run end to end',
+      'Event Staffing - experienced hospitality staff at any scale',
+    ],
+  },
   {
     path: 'services/luxury-tours',
     heroImage: 'tours-hero.webp',
@@ -249,11 +282,11 @@ for (const route of routes) {
     )
     .replace(
       /<title>[^<]*<\/title>/,
-      `<title>${route.title}</title>`
+      `<title>${esc(route.title)}</title>`
     )
     .replace(
       /<meta\s+name="description"\s+content="[^"]*"\s*\/>/,
-      `<meta name="description" content="${route.description}" />`
+      `<meta name="description" content="${esc(route.description)}" />`
     )
     .replace(
       '<meta property="og:url" content="https://ardire.co.uk/" />',
@@ -261,19 +294,19 @@ for (const route of routes) {
     )
     .replace(
       /<meta\s+property="og:title"\s+content="[^"]*"\s*\/>/,
-      `<meta property="og:title" content="${route.title}" />`
+      `<meta property="og:title" content="${esc(route.title)}" />`
     )
     .replace(
       /<meta\s+property="og:description"\s+content="[^"]*"\s*\/>/,
-      `<meta property="og:description" content="${route.description}" />`
+      `<meta property="og:description" content="${esc(route.description)}" />`
     )
     .replace(
       /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/>/,
-      `<meta name="twitter:title" content="${route.title}" />`
+      `<meta name="twitter:title" content="${esc(route.title)}" />`
     )
     .replace(
       /<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/>/,
-      `<meta name="twitter:description" content="${route.description}" />`
+      `<meta name="twitter:description" content="${esc(route.description)}" />`
     )
     .replace(
       /<div data-page-content[^>]*>[\s\S]*?<\/div><\/div>(?=\s*<script)/,
