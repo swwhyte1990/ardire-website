@@ -60,7 +60,7 @@ export default function PrivateChauffeurPage() {
     document.title = "Private Chauffeurs in Scotland | Glasgow, Edinburgh, Beyond.";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Premium private chauffeur hire across Scotland. Airport transfers, executive transport, and bespoke touring by The ÁrdÍre Group, Glasgow.");
+    desc?.setAttribute("content", "Premium private chauffeur hire across Scotland. Airport transfers, executive transport, and bespoke touring by The Árdíre Group, Glasgow.");
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
     faqScript.id = "faq-schema-private-chauffeur";
@@ -82,7 +82,7 @@ export default function PrivateChauffeurPage() {
       "@type": "Service",
       "name": "Private Chauffeur Service Scotland",
       "serviceType": "Chauffeur Service",
-      "provider": { "@type": "LocalBusiness", "name": "Árdíre Hospitality Group" },
+      "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
       "areaServed": "Scotland",
       "description": "Private chauffeur service across Scotland. Airport transfers, days out and group transport, driven by professionals who know the country.",
       "url": "https://ardire.co.uk/services/private-chauffeur",
@@ -114,7 +114,7 @@ export default function PrivateChauffeurPage() {
             src={chauffeurHero}
             srcSet={`${chauffeurHeroSm} 800w, ${chauffeurHero} 1200w`}
             sizes="100vw"
-            alt="Private Chauffeur Service Scotland, The ÁrdÍre Group"
+            alt="Private Chauffeur Service Scotland, The Árdíre Group"
             className="w-full h-full object-cover"
             width={1200}
             height={675}

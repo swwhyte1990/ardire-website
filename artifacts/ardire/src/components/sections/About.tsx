@@ -22,7 +22,7 @@ export function About() {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-8">
-              The ÁrdÍre Group<span className="italic text-primary">.</span>
+              The Árdíre Group<span className="italic text-primary">.</span>
             </h2>
 
             <div className="space-y-6 text-muted-foreground font-sans text-base leading-relaxed font-light">
@@ -30,7 +30,7 @@ export function About() {
                 Truly exceptional experiences are rarely about what is arranged. They are about how it feels to arrive, to settle in, to be genuinely looked after. The difference between an impressive itinerary and an unforgettable one comes down to something far more personal.
               </p>
               <p>
-                ÁrdÍre was founded by people who had spent their careers as butlers, working at the highest levels of private service in households, luxury hotels, and aboard private vessels. In those roles they developed something rare: an intimate, human understanding of what people from different cultures and backgrounds actually want when they finally have time to relax and enjoy the company of those around them.
+                Árdíre was founded by people who had spent their careers as butlers, working at the highest levels of private service in households, luxury hotels, and aboard private vessels. In those roles they developed something rare: an intimate, human understanding of what people from different cultures and backgrounds actually want when they finally have time to relax and enjoy the company of those around them.
               </p>
               <p>
                 That understanding is what we bring to every experience we create. The network, the creativity, and the expertise you would expect from a premium Scottish concierge group, combined with a genuine instinct for people. We know what makes a moment feel looked after. That is what makes it unforgettable.

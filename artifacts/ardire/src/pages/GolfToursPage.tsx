@@ -132,7 +132,7 @@ export default function GolfToursPage() {
       "@type": "Service",
       "name": "Private Golf Tours of Scotland",
       "serviceType": "Golf Tour",
-      "provider": { "@type": "LocalBusiness", "name": "Árdíre Hospitality Group" },
+      "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
       "areaServed": "Scotland",
       "description": "Bespoke private golf tours across Scotland's finest championship links. Tee times, caddies, transfers and accommodation all arranged end to end.",
       "url": "https://ardire.co.uk/services/golf-tours",

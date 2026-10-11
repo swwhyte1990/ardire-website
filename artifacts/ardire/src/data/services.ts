@@ -43,7 +43,7 @@ export const services: ServiceData[] = [
       "We design and run private golf tours across Scotland for small groups and individual travellers, from championship links on the east coast to Highland gems in the north. You tell us how you want to play. We build the week around it.",
     introRich: [
       { type: "heading", text: "Bespoke Golf Tours in Scotland" },
-      { type: "paragraph", text: "Play the courses that defined the game. The ÁrdÍre Group designs fully bespoke golf tours across Scotland for individuals, pairs, and groups who want more than a tee time. They want an experience. From the legendary Old Course at St Andrews to the dramatic links of the Outer Hebrides, we handle every detail so you can focus entirely on your game." },
+      { type: "paragraph", text: "Play the courses that defined the game. The Árdíre Group designs fully bespoke golf tours across Scotland for individuals, pairs, and groups who want more than a tee time. They want an experience. From the legendary Old Course at St Andrews to the dramatic links of the Outer Hebrides, we handle every detail so you can focus entirely on your game." },
       { type: "heading", text: "Championship Links & Hidden Gems" },
       { type: "paragraph", text: "Scotland boasts some of the finest golf courses in the world. We can secure access to celebrated venues including St Andrews, Carnoustie, Turnberry, Royal Troon, Muirfield, and Kingsbarns, as well as spectacular lesser-known courses where the scenery is as memorable as the golf. Every round is arranged in advance, with tee times, caddies, and transport all confirmed before you arrive." },
       { type: "heading", text: "Beyond the Fairway" },
@@ -66,7 +66,7 @@ export const services: ServiceData[] = [
       "A private chauffeur service across Scotland, for a single transfer or as long as you need a car and driver. Airport runs, days out, golf and event transfers, and group transport, planned around you.",
     introRich: [
       { type: "heading", text: "Private Chauffeur Services Across Scotland" },
-      { type: "paragraph", text: "The ÁrdÍre Group provides a premium chauffeur service for private individuals, corporate clients, and visiting guests throughout Scotland. Whether you require a seamless airport transfer, a chauffeured day of meetings across Glasgow and Edinburgh, or a multi-day touring driver for a leisurely exploration of the country, our experienced chauffeurs deliver an impeccable standard of service every time." },
+      { type: "paragraph", text: "The Árdíre Group provides a premium chauffeur service for private individuals, corporate clients, and visiting guests throughout Scotland. Whether you require a seamless airport transfer, a chauffeured day of meetings across Glasgow and Edinburgh, or a multi-day touring driver for a leisurely exploration of the country, our experienced chauffeurs deliver an impeccable standard of service every time." },
       { type: "heading", text: "Comfort, Discretion & Reliability" },
       { type: "paragraph", text: "Our chauffeurs are carefully selected for their professionalism, local knowledge, and calm composure. They are immaculately presented, punctual to the minute, and trained to anticipate your needs without being intrusive. All journeys are conducted in premium vehicles, maintained to the highest standard and specified for comfort on Scotland's varied roads." },
       { type: "heading", text: "Bespoke Ground Transportation" },
@@ -89,7 +89,7 @@ export const services: ServiceData[] = [
       "We design and run corporate incentive trips across Scotland for companies who want to reward their people, motivate their teams, or bring clients somewhere genuinely memorable. You tell us what the trip is meant to achieve, and we build a programme around it.",
     introRich: [
       { type: "heading", text: "Corporate Incentive Travel in Scotland" },
-      { type: "paragraph", text: "Scotland offers one of the most compelling natural backdrops for corporate incentive travel anywhere in the world. Ancient castles, dramatic Highland landscapes, private sporting estates, and world-class whisky culture combine to create an environment that inspires, motivates, and rewards in equal measure. The ÁrdÍre Group designs bespoke incentive programmes for businesses who want their people to feel genuinely extraordinary." },
+      { type: "paragraph", text: "Scotland offers one of the most compelling natural backdrops for corporate incentive travel anywhere in the world. Ancient castles, dramatic Highland landscapes, private sporting estates, and world-class whisky culture combine to create an environment that inspires, motivates, and rewards in equal measure. The Árdíre Group designs bespoke incentive programmes for businesses who want their people to feel genuinely extraordinary." },
       { type: "heading", text: "Experiences That Drive Performance" },
       { type: "paragraph", text: "We move well beyond the standard team-building itinerary. Whether it's a private Highland challenge followed by a castle dinner, a whisky blending masterclass at an exclusive distillery, a falconry experience on a private estate, or a clay shooting day in the Borders, every element is selected for its ability to create real connection and lasting memory. Your team's achievement deserves recognition that matches it." },
       { type: "heading", text: "Seamless from Brief to Debrief" },
@@ -135,11 +135,11 @@ export const services: ServiceData[] = [
       "Professional waiting staff, butlers and hospitality teams for events of any size, briefed and well presented. Staff on their own for an event you are running, or as part of a full event management service.",
     introRich: [
       { type: "heading", text: "Professional Event Staffing Across Scotland" },
-      { type: "paragraph", text: "The ÁrdÍre Group provides experienced, professionally trained event staff for a wide range of occasions across Scotland. From front-of-house teams and reception staff to hospitality managers and guest liaison officers, our people bring the right combination of warmth, discretion, and polish to every event they work." },
+      { type: "paragraph", text: "The Árdíre Group provides experienced, professionally trained event staff for a wide range of occasions across Scotland. From front-of-house teams and reception staff to hospitality managers and guest liaison officers, our people bring the right combination of warmth, discretion, and polish to every event they work." },
       { type: "heading", text: "Front-of-House & Hospitality Expertise" },
       { type: "paragraph", text: "Our staff are selected for their composure under pressure, natural warmth with guests, and ability to represent your brand impeccably. They arrive fully briefed, uniformed to your specification, and ready to deliver. Whether you need a single host for a private dining experience or a full team for a large-scale corporate gala, we build the right team around your event." },
       { type: "heading", text: "Flexible, Reliable, and Fully Insured" },
-      { type: "paragraph", text: "We understand that events rarely run exactly to plan. Our staff are trained to adapt, remain calm, and keep the guest experience seamless regardless of what happens behind the scenes. All of our event staff are background-checked, fully insured, and managed by a senior ÁrdÍre coordinator throughout your event." },
+      { type: "paragraph", text: "We understand that events rarely run exactly to plan. Our staff are trained to adapt, remain calm, and keep the guest experience seamless regardless of what happens behind the scenes. All of our event staff are background-checked, fully insured, and managed by a senior Árdíre coordinator throughout your event." },
     ],
     highlights: [
       "Trained, experienced staff across a range of event disciplines",
@@ -158,7 +158,7 @@ export const services: ServiceData[] = [
       "We plan, produce and run events from start to finish. One team manages the whole production, from venue and suppliers to on-the-day coordination, so you can hand the event over and trust that it will be handled properly.",
     introRich: [
       { type: "heading", text: "Full-Service Event Management Scotland" },
-      { type: "paragraph", text: "Whether you're hosting an intimate private dinner for twenty or a corporate gala for five hundred, The ÁrdÍre Group manages every element of your event from initial concept through to post-event debrief. Our event management team brings creative vision, logistical precision, and an unwavering commitment to excellence to every occasion we take on." },
+      { type: "paragraph", text: "Whether you're hosting an intimate private dinner for twenty or a corporate gala for five hundred, The Árdíre Group manages every element of your event from initial concept through to post-event debrief. Our event management team brings creative vision, logistical precision, and an unwavering commitment to excellence to every occasion we take on." },
       { type: "heading", text: "From Concept to Execution" },
       { type: "paragraph", text: "We work closely with you to understand your objectives, brand, and vision, then develop a bespoke event strategy around them. Venue sourcing and negotiation, supplier management, catering, entertainment, AV and technical production, décor, guest management, and on-the-day coordination, all handled seamlessly under one roof." },
       { type: "heading", text: "Corporate Events & Private Functions" },

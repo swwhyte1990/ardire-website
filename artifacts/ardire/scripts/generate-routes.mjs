@@ -78,8 +78,8 @@ const routes = [
   {
     path: 'travel',
     heroImage: 'travel-glenfinnan.webp',
-    title: 'Private Tours & Travel in Scotland | The ÁrdÍre Group',
-    description: 'Bespoke private tours, championship golf, chauffeur services and 24/7 concierge across Scotland, crafted by The ÁrdÍre Group.',
+    title: 'Private Tours & Travel in Scotland | The Árdíre Group',
+    description: 'Bespoke private tours, championship golf, chauffeur services and 24/7 concierge across Scotland, crafted by The Árdíre Group.',
     h1: 'Private Tours & Travel in Scotland',
     paragraphs: [
       'Privately guided journeys, championship golf, luxury chauffeur, self-guided adventures and round-the-clock concierge. All crafted around you.',
@@ -95,8 +95,8 @@ const routes = [
   {
     path: 'events',
     heroImage: 'events-hero.webp',
-    title: 'Corporate Events & Incentive Travel in Scotland | The ÁrdÍre Group',
-    description: 'Corporate incentives, end-to-end event management and professional staffing across Scotland, planned and delivered by The ÁrdÍre Group.',
+    title: 'Corporate Events & Incentive Travel in Scotland | The Árdíre Group',
+    description: 'Corporate incentives, end-to-end event management and professional staffing across Scotland, planned and delivered by The Árdíre Group.',
     h1: 'Corporate Events & Incentive Travel in Scotland',
     paragraphs: [
       'Corporate incentives, full-service event management, professional staffing and bespoke experiences. Conceived, managed and delivered.',
@@ -111,8 +111,8 @@ const routes = [
   {
     path: 'services/luxury-tours',
     heroImage: 'tours-hero.webp',
-    title: 'Luxury Private Tours Scotland | The ÁrdÍre Group',
-    description: 'Fully escorted private touring across Scotland\'s most breathtaking landscapes. Bespoke itineraries crafted by The ÁrdÍre Group, Glasgow.',
+    title: 'Luxury Private Tours Scotland | The Árdíre Group',
+    description: 'Fully escorted private touring across Scotland\'s most breathtaking landscapes. Bespoke itineraries crafted by The Árdíre Group, Glasgow.',
     h1: 'Luxury Private Tours Scotland',
     paragraphs: [
       'Every landscape tells a story; our guides know them all. We design private, fully guided journeys across Scotland\'s most dramatic and exclusive locations, from the ancient glens of the Highlands to the whisky distilleries of Speyside and the wild shores of the Outer Hebrides. Each tour is crafted around your interests, pace, and vision, never from a template.',
@@ -151,7 +151,7 @@ const routes = [
     path: 'services/private-chauffeur',
     heroImage: 'chauffeur-hero.webp',
     title: 'Private Chauffeurs in Scotland | Glasgow, Edinburgh, Beyond.',
-    description: 'Premium private chauffeur hire across Scotland. Airport transfers, executive transport, and bespoke touring by The ÁrdÍre Group, Glasgow.',
+    description: 'Premium private chauffeur hire across Scotland. Airport transfers, executive transport, and bespoke touring by The Árdíre Group, Glasgow.',
     h1: 'Private Chauffeur Scotland',
     paragraphs: [
       'From airport arrivals to full-day touring, our private chauffeur service sets the benchmark for discreet, professional ground transportation across Scotland. Every journey is handled with precision, punctuality, and an unwavering attention to comfort.',
@@ -170,8 +170,8 @@ const routes = [
   {
     path: 'services/corporate-incentives',
     heroImage: 'corporate-hero.webp',
-    title: 'Corporate Incentive Trips in Scotland | The ÁrdÍre Group',
-    description: 'Reward your top performers with world-class Scottish experiences. Corporate incentive programmes designed by The ÁrdÍre Group.',
+    title: 'Corporate Incentive Trips in Scotland | The Árdíre Group',
+    description: 'Reward your top performers with world-class Scottish experiences. Corporate incentive programmes designed by The Árdíre Group.',
     h1: 'Corporate Incentive Travel Scotland',
     paragraphs: [
       'The best incentive is one your team still talks about years later. We design and deliver high-impact corporate incentive programmes that go far beyond the ordinary, creating moments of genuine awe, team connection, and cultural immersion across Scotland\'s most spectacular settings.',
@@ -189,7 +189,7 @@ const routes = [
   {
     path: 'services/self-guided-tours',
     heroImage: 'self-guided-hero.webp',
-    title: 'Self-Guided Tours Scotland | The ÁrdÍre Group',
+    title: 'Self-Guided Tours Scotland | The Árdíre Group',
     description: 'Explore Scotland at your own pace with curated self-guided itineraries, pre-booked accommodations and 24/7 support from Ardire.',
     h1: 'Self-Guided Tours Scotland',
     paragraphs: [
@@ -209,8 +209,8 @@ const routes = [
   {
     path: 'services/event-staffing',
     heroImage: 'events-hero.webp',
-    title: 'Event Staffing Scotland | The ÁrdÍre Group',
-    description: 'Professional hospitality and event staffing for Scotland\'s most prestigious events. Sourced and managed by The ÁrdÍre Group.',
+    title: 'Event Staffing Scotland | The Árdíre Group',
+    description: 'Professional hospitality and event staffing for Scotland\'s most prestigious events. Sourced and managed by The Árdíre Group.',
     h1: 'Event Staffing Scotland',
     paragraphs: [
       'The impression your event makes starts with the people running it. Our event staffing team brings professionalism, warmth, and composure to every occasion, from intimate private dinners to large-scale corporate events and major public gatherings. We are discreet, well-presented, and completely reliable.',
@@ -228,7 +228,7 @@ const routes = [
   {
     path: 'services/event-management',
     heroImage: 'events-hero.webp',
-    title: 'Event Management Scotland | The ÁrdÍre Group',
+    title: 'Event Management Scotland | The Árdíre Group',
     description: 'Full-service event management for corporate functions, gala dinners, and private occasions across Scotland. Conceived, managed, and delivered by Ardire.',
     h1: 'Event Management Scotland',
     paragraphs: [
@@ -248,8 +248,8 @@ const routes = [
   {
     path: 'privacy',
     heroImage: null,
-    title: 'Privacy Policy | The ÁrdÍre Group',
-    description: 'Privacy policy for The ÁrdÍre Group. How we collect, use and protect your personal data.',
+    title: 'Privacy Policy | The Árdíre Group',
+    description: 'Privacy policy for The Árdíre Group. How we collect, use and protect your personal data.',
     h1: 'Privacy Policy',
     paragraphs: [
       'This privacy policy explains how Ard Ire Hospitality Group, trading as Ardire, collects, uses, stores, and protects your personal data when you visit our website or contact us about our services.',

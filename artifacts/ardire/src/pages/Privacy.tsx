@@ -14,10 +14,10 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 
 export default function Privacy() {
   useEffect(() => {
-    document.title = "Privacy Policy | The ÁrdÍre Group";
+    document.title = "Privacy Policy | The Árdíre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Privacy policy for The ÁrdÍre Group. How we collect, use and protect your personal data.");
+    desc?.setAttribute("content", "Privacy policy for The Árdíre Group. How we collect, use and protect your personal data.");
     return () => {
       document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
       if (desc && prev) desc.setAttribute("content", prev);
@@ -47,13 +47,13 @@ export default function Privacy() {
 
             <Section title="Who We Are">
               <p>
-                This Privacy Policy explains how The ÁrdÍre Group (&ldquo;ÁrdÍre&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) collects, uses, and protects your personal data when you visit our website or contact us regarding our services.
+                This Privacy Policy explains how The Árdíre Group (&ldquo;Árdíre&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) collects, uses, and protects your personal data when you visit our website or contact us regarding our services.
               </p>
               <p>
                 We are the data controller for the purposes of the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
               </p>
               <p>
-                <span className="text-foreground font-normal">The ÁrdÍre Group</span><br />
+                <span className="text-foreground font-normal">The Árdíre Group</span><br />
                 Glasgow, Scotland<br />
                 <a href="mailto:enquiries@ardire.co.uk" className="text-primary hover:underline">enquiries@ardire.co.uk</a><br />
                 +44 (0)141 255 0796

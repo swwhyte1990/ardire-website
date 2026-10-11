@@ -67,7 +67,7 @@ export default function EventManagementPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Event Management Scotland | The ÁrdÍre Group";
+    document.title = "Event Management Scotland | The Árdíre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
     desc?.setAttribute("content", "Full-service event management for corporate functions, gala dinners, and private occasions across Scotland. Conceived, managed, and delivered by Ardire.");
@@ -92,7 +92,7 @@ export default function EventManagementPage() {
       "@type": "Service",
       "name": "Full-Service Event Management Scotland",
       "serviceType": "Event Management",
-      "provider": { "@type": "LocalBusiness", "name": "Árdíre Hospitality Group" },
+      "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
       "areaServed": "Scotland",
       "description": "Full-service event management across Scotland. Árdíre plans, produces and runs your event from brief to close, with one team accountable for the whole thing.",
       "url": "https://ardire.co.uk/services/event-management",
@@ -124,7 +124,7 @@ export default function EventManagementPage() {
             src={eventsHero}
             srcSet={`${eventsHeroSm} 800w, ${eventsHero} 1440w`}
             sizes="100vw"
-            alt="Event Management Scotland, The ÁrdÍre Group"
+            alt="Event Management Scotland, The Árdíre Group"
             className="w-full h-full object-cover"
             width={1440}
             height={961}

@@ -48,10 +48,10 @@ export default function TravelPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Private Tours & Travel in Scotland | The ÁrdÍre Group";
+    document.title = "Private Tours & Travel in Scotland | The Árdíre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Bespoke private tours, championship golf, chauffeur services and 24/7 concierge across Scotland, crafted by The ÁrdÍre Group.");
+    desc?.setAttribute("content", "Bespoke private tours, championship golf, chauffeur services and 24/7 concierge across Scotland, crafted by The Árdíre Group.");
     return () => {
       document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
       if (desc && prev !== null) desc.setAttribute("content", prev);
@@ -143,7 +143,7 @@ export default function TravelPage() {
                   src={cardImages[service.slug] ?? hero}
                   srcSet={`${cardImagesSm[service.slug] ?? cardImages[service.slug] ?? hero} 800w, ${cardImages[service.slug] ?? hero} ${cardImageDesktopW[service.slug] ?? 1200}w`}
                   sizes="(min-width: 768px) 50vw, 100vw"
-                  alt={`${service.title}, The ÁrdÍre Group`}
+                  alt={`${service.title}, The Árdíre Group`}
                   className="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                   width={960}

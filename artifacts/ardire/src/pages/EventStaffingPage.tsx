@@ -43,10 +43,10 @@ export default function EventStaffingPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Event Staffing Scotland | The ÁrdÍre Group";
+    document.title = "Event Staffing Scotland | The Árdíre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Professional hospitality and event staffing for Scotland's most prestigious events. Sourced and managed by The ÁrdÍre Group.");
+    desc?.setAttribute("content", "Professional hospitality and event staffing for Scotland's most prestigious events. Sourced and managed by The Árdíre Group.");
     const serviceScript = document.createElement("script");
     serviceScript.type = "application/ld+json";
     serviceScript.id = "service-schema-event-staffing";
@@ -55,7 +55,7 @@ export default function EventStaffingPage() {
       "@type": "Service",
       "name": "Professional Event Staffing Scotland",
       "serviceType": "Event Staffing",
-      "provider": { "@type": "LocalBusiness", "name": "Árdíre Hospitality Group" },
+      "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
       "areaServed": "Scotland",
       "description": "Professional event staff for occasions across Scotland. Waiting staff, butlers and hospitality teams, briefed, well presented and ready to serve.",
       "url": "https://ardire.co.uk/services/event-staffing",
@@ -86,7 +86,7 @@ export default function EventStaffingPage() {
             src={eventsHero}
             srcSet={`${eventsHeroSm} 800w, ${eventsHero} 1440w`}
             sizes="100vw"
-            alt="Event Staffing Scotland, The ÁrdÍre Group"
+            alt="Event Staffing Scotland, The Árdíre Group"
             className="w-full h-full object-cover"
             width={1440}
             height={961}

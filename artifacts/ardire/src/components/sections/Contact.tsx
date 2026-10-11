@@ -28,7 +28,6 @@ const SERVICE_OPTIONS = [
   { value: "golf-tours", label: "Golf Tours" },
   { value: "private-chauffeur", label: "Private Chauffeur" },
   { value: "self-guided-tours", label: "Self-Guided Tours" },
-  { value: "concierge", label: "Concierge" },
   { value: "corporate-incentives", label: "Corporate Incentives" },
   { value: "event-management", label: "Event Management" },
   { value: "event-staffing", label: "Event Staffing" },
@@ -121,7 +120,7 @@ export function Contact() {
             <div className="space-y-8">
               <div>
                 <h3 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Based In</h3>
-                <p className="font-display text-lg text-foreground">The ÁrdÍre Group</p>
+                <p className="font-display text-lg text-foreground">The Árdíre Group</p>
                 <p className="text-muted-foreground font-sans mt-1">Glasgow, Scotland</p>
               </div>
               <div>

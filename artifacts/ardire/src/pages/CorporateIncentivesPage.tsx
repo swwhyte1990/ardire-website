@@ -97,10 +97,10 @@ export default function CorporateIncentivesPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Corporate Incentive Trips in Scotland | The ÁrdÍre Group";
+    document.title = "Corporate Incentive Trips in Scotland | The Árdíre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Reward your top performers with world-class Scottish experiences. Corporate incentive programmes designed by The ÁrdÍre Group.");
+    desc?.setAttribute("content", "Reward your top performers with world-class Scottish experiences. Corporate incentive programmes designed by The Árdíre Group.");
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
     faqScript.id = "faq-schema-corp";
@@ -122,7 +122,7 @@ export default function CorporateIncentivesPage() {
       "@type": "Service",
       "name": "Corporate Incentive Trips in Scotland",
       "serviceType": "Corporate Incentive Travel",
-      "provider": { "@type": "LocalBusiness", "name": "Árdíre Hospitality Group" },
+      "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
       "areaServed": "Scotland",
       "description": "Bespoke corporate incentive trips across Scotland. Golf, whisky, castles and Highland experiences, designed around your goals and run end to end.",
       "url": "https://ardire.co.uk/services/corporate-incentives",
@@ -154,7 +154,7 @@ export default function CorporateIncentivesPage() {
             src={corporateHero}
             srcSet={`${corporateHeroSm} 800w, ${corporateHero} 1200w`}
             sizes="100vw"
-            alt="Corporate Incentives Scotland, The ÁrdÍre Group"
+            alt="Corporate Incentives Scotland, The Árdíre Group"
             className="w-full h-full object-cover"
             width={1200}
             height={800}

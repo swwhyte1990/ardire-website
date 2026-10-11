@@ -59,7 +59,7 @@ export default function SelfGuidedToursPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Self-Guided Tours Scotland | The ÁrdÍre Group";
+    document.title = "Self-Guided Tours Scotland | The Árdíre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
     desc?.setAttribute("content", "Explore Scotland at your own pace with curated self-guided itineraries, pre-booked accommodations and 24/7 support from Ardire.");
@@ -84,7 +84,7 @@ export default function SelfGuidedToursPage() {
       "@type": "Service",
       "name": "Self-Guided Tours of Scotland",
       "serviceType": "Self-Guided Tour",
-      "provider": { "@type": "LocalBusiness", "name": "Árdíre Hospitality Group" },
+      "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
       "areaServed": "Scotland",
       "description": "Bespoke self-guided tours of Scotland, planned and booked around you. We design the route and make the bookings; you travel independently at your own pace.",
       "url": "https://ardire.co.uk/services/self-guided-tours",
@@ -116,7 +116,7 @@ export default function SelfGuidedToursPage() {
             src={selfGuidedHero}
             srcSet={`${selfGuidedHeroSm} 800w, ${selfGuidedHero} 1200w`}
             sizes="100vw"
-            alt="Self-Guided Tours of Scotland, The ÁrdÍre Group"
+            alt="Self-Guided Tours of Scotland, The Árdíre Group"
             className="w-full h-full object-cover"
             width={1200}
             height={800}
