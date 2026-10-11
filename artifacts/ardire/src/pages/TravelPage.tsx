@@ -53,7 +53,7 @@ export default function TravelPage() {
     const prev = desc?.getAttribute("content") ?? null;
     desc?.setAttribute("content", "Bespoke private tours, championship golf, chauffeur services and 24/7 concierge across Scotland, crafted by The ÁrdÍre Group.");
     return () => {
-      document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
+      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
       if (desc && prev !== null) desc.setAttribute("content", prev);
     };
   }, []);
@@ -126,9 +126,14 @@ export default function TravelPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[calc(1px+2mm)] bg-background">
             {travelServices.map((service, i) => (
-              <m.button
+              <m.a
                 key={service.slug}
-                onClick={() => goToService(service.slug)}
+                href={`/services/${service.slug}`}
+                onClick={(e) => {
+                  if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+                  e.preventDefault();
+                  goToService(service.slug);
+                }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.35 + i * 0.08 }}
@@ -159,7 +164,7 @@ export default function TravelPage() {
                     {service.cta} <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
-              </m.button>
+              </m.a>
             ))}
           </div>
         </div>

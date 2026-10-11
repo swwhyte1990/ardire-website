@@ -107,13 +107,10 @@ export default function GolfToursPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Private Golf Tours of Scotland | The ÁrdÍre Group";
+    document.title = "Golf Tours Scotland | St Andrews, Turnberry & Beyond";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute(
-      "content",
-      "Bespoke private golf tours across Scotland's finest championship links. Tee times, caddies, transfers, and accommodation all arranged by The ÁrdÍre Group."
-    );
+    desc?.setAttribute("content", "Play St Andrews, Carnoustie, and Turnberry on a luxury private golf tour of Scotland with private transport and luxury accommodation.");
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
     faqScript.id = "faq-schema-golf";
@@ -142,7 +139,7 @@ export default function GolfToursPage() {
     });
     document.head.appendChild(serviceScript);
     return () => {
-      document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
+      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
       if (desc && prev) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-golf")?.remove();
       document.getElementById("service-schema-golf")?.remove();

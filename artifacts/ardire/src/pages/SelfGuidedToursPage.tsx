@@ -59,13 +59,10 @@ export default function SelfGuidedToursPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Self-Guided Tours of Scotland | The ÁrdÍre Group";
+    document.title = "Self-Guided Tours Scotland | The ÁrdÍre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute(
-      "content",
-      "A bespoke self-guided tour of Scotland, planned and booked around you. We design the route and make the bookings; you travel independently at your own pace."
-    );
+    desc?.setAttribute("content", "Explore Scotland at your own pace with curated self-guided itineraries, pre-booked accommodations and 24/7 support from Ardire.");
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
     faqScript.id = "faq-schema-self-guided";
@@ -94,7 +91,7 @@ export default function SelfGuidedToursPage() {
     });
     document.head.appendChild(serviceScript);
     return () => {
-      document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
+      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
       if (desc && prev !== null) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-self-guided")?.remove();
       document.getElementById("service-schema-self-guided")?.remove();

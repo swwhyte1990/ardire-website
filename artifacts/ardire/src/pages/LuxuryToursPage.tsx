@@ -168,13 +168,10 @@ export default function LuxuryToursPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Luxury Scotland Tours & Travel Concierge | The ÁrdÍre Group";
+    document.title = "Luxury Private Tours Scotland | The ÁrdÍre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute(
-      "content",
-      "Bespoke private tours of Scotland with a dedicated travel concierge. We plan, arrange and look after every part of your trip, from the Highlands and islands to whisky trails and castle stays."
-    );
+    desc?.setAttribute("content", "Fully escorted private touring across Scotland's most breathtaking landscapes. Bespoke itineraries crafted by The ÁrdÍre Group, Glasgow.");
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
     faqScript.id = "faq-schema-luxury";
@@ -203,7 +200,7 @@ export default function LuxuryToursPage() {
     });
     document.head.appendChild(serviceScript);
     return () => {
-      document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
+      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
       if (desc && prev) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-luxury")?.remove();
       document.getElementById("service-schema-luxury")?.remove();

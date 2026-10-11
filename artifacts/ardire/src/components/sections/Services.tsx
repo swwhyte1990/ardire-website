@@ -1,30 +1,24 @@
 import { ArrowRight } from "lucide-react";
-import { useLocation } from "wouter";
+import { Link } from "wouter";
 import eventsHeroSm from "@/assets/images/events-hero-sm.webp";
 import eventsHero from "@/assets/images/events-hero.webp";
 import travelGlenfinnanSm from "@/assets/images/travel-glenfinnan-sm.webp";
 import travelGlenfinnan from "@/assets/images/travel-glenfinnan.webp";
 
+// These two cards are the main entry points to the hub pages, so they need to be
+// real anchors: a <button> gives a crawler no href to follow and a visitor no way
+// to open the page in a new tab.
+const toTop = () => window.scrollTo({ top: 0, behavior: "instant" });
+
 export function Services() {
-  const [, navigate] = useLocation();
-
-  function goToTravel() {
-    navigate("/travel");
-    window.scrollTo({ top: 0, behavior: "auto" });
-  }
-
-  function goToEvents() {
-    navigate("/events");
-    window.scrollTo({ top: 0, behavior: "auto" });
-  }
-
   return (
     <section id="services" className="px-6 md:px-10 pt-16 md:pt-32 pb-20 relative z-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-[calc(1px+2mm)] bg-background items-stretch">
 
         {/* Travel & Tours */}
-        <button
-          onClick={goToTravel}
+        <Link
+          href="/travel"
+          onClick={toTop}
           className="group relative block w-full h-[300px] md:h-[360px] overflow-hidden text-left"
         >
           <img
@@ -55,11 +49,12 @@ export function Services() {
               Plan a Private Tour <ArrowRight className="w-4 h-4" />
             </span>
           </div>
-        </button>
+        </Link>
 
         {/* Events & Hospitality */}
-        <button
-          onClick={goToEvents}
+        <Link
+          href="/events"
+          onClick={toTop}
           className="group relative block w-full h-[300px] md:h-[360px] overflow-hidden text-left"
         >
           <img
@@ -90,7 +85,7 @@ export function Services() {
               Discuss an Event <ArrowRight className="w-4 h-4" />
             </span>
           </div>
-        </button>
+        </Link>
 
       </div>
     </section>

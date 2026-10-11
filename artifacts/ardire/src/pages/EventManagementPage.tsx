@@ -70,10 +70,7 @@ export default function EventManagementPage() {
     document.title = "Event Management Scotland | The ÁrdÍre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute(
-      "content",
-      "Full-service event management across Scotland. Ardire plans, produces and runs your event from brief to close, with one team accountable for the whole thing."
-    );
+    desc?.setAttribute("content", "Full-service event management for corporate functions, gala dinners, and private occasions across Scotland. Conceived, managed, and delivered by Ardire.");
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
     faqScript.id = "faq-schema-event-management";
@@ -102,7 +99,7 @@ export default function EventManagementPage() {
     });
     document.head.appendChild(serviceScript);
     return () => {
-      document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
+      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
       if (desc && prev !== null) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-event-management")?.remove();
       document.getElementById("service-schema-event-management")?.remove();

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, type MouseEvent } from "react";
-import { useLocation } from "wouter";
+import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { setPendingScroll } from "@/lib/pendingScroll";
@@ -27,17 +27,13 @@ const eventsServices = [
 function NavDropdown({
   label,
   items,
-  onItemClick,
   hubHref,
   hubLabel,
-  onHubClick,
 }: {
   label: string;
   items: { slug: string; title: string }[];
-  onItemClick: (slug: string) => void;
   hubHref: string;
   hubLabel: string;
-  onHubClick: (href: string) => void;
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -74,21 +70,23 @@ function NavDropdown({
         )}
       >
         <div className="bg-card border border-border min-w-[210px] py-2 shadow-2xl">
-          <button
-            onClick={() => { setOpen(false); onHubClick(hubHref); }}
+          <Link
+            href={hubHref}
+            onClick={() => { setOpen(false); window.scrollTo({ top: 0, behavior: "instant" }); }}
             className="w-full text-left block px-5 py-2.5 text-xs font-sans uppercase tracking-[0.18em] text-primary font-semibold hover:bg-secondary/50 transition-colors duration-200"
           >
             {hubLabel}
-          </button>
+          </Link>
           <div className="mx-5 border-t border-border/50 my-1" />
           {items.map((item) => (
-            <button
+            <Link
               key={item.slug}
-              onClick={() => { setOpen(false); onItemClick(item.slug); }}
+              href={`/services/${item.slug}`}
+              onClick={() => { setOpen(false); window.scrollTo({ top: 0, behavior: "instant" }); }}
               className="w-full text-left block px-5 py-2.5 text-xs font-sans uppercase tracking-[0.18em] text-muted-foreground hover:text-primary hover:bg-secondary/50 transition-colors duration-200"
             >
               {item.title}
-            </button>
+            </Link>
           ))}
         </div>
       </div>
@@ -129,16 +127,6 @@ export function Navbar() {
     document.addEventListener("keydown", onKeyDown);
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [mobileMenuOpen]);
-
-  function goToService(slug: string) {
-    navigate(`/services/${slug}`);
-    window.scrollTo({ top: 0, behavior: "auto" });
-  }
-
-  function goToHub(href: string) {
-    navigate(href);
-    window.scrollTo({ top: 0, behavior: "auto" });
-  }
 
   function handleNavLinkClick(e: MouseEvent<HTMLAnchorElement>, sectionId: string) {
     e.preventDefault();
@@ -181,8 +169,8 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            <NavDropdown label="For Private Travellers" items={travelServices} onItemClick={goToService} hubHref="/travel" hubLabel="View All Travel" onHubClick={goToHub} />
-            <NavDropdown label="For Business & Events" items={eventsServices} onItemClick={goToService} hubHref="/events" hubLabel="View All Events" onHubClick={goToHub} />
+            <NavDropdown label="For Private Travellers" items={travelServices} hubHref="/travel" hubLabel="View All Travel" />
+            <NavDropdown label="For Business & Events" items={eventsServices} hubHref="/events" hubLabel="View All Events" />
             <a
               href="/#enquiry"
               onClick={(e) => handleNavLinkClick(e, "enquiry")}
@@ -245,22 +233,24 @@ export function Navbar() {
           {/* Travel section */}
           <div>
             <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-primary mb-4">Travel &amp; Tours</p>
-            <button
-              onClick={() => { setMobileMenuOpen(false); goToHub("/travel"); }}
+            <Link
+              href="/travel"
+              onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: "instant" }); }}
               className="group flex items-center gap-2 font-display text-2xl italic text-foreground hover:text-primary transition-colors duration-300 mb-5 text-left"
             >
               For Private Travellers
               <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-lg">→</span>
-            </button>
+            </Link>
             <div className="flex flex-col border-t border-border/20">
               {travelServices.map((s) => (
-                <button
+                <Link
                   key={s.slug}
-                  onClick={() => { setMobileMenuOpen(false); goToService(s.slug); }}
+                  href={`/services/${s.slug}`}
+                  onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: "instant" }); }}
                   className="py-3.5 text-left font-sans text-[11px] uppercase tracking-[0.25em] text-muted-foreground hover:text-primary border-b border-border/10 transition-colors duration-200"
                 >
                   {s.title}
-                </button>
+                </Link>
               ))}
             </div>
           </div>
@@ -268,22 +258,24 @@ export function Navbar() {
           {/* Events section */}
           <div>
             <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-primary mb-4">Events &amp; Corporate</p>
-            <button
-              onClick={() => { setMobileMenuOpen(false); goToHub("/events"); }}
+            <Link
+              href="/events"
+              onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: "instant" }); }}
               className="group flex items-center gap-2 font-display text-2xl italic text-foreground hover:text-primary transition-colors duration-300 mb-5 text-left"
             >
               For Business &amp; Events
               <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-lg">→</span>
-            </button>
+            </Link>
             <div className="flex flex-col border-t border-border/20">
               {eventsServices.map((s) => (
-                <button
+                <Link
                   key={s.slug}
-                  onClick={() => { setMobileMenuOpen(false); goToService(s.slug); }}
+                  href={`/services/${s.slug}`}
+                  onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: "instant" }); }}
                   className="py-3.5 text-left font-sans text-[11px] uppercase tracking-[0.25em] text-muted-foreground hover:text-primary border-b border-border/10 transition-colors duration-200"
                 >
                   {s.title}
-                </button>
+                </Link>
               ))}
             </div>
           </div>

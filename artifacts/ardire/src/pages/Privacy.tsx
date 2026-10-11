@@ -17,9 +17,9 @@ export default function Privacy() {
     document.title = "Privacy Policy | The ÁrdÍre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Privacy Policy for The ÁrdÍre Group, Scotland's luxury private tour and concierge specialists based in Glasgow.");
+    desc?.setAttribute("content", "Privacy policy for The ÁrdÍre Group. How we collect, use and protect your personal data.");
     return () => {
-      document.title = "Luxury Private Tours & Event Management | ÁrdÍre - Scotland";
+      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
       if (desc && prev) desc.setAttribute("content", prev);
     };
   }, []);

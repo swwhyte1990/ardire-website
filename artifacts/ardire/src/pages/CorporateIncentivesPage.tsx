@@ -100,10 +100,7 @@ export default function CorporateIncentivesPage() {
     document.title = "Corporate Incentive Trips in Scotland | The ÁrdÍre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute(
-      "content",
-      "Bespoke corporate incentive trips across Scotland. Golf, whisky, castles and Highland experiences, designed around your goals and run end to end by The ÁrdÍre Group."
-    );
+    desc?.setAttribute("content", "Reward your top performers with world-class Scottish experiences. Corporate incentive programmes designed by The ÁrdÍre Group.");
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
     faqScript.id = "faq-schema-corp";
@@ -132,7 +129,7 @@ export default function CorporateIncentivesPage() {
     });
     document.head.appendChild(serviceScript);
     return () => {
-      document.title = "Luxury Private Tours & Event Management | Scotland & Beyond";
+      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
       if (desc && prev) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-corp")?.remove();
       document.getElementById("service-schema-corp")?.remove();
