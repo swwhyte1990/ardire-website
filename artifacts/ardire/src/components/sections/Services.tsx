@@ -84,7 +84,7 @@ export function Services() {
               Events &amp; Corporate
             </h2>
             <p className="font-sans text-sm text-foreground/80 leading-relaxed mb-4 max-w-md hidden sm:block">
-              Corporate incentives, end-to-end event management, professional event staffing, and Glasgow 2026 support.
+              Corporate incentives, end-to-end event management, and professional event staffing.
             </p>
             <span className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.25em] text-foreground group-hover:gap-3 transition-all duration-300">
               Discuss an Event <ArrowRight className="w-4 h-4" />

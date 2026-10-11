@@ -219,9 +219,10 @@ export default function LuxuryToursPage() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-primary/30">
       <Navbar />
+      <main id="main-content" className="flex-1 w-full">
 
       {/* Hero */}
-      <section id="main-content" className="relative min-h-[55vh] flex items-end overflow-hidden">
+      <section className="relative min-h-[55vh] flex items-end overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             src={toursHero}
@@ -624,6 +625,7 @@ export default function LuxuryToursPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );

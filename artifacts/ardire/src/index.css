@@ -102,7 +102,9 @@
   --accent: 43 80% 65%;
   --accent-foreground: 155 58% 7%;
 
-  --destructive: 0 60% 50%;
+  /* Only ever rendered as error text on --card; 0 60% 50% gave 3.08:1, below the
+     4.5:1 minimum, on the one message telling someone their enquiry failed. */
+  --destructive: 0 75% 65%;
   --destructive-foreground: 0 0% 100%;
 
   --border: 155 48% 17%;

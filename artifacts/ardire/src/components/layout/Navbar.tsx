@@ -3,6 +3,12 @@ import { useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { setPendingScroll } from "@/lib/pendingScroll";
+
+// A tap on a touchscreen fires mouseenter and then click, so hover-to-open and
+// click-to-toggle cancelled each other out and the first tap did nothing. iPads
+// get the desktop nav, so this was every tablet visitor's first impression.
+const CAN_HOVER =
+  typeof window !== "undefined" && window.matchMedia?.("(hover: hover)").matches;
 import logoCrest from "@/assets/images/logo-crest.webp";
 
 const travelServices = [
@@ -48,8 +54,8 @@ function NavDropdown({
     <div
       ref={ref}
       className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={CAN_HOVER ? () => setOpen(true) : undefined}
+      onMouseLeave={CAN_HOVER ? () => setOpen(false) : undefined}
     >
       <button
         onClick={() => setOpen((v) => !v)}
@@ -61,6 +67,7 @@ function NavDropdown({
         <ChevronDown className={cn("w-3 h-3 transition-transform duration-200", open && "rotate-180")} />
       </button>
       <div
+        inert={!open}
         className={cn(
           "absolute left-0 top-full pt-2 z-50 transition-all duration-200",
           open ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-1"
@@ -198,6 +205,10 @@ export function Navbar() {
 
       {/* Full-screen mobile overlay */}
       <div
+        inert={!mobileMenuOpen}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu"
         className={cn(
           "fixed inset-0 z-50 bg-background/60 backdrop-blur-md flex flex-col md:hidden transition-all duration-500 ease-in-out",
           mobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"

@@ -2,7 +2,7 @@ import { m } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Form,
   FormControl,
@@ -23,11 +23,32 @@ const formSchema = z.object({
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
+const SERVICE_OPTIONS = [
+  { value: "luxury-tours", label: "Luxury Tours" },
+  { value: "golf-tours", label: "Golf Tours" },
+  { value: "private-chauffeur", label: "Private Chauffeur" },
+  { value: "self-guided-tours", label: "Self-Guided Tours" },
+  { value: "concierge", label: "Concierge" },
+  { value: "corporate-incentives", label: "Corporate Incentives" },
+  { value: "event-management", label: "Event Management" },
+  { value: "event-staffing", label: "Event Staffing" },
+  { value: "other", label: "Other / General" },
+] as const;
+
+const EMAIL_FALLBACK = "Please try again, or email us directly at enquiries@ardire.co.uk";
+
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const honeypotRef = useRef<HTMLInputElement>(null);
   const loadTimeRef = useRef(Date.now());
+  const successRef = useRef<HTMLHeadingElement>(null);
+
+  // Submitting unmounts the whole form, so focus would otherwise fall back to
+  // the body and a keyboard user would lose their place with no confirmation.
+  useEffect(() => {
+    if (submitted) successRef.current?.focus();
+  }, [submitted]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -35,8 +56,20 @@ export function Contact() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    if (honeypotRef.current?.value) return;
-    if (Date.now() - loadTimeRef.current < 3000) return;
+    // Both guards used to return silently, so the button appeared dead and the
+    // visitor had no idea why. A genuine person caught by either needs telling.
+    if (honeypotRef.current?.value) {
+      setSubmitError(EMAIL_FALLBACK);
+      return;
+    }
+    if (Date.now() - loadTimeRef.current < 3000) {
+      setSubmitError("Just a moment — please press Submit once more.");
+      loadTimeRef.current = 0;
+      return;
+    }
+
+    const serviceLabel =
+      SERVICE_OPTIONS.find((o) => o.value === values.service)?.label ?? values.service;
 
     try {
       const accessKey = import.meta.env.VITE_WEB3FORMS_KEY as string | undefined;
@@ -47,10 +80,10 @@ export function Contact() {
       const formData = new FormData();
       formData.append("access_key", accessKey);
       formData.append("from_name", "Árdíre Website");
-      formData.append("subject", `New Enquiry: ${values.service} — ${values.name}`);
+      formData.append("subject", `New Enquiry: ${serviceLabel} — ${values.name}`);
       formData.append("name", values.name);
       formData.append("email", values.email);
-      formData.append("message", `Area of Interest: ${values.service}\n\n${values.message}`);
+      formData.append("message", `Area of Interest: ${serviceLabel}\n\n${values.message}`);
 
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -114,9 +147,9 @@ export function Contact() {
             className="bg-card p-8 md:p-10 border border-border/50"
           >
             {submitted ? (
-              <div className="flex flex-col items-start justify-center h-full min-h-[360px] space-y-6">
+              <div role="status" aria-live="polite" className="flex flex-col items-start justify-center h-full min-h-[360px] space-y-6">
                 <div className="w-10 h-px bg-primary" />
-                <h3 className="font-display text-2xl text-foreground">
+                <h3 ref={successRef} tabIndex={-1} className="font-display text-2xl text-foreground outline-none">
                   Enquiry Received
                 </h3>
                 <p className="text-muted-foreground font-sans font-light text-base leading-relaxed max-w-sm">
@@ -150,7 +183,7 @@ export function Contact() {
                         <FormItem>
                           <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Full Name</FormLabel>
                           <FormControl>
-                            <Input placeholder="Your name..." className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary h-12" {...field} />
+                            <Input autoComplete="name" placeholder="Your name..." className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary h-12" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -163,7 +196,7 @@ export function Contact() {
                         <FormItem>
                           <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Email Address</FormLabel>
                           <FormControl>
-                            <Input placeholder="your@email.com" className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary h-12" {...field} />
+                            <Input type="email" inputMode="email" autoComplete="email" placeholder="your@email.com" className="bg-background/50 border-border/50 rounded-none focus-visible:ring-primary h-12" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -184,15 +217,11 @@ export function Contact() {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent className="bg-card border-border rounded-none">
-                            <SelectItem value="luxury-tours">Luxury Tours</SelectItem>
-                            <SelectItem value="golf-tours">Golf Tours</SelectItem>
-                            <SelectItem value="private-chauffeur">Private Chauffeur</SelectItem>
-                            <SelectItem value="self-guided">Self-Guided Tours</SelectItem>
-                            <SelectItem value="concierge">Concierge</SelectItem>
-                            <SelectItem value="corporate-incentives">Corporate Incentives</SelectItem>
-                            <SelectItem value="event-management">Event Management</SelectItem>
-                            <SelectItem value="staffing">Event Staffing</SelectItem>
-                            <SelectItem value="other">Other / General</SelectItem>
+                            {SERVICE_OPTIONS.map((o) => (
+                              <SelectItem key={o.value} value={o.value}>
+                                {o.label}
+                              </SelectItem>
+                            ))}
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -219,7 +248,7 @@ export function Contact() {
                   />
 
                   {submitError && (
-                    <p className="text-destructive font-sans text-sm">{submitError}</p>
+                    <p role="alert" className="text-destructive font-sans text-sm">{submitError}</p>
                   )}
 
                   <Button
