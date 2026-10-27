@@ -26,7 +26,7 @@ const pricingCards = [
   },
   {
     role: "Butlers & Event Managers",
-    price: "From £50",
+    price: "From £40",
     unit: "per hour, plus VAT",
     minimum: "Minimum ten hours",
   },
