@@ -114,141 +114,8 @@ export default function EventStaffingPage() {
         </div>
       </section>
 
-      {/* What This Is */}
-      <section className="py-24 md:py-32 bg-background">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <m.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mb-10"
-          >
-            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Professional Event Staffing</p>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              The people who make an event feel effortless.
-            </h2>
-          </m.div>
-          <m.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-            className="max-w-3xl font-sans font-light text-muted-foreground leading-relaxed text-base"
-          >
-            <p>
-              The impression an event makes owes a great deal to the people running it. We provide trained, professional staff for events across Scotland, from a single butler for a private dinner to a full front-of-house team for a large gathering. They arrive briefed, well presented, and ready to look after your guests, so the occasion feels effortless from the door onward.
-            </p>
-          </m.div>
-        </div>
-      </section>
-
-      {/* The Staff We Provide */}
-      <section className="py-24 md:py-32 bg-card border-t border-border/30">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <m.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mb-10"
-          >
-            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">The Staff We Provide</p>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Every role your event needs.
-            </h2>
-          </m.div>
-          <m.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-6">
-              {staffProvided.map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                  <span className="font-sans font-light text-sm text-muted-foreground">{item}</span>
-                </div>
-              ))}
-            </div>
-            <p className="font-sans font-light text-sm text-muted-foreground max-w-3xl">
-              If there is a role you need that is not listed here, ask. The chances are we can provide it.
-            </p>
-          </m.div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-24 md:py-32 bg-background border-t border-border/30">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <m.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="mb-10"
-          >
-            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">The Process</p>
-            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              You tell us what you need. We build the team.
-            </h2>
-          </m.div>
-          <m.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-            className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
-          >
-            <p>
-              You tell us about the event: the kind of occasion, the number of guests, and the feel you are after. We build the right team around it.
-            </p>
-            <p>
-              Our staff arrive briefed on your event, uniformed to your specification, and led by a senior coordinator who runs the team on the day, so you have one person to deal with rather than a roomful. We can provide staff on their own, for an event you or someone else is running, or as part of an event we are managing for you.
-            </p>
-          </m.div>
-        </div>
-      </section>
-
-      {/* What to Expect + Who It Is For */}
-      <section className="py-24 md:py-32 bg-card border-t border-border/30">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <m.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">What to Expect</p>
-              <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6">
-                A team your guests notice for all the right reasons.
-              </h2>
-              <p className="font-sans font-light text-muted-foreground leading-relaxed text-base">
-                Staff chosen for warmth and composure as much as for polish, who represent you well and stay calm when an event does what events sometimes do. Everyone we provide is experienced, background-checked and insured, and properly briefed before they arrive. The aim is a team your guests notice for all the right reasons, and never for the wrong ones.
-              </p>
-            </m.div>
-            <m.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
-            >
-              <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Who We Work With</p>
-              <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6">
-                Private hosts, companies, households and venues.
-              </h2>
-              <p className="font-sans font-light text-muted-foreground leading-relaxed text-base">
-                Private hosts planning a dinner or a celebration, companies running corporate functions and hospitality, and families marking something special. Private households who need staff for an occasion or a season. And the venues and event planners who want a reliable, well-presented team for an event they are running themselves.
-              </p>
-            </m.div>
-          </div>
-        </div>
-      </section>
-
       {/* Pricing — product cards */}
-      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+      <section className="py-24 md:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <m.div
             initial={{ opacity: 0, y: 16 }}
@@ -294,6 +161,139 @@ export default function EventStaffingPage() {
               The total comes down to the roles you need, how many staff, and the hours involved. Tell us about the event and we will put together a clear quote before anything is confirmed.
             </p>
           </m.div>
+        </div>
+      </section>
+
+      {/* What This Is */}
+      <section className="py-24 md:py-32 bg-card border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <m.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-10"
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Professional Event Staffing</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
+              The people who make an event feel effortless.
+            </h2>
+          </m.div>
+          <m.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="max-w-3xl font-sans font-light text-muted-foreground leading-relaxed text-base"
+          >
+            <p>
+              The impression an event makes owes a great deal to the people running it. We provide trained, professional staff for events across Scotland, from a single butler for a private dinner to a full front-of-house team for a large gathering. They arrive briefed, well presented, and ready to look after your guests, so the occasion feels effortless from the door onward.
+            </p>
+          </m.div>
+        </div>
+      </section>
+
+      {/* The Staff We Provide */}
+      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <m.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-10"
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">The Staff We Provide</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
+              Every role your event needs.
+            </h2>
+          </m.div>
+          <m.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-6">
+              {staffProvided.map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                  <span className="font-sans font-light text-sm text-muted-foreground">{item}</span>
+                </div>
+              ))}
+            </div>
+            <p className="font-sans font-light text-sm text-muted-foreground max-w-3xl">
+              If there is a role you need that is not listed here, ask. The chances are we can provide it.
+            </p>
+          </m.div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-24 md:py-32 bg-card border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <m.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-10"
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">The Process</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
+              You tell us what you need. We build the team.
+            </h2>
+          </m.div>
+          <m.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
+          >
+            <p>
+              You tell us about the event: the kind of occasion, the number of guests, and the feel you are after. We build the right team around it.
+            </p>
+            <p>
+              Our staff arrive briefed on your event, uniformed to your specification, and led by a senior coordinator who runs the team on the day, so you have one person to deal with rather than a roomful. We can provide staff on their own, for an event you or someone else is running, or as part of an event we are managing for you.
+            </p>
+          </m.div>
+        </div>
+      </section>
+
+      {/* What to Expect + Who It Is For */}
+      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <m.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">What to Expect</p>
+              <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6">
+                A team your guests notice for all the right reasons.
+              </h2>
+              <p className="font-sans font-light text-muted-foreground leading-relaxed text-base">
+                Staff chosen for warmth and composure as much as for polish, who represent you well and stay calm when an event does what events sometimes do. Everyone we provide is experienced, background-checked and insured, and properly briefed before they arrive. The aim is a team your guests notice for all the right reasons, and never for the wrong ones.
+              </p>
+            </m.div>
+            <m.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            >
+              <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Who We Work With</p>
+              <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6">
+                Private hosts, companies, households and venues.
+              </h2>
+              <p className="font-sans font-light text-muted-foreground leading-relaxed text-base">
+                Private hosts planning a dinner or a celebration, companies running corporate functions and hospitality, and families marking something special. Private households who need staff for an occasion or a season. And the venues and event planners who want a reliable, well-presented team for an event they are running themselves.
+              </p>
+            </m.div>
+          </div>
         </div>
       </section>
 
