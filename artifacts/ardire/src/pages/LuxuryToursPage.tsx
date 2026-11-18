@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { setPendingScroll } from "@/lib/pendingScroll";
+import { SampleJourney } from "@/components/SampleJourney";
+import { sampleJourneys } from "@/data/sampleJourneys";
 import toursHeroSm from "@/assets/images/tours-hero-sm.webp";
 import toursHero from "@/assets/images/tours-hero.webp";
 
@@ -38,8 +40,9 @@ const itineraries = [
     id: "5-day",
     duration: "Five Days",
     title: "The West Highlands and Skye",
+    journey: "west-highlands-skye",
     intro: "The Scotland most people picture, the mountains, the sea lochs and the islands, taken at a pace that lets you feel it.",
-    price: "Guide price, around £7,500 (+VAT) per person, drawn from a real trip",
+    price: "Price on enquiry",
     days: [
       {
         day: "Day 1",
@@ -446,6 +449,11 @@ export default function LuxuryToursPage() {
                       transition={{ duration: 0.35, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
+                      {"journey" in itin && itin.journey ? (
+                        <div className="px-6 md:px-8 pb-8 md:pb-10 pt-2">
+                          <SampleJourney journey={sampleJourneys[itin.journey]} />
+                        </div>
+                      ) : (
                       <div className="px-6 md:px-8 pb-6 md:pb-8 space-y-2">
                         {itin.intro && (
                           <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed pb-2 italic">{itin.intro}</p>
@@ -458,6 +466,7 @@ export default function LuxuryToursPage() {
                         ))}
                         <p className="font-sans font-light text-sm text-primary pt-2">{itin.price}</p>
                       </div>
+                      )}
                     </m.div>
                   )}
                 </AnimatePresence>
