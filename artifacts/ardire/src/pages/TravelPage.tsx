@@ -51,7 +51,7 @@ export default function TravelPage() {
     document.title = "Private Tours & Travel in Scotland | The Árdíre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Bespoke private tours, championship golf, chauffeur services and 24/7 concierge across Scotland, crafted by The Árdíre Group.");
+    desc?.setAttribute("content", "Bespoke private tours, championship golf, chauffeur services and a dedicated travel concierge across Scotland, crafted by The Árdíre Group.");
     return () => {
       document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
       if (desc && prev !== null) desc.setAttribute("content", prev);
@@ -103,7 +103,7 @@ export default function TravelPage() {
               Private Tours &amp; Travel in Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              Privately guided journeys, championship golf, luxury chauffeur, self-guided adventures and round-the-clock concierge. All crafted around you.
+              Privately guided journeys, championship golf, luxury chauffeur, self-guided adventures and a dedicated travel concierge. All crafted around you.
             </p>
           </m.div>
         </div>

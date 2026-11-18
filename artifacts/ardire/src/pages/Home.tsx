@@ -26,7 +26,7 @@ export default function Home() {
         <About />
         {/* The placeholder carries the id and the real section's height, so the
             Enquire anchor resolves immediately and nothing shifts on swap. */}
-        <Suspense fallback={<div id="enquiry" className="h-[1199px] md:h-[755px]" />}>
+        <Suspense fallback={<div id="enquiry" className="h-[1231px] md:h-[795px]" />}>
           <Contact />
         </Suspense>
       </main>

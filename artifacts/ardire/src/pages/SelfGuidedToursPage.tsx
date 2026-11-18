@@ -62,7 +62,7 @@ export default function SelfGuidedToursPage() {
     document.title = "Self-Guided Tours Scotland | The Árdíre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Explore Scotland at your own pace with curated self-guided itineraries, pre-booked accommodations and 24/7 support from Ardire.");
+    desc?.setAttribute("content", "Explore Scotland at your own pace with a self-guided itinerary planned for you, accommodation booked, and a point of contact throughout.");
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
     faqScript.id = "faq-schema-self-guided";
@@ -238,7 +238,7 @@ export default function SelfGuidedToursPage() {
         </div>
       </section>
 
-      {/* Who It Is For + The Ardire Difference */}
+      {/* Who It Is For + The Árdíre Difference */}
       <section className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">

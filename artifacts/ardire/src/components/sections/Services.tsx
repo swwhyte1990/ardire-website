@@ -43,7 +43,7 @@ export function Services() {
               Travel &amp; Tours
             </h2>
             <p className="font-sans text-sm text-foreground/80 leading-relaxed mb-4 max-w-md hidden sm:block">
-              Privately guided tours, championship golf, chauffeur, self-guided journeys and 24/7 concierge across Scotland.
+              Privately guided tours, championship golf, chauffeur, self-guided journeys and a dedicated travel concierge across Scotland.
             </p>
             <span className="inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.25em] text-foreground group-hover:gap-3 transition-all duration-300">
               Plan a Private Tour <ArrowRight className="w-4 h-4" />

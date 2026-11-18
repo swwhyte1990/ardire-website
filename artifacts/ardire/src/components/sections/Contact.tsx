@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "wouter";
 import { takePendingEnquiry } from "@/lib/pendingEnquiry";
 import {
   Form,
@@ -72,7 +73,7 @@ export function Contact() {
       return;
     }
     if (Date.now() - loadTimeRef.current < 3000) {
-      setSubmitError("Just a moment — please press Submit once more.");
+      setSubmitError("Just a moment. Please press Submit Enquiry again.");
       loadTimeRef.current = 0;
       return;
     }
@@ -83,7 +84,7 @@ export function Contact() {
     try {
       const accessKey = import.meta.env.VITE_WEB3FORMS_KEY as string | undefined;
       if (!accessKey) {
-        throw new Error("Form not yet configured — please email us directly at enquiries@ardire.co.uk");
+        throw new Error("The form is not set up yet. Please email us directly at enquiries@ardire.co.uk");
       }
 
       const formData = new FormData();
@@ -161,7 +162,7 @@ export function Contact() {
                   Enquiry Received
                 </h3>
                 <p className="text-muted-foreground font-sans font-light text-base leading-relaxed max-w-sm">
-                  Thank you for reaching out. Our team will be in touch within 24 hours to arrange a private consultation.
+                  Thank you for reaching out. Our team will be in touch within one working day to arrange a private consultation.
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); form.reset(); loadTimeRef.current = Date.now(); }}
@@ -266,6 +267,13 @@ export function Contact() {
                   >
                     {form.formState.isSubmitting ? "Sending…" : "Submit Enquiry"}
                   </Button>
+                  <p className="font-sans text-xs text-muted-foreground text-center">
+                    We use your details only to reply to your enquiry. See our{" "}
+                    <Link href="/privacy" className="text-primary underline underline-offset-2 hover:text-primary/80">
+                      privacy policy
+                    </Link>
+                    .
+                  </p>
                 </form>
               </Form>
             )}

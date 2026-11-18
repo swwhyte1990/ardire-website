@@ -41,7 +41,7 @@ export default function Privacy() {
                 Privacy Policy
               </h1>
               <p className="text-muted-foreground font-sans font-light text-base">
-                Last updated: March 2025
+                Last updated: November 2026
               </p>
             </div>
 
@@ -119,7 +119,7 @@ export default function Privacy() {
               </ul>
               <p>
                 To exercise any of these rights, please contact us at{" "}
-                <a href="mailto:enquiries@ardire.co.uk" className="text-primary hover:underline">enquiries@ardire.co.uk</a>. We will respond within 30 days.
+                <a href="mailto:enquiries@ardire.co.uk" className="text-primary hover:underline">enquiries@ardire.co.uk</a>. We will respond within one month.
               </p>
               <p>
                 If you are not satisfied with how we handle your data, you have the right to lodge a complaint with the Information Commissioner&rsquo;s Office (ICO) at{" "}
@@ -129,7 +129,7 @@ export default function Privacy() {
 
             <Section title="Cookies">
               <p>
-                This website does not use analytics cookies or advertising trackers. We do not profile visitors or share browsing data with any third party.
+                This website does not use analytics cookies or advertising trackers. Its pages, images and fonts are all served from our own website, so we do not profile visitors or share browsing data with any third party.
               </p>
             </Section>
 

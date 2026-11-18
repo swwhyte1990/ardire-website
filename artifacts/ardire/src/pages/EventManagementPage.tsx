@@ -70,7 +70,7 @@ export default function EventManagementPage() {
     document.title = "Event Management Scotland | The Árdíre Group";
     const desc = document.querySelector('meta[name="description"]');
     const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Full-service event management for corporate functions, gala dinners, and private occasions across Scotland. Conceived, managed, and delivered by Ardire.");
+    desc?.setAttribute("content", "Full-service event management for corporate functions, gala dinners and private occasions across Scotland. Conceived, managed and delivered by The Árdíre Group.");
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
     faqScript.id = "faq-schema-event-management";
@@ -178,7 +178,7 @@ export default function EventManagementPage() {
               We take full responsibility for your event, from the first conversation about what you want to achieve to the moment the last guest leaves. That means we are not just coordinating between suppliers. We are managing the production, making the decisions on the day, and accountable for the result.
             </p>
             <p>
-              The clients who come to us typically have one thing in common: they want to hand the event over and trust that it will be handled properly. Whether it is a private dinner for twenty or a corporate gala for three hundred, the level of attention is the same.
+              The clients who come to us typically have one thing in common: they want to hand the event over and trust that it will be handled properly. Whether it is a private dinner for twenty or a corporate gala for several hundred, the level of attention is the same.
             </p>
           </m.div>
         </div>
