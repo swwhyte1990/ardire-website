@@ -11,6 +11,8 @@ export interface JourneyDay {
   drive: string;
   highlights: string[];
   onTheRoad?: string;
+  /** The road line for the day as [lon, lat] pairs, from OpenStreetMap routing. */
+  route?: [number, number][];
   stops: JourneyStop[];
 }
 
@@ -30,4 +32,4 @@ import data from "./sampleJourneys.json";
 // golf courses are named; accommodation, restaurants and distilleries are described
 // rather than named. Facts come from Árdíre's story notes. The data lives in JSON
 // so scripts/generate-routes.mjs can read the same journeys for the static pages.
-export const sampleJourneys = data as Record<string, SampleJourney>;
+export const sampleJourneys = data as unknown as Record<string, SampleJourney>;

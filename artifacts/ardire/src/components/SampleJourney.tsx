@@ -2,15 +2,15 @@ import { useId, useMemo, useRef, useState, type KeyboardEvent, type MouseEvent, 
 import { useLocation } from "wouter";
 import { AnimatePresence, m } from "framer-motion";
 import { ArrowLeft, ArrowRight, Car } from "lucide-react";
-import type { SampleJourney as Journey, JourneyStop } from "@/data/sampleJourneys";
+import type { SampleJourney as Journey } from "@/data/sampleJourneys";
 import { MAP_HEIGHT, MAP_WIDTH, SCOTLAND_PATH, project } from "@/components/scotlandOutline";
 import { setPendingScroll } from "@/lib/pendingScroll";
 import { setPendingEnquiry } from "@/lib/pendingEnquiry";
 import { cn } from "@/lib/utils";
 
-function toPoints(stops: JourneyStop[]) {
-  return stops.map((s) => {
-    const { x, y } = project(s.lon, s.lat);
+function toPoints(line: [number, number][]) {
+  return line.map(([lon, lat]) => {
+    const { x, y } = project(lon, lat);
     return `${x.toFixed(1)},${y.toFixed(1)}`;
   }).join(" ");
 }
@@ -26,19 +26,28 @@ function RouteMap({ journey, active }: { journey: Journey; active: number }) {
     });
   }, [journey]);
 
+  // The line drawn for each day follows the roads where the data has them,
+  // and falls back to straight lines between the stops where it does not.
+  const lines = useMemo(
+    () => legs.map((leg, i) => journey.days[i].route ?? leg.map((s): [number, number] => [s.lon, s.lat])),
+    [legs, journey],
+  );
+
   const all = [journey.start, ...journey.days.flatMap((d) => d.stops)];
   const activeLeg = legs[active];
   // Only the places this day visits are labelled; the leg's first point is where
   // yesterday ended, except on day one where it is the starting point.
   const labelled = active === 0 ? activeLeg : activeLeg.slice(1);
 
-  // Zoom to the area the whole route covers, labels included, so the route is
-  // legible rather than a small mark on a map of the whole country.
+  // Zoom to the area the whole route covers, roads and labels included, so the
+  // route is legible rather than a small mark on a map of the whole country.
   const { view, sides } = useMemo(() => {
     const pts = all.map((s) => ({ s, ...project(s.lon, s.lat) }));
+    const road = lines.flat().map(([lon, lat]) => project(lon, lat));
+    const xs = [...pts, ...road].map((p) => p.x), ys = [...pts, ...road].map((p) => p.y);
     const pad = 40;
-    let x0 = Math.min(...pts.map((p) => p.x)) - pad, x1 = Math.max(...pts.map((p) => p.x)) + pad;
-    let y0 = Math.min(...pts.map((p) => p.y)) - pad, y1 = Math.max(...pts.map((p) => p.y)) + pad;
+    let x0 = Math.min(...xs) - pad, x1 = Math.max(...xs) + pad;
+    let y0 = Math.min(...ys) - pad, y1 = Math.max(...ys) + pad;
     const minSide = 180;
     if (x1 - x0 < minSide) { const c = (x0 + x1) / 2; x0 = c - minSide / 2; x1 = c + minSide / 2; }
     if (y1 - y0 < minSide) { const c = (y0 + y1) / 2; y0 = c - minSide / 2; y1 = c + minSide / 2; }
@@ -75,7 +84,7 @@ function RouteMap({ journey, active }: { journey: Journey; active: number }) {
     >
       <path d={SCOTLAND_PATH} className="fill-background stroke-primary/25" strokeWidth={0.8 * u} strokeLinejoin="round" />
       <polyline
-        points={toPoints(all)}
+        points={toPoints(lines.flat())}
         fill="none"
         className="stroke-primary/35"
         strokeWidth={1.4 * u}
@@ -85,7 +94,7 @@ function RouteMap({ journey, active }: { journey: Journey; active: number }) {
       />
       <m.polyline
         key={active}
-        points={toPoints(activeLeg)}
+        points={toPoints(lines[active])}
         fill="none"
         className="stroke-primary"
         strokeWidth={3 * u}
@@ -180,6 +189,18 @@ export function SampleJourney({ journey }: { journey: Journey }) {
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-8 lg:gap-12 items-start">
         <div className="bg-card border border-border/40 p-3 md:p-6">
           <RouteMap journey={journey} active={active} />
+          <p className="mt-2 text-right font-sans text-[10px] leading-none text-muted-foreground/70">
+            Roads ©{" "}
+            <a
+              href="https://www.openstreetmap.org/copyright"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-foreground"
+            >
+              OpenStreetMap
+            </a>{" "}
+            contributors
+          </p>
         </div>
 
         <div>
