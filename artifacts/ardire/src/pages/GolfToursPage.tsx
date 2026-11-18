@@ -8,6 +8,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { setPendingScroll } from "@/lib/pendingScroll";
 import { SampleJourney } from "@/components/SampleJourney";
+import { SkipToSamples, SAMPLES_ID } from "@/components/SkipToSamples";
 import { sampleJourneys } from "@/data/sampleJourneys";
 import golfHeroSm from "@/assets/images/golf-hero-sm.webp";
 import golfHero from "@/assets/images/golf-hero.webp";
@@ -141,6 +142,7 @@ export default function GolfToursPage() {
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               A week on the country's great courses, planned and looked after from the moment we meet you at the airport. You play. We take care of everything around it.
             </p>
+            <SkipToSamples label="See a Sample Week" onSkip={() => setItineraryOpen("golf-7day")} />
           </m.div>
         </div>
       </section>
@@ -246,7 +248,7 @@ export default function GolfToursPage() {
       </section>
 
       {/* Sample Itinerary */}
-      <section className="py-24 md:py-32 bg-card border-t border-border/30">
+      <section id={SAMPLES_ID} tabIndex={-1} className="scroll-mt-20 focus:outline-none py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <m.div
             initial={{ opacity: 0, y: 16 }}

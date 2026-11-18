@@ -8,6 +8,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { setPendingScroll } from "@/lib/pendingScroll";
 import { SampleJourney } from "@/components/SampleJourney";
+import { SkipToSamples, SAMPLES_ID } from "@/components/SkipToSamples";
 import { sampleJourneys } from "@/data/sampleJourneys";
 import corporateHeroSm from "@/assets/images/corporate-hero-sm.webp";
 import corporateHero from "@/assets/images/corporate-hero.webp";
@@ -144,6 +145,7 @@ export default function CorporateIncentivesPage() {
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               Reward a team, motivate your top performers, or bring clients somewhere they will not forget. We design and run the whole trip, from the moment everyone arrives to the day they head home.
             </p>
+            <SkipToSamples label="See a Sample Programme" onSkip={() => setProgrammeOpen("corp-5day")} />
           </m.div>
         </div>
       </section>
@@ -293,7 +295,7 @@ export default function CorporateIncentivesPage() {
       </section>
 
       {/* Sample Programme */}
-      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+      <section id={SAMPLES_ID} tabIndex={-1} className="scroll-mt-20 focus:outline-none py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <m.div
             initial={{ opacity: 0, y: 16 }}

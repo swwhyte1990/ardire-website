@@ -8,6 +8,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { setPendingScroll } from "@/lib/pendingScroll";
 import { SampleJourney } from "@/components/SampleJourney";
+import { SkipToSamples, SAMPLES_ID } from "@/components/SkipToSamples";
 import { sampleJourneys } from "@/data/sampleJourneys";
 import toursHeroSm from "@/assets/images/tours-hero-sm.webp";
 import toursHero from "@/assets/images/tours-hero.webp";
@@ -149,6 +150,7 @@ export default function LuxuryToursPage() {
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               A private tour designed around you, with a travel concierge to arrange and look after every part of it. From the moment we meet you at the airport, every day is ours to plan and yours to enjoy.
             </p>
+            <SkipToSamples label="See Sample Journeys" />
           </m.div>
         </div>
       </section>
@@ -285,7 +287,7 @@ export default function LuxuryToursPage() {
       </section>
 
       {/* Three Sample Journeys */}
-      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+      <section id={SAMPLES_ID} tabIndex={-1} className="scroll-mt-20 focus:outline-none py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <m.div
             initial={{ opacity: 0, y: 16 }}
