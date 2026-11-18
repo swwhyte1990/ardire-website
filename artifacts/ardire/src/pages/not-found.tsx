@@ -1,8 +1,25 @@
+import { useEffect } from "react";
 import { Link } from "wouter";
+import { usePageMeta } from "@/lib/usePageMeta";
 import { Button } from "@/components/ui/button";
 import texture from "@/assets/images/texture.webp";
 
 export default function NotFound() {
+  usePageMeta("404");
+  // Keep search engines from indexing this page. A page loaded directly already
+  // has the tag from the static 404.html; following a broken link inside the site
+  // does not, so add it. Either way it goes when the visitor moves on.
+  useEffect(() => {
+    let robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+    if (!robots) {
+      robots = document.createElement("meta");
+      robots.name = "robots";
+      robots.content = "noindex";
+      document.head.appendChild(robots);
+    }
+    return () => robots.remove();
+  }, []);
+
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center bg-background text-foreground relative overflow-hidden">
       {/* Background texture */}

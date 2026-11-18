@@ -42,5 +42,9 @@
   "privacy": {
     "title": "Privacy Policy | The Árdíre Group",
     "description": "Privacy policy for The Árdíre Group. How we collect, use and protect your personal data."
+  },
+  "404": {
+    "title": "Page Not Found | The Árdíre Group",
+    "description": "The page you are looking for has moved or no longer exists."
   }
 }

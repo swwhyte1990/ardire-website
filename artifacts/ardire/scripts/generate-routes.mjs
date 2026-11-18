@@ -370,9 +370,13 @@ for (const route of routes) {
       `<meta name="twitter:description" content="${esc(route.description)}" />`
     )
     .replace(
-      /<div data-page-content[^>]*>[\s\S]*?<\/div><\/div>(?=\s*<script)/,
+      /<div data-page-content[^>]*>[\s\S]*?<\/div><\/div>(?=\s*<\/body>)/,
       `${pageBlock}</div>`
     );
+
+  if (!html.includes(pageBlock)) {
+    throw new Error(`generate-routes: page content not inserted for route "${route.path}". The shape of #root in index.html changed.`);
+  }
 
   // A non-matching replace fails silently and would leave every route preloading
   // the homepage hero, so require the match instead of hoping for it.
@@ -399,6 +403,31 @@ for (const route of routes) {
 
   writeFileSync(join(routeDir, 'index.html'), html);
   console.log(`Generated: /${route.path}/index.html  [h1: ${route.h1}]`);
+}
+
+// The page Cloudflare Pages serves, with a 404 status, for any address that does
+// not exist. It is the full app, so React shows its own not-found page at the
+// visitor's address with no redirect, and search engines are told not to index it.
+{
+  const notFound = pageMeta['404'];
+  let html = indexHtml
+    .replace(/\s*<link rel="canonical"[^>]*\/>/, '')
+    .replace(/\s*<link rel="alternate" hreflang="[^"]*"[^>]*\/>/g, '')
+    .replace(/<title>[^<]*<\/title>/, `<title>${esc(notFound.title)}</title>\n    <meta name="robots" content="noindex" />`)
+    .replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/>/, `<meta name="description" content="${esc(notFound.description)}" />`)
+    .replace(HERO_PRELOAD, '')
+    .replace(
+      /<div data-page-content[^>]*>[\s\S]*?<\/div><\/div>(?=\s*<\/body>)/,
+      `<div data-page-content style="max-width:760px;margin:0 auto;padding:3rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7">` +
+        `<h1 style="font-family:Georgia,serif;font-size:2rem;font-weight:500;margin:0 0 1.5rem">Page not found</h1>` +
+        `<p>The page you are looking for has moved or no longer exists.</p>` +
+        `<p><a href="/" style="color:#c5a366">Return to The Árdíre Group</a></p></div></div>`
+    );
+  if (!html.includes('name="robots" content="noindex"') || html.includes('rel="canonical"') || !html.includes('Page not found')) {
+    throw new Error('generate-routes: could not build 404.html from index.html');
+  }
+  writeFileSync(join(distDir, '404.html'), html);
+  console.log('Generated: /404.html  [noindex]');
 }
 
 console.log(`\nStatic route generation complete — ${routes.length} pages pre-rendered.`);
