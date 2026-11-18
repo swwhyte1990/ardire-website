@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useEffect, useRef, useState } from "react";
+import { takePendingEnquiry } from "@/lib/pendingEnquiry";
 import {
   Form,
   FormControl,
@@ -49,9 +50,18 @@ export function Contact() {
     if (submitted) successRef.current?.focus();
   }, [submitted]);
 
+  // Read once at mount: a sample journey's "Make this yours" leaves its service
+  // and an opening line here, so the enquiry arrives with that context.
+  const [prefill] = useState(takePendingEnquiry);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: { name: "", email: "", service: "", message: "" },
+    defaultValues: {
+      name: "",
+      email: "",
+      service: prefill?.service ?? "",
+      message: prefill?.message ?? "",
+    },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
