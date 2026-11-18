@@ -142,7 +142,7 @@ export default function GolfToursPage() {
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               A week on the country's great courses, planned and looked after from the moment we meet you at the airport. You play. We take care of everything around it.
             </p>
-            <SkipToSamples label="See a Sample Week" onSkip={() => setItineraryOpen("golf-7day")} />
+            <SkipToSamples label="See Sample Journeys" onSkip={() => setItineraryOpen("golf-7day")} />
           </m.div>
         </div>
       </section>

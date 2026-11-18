@@ -145,7 +145,7 @@ export default function CorporateIncentivesPage() {
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               Reward a team, motivate your top performers, or bring clients somewhere they will not forget. We design and run the whole trip, from the moment everyone arrives to the day they head home.
             </p>
-            <SkipToSamples label="See a Sample Programme" onSkip={() => setProgrammeOpen("corp-5day")} />
+            <SkipToSamples label="See Sample Journeys" onSkip={() => setProgrammeOpen("corp-5day")} />
           </m.div>
         </div>
       </section>
