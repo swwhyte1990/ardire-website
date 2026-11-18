@@ -29,7 +29,7 @@ const golfFaqs = [
   },
   {
     q: "What does a golf tour include?",
-    a: "From the moment we meet you at the airport to the day you leave, everything is taken care of: private transfers throughout, green fees for your rounds, caddies and clubs where you want them, accommodation chosen for where you are playing next, meals and dining, and any experiences you would like around the golf. You simply play.",
+    a: "Everything is taken care of, from arrival to departure: private transfers throughout, green fees for your rounds, caddies and clubs where you want them, accommodation chosen for where you are playing next, meals and dining, and any experiences you would like around the golf. You simply play.",
   },
   {
     q: "How many rounds will we play in a week?",

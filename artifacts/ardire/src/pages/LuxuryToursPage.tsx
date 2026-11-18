@@ -38,7 +38,7 @@ const luxuryFaqs = [
   },
   {
     q: "What does the price include?",
-    a: "From the moment you land to the moment you leave, everything is taken care of: a private driver and transfers, accommodation, meals and dining, guides and experiences, and every booking handled ahead of time, with someone looking after your trip throughout.",
+    a: "Everything is taken care of: a private driver and transfers, accommodation, meals and dining, guides and experiences, and every booking handled ahead of time, with someone looking after your trip throughout.",
   },
   {
     q: "How does pricing work for a group?",
@@ -229,7 +229,7 @@ export default function LuxuryToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">The Process</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              From the moment we greet you to the day you head home.
+              Every day in hand, from arrival to departure.
             </h2>
           </m.div>
           <m.div
@@ -240,7 +240,7 @@ export default function LuxuryToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              From the moment we greet you at the airport to the day you head home, the planning is in our hands and the trip is yours to enjoy.
+              The planning is in our hands from the start, and the trip is yours to enjoy.
             </p>
             <p>
               We take care of the itinerary, the bookings, the rooms, the meals and the experiences, and we look after all of it as the days unfold. You will have a dedicated concierge who knows your plans and your preferences, a private driver between places, and the freedom to change your mind whenever you like. If the weather turns or a mood takes you somewhere new, we simply rework the day around it.
@@ -384,7 +384,7 @@ export default function LuxuryToursPage() {
               There is very little we cannot arrange when it matters to you. A private chef in a castle you have to yourselves. A helicopter to turn a long drive into a short hop. A ghillie for a day's fishing on the river or a stalk on the hill. A distillery opened after the public have gone. The leading authority on the one thing you most want to understand.
             </p>
             <p>
-              As we grow, those possibilities only widen, and the ceiling rises at the very top end. What you are paying for is not a list of suppliers but the fact that we can make these things happen at all, quietly and well, to a standard that would be hard to reach on your own.
+              What you are paying for is not a list of suppliers but the fact that we can make these things happen at all, quietly and well, to a standard that would be hard to reach on your own.
             </p>
           </m.div>
         </div>
@@ -402,7 +402,7 @@ export default function LuxuryToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">What's Included</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              From the moment you land to the moment you leave.
+              What every private tour includes.
             </h2>
           </m.div>
           <m.div

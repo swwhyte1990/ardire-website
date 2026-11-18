@@ -44,7 +44,7 @@ const chauffeurFaqs = [
   },
   {
     q: "What is included?",
-    a: "Your driver, the vehicle, fuel and parking, and on airport pickups, the meet and greet and flight tracking. There is water and refreshments in the car, and the journey is planned around your day rather than a fixed timetable.",
+    a: "Your driver, the vehicle, fuel and parking, and on airport pickups, the meet and greet and flight tracking. There are water and refreshments in the car, and the journey is planned around your day rather than a fixed timetable.",
   },
   {
     q: "How far ahead should we book?",

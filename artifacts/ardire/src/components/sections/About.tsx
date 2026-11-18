@@ -40,7 +40,7 @@ export function About() {
             <div className="mt-12 flex items-center gap-6">
               <div className="w-16 h-[1px] bg-primary/50" />
               <p className="font-display italic text-xl text-foreground">
-                "Thoughtfully Curated. Seamlessly Delivered."
+                Thoughtfully Curated. Seamlessly Delivered.
               </p>
             </div>
           </m.div>

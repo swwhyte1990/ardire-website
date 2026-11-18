@@ -313,7 +313,7 @@ export default function EventStaffingPage() {
               asChild
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-sans tracking-widest uppercase text-xs px-10 h-14 rounded-none transition-all duration-300"
             >
-              <a href="/#enquiry" onClick={goToEnquiry}>Enquire</a>
+              <a href="/#enquiry" onClick={goToEnquiry}>Request Staff</a>
             </Button>
           </m.div>
         </div>
