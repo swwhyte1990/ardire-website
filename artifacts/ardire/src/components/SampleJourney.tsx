@@ -32,21 +32,35 @@ function RouteMap({ journey, active }: { journey: Journey; active: number }) {
   // yesterday ended, except on day one where it is the starting point.
   const labelled = active === 0 ? activeLeg : activeLeg.slice(1);
 
-  // Zoom to the area the whole route covers, so the route is legible rather than
-  // a small mark on a map of the whole country.
-  const view = useMemo(() => {
-    const pts = all.map((s) => project(s.lon, s.lat));
-    const xs = pts.map((p) => p.x);
-    const ys = pts.map((p) => p.y);
-    const pad = 55;
-    let x0 = Math.min(...xs) - pad, x1 = Math.max(...xs) + pad;
-    let y0 = Math.min(...ys) - pad, y1 = Math.max(...ys) + pad;
+  // Zoom to the area the whole route covers, labels included, so the route is
+  // legible rather than a small mark on a map of the whole country.
+  const { view, sides } = useMemo(() => {
+    const pts = all.map((s) => ({ s, ...project(s.lon, s.lat) }));
+    const pad = 40;
+    let x0 = Math.min(...pts.map((p) => p.x)) - pad, x1 = Math.max(...pts.map((p) => p.x)) + pad;
+    let y0 = Math.min(...pts.map((p) => p.y)) - pad, y1 = Math.max(...pts.map((p) => p.y)) + pad;
     const minSide = 180;
     if (x1 - x0 < minSide) { const c = (x0 + x1) / 2; x0 = c - minSide / 2; x1 = c + minSide / 2; }
     if (y1 - y0 < minSide) { const c = (y0 + y1) / 2; y0 = c - minSide / 2; y1 = c + minSide / 2; }
+
+    // Label sizes depend on the zoom, and the zoom on the labels, so settle in two passes.
+    const sides = new Map<string, "left" | "right">();
+    for (let pass = 0; pass < 2; pass++) {
+      const u = (x1 - x0) / 300;
+      for (const { s, x } of pts) {
+        const width = (9 + s.name.length * 7.2) * u;
+        let side = s.label ?? "right";
+        // A label that would run off the edge of Scotland's map flips to the other side.
+        if (side === "right" && x + width > MAP_WIDTH) side = "left";
+        else if (side === "left" && x - width < 0) side = "right";
+        sides.set(s.name, side);
+        if (side === "right") x1 = Math.max(x1, x + width + 12 * u);
+        else x0 = Math.min(x0, x - width - 12 * u);
+      }
+    }
     x0 = Math.max(0, x0); y0 = Math.max(0, y0);
     x1 = Math.min(MAP_WIDTH, x1); y1 = Math.min(MAP_HEIGHT, y1);
-    return { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
+    return { view: { x: x0, y: y0, w: x1 - x0, h: y1 - y0 }, sides };
   }, [journey]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Sizes scale with the zoom so dots and labels look the same on every journey.
@@ -87,7 +101,7 @@ function RouteMap({ journey, active }: { journey: Journey; active: number }) {
       })}
       {labelled.map((s, i) => {
         const { x, y } = project(s.lon, s.lat);
-        const right = s.label !== "left";
+        const right = sides.get(s.name) !== "left";
         return (
           <g key={`${active}-${s.name}-${i}`}>
             <circle cx={x} cy={y} r={5 * u} className="fill-primary stroke-background" strokeWidth={1.5 * u} />
