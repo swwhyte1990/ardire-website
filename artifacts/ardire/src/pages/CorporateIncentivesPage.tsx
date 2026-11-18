@@ -6,41 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { setPendingScroll } from "@/lib/pendingScroll";
+import { SampleJourney } from "@/components/SampleJourney";
+import { sampleJourneys } from "@/data/sampleJourneys";
 import corporateHeroSm from "@/assets/images/corporate-hero-sm.webp";
 import corporateHero from "@/assets/images/corporate-hero.webp";
 
-const programmeDays = [
-  {
-    day: "Day 1",
-    location: "Edinburgh",
-    description:
-      "The group lands at Edinburgh airport, met on arrival, and taken to a landmark hotel in the heart of the city. After time to settle in, a private evening walk through the closes and hidden corners of the Old Town with a guide who knows its darker history, then dinner at one of the city's best tables.",
-  },
-  {
-    day: "Day 2",
-    location: "Stirling, Loch Lomond and the Highlands",
-    description:
-      "West out of the city, with a private tour of Stirling Castle along the way, and on into Loch Lomond and the Trossachs for a cruise on the loch with lunch aboard. From there the group carries on north into the Highlands to a private castle near Fort William, their home for the next three nights, where the first evening is a gala dinner in the castle.",
-  },
-  {
-    day: "Day 3",
-    location: "Glencoe",
-    description:
-      "A day in the landscape around Glencoe, some of the most dramatic scenery in the country, built around a challenge on a Highland estate: clay shooting, off-road driving and a few events run in the spirit of the Highland Games. Back to the castle for a ceilidh in the evening, which tends to be the night everyone remembers.",
-  },
-  {
-    day: "Day 4",
-    location: "Fort William",
-    description:
-      "A gentler day. A private tour and tasting at a distillery in Fort William, an afternoon to walk, fish or simply take in the surroundings, and a farewell dinner to close the trip properly.",
-  },
-  {
-    day: "Day 5",
-    location: "Departure",
-    description:
-      "A relaxed final morning and a transfer to Glasgow or Inverness for departing flights, with the option to add a night for anyone staying on.",
-  },
-];
 
 const experiences = [
   "A welcome that sets the tone from the first minute, whether that is a piper as the group arrives or a private dinner on the first evening",
@@ -365,10 +335,10 @@ export default function CorporateIncentivesPage() {
             >
               <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 min-w-0">
                 <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary shrink-0">Five Days</span>
-                <h3 className="font-display text-lg text-foreground">Edinburgh, the Highlands and the West Coast</h3>
+                <h3 className="font-display text-lg text-foreground">A Programme in the Highlands</h3>
               </div>
               <div className="flex items-center gap-4 shrink-0">
-                <span className="hidden sm:block font-sans text-xs text-muted-foreground">Priced on enquiry</span>
+                <span className="hidden sm:block font-sans text-xs text-muted-foreground">Price on enquiry</span>
                 <ChevronDown
                   className="w-4 h-4 text-primary transition-transform duration-300"
                   style={{ transform: programmeOpen === "corp-5day" ? "rotate(180deg)" : "rotate(0deg)" }}
@@ -385,19 +355,8 @@ export default function CorporateIncentivesPage() {
                   transition={{ duration: 0.35, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="px-6 md:px-8 pb-6 md:pb-8 space-y-2">
-                    {programmeDays.map((item) => (
-                      <div key={item.day} className="bg-card border-l border-primary/40 p-4 md:p-6">
-                        <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 mb-2">
-                          <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary shrink-0">{item.day}</span>
-                          <span className="font-display text-sm text-foreground">{item.location}</span>
-                        </div>
-                        <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                      </div>
-                    ))}
-                    <p className="font-sans font-light text-sm text-muted-foreground pt-2 italic">
-                      Each day pairs one memorable thing by day with an evening that feels like an occasion, and the whole programme is planned and run on the ground, so the company can be a guest at its own trip rather than its organiser.
-                    </p>
+                  <div className="px-6 md:px-8 pb-8 md:pb-10 pt-2">
+                    <SampleJourney journey={sampleJourneys["corporate-highlands"]} />
                   </div>
                 </m.div>
               )}

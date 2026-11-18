@@ -13,6 +13,69 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, '../dist/public');
 
+// The same sample journeys the pages render, so crawlers read the story and the
+// day outline without running JavaScript.
+const journeys = JSON.parse(
+  readFileSync(join(__dirname, '../src/data/sampleJourneys.json'), 'utf8')
+);
+const JOURNEYS_BY_ROUTE = {
+  'services/luxury-tours': ['edinburgh-heart-of-scotland', 'west-highlands-skye', 'grand-sweep'],
+  'services/golf-tours': ['golf-east-coast'],
+  'services/corporate-incentives': ['corporate-highlands'],
+};
+
+function routeJourneys(route) {
+  return (JOURNEYS_BY_ROUTE[route.path] || []).map((id) => {
+    const j = journeys[id];
+    if (!j) throw new Error(`generate-routes: unknown sample journey "${id}" for ${route.path}`);
+    return j;
+  });
+}
+
+function buildJourneysHtml(route) {
+  const list = routeJourneys(route);
+  if (!list.length) return '';
+  const h2 = 'font-family:Georgia,serif;font-size:1.5rem;font-weight:500;color:#c5a366;margin:2.5rem 0 1rem';
+  const h3 = 'font-family:Georgia,serif;font-size:1.2rem;font-weight:500;color:#c5a366;margin:2rem 0 0.75rem';
+  const body = list.map((j) => {
+    const story = j.story.map((s) => `<p style="font-size:1rem;margin:0 0 1rem">${esc(s)}</p>`).join('');
+    const days = j.days.map((d, i) =>
+      `<li style="margin:0 0 0.6rem"><strong>Day ${i + 1}, ${esc(d.title)}.</strong> ${esc(d.highlights.join('. '))}.</li>`
+    ).join('');
+    return `<h3 style="${h3}">${esc(j.duration)}: ${esc(j.title)}</h3>${story}<ol style="margin:0 0 1rem;padding-left:1.25rem;font-size:0.95rem">${days}</ol>`;
+  }).join('');
+  return `<h2 style="${h2}">Sample journeys</h2>${body}<p style="font-size:0.95rem;margin:1rem 0 0">Price on enquiry. Every journey is shaped around you.</p>`;
+}
+
+function buildJourneysJsonLd(route) {
+  const list = routeJourneys(route);
+  if (!list.length) return '';
+  const trips = list.map((j) => {
+    const seen = new Set();
+    const places = [j.start, ...j.days.flatMap((d) => d.stops)]
+      .map((s) => s.name)
+      .filter((n) => !seen.has(n) && seen.add(n));
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'TouristTrip',
+      name: j.title,
+      description: j.story[0],
+      url: `https://ardire.co.uk/${route.path}`,
+      provider: { '@type': 'TravelAgency', name: 'The \u00c1rd\u00edre Group', url: 'https://ardire.co.uk' },
+      itinerary: {
+        '@type': 'ItemList',
+        numberOfItems: places.length,
+        itemListElement: places.map((name, i) => ({
+          '@type': 'ListItem', position: i + 1, item: { '@type': 'Place', name },
+        })),
+      },
+    };
+  });
+  // "<" escaped so story text can never close the script element early.
+  const json = JSON.stringify(trips.length === 1 ? trips[0] : trips, null, 2).replace(/</g, '\\u003c');
+  return `    <script type="application/ld+json">\n${json}\n    </script>\n`;
+}
+
 // Images are imported from src/assets and content-hashed by Vite, so their built
 // filenames are only knowable from the manifest.
 const manifest = JSON.parse(
@@ -71,7 +134,7 @@ function buildPageBlock(route) {
 
   const navHtml = `<nav style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid rgba(197,163,102,0.25);font-size:0.95rem"><a href="https://ardire.co.uk/" style="${linkStyle}">Árdíre Home</a>${serviceLinksHtml}${route.path !== 'privacy' ? `<a href="https://ardire.co.uk/privacy" style="${linkStyle}">Privacy Policy</a>` : ''}<a href="https://ardire.co.uk/#enquiry" style="color:#c5a366;text-decoration:none;display:inline-block;padding:0.25rem 0">Contact Árdíre</a></nav>`;
 
-  return `<div data-page-content style="max-width:760px;margin:0 auto;padding:3rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7">${h1Html}${paragraphsHtml}${highlightsHtml}${navHtml}</div>`;
+  return `<div data-page-content style="max-width:760px;margin:0 auto;padding:3rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7">${h1Html}${paragraphsHtml}${highlightsHtml}${buildJourneysHtml(route)}${navHtml}</div>`;
 }
 
 const routes = [
@@ -327,6 +390,14 @@ for (const route of routes) {
       ? `<link rel="preload" as="image" href="${hashedImage(route.heroImage)}" fetchpriority="high" />`
       : ''
   );
+
+  const journeysLd = buildJourneysJsonLd(route);
+  if (journeysLd) {
+    if (!html.includes('</head>')) {
+      throw new Error(`generate-routes: no </head> to attach journey structured data for ${route.path}`);
+    }
+    html = html.replace('</head>', `${journeysLd}  </head>`);
+  }
 
   writeFileSync(join(routeDir, 'index.html'), html);
   console.log(`Generated: /${route.path}/index.html  [h1: ${route.h1}]`);

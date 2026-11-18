@@ -6,53 +6,11 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { setPendingScroll } from "@/lib/pendingScroll";
+import { SampleJourney } from "@/components/SampleJourney";
+import { sampleJourneys } from "@/data/sampleJourneys";
 import golfHeroSm from "@/assets/images/golf-hero-sm.webp";
 import golfHero from "@/assets/images/golf-hero.webp";
 
-const itinerary = [
-  {
-    day: "Day 1",
-    location: "Arrival, Edinburgh to Angus",
-    description:
-      "Your driver meets you at Edinburgh Airport. Transfer north to exclusive private accommodation near St Andrews. Time to settle in, take a walk, and decompress from the journey. The evening is a private dinner prepared by the house chef, followed by a full briefing on the week ahead.",
-  },
-  {
-    day: "Day 2",
-    location: "St Andrews",
-    description:
-      "Morning transfer to St Andrews. A visit to the R&A Golf Museum before tee time on the Castle Course, perched on the cliffs above the North Sea. Eighteen holes with views that will distract you from your score. Dinner at the Rock and Spindle. Transfer back to your accommodation.",
-  },
-  {
-    day: "Day 3",
-    location: "Carnoustie",
-    description:
-      "Breakfast at the house, then a short transfer to Carnoustie Golf Links. Your morning includes a historical talk on the course and its Championship history before your round begins. Lunch at the Rookery Restaurant. Carnoustie is harder than it looks on television and we warn clients of this in advance. It is also one of the finest tests of links golf in the world.",
-  },
-  {
-    day: "Day 4",
-    location: "Cruden Bay, transfer north",
-    description:
-      "Cases packed and departure from your St Andrews base. En route north, a stop at Dunnottar Castle on the Aberdeenshire cliff edge, one of the most dramatic ruins in Scotland. Arrival at Cruden Bay Golf Course for an afternoon tee time, then onward transfer to exclusive private accommodation in Aberdeenshire. Evening whisky tasting at the house, dinner, and a briefing for the following day.",
-  },
-  {
-    day: "Day 5",
-    location: "Royal Aberdeen",
-    description:
-      "Morning tour of Aberdeen city, with lunch at The Silver Darling on the harbour front. Afternoon tee time at Royal Aberdeen Golf Links, one of the oldest clubs in the world and a course that rewards patience. Evening gin tasting masterclass back in the city before transfer to the house for dinner.",
-  },
-  {
-    day: "Day 6",
-    location: "Braemar",
-    description:
-      "A day away from the course. Transfer to the Braemar Highland Gathering, the largest and most prestigious Highland Games in Scotland, held annually in the presence of the Royal Family. A genuinely extraordinary afternoon. Transfer back to your accommodation for a final evening dinner.",
-  },
-  {
-    day: "Day 7",
-    location: "Edinburgh, departure",
-    description:
-      "Breakfast at the house, then transfer south to Edinburgh for a final morning in the city. Lunch, a chosen afternoon activity, and check-in at a landmark hotel on the Royal Mile. Dinner at the Tolbooth Tavern, Edinburgh's oldest pub, before a restful last night. Departure transfer to the airport at your chosen time the following morning.",
-  },
-];
 
 
 const golfFaqs = [
@@ -86,7 +44,7 @@ const golfFaqs = [
   },
   {
     q: "How much does a Scotland golf tour cost?",
-    a: "Prices vary depending on what you decide to do, so the best guide is our sample itinerary, which is based on a real trip and shows the kind of week you can expect along with its cost. Once we know your plans, we put together a full, itemised proposal before anything is booked.",
+    a: "Prices vary a great deal with the courses you choose, the number of rounds, where you stay and the season, so we price every tour individually. Once we know your plans, we put together a full, itemised proposal before anything is booked.",
   },
   {
     q: "Do you arrange tours for corporate or company groups?",
@@ -282,10 +240,10 @@ export default function GolfToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              There is no set price for a tour, since every week is built around the courses you want to play and the way you want to travel. To give you a sense of what is possible, we have put together a sample itinerary priced as a real example, showing the kind of week you can expect and what it comes to.
+              There is no set price for a tour, since every week is built around the courses you want to play and the way you want to travel. The sample week below shows the kind of tour that is possible, and we price your own once we know what you have in mind.
             </p>
             <p>
-              It is shown per person so you can picture the cost at any group size. Your own figure will reflect the choices you make: the courses, the number of rounds, the standard of where you stay, and the experiences you add around the golf. We put together a full, itemised proposal before anything is booked.
+              Your figure will reflect the choices you make: the courses, the number of rounds, the standard of where you stay, and the experiences you add around the golf. We put together a full, itemised proposal before anything is booked.
             </p>
           </m.div>
         </div>
@@ -303,7 +261,7 @@ export default function GolfToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Sample Itinerary</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              A real week of golf, written to show the shape and the standard.
+              A week of golf, written to show the shape and the standard.
             </h2>
           </m.div>
           <m.p
@@ -313,7 +271,7 @@ export default function GolfToursPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-sans font-light text-sm text-muted-foreground max-w-2xl mb-12"
           >
-            This is a version of a tour we ran. The courses, order, accommodation, and cultural stops all change depending on your group, your dates, and what matters to you.
+            This is an illustration rather than a fixed plan. The courses, order, accommodation, and cultural stops all change depending on your group, your dates, and what matters to you.
           </m.p>
 
           <m.div
@@ -330,10 +288,10 @@ export default function GolfToursPage() {
             >
               <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 min-w-0">
                 <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary shrink-0">Seven Days</span>
-                <h3 className="font-display text-lg text-foreground">The East Coast Championship Circuit</h3>
+                <h3 className="font-display text-lg text-foreground">A Week on the Links, Fife to Royal Deeside</h3>
               </div>
               <div className="flex items-center gap-4 shrink-0">
-                <span className="hidden sm:block font-sans text-xs text-muted-foreground">Guide price £10,000 (+VAT) per person</span>
+                <span className="hidden sm:block font-sans text-xs text-muted-foreground">Price on enquiry</span>
                 <ChevronDown
                   className="w-4 h-4 text-primary transition-transform duration-300"
                   style={{ transform: itineraryOpen === "golf-7day" ? "rotate(180deg)" : "rotate(0deg)" }}
@@ -350,17 +308,8 @@ export default function GolfToursPage() {
                   transition={{ duration: 0.35, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <div className="px-6 md:px-8 pb-6 md:pb-8 space-y-2">
-                    {itinerary.map((item) => (
-                      <div key={item.day} className="bg-card border-l border-primary/40 p-4 md:p-6">
-                        <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 mb-2">
-                          <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary shrink-0">{item.day}</span>
-                          <span className="font-display text-sm text-foreground">{item.location}</span>
-                        </div>
-                        <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                      </div>
-                    ))}
-                    <p className="font-sans font-light text-sm text-primary pt-2">Guide price £10,000 (+VAT) per person</p>
+                  <div className="px-6 md:px-8 pb-8 md:pb-10 pt-2">
+                    <SampleJourney journey={sampleJourneys["golf-east-coast"]} />
                   </div>
                 </m.div>
               )}

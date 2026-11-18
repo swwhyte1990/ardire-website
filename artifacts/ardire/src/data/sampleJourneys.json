@@ -1,0 +1,635 @@
+{
+  "west-highlands-skye": {
+    "id": "west-highlands-skye",
+    "service": "luxury-tours",
+    "duration": "Five Days",
+    "title": "The West Highlands and Skye",
+    "story": [
+      "This is the Scotland most people picture: mountains running down into sea lochs, single-track roads, islands on the horizon. It is also the country of the Jacobites, and their story runs along the route day by day.",
+      "The journey passes Glencoe, where a massacre in 1692 is still remembered, and Glenfinnan, where Bonnie Prince Charlie raised his standard in 1745. It crosses to Skye, where Flora MacDonald later helped him escape, and comes back east to the moor at Culloden, where it ended. Five days, taken at a pace that lets you feel the place."
+    ],
+    "start": {
+      "name": "Glasgow",
+      "lon": -4.25,
+      "lat": 55.86
+    },
+    "days": [
+      {
+        "title": "North to Glencoe",
+        "drive": "Around 2½ hours, with a break on the way",
+        "highlights": [
+          "Collected and driven north as the landscape opens out",
+          "Rannoch Moor, then the descent into Glencoe",
+          "A Highland estate for the night"
+        ],
+        "onTheRoad": "The figure of 38 dead at Glencoe comes from the soldiers who did the killing. Modern research puts it nearer 30.",
+        "stops": [
+          {
+            "name": "Rannoch Moor",
+            "lon": -4.78,
+            "lat": 56.6
+          },
+          {
+            "name": "Glencoe",
+            "lon": -5.1,
+            "lat": 56.68,
+            "label": "left"
+          }
+        ]
+      },
+      {
+        "title": "The Road to the Isles and over to Skye",
+        "drive": "Around 3½ hours, split with a lunch stop",
+        "highlights": [
+          "Fort William, then west on the Road to the Isles",
+          "Glenfinnan and its viaduct",
+          "Across to Skye beneath Eilean Donan"
+        ],
+        "onTheRoad": "Eilean Donan looks medieval, but the Navy blew it up in 1719 with 343 barrels of captured gunpowder. What stands today was rebuilt and finished in 1932.",
+        "stops": [
+          {
+            "name": "Fort William",
+            "lon": -5.11,
+            "lat": 56.82
+          },
+          {
+            "name": "Glenfinnan",
+            "lon": -5.43,
+            "lat": 56.87,
+            "label": "left"
+          },
+          {
+            "name": "Eilean Donan",
+            "lon": -5.52,
+            "lat": 57.27
+          },
+          {
+            "name": "Skye",
+            "lon": -6.19,
+            "lat": 57.41,
+            "label": "left"
+          }
+        ]
+      },
+      {
+        "title": "Skye",
+        "drive": "Short drives, a day on the island",
+        "highlights": [
+          "The Trotternish ridge and the Quiraing with a guide who knows the island",
+          "A tasting at a distillery, arranged in your own time rather than the crowd's",
+          "An evening at a country house on the shore"
+        ],
+        "onTheRoad": "The MacLeods' Fairy Flag is said to come from the fairies. A V&A expert found the silk was woven in Syria or Rhodes.",
+        "stops": [
+          {
+            "name": "The Quiraing",
+            "lon": -6.27,
+            "lat": 57.63,
+            "label": "left"
+          },
+          {
+            "name": "Skye",
+            "lon": -6.19,
+            "lat": 57.41,
+            "label": "left"
+          }
+        ]
+      },
+      {
+        "title": "East to Loch Ness and Speyside",
+        "drive": "Around 3 hours, with a break on the way",
+        "highlights": [
+          "Along Loch Ness towards Inverness",
+          "The moor at Culloden",
+          "A castle for the night in Speyside, and a dinner to match the setting"
+        ],
+        "onTheRoad": "Within a lifetime of Culloden it was illegal for a Highlander to wear tartan. A second offence meant seven years' transportation.",
+        "stops": [
+          {
+            "name": "Loch Ness",
+            "lon": -4.6,
+            "lat": 57.22
+          },
+          {
+            "name": "Culloden",
+            "lon": -4.07,
+            "lat": 57.48
+          },
+          {
+            "name": "Speyside",
+            "lon": -3.23,
+            "lat": 57.47
+          }
+        ]
+      },
+      {
+        "title": "Speyside, and home",
+        "drive": "Around 1 hour to Inverness",
+        "highlights": [
+          "A quiet morning at a distillery that opens its doors for you",
+          "Then to your flight"
+        ],
+        "stops": [
+          {
+            "name": "Inverness",
+            "lon": -4.05,
+            "lat": 57.54
+          }
+        ]
+      }
+    ]
+  },
+  "edinburgh-heart-of-scotland": {
+    "id": "edinburgh-heart-of-scotland",
+    "service": "luxury-tours",
+    "duration": "Three Days",
+    "title": "Edinburgh and the Heart of Scotland",
+    "story": [
+      "Three days is enough to understand why Scotland's story is told the way it is. It begins in a capital built in two halves: the medieval Old Town, all closes and wynds on its ridge, and the Georgian New Town laid out below it by a 26-year-old architect who won the competition in 1766.",
+      "From there the road runs north to Stirling, the hinge of the country's history. Wallace fought below its castle in 1297, and Bruce won at Bannockburn in sight of it in 1314. Beyond lie the Trossachs and Loch Lomond, Rob Roy's country, which Walter Scott's novel made famous in 1817."
+    ],
+    "start": {
+      "name": "Edinburgh Airport",
+      "lon": -3.37,
+      "lat": 55.95,
+      "label": "left"
+    },
+    "days": [
+      {
+        "title": "Edinburgh",
+        "drive": "Arrival, no long drives",
+        "highlights": [
+          "Met at the airport and settled into the heart of the Old Town",
+          "An afternoon in the closes and wynds with a guide who knows the stories the crowds walk past",
+          "An evening at the castle, then dinner at one of the city's finest tables"
+        ],
+        "onTheRoad": "In 1828 Burke and Hare murdered sixteen people within a short walk of here and sold them to an anatomist. Their crimes gave the language the word \"burking\".",
+        "stops": [
+          {
+            "name": "Edinburgh",
+            "lon": -3.19,
+            "lat": 55.95
+          }
+        ]
+      },
+      {
+        "title": "Stirling, the Trossachs and Loch Lomond",
+        "drive": "Around 1 hour to Stirling, then a loop west",
+        "highlights": [
+          "Stirling Castle and the ground where Bannockburn was fought",
+          "Lunch on a private estate",
+          "An afternoon to suit you: falconry, time on the water, or simply the view"
+        ],
+        "onTheRoad": "The Scots at Bannockburn were outnumbered perhaps two or three to one. On the first day Bruce killed an English knight in single combat with an axe.",
+        "stops": [
+          {
+            "name": "Stirling",
+            "lon": -3.94,
+            "lat": 56.12
+          },
+          {
+            "name": "The Trossachs",
+            "lon": -4.4,
+            "lat": 56.23
+          },
+          {
+            "name": "Loch Lomond",
+            "lon": -4.6,
+            "lat": 56.08,
+            "label": "left"
+          },
+          {
+            "name": "Edinburgh",
+            "lon": -3.19,
+            "lat": 55.95
+          }
+        ]
+      },
+      {
+        "title": "Edinburgh, and home",
+        "drive": "No long drives",
+        "highlights": [
+          "A slow morning",
+          "One last experience chosen to your taste, perhaps a private whisky blending",
+          "Then to your flight"
+        ],
+        "stops": [
+          {
+            "name": "Edinburgh Airport",
+            "lon": -3.37,
+            "lat": 55.95,
+            "label": "left"
+          }
+        ]
+      }
+    ]
+  },
+  "grand-sweep": {
+    "id": "grand-sweep",
+    "service": "luxury-tours",
+    "duration": "Seven Days",
+    "title": "The Grand Sweep, South to Far North",
+    "story": [
+      "A week from the capital to the empty roads of the far north is the journey people take once and remember for good. It follows roads first built by soldiers: General Wade laid some 240 miles of military road after the 1715 rising to hold the Highlands down. Today the same country is the most open space in Britain.",
+      "It passes through the history that shaped the north. The Jacobites rose and fell here, and within a lifetime of Culloden came the Clearances, which emptied whole glens. Then, in Speyside, it ends with a happier story: the whisky smugglers who went legal."
+    ],
+    "start": {
+      "name": "Edinburgh Airport",
+      "lon": -3.37,
+      "lat": 55.95,
+      "label": "left"
+    },
+    "days": [
+      {
+        "title": "Edinburgh",
+        "drive": "Arrival, no long drives",
+        "highlights": [
+          "The Old Town with a private guide",
+          "The castle",
+          "A dinner to set the tone for the week"
+        ],
+        "stops": [
+          {
+            "name": "Edinburgh",
+            "lon": -3.19,
+            "lat": 55.95
+          }
+        ]
+      },
+      {
+        "title": "Stirling, Glencoe and the Highlands",
+        "drive": "Around 3½ hours, split with a lunch stop",
+        "highlights": [
+          "North through Stirling",
+          "Rannoch Moor and Glencoe",
+          "A private estate for the night, and the first real sense of the scale of the place"
+        ],
+        "onTheRoad": "General Wade's road-builders worked for twelve years. A stone is said to carry the couplet \"If you had seen this road before it was made\".",
+        "stops": [
+          {
+            "name": "Stirling",
+            "lon": -3.94,
+            "lat": 56.12
+          },
+          {
+            "name": "Glencoe",
+            "lon": -5.1,
+            "lat": 56.68,
+            "label": "left"
+          }
+        ]
+      },
+      {
+        "title": "Skye",
+        "drive": "Around 3 hours, with a break on the way",
+        "highlights": [
+          "Over to Skye beneath Eilean Donan",
+          "Its ridges and pools",
+          "A tasting, and a night on the island"
+        ],
+        "stops": [
+          {
+            "name": "Eilean Donan",
+            "lon": -5.52,
+            "lat": 57.27
+          },
+          {
+            "name": "Skye",
+            "lon": -6.19,
+            "lat": 57.41,
+            "label": "left"
+          }
+        ]
+      },
+      {
+        "title": "Torridon and the North West",
+        "drive": "Around 4 hours, split into shorter legs",
+        "highlights": [
+          "The great coastal road north through Torridon towards Ullapool",
+          "Mountains on one side and the sea on the other",
+          "The best room on the route waiting at the end of the drive"
+        ],
+        "onTheRoad": "The North Coast 500 was only named as a route in 2015, but these roads are centuries older, and many are still single track.",
+        "stops": [
+          {
+            "name": "Torridon",
+            "lon": -5.52,
+            "lat": 57.55,
+            "label": "left"
+          },
+          {
+            "name": "Ullapool",
+            "lon": -5.16,
+            "lat": 57.9
+          }
+        ]
+      },
+      {
+        "title": "The North Coast and Sutherland",
+        "drive": "A long day, broken with lunch and a coffee stop",
+        "highlights": [
+          "The north coast's empty beaches",
+          "Dunrobin Castle and the story of the Clearances, told from both sides",
+          "South towards Speyside"
+        ],
+        "onTheRoad": "John o' Groats is famous for being the end of the road, but it is not the northern tip of mainland Britain. That is Dunnet Head, further west along this coast.",
+        "stops": [
+          {
+            "name": "The north coast",
+            "lon": -4.75,
+            "lat": 58.56
+          },
+          {
+            "name": "Dunrobin Castle",
+            "lon": -3.95,
+            "lat": 57.98
+          },
+          {
+            "name": "Speyside",
+            "lon": -3.23,
+            "lat": 57.47
+          }
+        ]
+      },
+      {
+        "title": "Speyside",
+        "drive": "Short drives",
+        "highlights": [
+          "Whisky done properly: private tastings and a cask or two off the usual path",
+          "A castle dinner to close the week"
+        ],
+        "onTheRoad": "The Excise Act of 1823 made it worth going legal. Licensed whisky almost doubled in a single year, and George Smith of Glenlivet was first in line for a licence.",
+        "stops": [
+          {
+            "name": "Dufftown",
+            "lon": -3.13,
+            "lat": 57.45
+          }
+        ]
+      },
+      {
+        "title": "Home",
+        "drive": "Around 1 hour to Inverness, or 3½ hours to Edinburgh",
+        "highlights": [
+          "A last morning at leisure, then to your flight"
+        ],
+        "stops": [
+          {
+            "name": "Inverness",
+            "lon": -4.05,
+            "lat": 57.54,
+            "label": "left"
+          }
+        ]
+      }
+    ]
+  },
+  "golf-east-coast": {
+    "id": "golf-east-coast",
+    "service": "golf-tours",
+    "duration": "Seven Days",
+    "title": "A Week on the Links, Fife to Royal Deeside",
+    "story": [
+      "The first written record of golf in Scotland is the moment it was banned. In 1457 Parliament ordered that golf be \"utterly cried down\", because men should be practising archery. They took no notice. Three centuries later St Andrews cut its course to eighteen holes, and the rest of the world followed.",
+      "This week follows the game up the east coast, from the town that set its rules to some of the oldest and most testing links in the world, with a day away from the course in Royal Deeside to finish."
+    ],
+    "start": {
+      "name": "Edinburgh Airport",
+      "lon": -3.37,
+      "lat": 55.95,
+      "label": "left"
+    },
+    "days": [
+      {
+        "title": "Arrival in Fife",
+        "drive": "Around 1¼ hours from Edinburgh",
+        "highlights": [
+          "Met at the airport and driven to a private house near St Andrews",
+          "Dinner from the house chef, and a briefing on the week"
+        ],
+        "stops": [
+          {
+            "name": "Near St Andrews",
+            "lon": -2.92,
+            "lat": 56.29,
+            "label": "left"
+          }
+        ]
+      },
+      {
+        "title": "St Andrews",
+        "drive": "Short drives",
+        "highlights": [
+          "The R&A World Golf Museum",
+          "A round on the Castle Course, on the cliffs above the North Sea",
+          "Dinner in the town"
+        ],
+        "onTheRoad": "In 1764 St Andrews cut its round from 22 holes to 18, and that is why a round of golf is 18 holes today.",
+        "stops": [
+          {
+            "name": "St Andrews",
+            "lon": -2.8,
+            "lat": 56.34
+          }
+        ]
+      },
+      {
+        "title": "Carnoustie",
+        "drive": "Around 45 minutes",
+        "highlights": [
+          "A talk on the course and its championship history",
+          "A round on Carnoustie Golf Links, one of the toughest tests of links golf anywhere"
+        ],
+        "onTheRoad": "On the Tay crossing you can see the stumps of the first Tay Bridge, which fell in a storm in 1879 and took a train with it.",
+        "stops": [
+          {
+            "name": "Carnoustie",
+            "lon": -2.71,
+            "lat": 56.5
+          }
+        ]
+      },
+      {
+        "title": "North to Aberdeenshire",
+        "drive": "Around 2½ hours, with a stop at Dunnottar",
+        "highlights": [
+          "The clifftop ruin of Dunnottar Castle",
+          "An afternoon round at Cruden Bay",
+          "A private house in Aberdeenshire and an evening whisky tasting"
+        ],
+        "onTheRoad": "Bram Stoker holidayed at Cruden Bay and wrote early chapters of Dracula there. The ruined castle nearby may have inspired him.",
+        "stops": [
+          {
+            "name": "Dunnottar Castle",
+            "lon": -2.2,
+            "lat": 56.95
+          },
+          {
+            "name": "Cruden Bay",
+            "lon": -1.86,
+            "lat": 57.41,
+            "label": "left"
+          }
+        ]
+      },
+      {
+        "title": "Royal Aberdeen",
+        "drive": "Short drives",
+        "highlights": [
+          "The Granite City, and lunch by the harbour",
+          "An afternoon at Royal Aberdeen, one of the oldest golf clubs in the world"
+        ],
+        "onTheRoad": "Aberdeen's grey granite sparkles because of the mica in it, which is why it is called the Silver City by the Sea.",
+        "stops": [
+          {
+            "name": "Royal Aberdeen",
+            "lon": -2.08,
+            "lat": 57.18,
+            "label": "left"
+          }
+        ]
+      },
+      {
+        "title": "Royal Deeside",
+        "drive": "Around 1¼ hours",
+        "highlights": [
+          "A day away from the course in the country Queen Victoria fell for in 1848",
+          "In early September, the Braemar Gathering"
+        ],
+        "onTheRoad": "At a Highland games the caber is scored on how straight it lands, like the hand of a clock at twelve, not on how far it goes.",
+        "stops": [
+          {
+            "name": "Braemar",
+            "lon": -3.4,
+            "lat": 57.01,
+            "label": "left"
+          }
+        ]
+      },
+      {
+        "title": "Edinburgh, and home",
+        "drive": "Around 2½ hours",
+        "highlights": [
+          "South to Edinburgh for a final afternoon and night in the city",
+          "To the airport the next morning"
+        ],
+        "stops": [
+          {
+            "name": "Edinburgh",
+            "lon": -3.19,
+            "lat": 55.95
+          }
+        ]
+      }
+    ]
+  },
+  "corporate-highlands": {
+    "id": "corporate-highlands",
+    "service": "corporate-incentives",
+    "duration": "Five Days",
+    "title": "A Programme in the Highlands",
+    "story": [
+      "The best incentive trips are remembered for the moments the group shared, not for the agenda. This programme brings a team from the capital into the Highlands and gives them a castle of their own for three nights.",
+      "The days are built around experiences that pull a group together: a challenge on a Highland estate, an evening ceilidh, and whisky at its source. There is plenty of time for the scenery to do its work, too."
+    ],
+    "start": {
+      "name": "Edinburgh Airport",
+      "lon": -3.37,
+      "lat": 55.95,
+      "label": "left"
+    },
+    "days": [
+      {
+        "title": "Edinburgh",
+        "drive": "Arrival, no long drives",
+        "highlights": [
+          "The group is met at the airport and taken to a landmark hotel",
+          "An evening walk through the darker side of the Old Town",
+          "Dinner together"
+        ],
+        "stops": [
+          {
+            "name": "Edinburgh",
+            "lon": -3.19,
+            "lat": 55.95
+          }
+        ]
+      },
+      {
+        "title": "Stirling, Loch Lomond and north",
+        "drive": "Around 3½ hours, split with a lunch cruise",
+        "highlights": [
+          "A private visit to Stirling Castle",
+          "Lunch aboard on Loch Lomond",
+          "North to a private castle for three nights, with a gala dinner on the first evening"
+        ],
+        "stops": [
+          {
+            "name": "Stirling Castle",
+            "lon": -3.95,
+            "lat": 56.12
+          },
+          {
+            "name": "Loch Lomond",
+            "lon": -4.6,
+            "lat": 56.08,
+            "label": "left"
+          },
+          {
+            "name": "Fort William",
+            "lon": -5.11,
+            "lat": 56.82
+          }
+        ]
+      },
+      {
+        "title": "Glencoe",
+        "drive": "Short drives",
+        "highlights": [
+          "A challenge on a Highland estate: clay shooting, off-road driving, and events in the spirit of the Highland games",
+          "A ceilidh at the castle in the evening, which tends to be the night everyone remembers"
+        ],
+        "onTheRoad": "A ceilidh was originally not a dance at all but a visit: neighbours gathering on winter nights to tell stories and sing.",
+        "stops": [
+          {
+            "name": "Glencoe",
+            "lon": -5.1,
+            "lat": 56.68,
+            "label": "left"
+          }
+        ]
+      },
+      {
+        "title": "Lochaber",
+        "drive": "Short drives",
+        "highlights": [
+          "A private distillery tour and tasting",
+          "An afternoon to walk, fish or simply take in the surroundings",
+          "A farewell dinner"
+        ],
+        "stops": [
+          {
+            "name": "Fort William",
+            "lon": -5.11,
+            "lat": 56.82
+          }
+        ]
+      },
+      {
+        "title": "Home",
+        "drive": "Around 2½ hours to Glasgow, or 2 hours to Inverness",
+        "highlights": [
+          "A relaxed final morning",
+          "Transfers to flights, with the option to stay on"
+        ],
+        "stops": [
+          {
+            "name": "Glasgow Airport",
+            "lon": -4.43,
+            "lat": 55.87
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -12,109 +12,10 @@ import toursHeroSm from "@/assets/images/tours-hero-sm.webp";
 import toursHero from "@/assets/images/tours-hero.webp";
 
 const itineraries = [
-  {
-    id: "3-day",
-    duration: "Three Days",
-    title: "Edinburgh and the Heart of Scotland",
-    intro: "A short and rich introduction to the country, built around its capital with a day reaching into the Highlands.",
-    price: "Guide price, around £4,500 (+VAT) per person, drawn from a real trip",
-    days: [
-      {
-        day: "Day 1",
-        description:
-          "We meet you at Edinburgh airport and settle you into the heart of the Old Town. The afternoon is spent wandering its closes and wynds with a guide who knows the stories the crowds walk past, followed by a private evening at Edinburgh Castle and dinner at one of the city's finest tables.",
-      },
-      {
-        day: "Day 2",
-        description:
-          "A day to the north, taking in Stirling, the Trossachs and the shores of Loch Lomond, with lunch on a private estate and an afternoon to suit you, whether that is falconry, time on the water, or simply the view. Back to the city for the evening.",
-      },
-      {
-        day: "Day 3",
-        description:
-          "A gentle morning, a last experience chosen to your taste, perhaps a private whisky blending or an hour with the city's best independent shops, and then to your flight.",
-      },
-    ],
-  },
-  {
-    id: "5-day",
-    duration: "Five Days",
-    title: "The West Highlands and Skye",
-    journey: "west-highlands-skye",
-    intro: "The Scotland most people picture, the mountains, the sea lochs and the islands, taken at a pace that lets you feel it.",
-    price: "Price on enquiry",
-    days: [
-      {
-        day: "Day 1",
-        description:
-          "We collect you and head north into Glencoe, one of the most striking landscapes in Britain, and settle you at a Highland estate for the night.",
-      },
-      {
-        day: "Day 2",
-        description:
-          "On through Fort William and along the Road to the Isles, with the Glenfinnan Viaduct along the way, and across to Skye beneath the walls of Eilean Donan.",
-      },
-      {
-        day: "Day 3",
-        description:
-          "A full day on Skye with a guide who knows it intimately: the Trotternish ridge, the Quiraing, the Fairy Pools, and a tasting at Talisker arranged in your own time rather than the crowd's.",
-      },
-      {
-        day: "Day 4",
-        description:
-          "East toward Loch Ness and Inverness, then into Speyside, with a castle for the night and a dinner to match the setting.",
-      },
-      {
-        day: "Day 5",
-        description:
-          "A quiet morning at a distillery that opens its doors for you, and then to your flight from Inverness.",
-      },
-    ],
-  },
-  {
-    id: "7-day",
-    duration: "Seven Days",
-    title: "The Grand Sweep, South to Far North",
-    intro: "A full week from the capital to the open roads of the far north, the trip people take once and remember for good.",
-    price: "Guide price, around £10,000 (+VAT) per person, drawn from a real trip",
-    days: [
-      {
-        day: "Day 1",
-        description:
-          "Arrival in Edinburgh, the Old Town with a private guide, the castle, and a dinner to set the tone for the week.",
-      },
-      {
-        day: "Day 2",
-        description:
-          "North through Stirling and Glencoe into the Highlands, a private estate for the night, and the first real sense of the scale of the place.",
-      },
-      {
-        day: "Day 3",
-        description:
-          "Skye, with its ridges and pools and a tasting at Talisker, and a night on the island.",
-      },
-      {
-        day: "Day 4",
-        description:
-          "Onto the great coastal road of the northwest, through Torridon and Ullapool, with mountains on one side and sea on the other, and the best room on the route waiting at the end of the drive.",
-      },
-      {
-        day: "Day 5",
-        description:
-          "The north coast itself, its empty beaches and Dunrobin Castle and the distilleries few visitors reach, before turning south toward Speyside.",
-      },
-      {
-        day: "Day 6",
-        description:
-          "A day of Speyside whisky done the way it should be, with private tastings and a cask or two off the usual path, and a castle dinner in the Cairngorms to close the week.",
-      },
-      {
-        day: "Day 7",
-        description: "A final morning at leisure and the journey south to your flight.",
-      },
-    ],
-  },
-];
+  { id: "3-day", journey: "edinburgh-heart-of-scotland" },
+  { id: "5-day", journey: "west-highlands-skye" },
+  { id: "7-day", journey: "grand-sweep" },
+].map((i) => ({ ...i, ...sampleJourneys[i.journey] }));
 
 const included = [
   "A private driver and transfers throughout",
@@ -140,11 +41,11 @@ const luxuryFaqs = [
   },
   {
     q: "How does pricing work for a group?",
-    a: "There is no set price, because every trip is built around what you would like to do. We show an indicative per-person figure so you can picture the scale at different group sizes, with the cost reflecting the number of people travelling. Once we know your plans and your numbers, we cost the whole trip in full before anything is confirmed.",
+    a: "There is no set price, because every trip is built around what you would like to do, and the number of people travelling makes a real difference to the cost per person. Once we know your plans and your numbers, we cost the whole trip in full before anything is confirmed.",
   },
   {
-    q: "What do the prices on your sample journeys mean?",
-    a: "They are guidelines drawn from real trips, there to show the kind of cost a journey like that involves. Your own trip is priced around the choices you make, so something like private transport in place of a coach, or a higher standard of stay, will shape the final figure. We cost everything in full once your plans take shape.",
+    q: "Why do your sample journeys not show a price?",
+    a: "Because the same route can cost very different amounts depending on the season, the standard of stay, how you travel and how many of you there are, a single figure would mislead more than it helps. Tell us which journey appeals and we will cost it in full around your plans.",
   },
   {
     q: "How far ahead should we book?",
@@ -409,7 +310,7 @@ export default function LuxuryToursPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-sans font-light text-sm text-muted-foreground max-w-2xl mb-12"
           >
-            These are real journeys we can build, written to give you a feel for the range and to spark a few ideas of your own. Nothing here is fixed. The length, the places and the pace are all yours to shape, and we would happily reimagine any of them around what you have in mind.
+            These are journeys we can build, written to give you a feel for the range and to spark a few ideas of your own. Nothing here is fixed. The length, the places and the pace are all yours to shape, and we would happily reimagine any of them around what you have in mind.
           </m.p>
 
           <div className="space-y-3">
@@ -432,7 +333,7 @@ export default function LuxuryToursPage() {
                     <h3 className="font-display text-lg text-foreground">{itin.title}</h3>
                   </div>
                   <div className="flex items-center gap-4 shrink-0">
-                    <span className="hidden sm:block font-sans text-xs text-muted-foreground">{itin.price}</span>
+                    <span className="hidden sm:block font-sans text-xs text-muted-foreground">Price on enquiry</span>
                     <ChevronDown
                       className="w-4 h-4 text-primary transition-transform duration-300"
                       style={{ transform: openItinerary === itin.id ? "rotate(180deg)" : "rotate(0deg)" }}
@@ -449,24 +350,9 @@ export default function LuxuryToursPage() {
                       transition={{ duration: 0.35, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      {"journey" in itin && itin.journey ? (
-                        <div className="px-6 md:px-8 pb-8 md:pb-10 pt-2">
-                          <SampleJourney journey={sampleJourneys[itin.journey]} />
-                        </div>
-                      ) : (
-                      <div className="px-6 md:px-8 pb-6 md:pb-8 space-y-2">
-                        {itin.intro && (
-                          <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed pb-2 italic">{itin.intro}</p>
-                        )}
-                        {itin.days.map((item) => (
-                          <div key={item.day} className="bg-background border-l border-primary/40 p-4 md:p-6">
-                            <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary block mb-2">{item.day}</span>
-                            <p className="font-sans font-light text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                          </div>
-                        ))}
-                        <p className="font-sans font-light text-sm text-primary pt-2">{itin.price}</p>
+                      <div className="px-6 md:px-8 pb-8 md:pb-10 pt-2">
+                        <SampleJourney journey={sampleJourneys[itin.journey]} />
                       </div>
-                      )}
                     </m.div>
                   )}
                 </AnimatePresence>
