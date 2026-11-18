@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Navbar } from "@/components/layout/Navbar";
+import { usePageMeta } from "@/lib/usePageMeta";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
@@ -11,6 +12,7 @@ const loadContact = () => import("@/components/sections/Contact");
 const Contact = lazy(() => loadContact().then((m) => ({ default: m.Contact })));
 
 export default function Home() {
+  usePageMeta("");
   // Fetch straight after paint, so the form is ready long before anyone scrolls
   // to it or presses Enquire — it is just no longer a first-paint dependency.
   useEffect(() => {

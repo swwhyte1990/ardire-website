@@ -1,4 +1,5 @@
 import { useEffect, useState, type MouseEvent } from "react";
+import { usePageMeta } from "@/lib/usePageMeta";
 import { useLocation } from "wouter";
 import { m, AnimatePresence } from "framer-motion";
 import { CheckCircle, ChevronDown } from "lucide-react";
@@ -66,16 +67,13 @@ const luxuryFaqs = [
 ];
 
 export default function LuxuryToursPage() {
+  usePageMeta("services/luxury-tours");
   const [, navigate] = useLocation();
   const [openItinerary, setOpenItinerary] = useState<string | null>(null);
   const [faqOpen, setFaqOpen] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Luxury Private Tours Scotland | The Árdíre Group";
-    const desc = document.querySelector('meta[name="description"]');
-    const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Fully escorted private touring across Scotland's most breathtaking landscapes. Bespoke itineraries crafted by The Árdíre Group, Glasgow.");
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
     faqScript.id = "faq-schema-luxury";
@@ -104,8 +102,6 @@ export default function LuxuryToursPage() {
     });
     document.head.appendChild(serviceScript);
     return () => {
-      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
-      if (desc && prev) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-luxury")?.remove();
       document.getElementById("service-schema-luxury")?.remove();
     };

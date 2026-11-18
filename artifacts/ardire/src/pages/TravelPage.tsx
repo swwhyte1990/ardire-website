@@ -1,4 +1,5 @@
 import { useEffect, type MouseEvent } from "react";
+import { usePageMeta } from "@/lib/usePageMeta";
 import { useLocation } from "wouter";
 import { m } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -44,18 +45,11 @@ const cardImageDesktopW: Record<string, number> = {
 };
 
 export default function TravelPage() {
+  usePageMeta("travel");
   const [, navigate] = useLocation();
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Private Tours & Travel in Scotland | The Árdíre Group";
-    const desc = document.querySelector('meta[name="description"]');
-    const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Bespoke private tours, championship golf, chauffeur services and a dedicated travel concierge across Scotland, crafted by The Árdíre Group.");
-    return () => {
-      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
-      if (desc && prev !== null) desc.setAttribute("content", prev);
-    };
   }, []);
 
   function goToService(slug: string) {

@@ -1,4 +1,5 @@
 import { useEffect, useState, type MouseEvent } from "react";
+import { usePageMeta } from "@/lib/usePageMeta";
 import { useLocation } from "wouter";
 import { m, AnimatePresence } from "framer-motion";
 import { CheckCircle, ChevronDown } from "lucide-react";
@@ -54,15 +55,12 @@ const whatWeArrange = [
 ];
 
 export default function SelfGuidedToursPage() {
+  usePageMeta("services/self-guided-tours");
   const [, navigate] = useLocation();
   const [faqOpen, setFaqOpen] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Self-Guided Tours Scotland | The Árdíre Group";
-    const desc = document.querySelector('meta[name="description"]');
-    const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Explore Scotland at your own pace with a self-guided itinerary planned for you, accommodation booked, and a point of contact throughout.");
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
     faqScript.id = "faq-schema-self-guided";
@@ -91,8 +89,6 @@ export default function SelfGuidedToursPage() {
     });
     document.head.appendChild(serviceScript);
     return () => {
-      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
-      if (desc && prev !== null) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-self-guided")?.remove();
       document.getElementById("service-schema-self-guided")?.remove();
     };

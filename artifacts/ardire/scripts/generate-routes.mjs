@@ -141,8 +141,6 @@ const routes = [
   {
     path: 'travel',
     heroImage: 'travel-glenfinnan.webp',
-    title: 'Private Tours & Travel in Scotland | The Árdíre Group',
-    description: 'Bespoke private tours, championship golf, chauffeur services and a dedicated travel concierge across Scotland, crafted by The Árdíre Group.',
     h1: 'Private Tours & Travel in Scotland',
     paragraphs: [
       'Privately guided journeys, championship golf, luxury chauffeur, self-guided adventures and a dedicated travel concierge. All crafted around you.',
@@ -158,8 +156,6 @@ const routes = [
   {
     path: 'events',
     heroImage: 'events-hero.webp',
-    title: 'Corporate Events & Incentive Travel in Scotland | The Árdíre Group',
-    description: 'Corporate incentives, end-to-end event management and professional staffing across Scotland, planned and delivered by The Árdíre Group.',
     h1: 'Corporate Events & Incentive Travel in Scotland',
     paragraphs: [
       'Corporate incentives, full-service event management, professional staffing and bespoke experiences. Conceived, managed and delivered.',
@@ -174,8 +170,6 @@ const routes = [
   {
     path: 'services/luxury-tours',
     heroImage: 'tours-hero.webp',
-    title: 'Luxury Private Tours Scotland | The Árdíre Group',
-    description: 'Fully escorted private touring across Scotland\'s most breathtaking landscapes. Bespoke itineraries crafted by The Árdíre Group, Glasgow.',
     h1: 'Private Tours of Scotland',
     paragraphs: [
       'A private tour designed around you, with a travel concierge to arrange and look after every part of it. From the moment we meet you at the airport, every day is ours to plan and yours to enjoy.',
@@ -195,8 +189,6 @@ const routes = [
   {
     path: 'services/golf-tours',
     heroImage: 'golf-hero.webp',
-    title: 'Golf Tours Scotland | St Andrews, Turnberry & Beyond',
-    description: 'Play St Andrews, Carnoustie, and Turnberry on a luxury private golf tour of Scotland with private transport and luxury accommodation.',
     h1: 'Private Golf Tours of Scotland',
     paragraphs: [
       'A week on the country\'s great courses, planned and looked after from the moment we meet you at the airport. You play. We take care of everything around it.',
@@ -215,8 +207,6 @@ const routes = [
   {
     path: 'services/private-chauffeur',
     heroImage: 'chauffeur-hero.webp',
-    title: 'Private Chauffeurs in Scotland | Glasgow, Edinburgh, Beyond.',
-    description: 'Premium private chauffeur hire across Scotland. Airport transfers, executive transport, and bespoke touring by The Árdíre Group, Glasgow.',
     h1: 'Private Chauffeur Service in Scotland',
     paragraphs: [
       'A professional driver and a comfortable car whenever you want to be somewhere without thinking about how to get there. Airport transfers, days out, and everything in between.',
@@ -234,8 +224,6 @@ const routes = [
   {
     path: 'services/corporate-incentives',
     heroImage: 'corporate-hero.webp',
-    title: 'Corporate Incentive Trips in Scotland | The Árdíre Group',
-    description: 'Reward your top performers with world-class Scottish experiences. Corporate incentive programmes designed by The Árdíre Group.',
     h1: 'Corporate Incentive Trips in Scotland',
     paragraphs: [
       'Reward a team, motivate your top performers, or bring clients somewhere they will not forget. We design and run the whole trip, from the moment everyone arrives to the day they head home.',
@@ -255,8 +243,6 @@ const routes = [
   {
     path: 'services/self-guided-tours',
     heroImage: 'self-guided-hero.webp',
-    title: 'Self-Guided Tours Scotland | The Árdíre Group',
-    description: 'Explore Scotland at your own pace with a self-guided itinerary planned for you, accommodation booked, and a point of contact throughout.',
     h1: 'Self-Guided Tours of Scotland',
     paragraphs: [
       'The freedom to explore Scotland your own way, with the itinerary planned and the bookings made for you. You travel independently. We take care of arranging it all beforehand.',
@@ -276,8 +262,6 @@ const routes = [
   {
     path: 'services/event-staffing',
     heroImage: 'events-hero.webp',
-    title: 'Event Staffing Scotland | The Árdíre Group',
-    description: 'Professional hospitality and event staffing for Scotland\'s most prestigious events. Sourced and managed by The Árdíre Group.',
     h1: 'Event Staffing in Scotland',
     paragraphs: [
       'Professional waiting staff, butlers and hospitality teams for events of any size. Briefed, well presented, and ready to make the evening run beautifully.',
@@ -296,8 +280,6 @@ const routes = [
   {
     path: 'services/event-management',
     heroImage: 'events-hero.webp',
-    title: 'Event Management Scotland | The Árdíre Group',
-    description: 'Full-service event management for corporate functions, gala dinners and private occasions across Scotland. Conceived, managed and delivered by The Árdíre Group.',
     h1: 'Event Management in Scotland',
     paragraphs: [
       'We plan, produce and run events from start to finish. One team, one point of contact, the whole thing taken care of.',
@@ -317,8 +299,6 @@ const routes = [
   {
     path: 'privacy',
     heroImage: null,
-    title: 'Privacy Policy | The Árdíre Group',
-    description: 'Privacy policy for The Árdíre Group. How we collect, use and protect your personal data.',
     h1: 'Privacy Policy',
     paragraphs: [
       'This privacy policy explains how The Árdíre Group collects, uses, stores, and protects your personal data when you visit our website or contact us about our services.',
@@ -328,6 +308,18 @@ const routes = [
 ];
 
 const indexHtml = readFileSync(join(distDir, 'index.html'), 'utf8');
+
+// Titles and descriptions come from the same file the pages use at runtime.
+const pageMeta = JSON.parse(readFileSync(join(__dirname, '../src/data/pageMeta.json'), 'utf8'));
+for (const route of routes) {
+  if (!pageMeta[route.path]) throw new Error(`No entry for ${route.path} in src/data/pageMeta.json`);
+  Object.assign(route, pageMeta[route.path]);
+}
+// The home page's tags are written by hand in index.html; make sure they match too.
+for (const [label, re] of [['title', /<title>([^<]*)<\/title>/], ['description', /name="description"\s+content="([^"]*)"/]]) {
+  const found = indexHtml.match(re)?.[1].replace(/&amp;/g, '&');
+  if (found !== pageMeta[''][label]) throw new Error(`index.html ${label} does not match src/data/pageMeta.json: "${found}"`);
+}
 
 for (const route of routes) {
   const routeDir = join(distDir, route.path);

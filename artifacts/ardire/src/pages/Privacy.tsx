@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { usePageMeta } from "@/lib/usePageMeta";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { m } from "framer-motion";
@@ -13,17 +13,7 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 );
 
 export default function Privacy() {
-  useEffect(() => {
-    document.title = "Privacy Policy | The Árdíre Group";
-    const desc = document.querySelector('meta[name="description"]');
-    const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Privacy policy for The Árdíre Group. How we collect, use and protect your personal data.");
-    return () => {
-      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
-      if (desc && prev) desc.setAttribute("content", prev);
-    };
-  }, []);
-
+  usePageMeta("privacy");
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <Navbar />

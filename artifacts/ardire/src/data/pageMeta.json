@@ -1,0 +1,46 @@
+{
+  "": {
+    "title": "Private Tours & Event Management Scotland | The Árdíre Group",
+    "description": "Private tours, golf tours and chauffeur travel across Scotland, with event management, staffing and corporate incentives. By The Árdíre Group, Glasgow."
+  },
+  "travel": {
+    "title": "Private Tours & Travel in Scotland | The Árdíre Group",
+    "description": "Bespoke private tours, championship golf, chauffeur services and a dedicated travel concierge across Scotland, crafted by The Árdíre Group."
+  },
+  "events": {
+    "title": "Corporate Events & Incentives Scotland | The Árdíre Group",
+    "description": "Corporate incentives, end-to-end event management and professional staffing across Scotland, planned and delivered by The Árdíre Group."
+  },
+  "services/luxury-tours": {
+    "title": "Luxury Private Tours Scotland | The Árdíre Group",
+    "description": "Private tours of Scotland designed around you, with a dedicated travel concierge to plan, book and look after every part of your trip."
+  },
+  "services/golf-tours": {
+    "title": "Golf Tours Scotland | St Andrews, Carnoustie & Beyond",
+    "description": "Private golf tours of Scotland: St Andrews, Carnoustie, Royal Aberdeen and more, with tee times, transfers and every stay arranged for you."
+  },
+  "services/private-chauffeur": {
+    "title": "Private Chauffeur Service Scotland | The Árdíre Group",
+    "description": "Private chauffeur hire across Scotland. Airport transfers, days out and corporate travel, with a professional driver and a comfortable car."
+  },
+  "services/corporate-incentives": {
+    "title": "Corporate Incentive Trips in Scotland | The Árdíre Group",
+    "description": "Reward your top performers with world-class Scottish experiences. Corporate incentive programmes designed and run by The Árdíre Group."
+  },
+  "services/self-guided-tours": {
+    "title": "Self-Guided Tours Scotland | The Árdíre Group",
+    "description": "Explore Scotland at your own pace with a self-guided itinerary planned for you, accommodation booked, and a point of contact throughout."
+  },
+  "services/event-staffing": {
+    "title": "Event Staffing Scotland | The Árdíre Group",
+    "description": "Waiting staff, butlers, bar and front-of-house teams for events of any size across Scotland, from £25 per hour. Provided by The Árdíre Group."
+  },
+  "services/event-management": {
+    "title": "Event Management Scotland | The Árdíre Group",
+    "description": "Full-service event management for corporate functions, gala dinners and private occasions across Scotland. Conceived, managed and delivered by The Árdíre Group."
+  },
+  "privacy": {
+    "title": "Privacy Policy | The Árdíre Group",
+    "description": "Privacy policy for The Árdíre Group. How we collect, use and protect your personal data."
+  }
+}

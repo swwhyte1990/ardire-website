@@ -1,4 +1,5 @@
 import { useEffect, type MouseEvent } from "react";
+import { usePageMeta } from "@/lib/usePageMeta";
 import { useLocation } from "wouter";
 import { m } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -35,18 +36,11 @@ const cardImageDesktopW: Record<string, number> = {
 };
 
 export default function EventsPage() {
+  usePageMeta("events");
   const [, navigate] = useLocation();
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Corporate Events & Incentive Travel in Scotland | The Árdíre Group";
-    const desc = document.querySelector('meta[name="description"]');
-    const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Corporate incentives, end-to-end event management and professional staffing across Scotland, planned and delivered by The Árdíre Group.");
-    return () => {
-      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
-      if (desc && prev) desc.setAttribute("content", prev);
-    };
   }, []);
 
   function goToService(slug: string) {

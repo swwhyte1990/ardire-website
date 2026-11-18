@@ -1,4 +1,5 @@
 import { useEffect, useState, type MouseEvent } from "react";
+import { usePageMeta } from "@/lib/usePageMeta";
 import { useLocation } from "wouter";
 import { m, AnimatePresence } from "framer-motion";
 import { CheckCircle, ChevronDown } from "lucide-react";
@@ -62,15 +63,12 @@ const eventManagementFaqs = [
 ];
 
 export default function EventManagementPage() {
+  usePageMeta("services/event-management");
   const [, navigate] = useLocation();
   const [faqOpen, setFaqOpen] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Event Management Scotland | The Árdíre Group";
-    const desc = document.querySelector('meta[name="description"]');
-    const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Full-service event management for corporate functions, gala dinners and private occasions across Scotland. Conceived, managed and delivered by The Árdíre Group.");
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
     faqScript.id = "faq-schema-event-management";
@@ -99,8 +97,6 @@ export default function EventManagementPage() {
     });
     document.head.appendChild(serviceScript);
     return () => {
-      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
-      if (desc && prev !== null) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-event-management")?.remove();
       document.getElementById("service-schema-event-management")?.remove();
     };

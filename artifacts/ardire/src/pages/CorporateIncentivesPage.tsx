@@ -1,4 +1,5 @@
 import { useEffect, useState, type MouseEvent } from "react";
+import { usePageMeta } from "@/lib/usePageMeta";
 import { useLocation } from "wouter";
 import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -61,16 +62,13 @@ const corpFaqs = [
 ];
 
 export default function CorporateIncentivesPage() {
+  usePageMeta("services/corporate-incentives");
   const [, navigate] = useLocation();
   const [programmeOpen, setProgrammeOpen] = useState<string | null>(null);
   const [faqOpen, setFaqOpen] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Corporate Incentive Trips in Scotland | The Árdíre Group";
-    const desc = document.querySelector('meta[name="description"]');
-    const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Reward your top performers with world-class Scottish experiences. Corporate incentive programmes designed by The Árdíre Group.");
     const faqScript = document.createElement("script");
     faqScript.type = "application/ld+json";
     faqScript.id = "faq-schema-corp";
@@ -99,8 +97,6 @@ export default function CorporateIncentivesPage() {
     });
     document.head.appendChild(serviceScript);
     return () => {
-      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
-      if (desc && prev) desc.setAttribute("content", prev);
       document.getElementById("faq-schema-corp")?.remove();
       document.getElementById("service-schema-corp")?.remove();
     };

@@ -1,4 +1,5 @@
 import { useEffect, type MouseEvent } from "react";
+import { usePageMeta } from "@/lib/usePageMeta";
 import { useLocation } from "wouter";
 import { m } from "framer-motion";
 import { CheckCircle } from "lucide-react";
@@ -39,14 +40,11 @@ const pricingCards = [
 ];
 
 export default function EventStaffingPage() {
+  usePageMeta("services/event-staffing");
   const [, navigate] = useLocation();
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    document.title = "Event Staffing Scotland | The Árdíre Group";
-    const desc = document.querySelector('meta[name="description"]');
-    const prev = desc?.getAttribute("content") ?? null;
-    desc?.setAttribute("content", "Professional hospitality and event staffing for Scotland's most prestigious events. Sourced and managed by The Árdíre Group.");
     const serviceScript = document.createElement("script");
     serviceScript.type = "application/ld+json";
     serviceScript.id = "service-schema-event-staffing";
@@ -62,8 +60,6 @@ export default function EventStaffingPage() {
     });
     document.head.appendChild(serviceScript);
     return () => {
-      document.title = "Luxury Private Tours & Event Management | Árdíre - Scotland";
-      if (desc && prev !== null) desc.setAttribute("content", prev);
       document.getElementById("service-schema-event-staffing")?.remove();
     };
   }, []);
