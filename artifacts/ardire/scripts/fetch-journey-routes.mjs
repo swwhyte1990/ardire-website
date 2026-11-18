@@ -57,7 +57,7 @@ for (const journey of Object.values(journeys)) {
     day.route = simplify(r.geometry.coordinates);
     console.log(
       `${journey.id.padEnd(28)} day ${i + 1}: ${String(Math.round(r.distance / 1609.34)).padStart(3)} mi, ` +
-      `${String(Math.round(r.duration / 60)).padStart(3)} min driving, ${day.route.length} points   (copy says: ${day.drive})`
+      `${String(Math.round(r.duration / 60)).padStart(3)} min driving, ${day.route.length} points`
     );
     await sleep(1100); // the demo server asks for at most one request a second
   }

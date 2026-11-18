@@ -16,7 +16,6 @@
     "days": [
       {
         "title": "North to Glencoe",
-        "drive": "Around 2½ hours, with a break on the way",
         "highlights": [
           "Collected and driven north as the landscape opens out",
           "Rannoch Moor, then the descent into Glencoe",
@@ -72,7 +71,6 @@
       },
       {
         "title": "The Road to the Isles and over to Skye",
-        "drive": "Around 4 hours, split with a lunch stop",
         "highlights": [
           "Fort William, then west on the Road to the Isles",
           "Glenfinnan and its viaduct",
@@ -160,7 +158,6 @@
       },
       {
         "title": "Skye",
-        "drive": "Short drives, a day on the island",
         "highlights": [
           "The Trotternish ridge and the Quiraing with a guide who knows the island",
           "A tasting at a distillery, arranged in your own time rather than the crowd's",
@@ -197,7 +194,6 @@
       },
       {
         "title": "East to Loch Ness and Speyside",
-        "drive": "Around 5 hours, broken into shorter legs",
         "highlights": [
           "Along Loch Ness towards Inverness",
           "The moor at Culloden",
@@ -282,7 +278,6 @@
       },
       {
         "title": "Speyside, and home",
-        "drive": "Around 1 hour to Inverness",
         "highlights": [
           "A quiet morning at a distillery that opens its doors for you",
           "Then to your flight"
@@ -336,7 +331,6 @@
     "days": [
       {
         "title": "Edinburgh",
-        "drive": "Arrival, no long drives",
         "highlights": [
           "Met at the airport and settled into the heart of the Old Town",
           "An afternoon in the closes and wynds with a guide who knows the stories the crowds walk past",
@@ -359,7 +353,6 @@
       },
       {
         "title": "Stirling, the Trossachs and Loch Lomond",
-        "drive": "Around 1 hour to Stirling, then a loop west",
         "highlights": [
           "Stirling Castle and the ground where Bannockburn was fought",
           "Lunch on a private estate",
@@ -447,7 +440,6 @@
       },
       {
         "title": "Edinburgh, and home",
-        "drive": "No long drives",
         "highlights": [
           "A slow morning",
           "One last experience chosen to your taste, perhaps a private whisky blending",
@@ -487,7 +479,6 @@
     "days": [
       {
         "title": "Edinburgh",
-        "drive": "Arrival, no long drives",
         "highlights": [
           "The Old Town with a private guide",
           "The castle",
@@ -509,7 +500,6 @@
       },
       {
         "title": "Stirling, Glencoe and the Highlands",
-        "drive": "Around 3½ hours, split with a lunch stop",
         "highlights": [
           "North through Stirling",
           "Rannoch Moor and Glencoe",
@@ -572,7 +562,6 @@
       },
       {
         "title": "Skye",
-        "drive": "Around 3 hours, with a break on the way",
         "highlights": [
           "Over to Skye beneath Eilean Donan",
           "Its ridges and pools",
@@ -637,7 +626,6 @@
       },
       {
         "title": "Torridon and the North West",
-        "drive": "Around 4 hours, split into shorter legs",
         "highlights": [
           "The great coastal road north through Torridon towards Ullapool",
           "Mountains on one side and the sea on the other",
@@ -706,7 +694,6 @@
       },
       {
         "title": "The North Coast and Sutherland",
-        "drive": "A long day, broken with lunch and a coffee stop",
         "highlights": [
           "The north coast's empty beaches",
           "Dunrobin Castle and the story of the Clearances, told from both sides",
@@ -817,7 +804,6 @@
       },
       {
         "title": "Speyside",
-        "drive": "Short drives",
         "highlights": [
           "Whisky done properly: private tastings and a cask or two off the usual path",
           "A castle dinner to close the week"
@@ -839,7 +825,6 @@
       },
       {
         "title": "Home",
-        "drive": "Around 1 hour to Inverness, or 3½ hours to Edinburgh",
         "highlights": [
           "A last morning at leisure, then to your flight"
         ],
@@ -889,7 +874,6 @@
     "days": [
       {
         "title": "Arrival in Fife",
-        "drive": "Around 1¼ hours from Edinburgh",
         "highlights": [
           "Met at the airport and driven to a private house near St Andrews",
           "Dinner from the house chef, and a briefing on the week"
@@ -922,7 +906,6 @@
       },
       {
         "title": "St Andrews",
-        "drive": "Short drives",
         "highlights": [
           "The R&A World Golf Museum",
           "A round on the Castle Course, on the cliffs above the North Sea",
@@ -944,7 +927,6 @@
       },
       {
         "title": "Carnoustie",
-        "drive": "Around 45 minutes",
         "highlights": [
           "A talk on the course and its championship history",
           "A round on Carnoustie Golf Links, one of the toughest tests of links golf anywhere"
@@ -970,7 +952,6 @@
       },
       {
         "title": "North to Aberdeenshire",
-        "drive": "Around 2½ hours, with a stop at Dunnottar",
         "highlights": [
           "The clifftop ruin of Dunnottar Castle",
           "An afternoon round at Cruden Bay",
@@ -1021,7 +1002,6 @@
       },
       {
         "title": "Royal Aberdeen",
-        "drive": "Short drives",
         "highlights": [
           "The Granite City, and lunch by the harbour",
           "An afternoon at Royal Aberdeen, one of the oldest golf clubs in the world"
@@ -1049,7 +1029,6 @@
       },
       {
         "title": "Royal Deeside",
-        "drive": "Around 1¼ hours",
         "highlights": [
           "A day away from the course in the country Queen Victoria fell for in 1848",
           "In early September, the Braemar Gathering"
@@ -1092,7 +1071,6 @@
       },
       {
         "title": "Edinburgh, and home",
-        "drive": "Around 2½ hours",
         "highlights": [
           "South to Edinburgh for a final afternoon and night in the city",
           "To the airport the next morning"
@@ -1160,7 +1138,6 @@
     "days": [
       {
         "title": "Edinburgh",
-        "drive": "Arrival, no long drives",
         "highlights": [
           "The group is met at the airport and taken to a landmark hotel",
           "An evening walk through the darker side of the Old Town",
@@ -1182,7 +1159,6 @@
       },
       {
         "title": "Stirling, Loch Lomond and north",
-        "drive": "Around 3½ hours, split with a lunch cruise",
         "highlights": [
           "A private visit to Stirling Castle",
           "Lunch aboard on Loch Lomond",
@@ -1268,7 +1244,6 @@
       },
       {
         "title": "Glencoe",
-        "drive": "Short drives",
         "highlights": [
           "A challenge on a Highland estate: clay shooting, off-road driving, and events in the spirit of the Highland games",
           "A ceilidh at the castle in the evening, which tends to be the night everyone remembers"
@@ -1294,7 +1269,6 @@
       },
       {
         "title": "Lochaber",
-        "drive": "Short drives",
         "highlights": [
           "A private distillery tour and tasting",
           "An afternoon to walk, fish or simply take in the surroundings",
@@ -1319,7 +1293,6 @@
       },
       {
         "title": "Home",
-        "drive": "Around 2½ hours to Glasgow, or 2 hours to Inverness",
         "highlights": [
           "A relaxed final morning",
           "Transfers to flights, with the option to stay on"

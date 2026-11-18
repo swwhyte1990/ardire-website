@@ -1,7 +1,7 @@
 import { useId, useMemo, useRef, useState, type KeyboardEvent, type MouseEvent, type PointerEvent } from "react";
 import { useLocation } from "wouter";
 import { AnimatePresence, m } from "framer-motion";
-import { ArrowLeft, ArrowRight, Car } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { SampleJourney as Journey } from "@/data/sampleJourneys";
 import { MAP_HEIGHT, MAP_WIDTH, SCOTLAND_PATH, project } from "@/components/scotlandOutline";
 import { setPendingScroll } from "@/lib/pendingScroll";
@@ -253,11 +253,7 @@ export function SampleJourney({ journey }: { journey: Journey }) {
                 className="bg-card border-l-2 border-primary p-6 md:p-8"
               >
                 <p className="font-sans text-xs uppercase tracking-[0.3em] text-primary mb-2">Day {active + 1}</p>
-                <h4 className="font-display text-2xl md:text-3xl text-foreground mb-3">{day.title}</h4>
-                <p className="flex items-center gap-2 font-sans text-xs text-muted-foreground mb-6">
-                  <Car className="w-3.5 h-3.5 text-primary shrink-0" aria-hidden="true" />
-                  {day.drive}
-                </p>
+                <h4 className="font-display text-2xl md:text-3xl text-foreground mb-6">{day.title}</h4>
                 <ul className="space-y-3 mb-6">
                   {day.highlights.map((h) => (
                     <li key={h} className="flex gap-3 font-sans font-light text-sm text-muted-foreground leading-relaxed">
