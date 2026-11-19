@@ -1,7 +1,7 @@
 import { useId, useMemo, useRef, useState, type KeyboardEvent, type MouseEvent, type PointerEvent } from "react";
 import { useLocation } from "wouter";
 import { AnimatePresence, m } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Plane } from "lucide-react";
 import type { SampleJourney as Journey } from "@/data/sampleJourneys";
 import { MAP_HEIGHT, MAP_WIDTH, SCOTLAND_PATH, project } from "@/components/scotlandOutline";
 import { setPendingScroll } from "@/lib/pendingScroll";
@@ -209,31 +209,46 @@ export function SampleJourney({ journey }: { journey: Journey }) {
             role="tablist"
             aria-label={`Days of ${journey.title}`}
             onKeyDown={onTabKey}
-            className="grid grid-flow-col auto-cols-fr gap-2 mb-6"
+            className="flex gap-2 mb-6"
           >
-            {journey.days.map((d, i, days) => (
-              <button
-                key={d.title}
-                id={`${tabsId}-tab-${i}`}
-                role="tab"
-                aria-selected={i === active}
-                aria-controls={`${tabsId}-panel`}
-                tabIndex={i === active ? 0 : -1}
-                onClick={() => go(i)}
-                className={cn(
-                  "font-sans text-xs uppercase tracking-[0.2em] px-2 py-2.5 border transition-colors duration-200",
-                  i === active
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "border-border/60 text-muted-foreground hover:border-primary hover:text-primary",
-                )}
-              >
-                {/* Tabs share one row in equal widths. Longer journeys keep the
-                    numbers until the screen is wide enough for "Day 8". */}
-                <span className={days.length > 6 ? "xl:hidden" : "sm:hidden"} aria-hidden="true">{i + 1}</span>
-                <span className={days.length > 6 ? "hidden xl:inline" : "hidden sm:inline"}>Day {i + 1}</span>
-                <span className={days.length > 6 ? "sr-only xl:hidden" : "sr-only sm:hidden"}>Day {i + 1}</span>
-              </button>
-            ))}
+            {journey.days.map((d, i, days) => {
+              // Day tabs share the row equally. Longer journeys keep the numbers
+              // until the screen is wide enough for "Day 8". The departure tab
+              // takes the width its word needs, and a plane on phones.
+              const long = days.filter((x) => !x.departure).length > 6;
+              return (
+                <button
+                  key={d.title}
+                  id={`${tabsId}-tab-${i}`}
+                  role="tab"
+                  aria-selected={i === active}
+                  aria-controls={`${tabsId}-panel`}
+                  tabIndex={i === active ? 0 : -1}
+                  onClick={() => go(i)}
+                  className={cn(
+                    "font-sans text-xs uppercase py-2.5 border transition-colors duration-200",
+                    d.departure ? "flex-none px-3 tracking-[0.15em]" : "flex-1 min-w-0 px-1 tracking-[0.15em]",
+                    i === active
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "border-border/60 text-muted-foreground hover:border-primary hover:text-primary",
+                  )}
+                >
+                  {d.departure ? (
+                    <>
+                      <Plane className="w-4 h-4 mx-auto sm:hidden" aria-hidden="true" />
+                      <span className="hidden sm:inline">Departure</span>
+                      <span className="sr-only sm:hidden">Departure</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className={long ? "xl:hidden" : "sm:hidden"} aria-hidden="true">{i + 1}</span>
+                      <span className={long ? "hidden xl:inline" : "hidden sm:inline"}>Day {i + 1}</span>
+                      <span className={long ? "sr-only xl:hidden" : "sr-only sm:hidden"}>Day {i + 1}</span>
+                    </>
+                  )}
+                </button>
+              );
+            })}
           </div>
 
           <div
@@ -255,7 +270,9 @@ export function SampleJourney({ journey }: { journey: Journey }) {
                 transition={{ duration: 0.25, ease: "easeOut" }}
                 className="bg-card border-l-2 border-primary p-6 md:p-8"
               >
-                <p className="font-sans text-xs uppercase tracking-[0.3em] text-primary mb-2">Day {active + 1}</p>
+                {!day.departure && (
+                  <p className="font-sans text-xs uppercase tracking-[0.3em] text-primary mb-2">Day {active + 1}</p>
+                )}
                 <h4 className="font-display text-2xl md:text-3xl text-foreground mb-6">{day.title}</h4>
                 <ul className="space-y-3 mb-6">
                   {day.highlights.map((h) => (

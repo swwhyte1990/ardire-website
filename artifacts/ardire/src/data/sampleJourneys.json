@@ -297,6 +297,7 @@
       },
       {
         "title": "Departure",
+        "departure": true,
         "highlights": [
           "Driven to Inverness Airport for your flight"
         ],
@@ -458,6 +459,7 @@
       },
       {
         "title": "Departure",
+        "departure": true,
         "highlights": [
           "Driven to Glasgow or Edinburgh Airport for your flight"
         ],
@@ -890,6 +892,7 @@
       },
       {
         "title": "Departure",
+        "departure": true,
         "highlights": [
           "Driven to Inverness or Aberdeen Airport for your flight"
         ],
@@ -1188,6 +1191,7 @@
       },
       {
         "title": "Departure",
+        "departure": true,
         "highlights": [
           "Driven to Edinburgh Airport for your flight"
         ],
@@ -1413,6 +1417,7 @@
       },
       {
         "title": "Departure",
+        "departure": true,
         "highlights": [
           "Transfers to Glasgow Airport, with the option to stay on"
         ],

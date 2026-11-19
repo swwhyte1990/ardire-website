@@ -11,6 +11,8 @@ export interface JourneyDay {
   title: string;
   highlights: string[];
   onTheRoad?: string;
+  /** The travel day home: its tab reads "Departure" rather than a day number. */
+  departure?: boolean;
   /** The road line for the day as [lon, lat] pairs, from OpenStreetMap routing. */
   route?: [number, number][];
   stops: JourneyStop[];
