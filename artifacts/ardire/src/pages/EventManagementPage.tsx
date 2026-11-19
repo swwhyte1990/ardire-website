@@ -93,7 +93,7 @@ export default function EventManagementPage() {
       "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
       "areaServed": "Scotland",
       "description": "Full-service event management across Scotland. Árdíre plans, produces and runs your event from brief to close, with one team accountable for the whole thing.",
-      "url": "https://ardire.co.uk/services/event-management",
+      "url": "https://ardire.co.uk/services/event-management/",
     });
     document.head.appendChild(serviceScript);
     return () => {

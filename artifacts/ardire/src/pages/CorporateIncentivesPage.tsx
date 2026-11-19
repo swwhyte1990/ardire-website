@@ -94,7 +94,7 @@ export default function CorporateIncentivesPage() {
       "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
       "areaServed": "Scotland",
       "description": "Bespoke corporate incentive trips across Scotland. Golf, whisky, castles and Highland experiences, designed around your goals and run end to end.",
-      "url": "https://ardire.co.uk/services/corporate-incentives",
+      "url": "https://ardire.co.uk/services/corporate-incentives/",
     });
     document.head.appendChild(serviceScript);
     return () => {

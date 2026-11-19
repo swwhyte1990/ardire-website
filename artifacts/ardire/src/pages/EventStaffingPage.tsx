@@ -56,7 +56,7 @@ export default function EventStaffingPage() {
       "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
       "areaServed": "Scotland",
       "description": "Professional event staff for occasions across Scotland. Waiting staff, butlers and hospitality teams, briefed, well presented and ready to serve.",
-      "url": "https://ardire.co.uk/services/event-staffing",
+      "url": "https://ardire.co.uk/services/event-staffing/",
     });
     document.head.appendChild(serviceScript);
     return () => {

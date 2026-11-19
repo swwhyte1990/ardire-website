@@ -99,7 +99,7 @@ export default function LuxuryToursPage() {
       "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
       "areaServed": "Scotland",
       "description": "Bespoke private tours of Scotland with a dedicated travel concierge. We plan, arrange and look after every part of your trip.",
-      "url": "https://ardire.co.uk/services/luxury-tours",
+      "url": "https://ardire.co.uk/services/luxury-tours/",
     });
     document.head.appendChild(serviceScript);
     return () => {

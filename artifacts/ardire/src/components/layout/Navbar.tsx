@@ -81,7 +81,7 @@ function NavDropdown({
           {items.map((item) => (
             <Link
               key={item.slug}
-              href={`/services/${item.slug}`}
+              href={`/services/${item.slug}/`}
               onClick={() => { setOpen(false); window.scrollTo({ top: 0, behavior: "instant" }); }}
               className="w-full text-left block px-5 py-2.5 text-xs font-sans uppercase tracking-[0.18em] text-muted-foreground hover:text-primary hover:bg-secondary/50 transition-colors duration-200"
             >
@@ -169,8 +169,8 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            <NavDropdown label="For Private Travellers" items={travelServices} hubHref="/travel" hubLabel="View All Travel" />
-            <NavDropdown label="For Business & Events" items={eventsServices} hubHref="/events" hubLabel="View All Events" />
+            <NavDropdown label="For Private Travellers" items={travelServices} hubHref="/travel/" hubLabel="View All Travel" />
+            <NavDropdown label="For Business & Events" items={eventsServices} hubHref="/events/" hubLabel="View All Events" />
             <a
               href="/#enquiry"
               onClick={(e) => handleNavLinkClick(e, "enquiry")}
@@ -234,7 +234,7 @@ export function Navbar() {
           <div>
             <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-primary mb-4">Travel &amp; Tours</p>
             <Link
-              href="/travel"
+              href="/travel/"
               onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: "instant" }); }}
               className="group flex items-center gap-2 font-display text-2xl italic text-foreground hover:text-primary transition-colors duration-300 mb-5 text-left"
             >
@@ -245,7 +245,7 @@ export function Navbar() {
               {travelServices.map((s) => (
                 <Link
                   key={s.slug}
-                  href={`/services/${s.slug}`}
+                  href={`/services/${s.slug}/`}
                   onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: "instant" }); }}
                   className="py-3.5 text-left font-sans text-[11px] uppercase tracking-[0.25em] text-muted-foreground hover:text-primary border-b border-border/10 transition-colors duration-200"
                 >
@@ -259,7 +259,7 @@ export function Navbar() {
           <div>
             <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-primary mb-4">Events &amp; Corporate</p>
             <Link
-              href="/events"
+              href="/events/"
               onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: "instant" }); }}
               className="group flex items-center gap-2 font-display text-2xl italic text-foreground hover:text-primary transition-colors duration-300 mb-5 text-left"
             >
@@ -270,7 +270,7 @@ export function Navbar() {
               {eventsServices.map((s) => (
                 <Link
                   key={s.slug}
-                  href={`/services/${s.slug}`}
+                  href={`/services/${s.slug}/`}
                   onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: "instant" }); }}
                   className="py-3.5 text-left font-sans text-[11px] uppercase tracking-[0.25em] text-muted-foreground hover:text-primary border-b border-border/10 transition-colors duration-200"
                 >

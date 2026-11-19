@@ -77,7 +77,7 @@ export function Footer() {
           © {new Date().getFullYear()} The Árdíre Group. All rights reserved.
         </p>
         <div className="flex gap-6 text-xs font-sans text-muted-foreground">
-          <a href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</a>
+          <a href="/privacy/" className="hover:text-primary transition-colors">Privacy Policy</a>
         </div>
       </div>
     </footer>

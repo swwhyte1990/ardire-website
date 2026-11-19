@@ -85,7 +85,7 @@ export default function SelfGuidedToursPage() {
       "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
       "areaServed": "Scotland",
       "description": "Bespoke self-guided tours of Scotland, planned and booked around you. We design the route and make the bookings; you travel independently at your own pace.",
-      "url": "https://ardire.co.uk/services/self-guided-tours",
+      "url": "https://ardire.co.uk/services/self-guided-tours/",
     });
     document.head.appendChild(serviceScript);
     return () => {

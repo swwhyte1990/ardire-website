@@ -60,8 +60,8 @@ function buildJourneysJsonLd(route) {
       '@type': 'TouristTrip',
       name: j.title,
       description: j.story[0],
-      url: `https://ardire.co.uk/${route.path}`,
-      provider: { '@type': 'TravelAgency', name: 'The \u00c1rd\u00edre Group', url: 'https://ardire.co.uk' },
+      url: `https://ardire.co.uk/${route.path}/`,
+      provider: { '@type': 'TravelAgency', name: 'The \u00c1rd\u00edre Group', url: 'https://ardire.co.uk/' },
       itinerary: {
         '@type': 'ItemList',
         numberOfItems: places.length,
@@ -129,10 +129,10 @@ function buildPageBlock(route) {
 
   const serviceLinksHtml = allServiceLinks
     .filter(s => route.path !== `services/${s.slug}`)
-    .map(s => `<a href="https://ardire.co.uk/services/${s.slug}" style="${linkStyle}">${esc(s.label)}</a>`)
+    .map(s => `<a href="https://ardire.co.uk/services/${s.slug}/" style="${linkStyle}">${esc(s.label)}</a>`)
     .join('');
 
-  const navHtml = `<nav style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid rgba(197,163,102,0.25);font-size:0.95rem"><a href="https://ardire.co.uk/" style="${linkStyle}">Árdíre Home</a>${serviceLinksHtml}${route.path !== 'privacy' ? `<a href="https://ardire.co.uk/privacy" style="${linkStyle}">Privacy Policy</a>` : ''}<a href="https://ardire.co.uk/#enquiry" style="color:#c5a366;text-decoration:none;display:inline-block;padding:0.25rem 0">Contact Árdíre</a></nav>`;
+  const navHtml = `<nav style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid rgba(197,163,102,0.25);font-size:0.95rem"><a href="https://ardire.co.uk/" style="${linkStyle}">Árdíre Home</a>${serviceLinksHtml}${route.path !== 'privacy' ? `<a href="https://ardire.co.uk/privacy/" style="${linkStyle}">Privacy Policy</a>` : ''}<a href="https://ardire.co.uk/#enquiry" style="color:#c5a366;text-decoration:none;display:inline-block;padding:0.25rem 0">Contact Árdíre</a></nav>`;
 
   return `<div data-page-content style="max-width:760px;margin:0 auto;padding:3rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7">${h1Html}${paragraphsHtml}${highlightsHtml}${buildJourneysHtml(route)}${navHtml}</div>`;
 }
@@ -325,7 +325,9 @@ for (const route of routes) {
   const routeDir = join(distDir, route.path);
   mkdirSync(routeDir, { recursive: true });
 
-  const canonicalUrl = `https://ardire.co.uk/${route.path}`;
+  // Cloudflare Pages serves each route at its trailing-slash URL and redirects
+  // the bare one there, so the trailing-slash form is the canonical.
+  const canonicalUrl = `https://ardire.co.uk/${route.path}/`;
   const pageBlock = buildPageBlock(route);
 
   let html = indexHtml

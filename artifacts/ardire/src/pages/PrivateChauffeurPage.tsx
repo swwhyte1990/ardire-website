@@ -83,7 +83,7 @@ export default function PrivateChauffeurPage() {
       "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
       "areaServed": "Scotland",
       "description": "Private chauffeur service across Scotland. Airport transfers, days out and group transport, driven by professionals who know the country.",
-      "url": "https://ardire.co.uk/services/private-chauffeur",
+      "url": "https://ardire.co.uk/services/private-chauffeur/",
     });
     document.head.appendChild(serviceScript);
     return () => {
