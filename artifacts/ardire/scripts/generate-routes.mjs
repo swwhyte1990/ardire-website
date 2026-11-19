@@ -408,28 +408,50 @@ for (const route of routes) {
 }
 
 // The page Cloudflare Pages serves, with a 404 status, for any address that does
-// not exist. It is the full app, so React shows its own not-found page at the
-// visitor's address with no redirect, and search engines are told not to index it.
+// not exist: Pages returns the nearest 404.html with a 404 whenever a project has
+// one, and only falls back to serving index.html (the SPA mode) when it has none.
+// It is the full app, so React shows its not-found page at the visitor's address
+// with no redirect. The same words and links are written into the raw HTML from
+// src/data/notFound.json, so they are there before any JavaScript runs. Search
+// engines are told not to index it, and it carries no canonical, hreflang or
+// og:url, since it is not a page in its own right.
 {
   const notFound = pageMeta['404'];
+  const copy = JSON.parse(readFileSync(join(__dirname, '../src/data/notFound.json'), 'utf8'));
+  const linkHtml = copy.links
+    .map(l => `<a href="${esc(l.href)}" style="color:#c5a366;text-decoration:none;display:inline-block;padding:0.25rem 0.5rem">${esc(l.label)}</a>`)
+    .join('');
+  const block =
+    `<div data-page-content style="max-width:760px;margin:0 auto;padding:4rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7;text-align:center">` +
+      `<a href="/" style="display:inline-block;color:#c5a366;text-decoration:none;margin-bottom:2rem">` +
+        `<img src="${hashedImage('logo-crest.webp')}" alt="" width="96" height="96" style="display:block;margin:0 auto 0.75rem" />` +
+        `<span style="letter-spacing:0.25em">ÁRDÍRE</span></a>` +
+      `<p aria-hidden="true" style="font-size:4rem;line-height:1;margin:0 0 1rem;opacity:0.25">404</p>` +
+      `<h1 style="font-family:Georgia,serif;font-size:2rem;font-weight:500;margin:0 0 1.25rem">${esc(copy.heading)}</h1>` +
+      `<p style="margin:0 auto 2rem;max-width:30rem">${esc(copy.line)}</p>` +
+      `<nav aria-label="Where to next">${linkHtml}</nav>` +
+    `</div></div>`;
   let html = indexHtml
     .replace(/\s*<link rel="canonical"[^>]*\/>/, '')
     .replace(/\s*<link rel="alternate" hreflang="[^"]*"[^>]*\/>/g, '')
+    .replace(/\s*<meta property="og:url"[^>]*\/>/, '')
     .replace(/<title>[^<]*<\/title>/, `<title>${esc(notFound.title)}</title>\n    <meta name="robots" content="noindex" />`)
     .replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/>/, `<meta name="description" content="${esc(notFound.description)}" />`)
+    .replace(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/>/, `<meta property="og:title" content="${esc(notFound.title)}" />`)
+    .replace(/<meta\s+property="og:description"\s+content="[^"]*"\s*\/>/, `<meta property="og:description" content="${esc(notFound.description)}" />`)
+    .replace(/<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/>/, `<meta name="twitter:title" content="${esc(notFound.title)}" />`)
+    .replace(/<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/>/, `<meta name="twitter:description" content="${esc(notFound.description)}" />`)
     .replace(HERO_PRELOAD, '')
-    .replace(
-      /<div data-page-content[^>]*>[\s\S]*?<\/div><\/div>(?=\s*<\/body>)/,
-      `<div data-page-content style="max-width:760px;margin:0 auto;padding:3rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7">` +
-        `<h1 style="font-family:Georgia,serif;font-size:2rem;font-weight:500;margin:0 0 1.5rem">Page not found</h1>` +
-        `<p>The page you are looking for has moved or no longer exists.</p>` +
-        `<p><a href="/" style="color:#c5a366">Return to The Árdíre Group</a></p></div></div>`
-    );
-  if (!html.includes('name="robots" content="noindex"') || html.includes('rel="canonical"') || !html.includes('Page not found')) {
-    throw new Error('generate-routes: could not build 404.html from index.html');
-  }
+    .replace(/<div data-page-content[^>]*>[\s\S]*?<\/div><\/div>(?=\s*<\/body>)/, block);
+  const problems = [
+    !html.includes('<meta name="robots" content="noindex" />') && 'no noindex tag',
+    /rel="canonical"|hreflang=|og:url/.test(html) && 'a canonical, hreflang or og:url tag survived',
+    !html.includes(esc(copy.heading)) && 'the page content was not inserted',
+    /location\.(replace|href|assign)|http-equiv="refresh"/.test(html) && 'a redirect is present',
+  ].filter(Boolean);
+  if (problems.length) throw new Error(`generate-routes: 404.html is wrong: ${problems.join(', ')}`);
   writeFileSync(join(distDir, '404.html'), html);
-  console.log('Generated: /404.html  [noindex]');
+  console.log('Generated: /404.html  [404 status on Cloudflare Pages, noindex]');
 }
 
 console.log(`\nStatic route generation complete — ${routes.length} pages pre-rendered.`);
