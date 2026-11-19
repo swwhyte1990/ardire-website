@@ -1,0 +1,10 @@
+{
+  "heading": "Path Not Found",
+  "line": "The Highland path you are seeking seems to have faded into the mist. Let us guide you back to familiar terrain.",
+  "links": [
+    { "label": "Home", "href": "/" },
+    { "label": "Travel", "href": "/travel/" },
+    { "label": "Events", "href": "/events/" },
+    { "label": "Make an Enquiry", "href": "/#enquiry" }
+  ]
+}

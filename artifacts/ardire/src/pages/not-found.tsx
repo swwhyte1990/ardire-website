@@ -1,11 +1,21 @@
-import { useEffect } from "react";
-import { Link } from "wouter";
+import { useEffect, type MouseEvent } from "react";
+import { Link, useLocation } from "wouter";
 import { usePageMeta } from "@/lib/usePageMeta";
-import { Button } from "@/components/ui/button";
 import texture from "@/assets/images/texture.webp";
+import logoCrest from "@/assets/images/logo-crest.webp";
+import { setPendingScroll } from "@/lib/pendingScroll";
+import notFound from "@/data/notFound.json";
 
 export default function NotFound() {
   usePageMeta("404");
+  const [, navigate] = useLocation();
+
+  // The enquiry form lives on the home page, so go there and scroll to it.
+  function goToEnquiry(e: MouseEvent<HTMLAnchorElement>) {
+    e.preventDefault();
+    setPendingScroll("enquiry");
+    navigate("/");
+  }
   // Keep search engines from indexing this page. A page loaded directly already
   // has the tag from the static 404.html; following a broken link inside the site
   // does not, so add it. Either way it goes when the visitor moves on.
@@ -31,17 +41,38 @@ export default function NotFound() {
         }}
       />
       
-      <div className="text-center relative z-10 space-y-6">
-        <h1 className="text-8xl md:text-9xl font-display text-primary/20 select-none">404</h1>
-        <h2 className="text-3xl md:text-4xl font-display text-foreground">Path Not Found</h2>
-        <p className="text-muted-foreground font-sans font-light max-w-md mx-auto">
-          The Highland path you are seeking seems to have faded into the mist. Let us guide you back to familiar terrain.
-        </p>
-        <div className="pt-8">
-          <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 font-sans tracking-widest uppercase text-xs rounded-none px-8 h-12">
-            <Link href="/">Return to Árdíre</Link>
-          </Button>
-        </div>
+      {/* The same words and links are in the static 404.html, built from
+          src/data/notFound.json, so the page reads the same before JavaScript runs. */}
+      <div className="text-center relative z-10 px-6 flex flex-col items-center">
+        <Link href="/" aria-label="The Árdíre Group, home" className="flex flex-col items-center gap-3 mb-10">
+          <img src={logoCrest} alt="" width={96} height={96} className="w-20 h-20 md:w-24 md:h-24 object-contain" />
+          <span className="font-display text-xl tracking-[0.25em] text-primary">ÁRDÍRE</span>
+        </Link>
+        <p className="text-7xl md:text-8xl font-display text-primary/20 select-none leading-none mb-4" aria-hidden="true">404</p>
+        <h1 className="text-3xl md:text-4xl font-display text-foreground mb-5">{notFound.heading}</h1>
+        <p className="text-muted-foreground font-sans font-light max-w-md mx-auto mb-10">{notFound.line}</p>
+        <nav aria-label="Where to next" className="flex flex-wrap items-center justify-center gap-3">
+          {notFound.links.map((l) =>
+            l.href === "/#enquiry" ? (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={goToEnquiry}
+                className="bg-primary text-primary-foreground hover:bg-primary/90 font-sans tracking-widest uppercase text-xs px-6 h-12 inline-flex items-center transition-colors"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="border border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground font-sans tracking-widest uppercase text-xs px-6 h-12 inline-flex items-center transition-colors"
+              >
+                {l.label}
+              </Link>
+            ),
+          )}
+        </nav>
       </div>
     </div>
   );
