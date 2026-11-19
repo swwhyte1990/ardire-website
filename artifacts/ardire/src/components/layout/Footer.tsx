@@ -38,7 +38,7 @@ export function Footer() {
             </div>
           </div>
           <p className="font-sans text-xs text-muted-foreground tracking-widest uppercase text-center md:text-left">
-            Thoughtfully Curated. Seamlessly Delivered. Uniquely Yours.
+            Thoughtfully Planned. Quietly Delivered. Entirely Yours.
           </p>
           <div className="text-muted-foreground font-sans text-xs leading-relaxed mt-2">
             <p>Glasgow, Scotland</p>

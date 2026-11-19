@@ -18,23 +18,23 @@ import golfHero from "@/assets/images/golf-hero.webp";
 const golfFaqs = [
   {
     q: "Can you get us onto the Old Course at St Andrews?",
-    a: "The Old Course is allocated mainly through a daily public ballot, so a place on it can never be guaranteed. What we do is enter the ballot for you and build your St Andrews day around a confirmed round on one of the other Links courses, so the day is wonderful either way and a place on the Old Course is the bonus.",
+    a: "The Old Course is allocated mainly through a daily public ballot, so a place can never be guaranteed. We enter the ballot for you and build your St Andrews day around a confirmed round on another of the Links courses. If your name comes up, the Old Course is the bonus.",
   },
   {
     q: "How far in advance should we book?",
-    a: "As early as you can. Tee times at most courses tend to open around the autumn before the year you want to play, so booking ahead gives you the most flexibility on dates and times, particularly for the well-known courses in summer. Shorter notice is still workable; it simply means fewer options on the busiest tee sheets.",
+    a: "As early as you can. Most courses open tee times around the autumn before the year you want to play. Booking early gives you the widest choice, especially at the well-known courses in summer. Shorter notice is still workable, with fewer options on the busiest tee sheets.",
   },
   {
     q: "Which courses can you arrange?",
-    a: "We can arrange rounds at the great majority of Scotland's championship and best-loved courses. A small number can only be played as the guest of a member, and we will always be straight with you about which those are rather than promise something we cannot deliver.",
+    a: "We arrange rounds at most of Scotland's championship and best-loved courses. A few can only be played as a member's guest, and we will tell you which at the outset.",
   },
   {
     q: "What does a golf tour include?",
-    a: "Everything is taken care of, from arrival to departure: private transfers throughout, green fees for your rounds, caddies and clubs where you want them, accommodation chosen for where you are playing next, meals and dining, and any experiences you would like around the golf. You simply play.",
+    a: "From arrival to departure: private transfers, green fees, caddies and clubs where you want them, accommodation chosen for where you play next, meals, and any experiences you would like around the golf.",
   },
   {
     q: "How many rounds will we play in a week?",
-    a: "A typical week runs to four or five rounds, with the other days left for rest, a distillery, sightseeing, or whatever suits the group. We build the pace around you rather than packing the schedule.",
+    a: "A typical week runs to four or five rounds, with the other days left for rest, a distillery, sightseeing or whatever suits the group. We set the pace to suit you.",
   },
   {
     q: "Do you arrange caddies, clubs and transport between courses?",
@@ -140,7 +140,7 @@ export default function GolfToursPage() {
               Private Golf Tours of Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              A week on the country's great courses, planned and looked after from the moment we meet you at the airport. You play. We take care of everything around it.
+              A week on Scotland's great courses, planned and run from arrival to departure. You play. We look after everything around it.
             </p>
             <SkipToSamples label="See Sample Journeys" onSkip={() => setItineraryOpen("golf-7day")} />
           </m.div>
@@ -173,10 +173,10 @@ export default function GolfToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              We plan and run private golf tours across Scotland for small groups and individual golfers who want to play the country's finest courses without a thing to organise. You tell us how you like to play and the courses you have always wanted to tick off, and we shape the week around it: the rounds, the cars, the rooms, the dinners and the evenings, all looked after as the days unfold.
+              We plan and run private golf tours across Scotland for small groups of golfers. Tell us how you like to play and the courses on your list. We shape the trip around them: the rounds, the cars, the rooms, the dinners and the evenings.
             </p>
             <p>
-              Scotland is the home of golf, and showing it off is one of the things we love most. Whether you are here to play a lifetime's list of courses or to give a team a few days they will always remember, the week is built around you. You bring your clubs, and we look after the rest.
+              Scotland is the home of golf, and showing it off is one of the things we love most. Some come to play a lifetime's list of courses. Others bring a team for a few days they will always remember. Bring your clubs, and we will have the rest ready.
             </p>
           </m.div>
         </div>
@@ -194,7 +194,7 @@ export default function GolfToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">The Process</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              We plan the whole trip before you arrive, then look after it while you are here.
+              We plan the whole trip before you arrive, then look after you while you are here.
             </h2>
           </m.div>
 
@@ -206,10 +206,10 @@ export default function GolfToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              Your tee times are booked in the right order and early enough to get you onto the courses that matter most to you, a private driver takes care of getting you there, and your accommodation is chosen for where you are playing the next morning. Someone is with you through the week who knows your plans, so if the weather turns or you feel like changing something, it is easily done and never yours to worry about.
+              Tee times are booked in the right order, and early enough to secure the courses that matter most to you. A private driver takes you to each one. Each night's stay is chosen for where you play the next morning. Someone who knows your plans is with you through the week, so if the weather turns or you want to change something, it is quickly done.
             </p>
             <p>
-              What you bring is the golf you want to play. We bring everything it takes to make the week run beautifully around it.
+              You choose the golf. We run the week around it.
             </p>
           </m.div>
         </div>
@@ -227,7 +227,7 @@ export default function GolfToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Pricing</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Built around what you want to play.
+              It starts with the courses you choose.
             </h2>
           </m.div>
           <m.div
@@ -238,10 +238,10 @@ export default function GolfToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              There is no set price for a tour, since every week is built around the courses you want to play and the way you want to travel. The sample week below shows the kind of tour that is possible, and we price your own once we know what you have in mind.
+              There is no set price for a tour. Each week depends on the courses you play and the way you travel. The sample week below shows what is possible, and we price yours once we know your plans.
             </p>
             <p>
-              Your figure will reflect the choices you make: the courses, the number of rounds, the standard of where you stay, and the experiences you add around the golf. We put together a full, itemised proposal before anything is booked.
+              The figure reflects the courses, the number of rounds, the standard of where you stay and anything you add around the golf. You receive a full, itemised proposal before anything is booked.
             </p>
           </m.div>
         </div>
@@ -259,7 +259,7 @@ export default function GolfToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Sample Itinerary</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              A week of golf, written to show the shape and the standard.
+              Sample golf trips, set out day by day.
             </h2>
           </m.div>
           <m.p
@@ -269,7 +269,7 @@ export default function GolfToursPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-sans font-light text-sm text-muted-foreground max-w-2xl mb-12"
           >
-            This is an illustration rather than a fixed plan. The courses, order, accommodation, and cultural stops all change depending on your group, your dates, and what matters to you.
+            Each sample is one way a trip could run. The courses, the order, where you stay and what you do off the course all change with your group, your dates and what matters to you.
           </m.p>
 
           <m.div
@@ -328,7 +328,7 @@ export default function GolfToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Things people ask us.
+              Before you tee off.
             </h2>
           </m.div>
           <m.div
@@ -388,7 +388,7 @@ export default function GolfToursPage() {
               Plan your golf tour.
             </h2>
             <p className="text-muted-foreground font-sans font-light text-base mb-10 max-w-xl mx-auto">
-              Tell us when you would like to come, who is travelling, and the courses you have always wanted to play. We will come back to you with a proposal built around it.
+              Tell us when you would like to come, who is travelling and the courses you have always wanted to play. We will come back to you with a proposal.
             </p>
             <Button
               asChild

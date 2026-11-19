@@ -13,19 +13,19 @@ import selfGuidedHero from "@/assets/images/self-guided-hero.webp";
 const selfGuidedFaqs = [
   {
     q: "What is a self-guided tour?",
-    a: "It is a trip you travel independently, at your own pace and with your own company, but with the planning and booking taken care of by us. We design the route, recommend and reserve the places to stay and the things worth doing, and you set off and enjoy it your own way, with us on hand if you need anything.",
+    a: "A trip you travel independently, at your own pace and in your own company. We design the route and book the places to stay and the things worth doing. You set off with everything arranged, and we are a phone call away.",
   },
   {
     q: "What exactly do you arrange?",
-    a: "We build the itinerary and book the parts you would like handled: your accommodation, restaurants, tastings, activities and experiences, along with detailed recommendations for each day. If you would like us to arrange car hire or a private guide for a day, we can add that too. The travelling itself is yours to do at your own pace.",
+    a: "We build the itinerary and book whatever you would like handled: accommodation, restaurants, tastings, activities and experiences. Each day comes with detailed recommendations. We can also add car hire or a private guide for a day.",
   },
   {
     q: "Do you provide transport or move our luggage?",
-    a: "You travel in your own way, in whatever transport suits you, with your own luggage. We focus on planning the trip and making the bookings rather than driving you or moving your bags. If you would prefer a car arranged or a driver for part of the trip, just ask and we will look after it.",
+    a: "No. You travel in whatever way suits you, with your own luggage. Our part is the planning and the bookings. If you would like a car or a driver for part of the trip, we can arrange it.",
   },
   {
     q: "How is this different from planning the trip myself?",
-    a: "The difference is in the knowledge and the access behind it. We know which places are worth your time, which to avoid, and how to put a route together that flows. We can hold the right rooms and restaurants before they fill, and arrange things that are harder to reach on your own. You get a trip shaped around you rather than pieced together from scratch.",
+    a: "We know which places are worth your time and which to skip, and how to join them into a route that flows. We hold the right rooms and tables before they fill. The trip is shaped around how you like to travel.",
   },
   {
     q: "Can we still change things once we are travelling?",
@@ -37,7 +37,7 @@ const selfGuidedFaqs = [
   },
   {
     q: "How far ahead should we book?",
-    a: "The earlier the better, since the best accommodation and experiences are booked well in advance, especially through the summer. Give us a good run at it and we can hold the places that make a trip, though shorter notice is still workable.",
+    a: "The earlier the better. The best places to stay and the most popular experiences fill well ahead, especially in summer. Shorter notice is still workable.",
   },
   {
     q: "How much does a self-guided tour cost?",
@@ -46,12 +46,12 @@ const selfGuidedFaqs = [
 ];
 
 const whatWeArrange = [
-  "A bespoke route and itinerary, built around what you want to see and how far you would like to travel each day",
+  "A route and itinerary shaped by what you want to see and how far you like to travel each day",
   "Accommodation booked throughout, from country houses and castles to the best small hotels",
-  "Tables, tastings and experiences reserved in advance, so the good places are held for you",
+  "Tables, tastings and experiences reserved in advance",
   "Detailed recommendations for each day: where to stop, what to see, and where to eat",
   "Anything else you would like arranged, from car hire to a private guide for a day",
-  "A point of contact on hand throughout, if plans change or you simply want advice",
+  "A point of contact throughout, for changes of plan or advice on the road",
 ];
 
 export default function SelfGuidedToursPage() {
@@ -134,7 +134,7 @@ export default function SelfGuidedToursPage() {
               Self-Guided Tours of Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              The freedom to explore Scotland your own way, with the itinerary planned and the bookings made for you. You travel independently. We take care of arranging it all beforehand.
+              The freedom to explore Scotland your own way, with the route planned and the bookings made before you leave.
             </p>
           </m.div>
         </div>
@@ -163,10 +163,10 @@ export default function SelfGuidedToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              A self-guided tour gives you Scotland on your own terms. You travel independently, in your own way and at your own pace, while we design the itinerary and make the bookings, so the whole trip is shaped and arranged before you set off, and yours to enjoy without the planning.
+              You travel independently, at your own pace. We design the itinerary and make the bookings, so the trip is arranged before you set off.
             </p>
             <p>
-              You bring the appetite for the open road. We bring the route worth taking, the right places to stay, and the knowledge of what to see and where the best days are quietly waiting.
+              Bring an appetite for the open road. We will have the route, the rooms and the best stops ready.
             </p>
           </m.div>
         </div>
@@ -184,7 +184,7 @@ export default function SelfGuidedToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">The Process</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              We plan the journey around you, then arrange the parts you want booked.
+              Your route designed, your bookings made.
             </h2>
           </m.div>
           <m.div
@@ -195,7 +195,7 @@ export default function SelfGuidedToursPage() {
             className="max-w-3xl font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              You tell us where you would like to go, how long you have and how you like to travel, and we design a route to suit, recommend the places worth staying and stopping, and book whatever you would like handled, from accommodation to tables and experiences. From there, the trip is yours. You travel in your own way, at your own pace, with everything already arranged and us on hand if you need anything along the way.
+              Tell us where you would like to go, how long you have and how you like to travel. We design a route, recommend places to stay and stop, and book whatever you would like handled, from rooms to tables and experiences. Then the trip is yours, and we are there if you need us.
             </p>
           </m.div>
         </div>
@@ -246,7 +246,7 @@ export default function SelfGuidedToursPage() {
             >
               <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Who It Suits</p>
               <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6">
-                For travellers who want independence without giving up on a trip that is properly thought through.
+                For travellers who want independence and a trip that is properly thought through.
               </h2>
               <p className="font-sans font-light text-muted-foreground leading-relaxed text-base">
                 Self-guided suits couples and families who would rather set their own rhythm than follow a guide. Confident travellers who love the drive and the discovery. And people who have toured Scotland with a guide before and want to come back and explore it their own way. Whether it is a few days or a fortnight, the trip is yours to lead.
@@ -260,10 +260,10 @@ export default function SelfGuidedToursPage() {
             >
               <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">The Difference</p>
               <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6">
-                A self-guided trip is only as good as the planning behind it.
+                Independent travel, planned with care.
               </h2>
               <p className="font-sans font-light text-muted-foreground leading-relaxed text-base">
-                What you get with us is an itinerary built from real knowledge of the country, the right places held before they fill, and access you would struggle to arrange on your own, all shaped around you rather than pulled from a fixed catalogue. You travel independently, but never without a good plan and someone to call.
+                Every itinerary draws on close knowledge of the country, and the best rooms and tables are held before they fill. You travel independently, with a good plan and someone to call.
               </p>
             </m.div>
           </div>
@@ -282,7 +282,7 @@ export default function SelfGuidedToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Things people ask us.
+              Before you set off.
             </h2>
           </m.div>
           <m.div
@@ -341,11 +341,8 @@ export default function SelfGuidedToursPage() {
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
               Plan your self-guided tour.
             </h2>
-            <p className="text-muted-foreground font-sans font-light text-base mb-4 max-w-xl mx-auto">
-              There is no set price, since every self-guided trip is built around your route, your pace and what you would like us to book.
-            </p>
             <p className="text-muted-foreground font-sans font-light text-base mb-10 max-w-xl mx-auto">
-              Tell us where you would like to go, how long you have, and how you would like to travel, and we will design a route around it.
+              Tell us where you would like to go and how long you have. We will design the route.
             </p>
             <Button
               asChild

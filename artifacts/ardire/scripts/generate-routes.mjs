@@ -143,7 +143,7 @@ const routes = [
     heroImage: 'travel-glenfinnan.webp',
     h1: 'Private Tours & Travel in Scotland',
     paragraphs: [
-      'Privately guided journeys, championship golf, luxury chauffeur, self-guided adventures and a dedicated travel concierge. All crafted around you.',
+      'Privately guided tours, championship golf, a private chauffeur, self-guided routes and a dedicated travel concierge. Each one planned with you.',
       'Whether you want a private tour of the Highlands, a week on Scotland\'s championship links, a chauffeur on call for the duration of your stay, or a self-guided route with everything booked ahead of you, each journey is built around how you prefer to travel rather than a fixed itinerary.',
     ],
     highlights: [
@@ -158,7 +158,7 @@ const routes = [
     heroImage: 'events-hero.webp',
     h1: 'Corporate Events & Incentive Travel in Scotland',
     paragraphs: [
-      'Corporate incentives, full-service event management, professional staffing and bespoke experiences. Conceived, managed and delivered.',
+      'Corporate incentives, full-service event management, professional staffing and bespoke experiences across Scotland.',
       'From the first concept through to the final curtain, we plan and run events across Scotland: incentive programmes that reward the people who earned them, full event management for conferences, dinners and launches, and experienced hospitality staff for occasions of any scale.',
     ],
     highlights: [
@@ -172,10 +172,10 @@ const routes = [
     heroImage: 'tours-hero.webp',
     h1: 'Private Tours of Scotland',
     paragraphs: [
-      'A private tour designed around you, with a travel concierge to arrange and look after every part of it. From the moment we meet you at the airport, every day is ours to plan and yours to enjoy.',
-      'A private tour is built entirely around you: what you want to see, the pace you want to keep, and the kind of days you want to have. We plan the itinerary, secure every booking, arrange the transport, the rooms, the meals and the experiences, and manage all of it on the ground so that for the length of your stay there is nothing to organise and nothing to chase.',
+      'A private tour of Scotland, with a travel concierge who arranges and looks after every part of it, from first idea to final evening.',
+      'A private tour follows what you want to see, the pace you want to keep and the kind of days you want to have. We plan the itinerary and book everything: transport, rooms, meals and experiences. Then we run it on the ground, so there is nothing to chase while you are here.',
       'This is a country we know well and love showing off, and most of that love is in the detail: the right glen on the right morning, the dinner worth driving for, the distillery that will open a door for you. Some of our guests arrive knowing exactly what they want. Most come with a few ideas and let us fill in the rest.',
-      'Beyond the trips we design, we act as your travel concierge for the whole of your time in Scotland: one person to arrange, book and look after everything, whether you would like a complete journey planned and run for you, or simply the harder parts taken care of and someone on call while you are here.',
+      'We can also be your travel concierge for the whole of your time in Scotland: one person who arranges, books and looks after everything, and is on call while you are here.',
     ],
     highlights: [
       'A private driver and transfers throughout',
@@ -191,10 +191,10 @@ const routes = [
     heroImage: 'golf-hero.webp',
     h1: 'Private Golf Tours of Scotland',
     paragraphs: [
-      'A week on the country\'s great courses, planned and looked after from the moment we meet you at the airport. You play. We take care of everything around it.',
-      'We plan and run private golf tours across Scotland for small groups and individual golfers who want to play the country\'s finest courses without a thing to organise. You tell us how you like to play and the courses you have always wanted to tick off, and we shape the week around it: the rounds, the cars, the rooms, the dinners and the evenings, all looked after as the days unfold.',
-      'Your tee times are booked in the right order and early enough to get you onto the courses that matter most to you, a private driver takes care of getting you there, and your accommodation is chosen for where you are playing the next morning. Someone is with you through the week who knows your plans, so if the weather turns or you feel like changing something, it is easily done.',
-      'There is no set price for a tour, since every week is built around the courses you want to play and the way you want to travel. We put together a full, itemised proposal before anything is booked.',
+      'A week on Scotland\'s great courses, planned and run from arrival to departure. You play. We look after everything around it.',
+      'We plan and run private golf tours across Scotland for small groups of golfers. Tell us how you like to play and the courses on your list. We shape the trip around them: the rounds, the cars, the rooms, the dinners and the evenings.',
+      'Tee times are booked in the right order, and early enough to secure the courses that matter most to you. A private driver takes you to each one. Each night\'s stay is chosen for where you play the next morning. Someone who knows your plans is with you through the week, so if the weather turns or you want to change something, it is quickly done.',
+      'There is no set price for a tour. Each trip depends on the courses you play and the way you travel. You receive a full, itemised proposal before anything is booked.',
     ],
     highlights: [
       'Tee times booked in the right order, for the courses that matter most to you',
@@ -209,16 +209,16 @@ const routes = [
     heroImage: 'chauffeur-hero.webp',
     h1: 'Private Chauffeur Service in Scotland',
     paragraphs: [
-      'A professional driver and a comfortable car whenever you want to be somewhere without thinking about how to get there. Airport transfers, days out, and everything in between.',
-      'We provide a private chauffeur service across Scotland, for a single transfer or for as long as you would like a car and driver at your disposal. That might be a quiet, comfortable run from the airport after a long flight, a day spent exploring at your own pace, or getting a group where it needs to be without anyone watching the clock.',
-      'Our drivers know the roads and the country, and they bring the same care and discretion we put into everything we do. The driving that looks after our private tours and golf trips is the same service we offer on its own here, so you are in experienced hands whether you need us for an hour or a week.',
-      'Pricing is quoted per journey or per day. Tell us where you need to be and when, and we will take care of the rest.',
+      'A professional driver and a comfortable car, anywhere in Scotland. Airport transfers, days out and everything in between.',
+      'We provide a private chauffeur service across Scotland, for a single transfer or for as long as you would like a car and driver. That might be a quiet run from the airport after a long flight, a day exploring at your own pace, or getting a group where it needs to be, on time.',
+      'Our drivers know the roads and the country, and work with care and discretion. This is the same driving that runs our private tours and golf trips, offered on its own for an hour or a week.',
+      'Pricing is per journey or per day. Send us the details and we will reply with a quote.',
     ],
     highlights: [
-      'Airport transfers, met on arrival and looked after all the way to the door',
-      'A car and driver for the day, or for several, with no route to plan',
+      'Airport transfers, met at arrivals and driven to your door',
+      'A car and driver for a day or several, to explore at your own pace',
       'Getting between courses, dinners and events comfortably and on time',
-      'Reliable, considered transport for groups, occasions and corporate days',
+      'Transport for groups, occasions and corporate days',
     ],
   },
   {
@@ -226,10 +226,10 @@ const routes = [
     heroImage: 'corporate-hero.webp',
     h1: 'Corporate Incentive Trips in Scotland',
     paragraphs: [
-      'Reward a team, motivate your top performers, or bring clients somewhere they will not forget. We design and run the whole trip, from the moment everyone arrives to the day they head home.',
-      'We plan and run corporate incentive trips across Scotland for companies who want to reward people, motivate them, or bring them closer together. You tell us what the trip is meant to achieve, and we build a programme around it, looking after every part as the days unfold.',
-      'Scotland makes a strong case for itself here: world-famous golf, whisky at its source, castles to stay in rather than only visit, and scenery that does a great deal of the work before a single thing is planned. Our part is knowing how to turn all of that into days that run smoothly and land the way you intended.',
-      'There is no set price for an incentive trip, since every programme is built around your goals, your group and the time you have. We put together a full, itemised proposal before anything is confirmed.',
+      'Reward a team, motivate your top performers, or bring clients somewhere they will not forget. We design and run the whole trip, from arrival to the journey home.',
+      'We plan and run incentive trips across Scotland for companies who want to reward their people, motivate them or bring them closer together. Tell us the aim, and we build the programme and run every part of it.',
+      'Scotland gives a group plenty to remember: famous golf, whisky at its source, castles to stay in, and scenery that does much of the work. We turn it into days that run smoothly and land as you intended.',
+      'There is no set price for an incentive trip. Your figure reflects where you stay, how you travel, the experiences you choose and the number coming. We send a full, itemised proposal before anything is confirmed.',
     ],
     highlights: [
       'A welcome that sets the tone, from a piper on arrival to a private first-night dinner',
@@ -245,18 +245,18 @@ const routes = [
     heroImage: 'self-guided-hero.webp',
     h1: 'Self-Guided Tours of Scotland',
     paragraphs: [
-      'The freedom to explore Scotland your own way, with the itinerary planned and the bookings made for you. You travel independently. We take care of arranging it all beforehand.',
-      'You tell us where you would like to go, how long you have and how you like to travel, and we design a route to suit, recommend the places worth staying and stopping, and book whatever you would like handled, from accommodation to tables and experiences. From there, the trip is yours, with us on hand if you need anything along the way.',
+      'The freedom to explore Scotland your own way, with the route planned and the bookings made before you leave.',
+      'Tell us where you would like to go, how long you have and how you like to travel. We design a route, recommend places to stay and stop, and book whatever you would like handled, from rooms to tables and experiences. Then the trip is yours, and we are there if you need us.',
       'Self-guided suits couples and families who would rather set their own rhythm than follow a guide, confident travellers who love the drive and the discovery, and people who have toured Scotland with a guide before and want to come back and explore it their own way.',
-      'There is no set price, since every self-guided trip is built around your route, your pace and what you would like us to book.',
+      'There is no set price. Each self-guided trip depends on your route, your pace and what you would like us to book.',
     ],
     highlights: [
-      'A bespoke route and itinerary, built around what you want to see',
+      'A route and itinerary shaped by what you want to see and how far you like to travel each day',
       'Accommodation booked throughout, from country houses and castles to the best small hotels',
       'Tables, tastings and experiences reserved in advance',
       'Detailed recommendations for each day: where to stop, what to see, and where to eat',
       'Anything else you would like arranged, from car hire to a private guide for a day',
-      'A point of contact on hand throughout, if plans change or you simply want advice',
+      'A point of contact throughout, for changes of plan or advice on the road',
     ],
   },
   {
@@ -264,14 +264,14 @@ const routes = [
     heroImage: 'events-hero.webp',
     h1: 'Event Staffing in Scotland',
     paragraphs: [
-      'Professional waiting staff, butlers and hospitality teams for events of any size. Briefed, well presented, and ready to make the evening run beautifully.',
+      'Waiting staff, butlers and hospitality teams for events of any size. Briefed, well presented and ready to look after your guests.',
       'Pricing is by role and by the hour: front-of-house and bar staff from £25 per hour plus VAT (minimum four hours), butlers and event managers from £40 per hour plus VAT (minimum ten hours), and chefs on request for private dining and on-site catering.',
-      'We provide trained, professional staff for events across Scotland, from a single butler for a private dinner to a full front-of-house team for a large gathering. Our staff arrive briefed on your event, uniformed to your specification, and led by a senior coordinator who runs the team on the day, so you have one person to deal with rather than a roomful.',
-      'Everyone we provide is experienced, background-checked and insured. We work with private hosts, companies, private households, and the venues and event planners who want a reliable, well-presented team for an event they are running themselves.',
+      'We provide trained staff for events across Scotland, from a single butler for a private dinner to a full front-of-house team for a large gathering. Our staff arrive briefed and uniformed to your specification. A senior coordinator runs the team on the day, so you deal with one person.',
+      'Everyone we provide is experienced, background-checked, insured and briefed before they arrive. We work with private hosts, companies, families, private households, and the venues and event planners who need a reliable team for an event they are running.',
     ],
     highlights: [
       'Waiting staff for dinners, receptions and functions of every size',
-      'Butlers and private service staff for households and private dinners',
+      'Butlers and private service staff for households, private dinners and smaller occasions',
       'Front-of-house and hospitality teams: reception, hosts and guest liaison',
       'Bar staff, from a quiet drinks reception to a full event bar',
       'Chefs on request, for private dining and on-site catering',
@@ -282,10 +282,10 @@ const routes = [
     heroImage: 'events-hero.webp',
     h1: 'Event Management in Scotland',
     paragraphs: [
-      'We plan, produce and run events from start to finish. One team, one point of contact, the whole thing taken care of.',
-      'We take full responsibility for your event, from the first conversation about what you want to achieve to the moment the last guest leaves. That means we are not just coordinating between suppliers. We are managing the production, making the decisions on the day, and accountable for the result. Whether it is a private dinner for twenty or a corporate gala for several hundred, the level of attention is the same.',
-      'We start with the brief: what the event is for, who is attending, what impression it should leave. From there we develop the concept, source the venue, build the supplier list, and manage every booking and contract. On the day, we are there, fully staffed, running the event so you do not have to think about it.',
-      'We work across a wide range of occasions: private dinners, birthday celebrations and family gatherings; product launches, awards evenings, corporate hospitality days, charity galas and conference receptions at scale.',
+      'We plan, produce and run events from start to finish, with one point of contact throughout.',
+      'We take full responsibility for your event, from the first conversation to the moment the last guest leaves. We manage the production, make the decisions on the day and answer for the result. Our clients want to hand the event over and know it will be run properly, whatever the size.',
+      'We start with the brief: what the event is for, who is attending, what impression it should leave. From there we develop the concept, source the venue, build the supplier list, and manage every booking and contract. On the day, we are there with a full team, running the event.',
+      'Smaller occasions include private dinners, birthday celebrations and family gatherings. Larger ones include product launches, awards evenings, corporate hospitality days, charity galas and conference receptions. Each is produced differently. The approach stays the same: plan thoroughly, staff well and run it calmly.',
     ],
     highlights: [
       'Venue sourcing and contract negotiation',

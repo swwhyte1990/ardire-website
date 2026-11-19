@@ -36,7 +36,7 @@ export function Hero() {
             Luxury Tours of Scotland &amp; Event Services
           </h1>
           <p className="hidden sm:block font-sans text-base md:text-lg text-foreground/85 max-w-xl leading-relaxed">
-            Bespoke private tours, concierge and event hospitality, crafted in Glasgow and delivered across Scotland.
+            Bespoke private tours, concierge and event hospitality. Based in Glasgow, working across Scotland.
           </p>
         </m.div>
       </div>

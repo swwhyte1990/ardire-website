@@ -11,7 +11,7 @@ export const services: ServiceData[] = [
   {
     slug: "luxury-tours",
     title: "Luxury Tours",
-    subtitle: "A Private Tour and a Travel Concierge in One.",
+    subtitle: "Your Scotland, Planned and Looked After.",
     cta: "Plan Your Tour",
   },
   {
@@ -29,7 +29,7 @@ export const services: ServiceData[] = [
   {
     slug: "corporate-incentives",
     title: "Corporate Incentives",
-    subtitle: "Built Around What the Trip Is Meant to Achieve.",
+    subtitle: "Planned Around Your Objectives.",
     cta: "Discuss Your Programme",
   },
   {
@@ -41,7 +41,7 @@ export const services: ServiceData[] = [
   {
     slug: "event-staffing",
     title: "Event Staffing",
-    subtitle: "Every Detail. Impeccably Handled.",
+    subtitle: "Every Detail. Quietly Handled.",
     cta: "Request Staff",
   },
   {

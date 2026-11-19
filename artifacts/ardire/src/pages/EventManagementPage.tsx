@@ -22,27 +22,27 @@ const whatWeHandle = [
 const eventManagementFaqs = [
   {
     q: "What does your event management service include?",
-    a: "We take on the whole event, from the first idea to the last guest leaving. That covers the concept, the venue, the suppliers, the catering, the production and styling, the guest arrangements, and the running of it on the day. You have one team leading all of it, so the parts come together as a single event rather than a dozen things to chase.",
+    a: "We take on the whole event, from the first idea to the last guest leaving. That covers the concept, the venue, the suppliers, the catering, the production and styling, the guest arrangements and the running of it on the day. One team leads all of it.",
   },
   {
     q: "What kinds of events do you manage?",
-    a: "A wide range, from private dinners and celebrations to corporate functions, product launches, awards evenings, gala dinners and charity events. Whatever the occasion, the approach is the same: we build it around your purpose and your guests.",
+    a: "A wide range, from private dinners and celebrations to corporate functions, product launches, awards evenings, gala dinners and charity events. Each is planned around its purpose and its guests.",
   },
   {
     q: "What is the difference between event management and event staffing?",
-    a: "Event management is us running the whole event, the planning, the suppliers, the production and the day itself. Event staffing is us providing the people, a front-of-house and hospitality team, for an event that you or someone else is running. Many clients take both, with our team managing the event and staffing it as well.",
+    a: "Event management means we run the whole event: the planning, the suppliers, the production and the day itself. Event staffing means we provide the people (front-of-house and hospitality) for an event you or someone else is running. Many clients take both.",
   },
   {
     q: "How large or small an event can you manage?",
-    a: "Both ends of the scale. We are as comfortable with an intimate dinner for twenty as with a corporate gathering for several hundred. The care is the same, only the scale changes.",
+    a: "Anything from a private dinner for twenty to a corporate gathering for several hundred. The care is the same at either size.",
   },
   {
     q: "Do you source the venue, or work with one we already have?",
-    a: "Either, depending on where you are starting from. If you need a venue, finding and securing the right setting is part of what we do, whether that is a country estate, a city hotel, or somewhere more unexpected. If the venue is already decided, or you have come to us through one, we work within it and manage everything around it.",
+    a: "Either. If you need a venue, we find and secure it, whether a country estate, a city hotel or somewhere unexpected. If the venue is already decided, or you came to us through one, we work within it and manage everything around it.",
   },
   {
     q: "Who runs the event on the day?",
-    a: "A dedicated event producer from our team leads it throughout, with the staff and suppliers reporting to them. That way, on the day, you are a guest at your own event rather than the one solving problems.",
+    a: "A dedicated event producer from our team leads it throughout, and the staff and suppliers report to them. You are free to be a guest at your own event.",
   },
   {
     q: "Do you manage the suppliers, catering and production as well?",
@@ -54,11 +54,11 @@ const eventManagementFaqs = [
   },
   {
     q: "How far ahead should we start planning?",
-    a: "The sooner the better, particularly for the best venues and for events at busy times of year, since those are taken well ahead. That said, we are used to working to tighter timelines when an occasion calls for it.",
+    a: "As early as you can, especially for sought-after venues and busy times of year, which book up well ahead. We can also work to shorter timelines.",
   },
   {
     q: "How much does event management cost?",
-    a: "There is no set price, since it depends on the scale of the event, the venue, and what you would like it to involve. Tell us about the occasion and we will put together a detailed proposal, costed in full, before anything is committed.",
+    a: "There is no set price. It depends on the scale, the venue and what the event involves. Tell us about the occasion and we will send a detailed proposal, costed in full, before anything is committed.",
   },
 ];
 
@@ -142,7 +142,7 @@ export default function EventManagementPage() {
               Event Management in Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              We plan, produce and run events from start to finish. One team, one point of contact, the whole thing taken care of.
+              We plan, produce and run events from start to finish, with one point of contact throughout.
             </p>
           </m.div>
         </div>
@@ -171,10 +171,10 @@ export default function EventManagementPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              We take full responsibility for your event, from the first conversation about what you want to achieve to the moment the last guest leaves. That means we are not just coordinating between suppliers. We are managing the production, making the decisions on the day, and accountable for the result.
+              We take full responsibility for your event, from the first conversation to the moment the last guest leaves. We manage the production, make the decisions on the day and answer for the result.
             </p>
             <p>
-              The clients who come to us typically have one thing in common: they want to hand the event over and trust that it will be handled properly. Whether it is a private dinner for twenty or a corporate gala for several hundred, the level of attention is the same.
+              Our clients want to hand the event over and know it will be run properly. The attention is the same whatever the size.
             </p>
           </m.div>
         </div>
@@ -203,7 +203,7 @@ export default function EventManagementPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              We start with the brief: what the event is for, who is attending, what impression it should leave. From there we develop the concept, source the venue, build the supplier list, and manage every booking and contract. As the date approaches we coordinate logistics, brief the team, and build a production schedule. On the day, we are there, fully staffed, running the event so you do not have to think about it.
+              We start with the brief: what the event is for, who is attending, what impression it should leave. From there we develop the concept, source the venue, build the supplier list, and manage every booking and contract. As the date approaches we coordinate logistics, brief the team, and build a production schedule. On the day, we are there with a full team, running the event.
             </p>
             <p>
               Most clients give us the whole project. Some come to us with a venue already chosen and want us to take the production from there. Either way works.
@@ -268,10 +268,10 @@ export default function EventManagementPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              We work across a wide range of occasions: private dinners, birthday celebrations and family gatherings on the smaller side; product launches, awards evenings, corporate hospitality days, charity galas and conference receptions at scale. The production challenge is different for each, but the approach is the same: plan thoroughly, staff well, and run it calmly.
+              Smaller occasions include private dinners, birthday celebrations and family gatherings. Larger ones include product launches, awards evenings, corporate hospitality days, charity galas and conference receptions. Each is produced differently. The approach stays the same: plan thoroughly, staff well and run it calmly.
             </p>
             <p>
-              We have experience working with venues across Scotland, from city hotels and private members' clubs to country estates and non-traditional spaces that take more work to get right.
+              We work with venues across Scotland, from city hotels and private members' clubs to country estates and unconventional spaces.
             </p>
           </m.div>
         </div>
@@ -289,7 +289,7 @@ export default function EventManagementPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Things people ask us.
+              Planning an event with us.
             </h2>
           </m.div>
           <m.div
@@ -349,7 +349,7 @@ export default function EventManagementPage() {
               Tell us about your event.
             </h2>
             <p className="text-muted-foreground font-sans font-light text-base mb-10 max-w-xl mx-auto">
-              There is no standard price for event management. It depends on the scale, the venue, the suppliers involved and how much of the production you want us to own. We scope against the brief and come back with a clear proposal.
+              Tell us the occasion, the guest numbers and how much you would like us to take on. We will come back with a clear proposal, costed in full.
             </p>
             <Button
               asChild

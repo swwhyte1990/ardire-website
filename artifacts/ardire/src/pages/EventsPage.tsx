@@ -82,13 +82,13 @@ export default function EventsPage() {
             transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
           >
             <p className="font-sans text-[11px] uppercase tracking-[0.4em] text-foreground/70 mb-4">
-              For Companies &amp; Organisers
+              For Businesses &amp; Organisers
             </p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-foreground mb-4">
               Corporate Events &amp; Incentive Travel in Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              Corporate incentives, full-service event management, professional staffing and bespoke experiences. Conceived, managed and delivered.
+              Corporate incentives, full-service event management, professional staffing and bespoke experiences across Scotland.
             </p>
           </m.div>
         </div>
@@ -166,7 +166,7 @@ export default function EventsPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-6">Work With Us</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
-              Let's Create Something Extraordinary
+              Planning an Event in Scotland?
             </h2>
             <p className="text-muted-foreground font-sans font-light text-base mb-10 max-w-xl mx-auto">
               Tell us about your event or programme and our team will be in touch to arrange a private consultation.

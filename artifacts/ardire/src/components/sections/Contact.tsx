@@ -125,7 +125,7 @@ export function Contact() {
               Begin Your <span className="italic text-primary">Journey</span>
             </h2>
             <p className="text-muted-foreground font-sans font-light text-base mb-12 max-w-md">
-              Allow us to craft an experience that surpasses expectation. Share your initial thoughts and our team will be in touch to arrange a private consultation.
+              Tell us what you have in mind, however loosely. Our team will be in touch to arrange a private consultation.
             </p>
 
             <div className="space-y-8">

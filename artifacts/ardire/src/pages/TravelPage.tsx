@@ -97,7 +97,7 @@ export default function TravelPage() {
               Private Tours &amp; Travel in Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              Privately guided journeys, championship golf, luxury chauffeur, self-guided adventures and a dedicated travel concierge. All crafted around you.
+              Privately guided tours, championship golf, a private chauffeur, self-guided routes and a dedicated travel concierge. Each one planned with you.
             </p>
           </m.div>
         </div>
@@ -173,12 +173,12 @@ export default function TravelPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-6">Begin Your Journey</p>
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-6">Get in Touch</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-4">
               Ready to Explore Scotland?
             </h2>
             <p className="text-muted-foreground font-sans font-light text-base mb-10 max-w-xl mx-auto">
-              Share your vision and our team will be in touch to arrange a private consultation, with no obligation.
+              Tell us where you would like to go. We will arrange a time to talk it over, with no obligation.
             </p>
             <Button
               asChild

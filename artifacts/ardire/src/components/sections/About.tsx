@@ -27,20 +27,20 @@ export function About() {
 
             <div className="space-y-6 text-muted-foreground font-sans text-base leading-relaxed font-light">
               <p>
-                Truly exceptional experiences are rarely about what is arranged. They are about how it feels to arrive, to settle in, to be genuinely looked after. The difference between an impressive itinerary and an unforgettable one comes down to something far more personal.
+                What stays with people is how a trip felt. The arrival, the first evening, the sense of being well looked after.
               </p>
               <p>
-                Árdíre was founded by people who had spent their careers as butlers, working at the highest levels of private service in households, luxury hotels, and aboard private vessels. In those roles they developed something rare: an intimate, human understanding of what people from different cultures and backgrounds actually want when they finally have time to relax and enjoy the company of those around them.
+                Árdíre is a team of event butlers. We work with private households, concierge services and event companies across Scotland and the UK, and that work has taught us what guests from many cultures want when they finally have time to rest and enjoy each other's company.
               </p>
               <p>
-                That understanding is what we bring to every experience we create. The network, the creativity, and the expertise you would expect from a premium Scottish concierge group, combined with a genuine instinct for people. We know what makes a moment feel looked after. That is what makes it unforgettable.
+                We bring that instinct for people to everything we arrange, along with a wide network across Scotland and the ideas to use it well. We know what makes a moment feel looked after.
               </p>
             </div>
 
             <div className="mt-12 flex items-center gap-6">
               <div className="w-16 h-[1px] bg-primary/50" />
               <p className="font-display italic text-xl text-foreground">
-                Thoughtfully Curated. Seamlessly Delivered.
+                Thoughtfully Planned. Quietly Delivered.
               </p>
             </div>
           </m.div>

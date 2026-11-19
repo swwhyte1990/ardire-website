@@ -25,17 +25,17 @@ const included = [
   "Meals and dining, with a private chef whenever you would like one",
   "Guides, experiences and access arranged around your interests",
   "Every booking, ticket and reservation handled ahead of time",
-  "A dedicated concierge looking after your trip on the ground throughout, whenever you need them",
+  "A dedicated concierge on the ground, there whenever you need them",
 ];
 
 const luxuryFaqs = [
   {
     q: "How does the planning work?",
-    a: "It starts with a conversation. You might want to plan the whole trip with us in detail, or simply give us a sense of what you are looking for and let us put together a draft itinerary to react to. Either way, everything we plan is discussed with you, and nothing is booked without your approval.",
+    a: "It starts with a conversation. You can plan every detail with us, or give us a sense of what you would like and we will send a draft itinerary for you to shape. Nothing is booked without your approval.",
   },
   {
     q: "Can the trip be fully tailored to us?",
-    a: "Yes. The sample journeys on this page are there to give you a feel and to spark ideas, but nothing is fixed. We build every trip around your interests, your pace and the things you most want to do.",
+    a: "Yes. The sample journeys are there to spark ideas, and nothing in them is fixed. Every trip follows your interests and your pace.",
   },
   {
     q: "What does the price include?",
@@ -43,27 +43,27 @@ const luxuryFaqs = [
   },
   {
     q: "How does pricing work for a group?",
-    a: "There is no set price, because every trip is built around what you would like to do, and the number of people travelling makes a real difference to the cost per person. Once we know your plans and your numbers, we cost the whole trip in full before anything is confirmed.",
+    a: "There is no set price. The cost per person depends on your plans and how many of you are travelling. Once we know both, we send a full proposal before anything is booked.",
   },
   {
     q: "Why do your sample journeys not show a price?",
-    a: "Because the same route can cost very different amounts depending on the season, the standard of stay, how you travel and how many of you there are, a single figure would mislead more than it helps. Tell us which journey appeals and we will cost it in full around your plans.",
+    a: "The same route can vary widely with the season, the standard of stay, how you travel and how many of you there are. Tell us which journey appeals and we will send a full proposal for it.",
   },
   {
     q: "How far ahead should we book?",
-    a: "The more notice you can give us, the more we can arrange, particularly for the best rooms and experiences in the busy summer months. That said, we are well used to shaping memorable trips at shorter notice too.",
+    a: "As early as you can, especially for summer, when the best rooms and experiences go first. We also plan trips at shorter notice.",
   },
   {
     q: "Can you arrange things that are not in your sample itineraries?",
-    a: "Almost certainly. The samples are a starting point, not a menu. If there is something you have always wanted to do in Scotland, tell us, and the chances are we can build it in.",
+    a: "Almost certainly. The samples are only a starting point. Tell us what you have always wanted to do in Scotland, and we will look at building it in.",
   },
   {
     q: "What parts of Scotland do you cover?",
-    a: "All of it, from Edinburgh and the Borders to the Highlands, Skye and the islands, Speyside and the far north, with the route built around what you want to see rather than a fixed circuit. Scotland is our home and our main focus, though where a trip calls for it we can plan beyond its borders too.",
+    a: "All of it, from Edinburgh and the Borders to the Highlands, Skye and the islands, Speyside and the far north. The route follows what you want to see. Scotland is our home, though we can plan beyond it when a trip calls for it.",
   },
   {
     q: "Can you look after families, special occasions and particular requirements?",
-    a: "Yes. We plan trips for couples, families and groups marking something special, and we take care of the details that matter to you, from how the days are paced to dining and anything else you need along the way.",
+    a: "Yes. We plan for couples, families and groups marking something special. We look after the details that matter to you, from the pace of each day to where you dine.",
   },
 ];
 
@@ -148,7 +148,7 @@ export default function LuxuryToursPage() {
               Private Tours of Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              A private tour designed around you, with a travel concierge to arrange and look after every part of it. From the moment we meet you at the airport, every day is ours to plan and yours to enjoy.
+              A private tour of Scotland, with a travel concierge who arranges and looks after every part of it, from first idea to final evening.
             </p>
             <SkipToSamples label="See Sample Journeys" />
           </m.div>
@@ -178,7 +178,7 @@ export default function LuxuryToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              A private tour is built entirely around you: what you want to see, the pace you want to keep, and the kind of days you want to have. We plan the itinerary, secure every booking, arrange the transport, the rooms, the meals and the experiences, and manage all of it on the ground so that for the length of your stay there is nothing to organise and nothing to chase. It is a private tour and a travel concierge in one, the trip designed and every part of it looked after.
+              A private tour follows what you want to see, the pace you want to keep and the kind of days you want to have. We plan the itinerary and book everything: transport, rooms, meals and experiences. Then we run it on the ground, so there is nothing to chase while you are here.
             </p>
             <p>
               This is a country we know well and love showing off, and most of that love is in the detail: the right glen on the right morning, the dinner worth driving for, the distillery that will open a door for you. Some of our guests arrive knowing exactly what they want. Most come with a few ideas and let us fill in the rest. Either way is the right way to begin.
@@ -210,10 +210,10 @@ export default function LuxuryToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              Beyond the trips we design, we act as your travel concierge for the whole of your time in Scotland. That means one person to arrange, book and look after everything, whether you would like a complete journey planned and run for you, or simply the harder parts taken care of and someone on call while you are here.
+              We can also be your travel concierge for the whole of your time in Scotland: one person who arranges, books and looks after everything, and is on call while you are here.
             </p>
             <p>
-              Some guests hand us the trip from the first idea. Others have much of it in place already and want us to arrange the bookings, open a few doors, and be there for whatever comes up. Both are exactly what we are here for, whether you are visiting for a few days or settling in for a longer stay.
+              Some guests hand us the trip from the first idea. Others arrive with much of it in place and want the bookings made, a few doors opened and someone there for whatever comes up. We are glad to do either, for a few days or a longer stay.
             </p>
           </m.div>
         </div>
@@ -245,10 +245,10 @@ export default function LuxuryToursPage() {
               The planning is in our hands from the start, and the trip is yours to enjoy.
             </p>
             <p>
-              We take care of the itinerary, the bookings, the rooms, the meals and the experiences, and we look after all of it as the days unfold. You will have a dedicated concierge who knows your plans and your preferences, a private driver between places, and the freedom to change your mind whenever you like. If the weather turns or a mood takes you somewhere new, we simply rework the day around it.
+              A dedicated concierge knows your plans and preferences, and a private driver takes you between places. You are free to change your mind at any point. If the weather turns, or you fancy somewhere new, we rework the day.
             </p>
             <p>
-              What you bring is the sense of what you want. We bring everything it takes to make it happen.
+              You bring a sense of what you want. We make it happen.
             </p>
           </m.div>
         </div>
@@ -308,7 +308,7 @@ export default function LuxuryToursPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-sans font-light text-sm text-muted-foreground max-w-2xl mb-12"
           >
-            These are journeys we can build, written to give you a feel for the range and to spark a few ideas of your own. Nothing here is fixed. The length, the places and the pace are all yours to shape, and we would happily reimagine any of them around what you have in mind.
+            These are journeys we can build, here to spark a few ideas of your own. Nothing is fixed. The length, the places and the pace are yours to shape, and we will happily rework any of them.
           </m.p>
 
           <div className="space-y-3">
@@ -383,10 +383,7 @@ export default function LuxuryToursPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              There is very little we cannot arrange when it matters to you. A private chef in a castle you have to yourselves. A helicopter to turn a long drive into a short hop. A ghillie for a day's fishing on the river or a stalk on the hill. A distillery opened after the public have gone. The leading authority on the one thing you most want to understand.
-            </p>
-            <p>
-              What you are paying for is not a list of suppliers but the fact that we can make these things happen at all, quietly and well, to a standard that would be hard to reach on your own.
+              A private chef in a castle you have to yourselves. A helicopter to turn a long drive into a short hop. A ghillie for a day's fishing on the river or a stalk on the hill. A distillery opened after the public have gone. The leading authority on the one thing you most want to understand.
             </p>
           </m.div>
         </div>
@@ -425,7 +422,7 @@ export default function LuxuryToursPage() {
               ))}
             </div>
             <p className="font-sans font-light text-sm text-muted-foreground">
-              You simply arrive. We take care of the rest.
+              Arrive, and the rest is in hand.
             </p>
           </m.div>
         </div>
@@ -443,7 +440,7 @@ export default function LuxuryToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Things people ask us.
+              Planning a private tour.
             </h2>
           </m.div>
           <m.div
@@ -503,7 +500,7 @@ export default function LuxuryToursPage() {
               Start with an idea.
             </h2>
             <p className="text-muted-foreground font-sans font-light text-base mb-10 max-w-xl mx-auto">
-              Tell us when you would like to come, who is travelling, and the one thing you most want this trip to be. We will design the rest around it and come back to you with a proposal.
+              Tell us when you would like to come, who is travelling, and the one thing you most want this trip to be. We will plan the rest and send you a proposal.
             </p>
             <Button
               asChild

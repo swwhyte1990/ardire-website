@@ -12,10 +12,10 @@ import eventsHero from "@/assets/images/events-hero.webp";
 
 const staffProvided = [
   "Waiting staff for dinners, receptions and functions of every size",
-  "Butlers and private service staff, for households, private dinners and occasions that call for a more personal touch",
+  "Butlers and private service staff for households, private dinners and smaller occasions",
   "Front-of-house and hospitality teams: reception, hosts and guest liaison",
   "Bar staff, for everything from a quiet drinks reception to a full event bar",
-  "Chefs on request, for private dining and events that would like food prepared on site",
+  "Chefs on request, for private dining and food prepared on site",
 ];
 
 const pricingCards = [
@@ -104,7 +104,7 @@ export default function EventStaffingPage() {
               Event Staffing in Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              Professional waiting staff, butlers and hospitality teams for events of any size. Briefed, well presented, and ready to make the evening run beautifully.
+              Waiting staff, butlers and hospitality teams for events of any size. Briefed, well presented and ready to look after your guests.
             </p>
           </m.div>
         </div>
@@ -154,7 +154,7 @@ export default function EventStaffingPage() {
               ))}
             </div>
             <p className="font-sans font-light text-sm text-muted-foreground max-w-2xl">
-              The total comes down to the roles you need, how many staff, and the hours involved. Tell us about the event and we will put together a clear quote before anything is confirmed.
+              The total depends on the roles, the number of staff and the hours. Tell us about the event and we will send a clear quote before anything is confirmed.
             </p>
           </m.div>
         </div>
@@ -183,7 +183,7 @@ export default function EventStaffingPage() {
             className="max-w-3xl font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              The impression an event makes owes a great deal to the people running it. We provide trained, professional staff for events across Scotland, from a single butler for a private dinner to a full front-of-house team for a large gathering. They arrive briefed, well presented, and ready to look after your guests, so the occasion feels effortless from the door onward.
+              Much of an event's impression comes from the people running it. We provide trained staff for events across Scotland, from a single butler for a private dinner to a full front-of-house team for a large gathering. They arrive briefed and well presented, and look after your guests from the door onward.
             </p>
           </m.div>
         </div>
@@ -219,7 +219,7 @@ export default function EventStaffingPage() {
               ))}
             </div>
             <p className="font-sans font-light text-sm text-muted-foreground max-w-3xl">
-              If there is a role you need that is not listed here, ask. The chances are we can provide it.
+              Need a role not listed here? Ask us.
             </p>
           </m.div>
         </div>
@@ -248,10 +248,10 @@ export default function EventStaffingPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              You tell us about the event: the kind of occasion, the number of guests, and the feel you are after. We build the right team around it.
+              Tell us the occasion, the number of guests and the feel you want, and we choose the staff to match.
             </p>
             <p>
-              Our staff arrive briefed on your event, uniformed to your specification, and led by a senior coordinator who runs the team on the day, so you have one person to deal with rather than a roomful. We can provide staff on their own, for an event you or someone else is running, or as part of an event we are managing for you.
+              Our staff arrive briefed and uniformed to your specification. A senior coordinator runs the team on the day, so you deal with one person. We can provide staff for an event you or someone else is running, or as part of an event we manage for you.
             </p>
           </m.div>
         </div>
@@ -269,10 +269,10 @@ export default function EventStaffingPage() {
             >
               <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">What to Expect</p>
               <h2 className="font-display text-2xl md:text-3xl text-foreground mb-6">
-                A team your guests notice for all the right reasons.
+                A team that represents you well.
               </h2>
               <p className="font-sans font-light text-muted-foreground leading-relaxed text-base">
-                Staff chosen for warmth and composure as much as for polish, who represent you well and stay calm when an event does what events sometimes do. Everyone we provide is experienced, background-checked and insured, and properly briefed before they arrive. The aim is a team your guests notice for all the right reasons, and never for the wrong ones.
+                We choose staff for warmth and composure as well as polish. They stay calm when plans change. Everyone we provide is experienced, background-checked, insured and briefed before they arrive.
               </p>
             </m.div>
             <m.div
@@ -286,7 +286,7 @@ export default function EventStaffingPage() {
                 Private hosts, companies, households and venues.
               </h2>
               <p className="font-sans font-light text-muted-foreground leading-relaxed text-base">
-                Private hosts planning a dinner or a celebration, companies running corporate functions and hospitality, and families marking something special. Private households who need staff for an occasion or a season. And the venues and event planners who want a reliable, well-presented team for an event they are running themselves.
+                Private hosts planning a dinner or celebration. Companies running corporate functions and hospitality. Families marking something special. Households that need staff for an occasion or a season. Venues and event planners who need a reliable team for an event they are running.
               </p>
             </m.div>
           </div>
@@ -307,7 +307,7 @@ export default function EventStaffingPage() {
               Request staff for your event.
             </h2>
             <p className="text-muted-foreground font-sans font-light text-base mb-10 max-w-xl mx-auto">
-              Tell us the occasion, the date, and roughly how many guests, and we will build the right team around it.
+              Tell us the occasion, the date and roughly how many guests. We will put the right team together.
             </p>
             <Button
               asChild

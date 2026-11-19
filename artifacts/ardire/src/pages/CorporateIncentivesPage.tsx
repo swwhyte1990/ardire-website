@@ -15,10 +15,10 @@ import corporateHero from "@/assets/images/corporate-hero.webp";
 
 
 const experiences = [
-  "A welcome that sets the tone from the first minute, whether that is a piper as the group arrives or a private dinner on the first evening",
+  "A welcome that sets the tone, from a piper as the group arrives to a private dinner on the first evening",
   "Stays in places worth the trip in themselves, from exclusive-use castles and Highland lodges to landmark city hotels",
   "Whisky at its source, with private tastings and the chance to get behind how it is made",
-  "Golf on courses your team will be talking about long after, arranged around every level of ability",
+  "Golf on courses your team will talk about for years, arranged for every level of ability",
   "Days that bring a group together, from Highland Games style challenges to time on the lochs, the islands and the open country",
   "Dinners with a real sense of occasion, a gala evening and a ceilidh among them",
 ];
@@ -26,35 +26,35 @@ const experiences = [
 const corpFaqs = [
   {
     q: "How far in advance should we start planning?",
-    a: "The more notice you give us, the more options we have, particularly for the most sought-after locations and experiences in the summer months. For a trip of three days or more, we recommend coming to us at least four to six months ahead of when you want to travel. That said, we are used to working at shorter notice and can generally put something strong together even with a tighter timeline.",
+    a: "The more notice, the more choice, especially for the most sought-after places in summer. For a trip of three days or more, we recommend coming to us four to six months ahead. Shorter timelines are often workable too.",
   },
   {
     q: "How many people can you accommodate?",
-    a: "We work with groups of all sizes, from small leadership teams to larger company-wide reward trips. The size of the group shapes some of the choices we make on venues and transport, and we will tell you honestly if something works better at a certain scale.",
+    a: "We work with groups of all sizes, from small leadership teams to company-wide reward trips. Group size shapes the choice of venues and transport, and we will say early if something suits a different scale.",
   },
   {
     q: "Can the trip be themed around our company or its goals?",
-    a: "Yes. If there is a theme, a goal or a message you want the trip to carry, we build it into the experience rather than just the brief. That might mean the welcome, the choice of activities, the way evenings are framed, or the small details that connect the days to each other. A well-designed incentive trip feels purposeful throughout, not just at the gala dinner.",
+    a: "Yes. If there is a theme, a goal or a message you want the trip to carry, we build it into the days themselves: the welcome, the choice of activities, the way evenings are framed, and the small details that link one day to the next.",
   },
   {
-    q: "Do you handle everything from the moment the group lands?",
-    a: "Yes. From the airport welcome to the final transfer home, every part of the trip is ours to plan and run. Flights to Scotland are arranged separately, and everything from arrival onward is taken care of.",
+    q: "Do you handle everything once the group lands?",
+    a: "Yes. From the airport welcome to the final transfer home, we plan and run every part of the trip. Flights to Scotland are arranged separately.",
   },
   {
     q: "How does pricing work for a corporate trip?",
-    a: "Every programme is priced around what you want to do, so there is no set figure. We work out the cost per person based on group size, the experiences you choose, where you stay, and how you travel. Once we understand your brief, we put together a full, itemised proposal before anything is confirmed.",
+    a: "There is no set figure. We work out a cost per person from the group size, the experiences you choose, where you stay and how you travel. Once we understand your brief, we send a full, itemised proposal before anything is confirmed.",
   },
   {
     q: "Can you accommodate a mixed group with different interests?",
-    a: "Absolutely. Most of our programmes are designed for groups with a range of interests, and we plan the days so that everyone has something they would choose to do. Distillery visits, Highland activities, wildlife, walking, spa time and cultural experiences can all sit alongside each other in a well-built week.",
+    a: "Yes. We plan the days so everyone has something they would choose to do. Distillery visits, Highland activities, wildlife, walking, spa time and cultural experiences can all run side by side.",
   },
   {
     q: "Can you arrange photography, video or branded elements for the trip?",
-    a: "Yes. We can arrange a photographer for key moments, branded welcome gifts or printed materials, and any touches that make the trip feel like it belongs to your company rather than a generic package. Tell us what matters and we will make it work.",
+    a: "Yes. We can arrange a photographer for key moments, branded welcome gifts, printed materials and other touches that make the trip feel like your company's own.",
   },
   {
     q: "What if our numbers change between booking and travel?",
-    a: "We build flexibility into the planning wherever we can, and we manage changes as they come up. Some elements, particularly exclusive-use venues, are harder to adjust at short notice, which is why we are honest about what is fixed and what is not from the start.",
+    a: "We build in flexibility wherever we can and manage changes as they come. Some elements, exclusive-use venues especially, are harder to change at short notice, so we set out what is fixed at the start.",
   },
   {
     q: "Do you work with incentive travel agencies as well as directly with companies?",
@@ -143,7 +143,7 @@ export default function CorporateIncentivesPage() {
               Corporate Incentive Trips in Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              Reward a team, motivate your top performers, or bring clients somewhere they will not forget. We design and run the whole trip, from the moment everyone arrives to the day they head home.
+              Reward a team, motivate your top performers, or bring clients somewhere they will not forget. We design and run the whole trip, from arrival to the journey home.
             </p>
             <SkipToSamples label="See Sample Journeys" onSkip={() => setProgrammeOpen("corp-5day")} />
           </m.div>
@@ -173,10 +173,10 @@ export default function CorporateIncentivesPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              We plan and run corporate incentive trips across Scotland for companies who want to reward people, motivate them, or bring them closer together. You tell us what the trip is meant to achieve, and we build a programme around it, looking after every part as the days unfold.
+              We plan and run incentive trips across Scotland for companies who want to reward their people, motivate them or bring them closer together. Tell us the aim, and we build the programme and run every part of it.
             </p>
             <p>
-              Scotland makes a strong case for itself here. There are few better places to make a group feel genuinely rewarded: world-famous golf, whisky at its source, castles to stay in rather than only visit, and scenery that does a great deal of the work before a single thing is planned. Our part is knowing how to turn all of that into days that run smoothly and land the way you intended.
+              Scotland gives a group plenty to remember: famous golf, whisky at its source, castles to stay in, and scenery that does much of the work. We turn it into days that run smoothly and land as you intended.
             </p>
           </m.div>
         </div>
@@ -205,7 +205,7 @@ export default function CorporateIncentivesPage() {
             className="max-w-3xl font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              The best incentive trips are built around an outcome rather than just an itinerary, and knowing yours shapes everything we plan. Some companies come to us to reward and recognise the people who have driven their year. Others want to motivate a team toward a shared goal, with something memorable waiting at the end of it, or to strengthen how a group works together away from the office. And some are here to host clients or partners in a way that deepens the relationship for years afterwards. Tell us which of these matters most, or the mix of them, and the trip takes its shape from there.
+              The best incentive trips start with an outcome, and yours shapes everything we plan. Some companies want to reward the people who drove their year. Others want to motivate a team toward a shared goal, or strengthen how a group works together away from the office. Some are here to host clients or partners and deepen the relationship. Tell us which matters most, or the mix, and the trip takes its shape from there.
             </p>
           </m.div>
         </div>
@@ -223,7 +223,7 @@ export default function CorporateIncentivesPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">The Process</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              We plan the programme before anyone travels, then run it while you are here.
+              Planned with you, then run on the ground.
             </h2>
           </m.div>
           <m.div
@@ -234,10 +234,10 @@ export default function CorporateIncentivesPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              We plan the programme before anyone travels, then run it on the ground while you are here, so that on the day your only job is to enjoy it alongside your people.
+              On the ground, we run the programme, so your only job is to enjoy it alongside your people.
             </p>
             <p>
-              From the welcome at the airport to the final farewell, the detail is ours: the travel between places, the accommodation, the dining, the experiences, and the small touches that make a trip feel considered rather than booked. Everything is planned with you and signed off before it is arranged, and someone is with you throughout, so if anything needs to flex on the day, it is taken care of quietly.
+              From the airport welcome to the final farewell, the detail is ours: travel between places, accommodation, dining, experiences and the small touches. Everything is planned with you and signed off before it is booked. Someone is with you throughout, so anything that changes on the day is handled quietly.
             </p>
           </m.div>
         </div>
@@ -316,7 +316,7 @@ export default function CorporateIncentivesPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-sans font-light text-sm text-muted-foreground max-w-2xl mb-12"
           >
-            This is one example for a group of around twelve. It is there to show the shape and standard, not to be taken as a fixed plan. Every trip we build looks different.
+            One example, for a group of around twelve. Every programme we build is different.
           </m.p>
 
           <m.div
@@ -375,7 +375,7 @@ export default function CorporateIncentivesPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Pricing</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Built around your goals, your group and the time you have.
+              Shaped by your goals and your group.
             </h2>
           </m.div>
           <m.div
@@ -386,10 +386,10 @@ export default function CorporateIncentivesPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              There is no set price for an incentive trip, since every programme is built around your goals, your group and the time you have. We can price a programme like the one above as a worked example, so you can picture the cost before committing to anything.
+              There is no set price for an incentive trip. We can price the sample programme above as a worked example, so you can picture the cost.
             </p>
             <p>
-              Your own figure will reflect the choices you make: where you stay, how you travel, the experiences you build in, and the number of people coming. We put together a full, itemised proposal before anything is confirmed.
+              Your own figure reflects where you stay, how you travel, the experiences you choose and the number coming. We send a full, itemised proposal before anything is confirmed.
             </p>
           </m.div>
         </div>
@@ -407,7 +407,7 @@ export default function CorporateIncentivesPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Things people ask us.
+              What companies ask us.
             </h2>
           </m.div>
           <m.div
@@ -467,7 +467,7 @@ export default function CorporateIncentivesPage() {
               Plan your incentive trip.
             </h2>
             <p className="text-muted-foreground font-sans font-light text-base mb-10 max-w-xl mx-auto">
-              Tell us what the trip is meant to achieve, roughly how many are coming and when, and we will design a programme around it and come back to you with a proposal.
+              Tell us what the trip is for, roughly how many are coming and when. We will come back with a proposed programme.
             </p>
             <Button
               asChild

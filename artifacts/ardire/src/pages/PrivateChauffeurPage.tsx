@@ -11,20 +11,20 @@ import chauffeurHeroSm from "@/assets/images/chauffeur-hero-sm.webp";
 import chauffeurHero from "@/assets/images/chauffeur-hero.webp";
 
 const howWeCanHelp = [
-  "Airport transfers, where you are met on arrival and looked after all the way to the door",
-  "A car and driver for the day, or for several, to explore at your own pace with no route to plan",
+  "Airport transfers, met at arrivals and driven to your door",
+  "A car and driver for a day or several, to explore at your own pace",
   "Getting between courses, dinners and events comfortably and on time",
-  "Reliable, considered transport for groups, occasions and corporate days",
+  "Transport for groups, occasions and corporate days",
 ];
 
 const chauffeurFaqs = [
   {
     q: "What areas of Scotland do you cover?",
-    a: "We are based in Glasgow and cover the whole of Scotland, from the cities to the Highlands and islands, travelling wherever suits you. Whether it is a short transfer in town or a day's drive across the country, we plan the journey around where you need to be.",
+    a: "We are based in Glasgow and cover the whole of Scotland, from the cities to the Highlands and islands. That might be a short transfer in town or a day's drive across the country.",
   },
   {
     q: "What kind of vehicles do you provide?",
-    a: "We provide a vehicle to suit your party, from an executive saloon for one or two passengers, to a larger luxury car or SUV, to a people carrier for a group with luggage. Tell us how many of you there are and what you have planned, and we will match the right car to it.",
+    a: "A car to suit your party: an executive saloon for one or two, a larger luxury car or SUV, or a people carrier for a group with luggage. Tell us how many are travelling and what you have planned, and we will match the car to it.",
   },
   {
     q: "How many passengers can you take?",
@@ -32,23 +32,23 @@ const chauffeurFaqs = [
   },
   {
     q: "Will you meet us at the airport?",
-    a: "Yes. On airport pickups we meet you on arrival, keep an eye on your flight in case it lands early or late, and look after you and your luggage all the way to the car. You step off the plane and the rest is taken care of.",
+    a: "Yes. We meet you on arrival, track your flight in case it lands early or late, and see you and your luggage to the car.",
   },
   {
     q: "Can we hire a car and driver for a full day, or longer?",
-    a: "Of course. As well as transfers, we provide a car and driver by the day, or for several, so you can explore at your own pace with nothing to plan and no route to navigate. We simply take you where you would like to go.",
+    a: "Yes. Book a car and driver for a day or for several, and explore at your own pace. Your driver takes you wherever you would like to go.",
   },
   {
     q: "Do you provide transfers for golf trips and events?",
-    a: "Yes. We look after getting you between courses, dinners and events comfortably and on time, so nobody is watching the clock or finding their own way to an early tee. It often works alongside our golf tours and event services, whether as part of a trip we have planned for you or simply the driving for one you are running yourself.",
+    a: "Yes. We get you between courses, dinners and events comfortably and on time, early tee times included. We drive as part of our golf tours and event services, or for a trip you are running yourself.",
   },
   {
     q: "What is included?",
-    a: "Your driver, the vehicle, fuel and parking, and on airport pickups, the meet and greet and flight tracking. There are water and refreshments in the car, and the journey is planned around your day rather than a fixed timetable.",
+    a: "Your driver, the vehicle, fuel and parking, plus meet and greet and flight tracking on airport pickups. Water and refreshments are in the car.",
   },
   {
     q: "How far ahead should we book?",
-    a: "The more notice you can give us, the better, particularly in the busy summer months and around major events, when cars are in demand. Shorter notice is often workable too, so it is always worth asking.",
+    a: "Early, if you can, especially in summer and around major events, when cars are in demand. Shorter notice is often possible, so do ask.",
   },
 ];
 
@@ -132,7 +132,7 @@ export default function PrivateChauffeurPage() {
               Private Chauffeur Service in Scotland
             </h1>
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
-              A professional driver and a comfortable car whenever you want to be somewhere without thinking about how to get there. Airport transfers, days out, and everything in between.
+              A professional driver and a comfortable car, anywhere in Scotland. Airport transfers, days out and everything in between.
             </p>
           </m.div>
         </div>
@@ -161,10 +161,10 @@ export default function PrivateChauffeurPage() {
             className="max-w-3xl space-y-6 font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              We provide a private chauffeur service across Scotland, for a single transfer or for as long as you would like a car and driver at your disposal. That might be a quiet, comfortable run from the airport after a long flight, a day spent exploring at your own pace, or getting a group where it needs to be without anyone watching the clock.
+              We provide a private chauffeur service across Scotland, for a single transfer or for as long as you would like a car and driver. That might be a quiet run from the airport after a long flight, a day exploring at your own pace, or getting a group where it needs to be, on time.
             </p>
             <p>
-              Our drivers know the roads and the country, and they bring the same care and discretion we put into everything we do. The driving that looks after our private tours and golf trips is the same service we offer on its own here, so you are in experienced hands whether you need us for an hour or a week.
+              Our drivers know the roads and the country, and work with care and discretion. This is the same driving that runs our private tours and golf trips, offered on its own for an hour or a week.
             </p>
           </m.div>
         </div>
@@ -182,7 +182,7 @@ export default function PrivateChauffeurPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">How We Can Help</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Whatever the journey, we plan it around you.
+              Whatever the journey, wherever in Scotland.
             </h2>
           </m.div>
           <m.div
@@ -200,7 +200,7 @@ export default function PrivateChauffeurPage() {
               ))}
             </div>
             <p className="font-sans font-light text-sm text-muted-foreground max-w-3xl">
-              Wherever you are headed and however long you need us, we plan the journey around you rather than a timetable.
+              For an hour, a day or a week.
             </p>
           </m.div>
         </div>
@@ -229,7 +229,7 @@ export default function PrivateChauffeurPage() {
             className="max-w-3xl font-sans font-light text-muted-foreground leading-relaxed text-base"
           >
             <p>
-              A professional and discreet driver, a clean and comfortable vehicle suited to the size of your party, and a journey that runs to your day rather than ours. If plans change while you are out, that is no trouble; we simply adjust as we go.
+              A professional, discreet driver and a clean, comfortable car suited to your party. If plans change while you are out, your driver adjusts as you go.
             </p>
           </m.div>
         </div>
@@ -265,7 +265,7 @@ export default function PrivateChauffeurPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Things people ask us.
+              Before you book a car.
             </h2>
           </m.div>
           <m.div
@@ -325,7 +325,7 @@ export default function PrivateChauffeurPage() {
               Tell us where you need to be and when.
             </h2>
             <p className="text-muted-foreground font-sans font-light text-base mb-10 max-w-xl mx-auto">
-              Pricing is quoted per journey or per day. Tell us where you need to be and when, and we will take care of the rest.
+              Pricing is per journey or per day. Send us the details and we will reply with a quote.
             </p>
             <Button
               asChild

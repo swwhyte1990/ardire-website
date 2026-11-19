@@ -89,7 +89,7 @@ export default function Privacy() {
 
             <Section title="How Long We Keep Your Data">
               <p>
-                We retain your enquiry and any correspondence for up to <span className="text-foreground font-normal">12 months</span> from the date of last contact, unless you become a client, in which case we will retain records for as long as is necessary to provide our services and meet our legal obligations.
+                We keep your enquiry and any correspondence for up to <span className="text-foreground font-normal">12 months</span> from the date of last contact. If you become a client, we keep records for as long as we need to provide our services and meet our legal obligations.
               </p>
               <p>
                 We review the data we hold regularly and delete anything we no longer need.
@@ -125,7 +125,7 @@ export default function Privacy() {
 
             <Section title="Changes to This Policy">
               <p>
-                We may update this Privacy Policy from time to time. Any changes will be posted on this page with a revised &ldquo;last updated&rdquo; date. We encourage you to review this page periodically.
+                We may update this Privacy Policy from time to time. Any changes will be posted on this page with a revised &ldquo;last updated&rdquo; date. Please check this page from time to time.
               </p>
             </Section>
 
