@@ -37,7 +37,7 @@ function RouteMap({ journey, active }: { journey: Journey; active: number }) {
   const activeLeg = legs[active];
   // Only the places this day visits are labelled; the leg's first point is where
   // yesterday ended, except on day one where it is the starting point.
-  const labelled = active === 0 ? activeLeg : activeLeg.slice(1);
+  const labelled = (active === 0 ? activeLeg : activeLeg.slice(1)).filter((s) => s.label !== "none");
 
   // Zoom to the area the whole route covers, roads and labels included, so the
   // route is legible rather than a small mark on a map of the whole country.
@@ -57,6 +57,7 @@ function RouteMap({ journey, active }: { journey: Journey; active: number }) {
     for (let pass = 0; pass < 2; pass++) {
       const u = (x1 - x0) / 300;
       for (const { s, x } of pts) {
+        if (s.label === "none") continue;
         const width = (9 + s.name.length * 7.2) * u;
         let side = s.label ?? "right";
         // A label that would run off the edge of Scotland's map flips to the other side.

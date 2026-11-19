@@ -3,7 +3,8 @@ export interface JourneyStop {
   lon: number;
   lat: number;
   // Which side of the dot the map label sits; defaults to the right.
-  label?: "left" | "right";
+  /** Which side of the dot the name sits; "none" keeps the stop on the route without a label, for a place too close to its neighbours. */
+  label?: "left" | "right" | "none";
 }
 
 export interface JourneyDay {

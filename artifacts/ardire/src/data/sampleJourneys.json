@@ -320,7 +320,7 @@
     "title": "Edinburgh and the Heart of Scotland",
     "story": [
       "Three days is enough to understand why Scotland's story is told the way it is. It begins in a capital built in two halves: the medieval Old Town, all closes and wynds on its ridge, and the Georgian New Town laid out below it by a 26-year-old architect who won the competition in 1766.",
-      "From there the road runs north to Stirling, the hinge of the country's history. Wallace fought below its castle in 1297, and Bruce won at Bannockburn in sight of it in 1314. Beyond lie the Trossachs and Loch Lomond, Rob Roy's country, which Walter Scott's novel made famous in 1817."
+      "From there the road runs north to Stirling, the hinge of the country's history. Wallace fought below its castle in 1297, and Bruce won at Bannockburn in sight of it in 1314. Then it turns west into the Trossachs and down to Loch Lomond, Rob Roy's country, which Walter Scott's novel made famous in 1817. The second night is spent out among the lochs, so the last morning starts on the water."
     ],
     "start": {
       "name": "Edinburgh Airport",
@@ -352,11 +352,11 @@
         ]
       },
       {
-        "title": "Stirling, the Trossachs and Loch Lomond",
+        "title": "Stirling and into the Trossachs",
         "highlights": [
-          "Stirling Castle and the ground where Bannockburn was fought",
-          "Lunch on a private estate",
-          "An afternoon to suit you: falconry, time on the water, or simply the view"
+          "Stirling Castle, where Mary, Queen of Scots was crowned in 1543, and the field of Bannockburn below it",
+          "Doune Castle on the road west",
+          "A night in a country house among the lochs and hills of the Trossachs"
         ],
         "onTheRoad": "The Scots at Bannockburn were outnumbered perhaps two or three to one. On the first day Bruce killed an English knight in single combat with an axe.",
         "stops": [
@@ -366,20 +366,16 @@
             "lat": 56.12
           },
           {
+            "name": "Doune Castle",
+            "lon": -4.05,
+            "lat": 56.185,
+            "label": "none"
+          },
+          {
             "name": "The Trossachs",
-            "lon": -4.4,
-            "lat": 56.23
-          },
-          {
-            "name": "Loch Lomond",
-            "lon": -4.6,
-            "lat": 56.08,
+            "lon": -4.38,
+            "lat": 56.18,
             "label": "left"
-          },
-          {
-            "name": "Edinburgh",
-            "lon": -3.19,
-            "lat": 55.95
           }
         ],
         "route": [
@@ -390,73 +386,56 @@
           [-3.4, 55.925],
           [-3.416, 55.954],
           [-3.483, 55.978],
-          [-3.698, 55.991],
+          [-3.697, 55.991],
           [-3.736, 56.004],
           [-3.78, 56.042],
           [-3.821, 56.044],
           [-3.92, 56.076],
           [-3.939, 56.12],
-          [-4.061, 56.163],
-          [-4.061, 56.186],
-          [-4.2, 56.219],
-          [-4.216, 56.244],
-          [-4.246, 56.248],
-          [-4.293, 56.226],
-          [-4.411, 56.232],
-          [-4.38, 56.211],
-          [-4.39, 56.183],
-          [-4.362, 56.162],
-          [-4.371, 56.082],
-          [-4.44, 56.068],
-          [-4.452, 56.053],
-          [-4.511, 56.049],
-          [-4.554, 56.029],
-          [-4.571, 56.005],
-          [-4.597, 55.998],
-          [-4.633, 56.025],
-          [-4.646, 56.058],
-          [-4.633, 56.071],
-          [-4.645, 56.041],
-          [-4.597, 55.999],
-          [-4.585, 55.962],
-          [-4.528, 55.935],
-          [-4.447, 55.926],
-          [-4.483, 55.899],
-          [-4.45, 55.859],
-          [-4.367, 55.867],
-          [-4.34, 55.853],
-          [-4.281, 55.85],
-          [-4.267, 55.87],
-          [-4.186, 55.874],
-          [-4.038, 55.84],
-          [-3.942, 55.833],
-          [-3.734, 55.868],
-          [-3.661, 55.871],
-          [-3.545, 55.917],
-          [-3.371, 55.931],
-          [-3.303, 55.92],
-          [-3.19, 55.95]
+          [-3.974, 56.134],
+          [-3.971, 56.17],
+          [-4.04, 56.187],
+          [-4.139, 56.174],
+          [-4.252, 56.187],
+          [-4.366, 56.172],
+          [-4.38, 56.18]
         ]
       },
       {
-        "title": "Edinburgh, and home",
+        "title": "Loch Lomond, and home",
         "highlights": [
-          "A slow morning",
-          "One last experience chosen to your taste, perhaps a private whisky blending",
-          "Then to your flight"
+          "A morning on Loch Lomond in a private boat",
+          "Lunch by the water",
+          "Then to your flight from Glasgow, or back to Edinburgh"
         ],
+        "onTheRoad": "Rob Roy is buried a short drive north at Balquhidder. His stone reads \"MacGregor Despite Them\", a defiance of the law that outlawed his very name.",
         "stops": [
           {
-            "name": "Edinburgh Airport",
-            "lon": -3.37,
-            "lat": 55.95,
+            "name": "Loch Lomond",
+            "lon": -4.54,
+            "lat": 56.085,
             "label": "left"
+          },
+          {
+            "name": "Glasgow Airport",
+            "lon": -4.43,
+            "lat": 55.87
           }
         ],
         "route": [
-          [-3.19, 55.95],
-          [-3.359, 55.936],
-          [-3.369, 55.948]
+          [-4.38, 56.18],
+          [-4.358, 56.135],
+          [-4.37, 56.082],
+          [-4.453, 56.065],
+          [-4.54, 56.086],
+          [-4.462, 56.072],
+          [-4.447, 56.042],
+          [-4.419, 56.034],
+          [-4.365, 55.98],
+          [-4.343, 55.934],
+          [-4.372, 55.928],
+          [-4.375, 55.896],
+          [-4.428, 55.868]
         ]
       }
     ]
