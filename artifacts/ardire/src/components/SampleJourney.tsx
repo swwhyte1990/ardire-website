@@ -209,9 +209,9 @@ export function SampleJourney({ journey }: { journey: Journey }) {
             role="tablist"
             aria-label={`Days of ${journey.title}`}
             onKeyDown={onTabKey}
-            className="grid grid-flow-col auto-cols-fr gap-2 mb-6 sm:flex sm:flex-wrap"
+            className="grid grid-flow-col auto-cols-fr gap-2 mb-6"
           >
-            {journey.days.map((d, i) => (
+            {journey.days.map((d, i, days) => (
               <button
                 key={d.title}
                 id={`${tabsId}-tab-${i}`}
@@ -221,15 +221,17 @@ export function SampleJourney({ journey }: { journey: Journey }) {
                 tabIndex={i === active ? 0 : -1}
                 onClick={() => go(i)}
                 className={cn(
-                  "font-sans text-xs uppercase tracking-[0.2em] px-2 sm:px-4 py-2.5 border transition-colors duration-200",
+                  "font-sans text-xs uppercase tracking-[0.2em] px-2 py-2.5 border transition-colors duration-200",
                   i === active
                     ? "bg-primary text-primary-foreground border-primary"
                     : "border-border/60 text-muted-foreground hover:border-primary hover:text-primary",
                 )}
               >
-                <span className="sm:hidden" aria-hidden="true">{i + 1}</span>
-                <span className="hidden sm:inline">Day {i + 1}</span>
-                <span className="sr-only sm:hidden">Day {i + 1}</span>
+                {/* Tabs share one row in equal widths. Longer journeys keep the
+                    numbers until the screen is wide enough for "Day 8". */}
+                <span className={days.length > 6 ? "xl:hidden" : "sm:hidden"} aria-hidden="true">{i + 1}</span>
+                <span className={days.length > 6 ? "hidden xl:inline" : "hidden sm:inline"}>Day {i + 1}</span>
+                <span className={days.length > 6 ? "sr-only xl:hidden" : "sr-only sm:hidden"}>Day {i + 1}</span>
               </button>
             ))}
           </div>

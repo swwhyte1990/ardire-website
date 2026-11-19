@@ -193,28 +193,24 @@
         ]
       },
       {
-        "title": "East to Loch Ness and Speyside",
+        "title": "Loch Ness and Inverness",
         "highlights": [
-          "Along Loch Ness towards Inverness",
-          "The moor at Culloden",
-          "A castle for the night in Speyside, and a dinner to match the setting"
+          "Back over the bridge and east through Glen Shiel",
+          "Along Loch Ness, with a stop at Urquhart Castle",
+          "A country house near Inverness for the night"
         ],
-        "onTheRoad": "Within a lifetime of Culloden it was illegal for a Highlander to wear tartan. A second offence meant seven years' transportation.",
+        "onTheRoad": "Urquhart Castle was not blown up by government troops. In 1690 its own garrison blew up the gatehouse so the Jacobites could not use it.",
         "stops": [
           {
             "name": "Loch Ness",
-            "lon": -4.6,
-            "lat": 57.22
+            "lon": -4.44,
+            "lat": 57.32,
+            "label": "left"
           },
           {
-            "name": "Culloden",
-            "lon": -4.07,
+            "name": "Inverness",
+            "lon": -4.22,
             "lat": 57.48
-          },
-          {
-            "name": "Speyside",
-            "lon": -3.23,
-            "lat": 57.47
           }
         ],
         "route": [
@@ -243,17 +239,40 @@
           [-4.815, 57.17],
           [-4.793, 57.184],
           [-4.645, 57.222],
-          [-4.587, 57.217],
-          [-4.605, 57.214],
-          [-4.536, 57.249],
+          [-4.605, 57.212],
+          [-4.584, 57.218],
           [-4.445, 57.322],
           [-4.48, 57.337],
-          [-4.421, 57.344],
-          [-4.272, 57.457],
-          [-4.243, 57.464],
-          [-4.256, 57.452],
-          [-4.225, 57.447],
-          [-4.19, 57.472],
+          [-4.425, 57.342],
+          [-4.295, 57.444],
+          [-4.22, 57.48]
+        ]
+      },
+      {
+        "title": "Culloden and Speyside",
+        "highlights": [
+          "The moor at Culloden, early, before the visitors",
+          "Into Speyside, and a distillery that opens its doors for you",
+          "A castle for the night, and a dinner to match the setting"
+        ],
+        "onTheRoad": "Within a lifetime of Culloden it was illegal for a Highlander to wear tartan. A second offence meant seven years' transportation.",
+        "stops": [
+          {
+            "name": "Culloden",
+            "lon": -4.07,
+            "lat": 57.48,
+            "label": "left"
+          },
+          {
+            "name": "Speyside",
+            "lon": -3.23,
+            "lat": 57.47
+          }
+        ],
+        "route": [
+          [-4.22, 57.48],
+          [-4.192, 57.482],
+          [-4.17, 57.467],
           [-4.079, 57.478],
           [-4.043, 57.489],
           [-4.004, 57.521],
@@ -267,7 +286,7 @@
           [-3.659, 57.43],
           [-3.656, 57.403],
           [-3.612, 57.367],
-          [-3.597, 57.334],
+          [-3.596, 57.334],
           [-3.48, 57.384],
           [-3.463, 57.402],
           [-3.384, 57.417],
@@ -277,16 +296,16 @@
         ]
       },
       {
-        "title": "Speyside, and home",
+        "title": "Departure",
         "highlights": [
-          "A quiet morning at a distillery that opens its doors for you",
-          "Then to your flight"
+          "Driven to Inverness Airport for your flight"
         ],
         "stops": [
           {
-            "name": "Inverness",
-            "lon": -4.05,
-            "lat": 57.54
+            "name": "Inverness Airport",
+            "lon": -4.06,
+            "lat": 57.54,
+            "label": "left"
           }
         ],
         "route": [
@@ -308,7 +327,9 @@
           [-3.936, 57.525],
           [-3.96, 57.523],
           [-4.003, 57.545],
-          [-4.043, 57.537]
+          [-4.048, 57.53],
+          [-4.068, 57.534],
+          [-4.064, 57.541]
         ]
       }
     ]
@@ -320,7 +341,7 @@
     "title": "Edinburgh and the Heart of Scotland",
     "story": [
       "Three days is enough to understand why Scotland's story is told the way it is. It begins in a capital built in two halves: the medieval Old Town, all closes and wynds on its ridge, and the Georgian New Town laid out below it by a 26-year-old architect who won the competition in 1766.",
-      "From there the road runs north to Stirling, the hinge of the country's history. Wallace fought below its castle in 1297, and Bruce won at Bannockburn in sight of it in 1314. Then it turns west into the Trossachs and down to Loch Lomond, Rob Roy's country, which Walter Scott's novel made famous in 1817. The second night is spent out among the lochs, so the last morning starts on the water."
+      "From there the road runs north to Stirling, the hinge of the country's history. Wallace fought below its castle in 1297, and Bruce won at Bannockburn in sight of it in 1314. Then it turns west into the Trossachs and down to Loch Lomond, Rob Roy's country, which Walter Scott's novel made famous in 1817. The last two nights are spent out among the lochs and hills."
     ],
     "start": {
       "name": "Edinburgh Airport",
@@ -356,7 +377,7 @@
         "highlights": [
           "Stirling Castle, where Mary, Queen of Scots was crowned in 1543, and the field of Bannockburn below it",
           "Doune Castle on the road west",
-          "A night in a country house among the lochs and hills of the Trossachs"
+          "A country house in the Trossachs for the next two nights"
         ],
         "onTheRoad": "The Scots at Bannockburn were outnumbered perhaps two or three to one. On the first day Bruce killed an English knight in single combat with an axe.",
         "stops": [
@@ -402,11 +423,11 @@
         ]
       },
       {
-        "title": "Loch Lomond, and home",
+        "title": "Loch Lomond",
         "highlights": [
           "A morning on Loch Lomond in a private boat",
-          "Lunch by the water",
-          "Then to your flight from Glasgow, or back to Edinburgh"
+          "Lunch by the water at Luss",
+          "Back through the Trossachs for a last evening at the house"
         ],
         "onTheRoad": "Rob Roy is buried a short drive north at Balquhidder. His stone reads \"MacGregor Despite Them\", a defiance of the law that outlawed his very name.",
         "stops": [
@@ -417,9 +438,10 @@
             "label": "left"
           },
           {
-            "name": "Glasgow Airport",
-            "lon": -4.43,
-            "lat": 55.87
+            "name": "The Trossachs",
+            "lon": -4.38,
+            "lat": 56.18,
+            "label": "left"
           }
         ],
         "route": [
@@ -427,10 +449,32 @@
           [-4.358, 56.135],
           [-4.37, 56.082],
           [-4.453, 56.065],
-          [-4.54, 56.086],
-          [-4.462, 56.072],
-          [-4.447, 56.042],
-          [-4.419, 56.034],
+          [-4.539, 56.084],
+          [-4.453, 56.065],
+          [-4.37, 56.082],
+          [-4.358, 56.135],
+          [-4.38, 56.18]
+        ]
+      },
+      {
+        "title": "Departure",
+        "highlights": [
+          "Driven to Glasgow or Edinburgh Airport for your flight"
+        ],
+        "stops": [
+          {
+            "name": "Glasgow Airport",
+            "lon": -4.43,
+            "lat": 55.87
+          }
+        ],
+        "route": [
+          [-4.38, 56.18],
+          [-4.362, 56.162],
+          [-4.358, 56.103],
+          [-4.397, 56.059],
+          [-4.396, 56.037],
+          [-4.42, 56.034],
           [-4.365, 55.98],
           [-4.343, 55.934],
           [-4.372, 55.928],
@@ -672,28 +716,24 @@
         ]
       },
       {
-        "title": "The North Coast and Sutherland",
+        "title": "The North Coast",
         "highlights": [
-          "The north coast's empty beaches",
-          "Dunrobin Castle and the story of the Clearances, told from both sides",
-          "South towards Speyside"
+          "North through Assynt to the empty beaches of the north coast",
+          "Dunnet Head, the true northern tip of the mainland",
+          "A night by the sea"
         ],
         "onTheRoad": "John o' Groats is famous for being the end of the road, but it is not the northern tip of mainland Britain. That is Dunnet Head, further west along this coast.",
         "stops": [
           {
             "name": "The north coast",
             "lon": -4.75,
-            "lat": 58.56
+            "lat": 58.56,
+            "label": "left"
           },
           {
-            "name": "Dunrobin Castle",
-            "lon": -3.95,
-            "lat": 57.98
-          },
-          {
-            "name": "Speyside",
-            "lon": -3.23,
-            "lat": 57.47
+            "name": "Dunnet Head",
+            "lon": -3.37,
+            "lat": 58.67
           }
         ],
         "route": [
@@ -718,35 +758,78 @@
           [-5.066, 58.379],
           [-5.018, 58.373],
           [-5.033, 58.383],
-          [-5.003, 58.421],
+          [-5.004, 58.42],
           [-4.865, 58.488],
           [-4.816, 58.5],
-          [-4.747, 58.568],
-          [-4.816, 58.5],
-          [-4.865, 58.488],
-          [-5.002, 58.421],
-          [-5.032, 58.381],
-          [-4.994, 58.372],
-          [-4.967, 58.348],
-          [-4.918, 58.33],
-          [-4.916, 58.31],
-          [-4.831, 58.28],
-          [-4.813, 58.261],
-          [-4.749, 58.252],
-          [-4.724, 58.227],
-          [-4.737, 58.204],
-          [-4.712, 58.175],
-          [-4.549, 58.135],
-          [-4.439, 58.057],
-          [-4.419, 58.056],
-          [-4.425, 58.038],
-          [-4.402, 58.024],
-          [-4.266, 58.006],
-          [-4.178, 58.005],
-          [-4.171, 57.993],
-          [-4.067, 57.957],
-          [-3.946, 57.983],
-          [-4.084, 57.95],
+          [-4.762, 58.562],
+          [-4.721, 58.563],
+          [-4.673, 58.543],
+          [-4.757, 58.46],
+          [-4.753, 58.444],
+          [-4.685, 58.469],
+          [-4.653, 58.504],
+          [-4.496, 58.504],
+          [-4.436, 58.492],
+          [-4.389, 58.507],
+          [-4.222, 58.485],
+          [-4.224, 58.525],
+          [-4.15, 58.528],
+          [-4.013, 58.562],
+          [-3.933, 58.56],
+          [-3.9, 58.542],
+          [-3.868, 58.555],
+          [-3.761, 58.561],
+          [-3.628, 58.552],
+          [-3.508, 58.596],
+          [-3.363, 58.595],
+          [-3.344, 58.608],
+          [-3.342, 58.641],
+          [-3.377, 58.658],
+          [-3.371, 58.669]
+        ]
+      },
+      {
+        "title": "Sutherland and south to Speyside",
+        "highlights": [
+          "Dunrobin Castle and the story of the Clearances, told from both sides",
+          "Over the Dornoch Firth and south into Speyside",
+          "A castle for the last two nights"
+        ],
+        "onTheRoad": "The last woman executed for witchcraft in Britain was burned at Dornoch in the 1720s. \"Janet Horne\" was a name used for any witch, so her real name may be lost.",
+        "stops": [
+          {
+            "name": "Dunrobin Castle",
+            "lon": -3.95,
+            "lat": 57.98
+          },
+          {
+            "name": "Speyside",
+            "lon": -3.23,
+            "lat": 57.47
+          }
+        ],
+        "route": [
+          [-3.371, 58.669],
+          [-3.377, 58.658],
+          [-3.342, 58.641],
+          [-3.353, 58.598],
+          [-3.384, 58.591],
+          [-3.508, 58.596],
+          [-3.522, 58.584],
+          [-3.451, 58.521],
+          [-3.394, 58.317],
+          [-3.37, 58.279],
+          [-3.441, 58.247],
+          [-3.496, 58.184],
+          [-3.586, 58.163],
+          [-3.601, 58.141],
+          [-3.673, 58.102],
+          [-3.791, 58.069],
+          [-3.854, 58.027],
+          [-3.853, 58.012],
+          [-3.897, 57.989],
+          [-3.948, 57.985],
+          [-4.083, 57.951],
           [-4.056, 57.909],
           [-4.11, 57.875],
           [-4.11, 57.836],
@@ -754,25 +837,28 @@
           [-4.029, 57.768],
           [-4.102, 57.731],
           [-4.289, 57.682],
-          [-4.366, 57.631],
+          [-4.367, 57.628],
+          [-4.353, 57.606],
           [-4.36, 57.582],
-          [-4.322, 57.526],
+          [-4.323, 57.527],
           [-4.192, 57.482],
           [-4.127, 57.431],
           [-4.134, 57.418],
           [-4.119, 57.425],
           [-4.076, 57.411],
-          [-4.072, 57.393],
-          [-3.914, 57.292],
+          [-4.073, 57.394],
+          [-4.007, 57.36],
+          [-3.976, 57.322],
+          [-3.91, 57.291],
           [-3.852, 57.294],
           [-3.815, 57.285],
           [-3.735, 57.308],
           [-3.663, 57.303],
           [-3.606, 57.322],
           [-3.596, 57.315],
-          [-3.561, 57.321],
-          [-3.511, 57.365],
-          [-3.469, 57.373],
+          [-3.562, 57.321],
+          [-3.51, 57.366],
+          [-3.468, 57.373],
           [-3.461, 57.389],
           [-3.382, 57.409],
           [-3.358, 57.402],
@@ -803,14 +889,14 @@
         ]
       },
       {
-        "title": "Home",
+        "title": "Departure",
         "highlights": [
-          "A last morning at leisure, then to your flight"
+          "Driven to Inverness or Aberdeen Airport for your flight"
         ],
         "stops": [
           {
-            "name": "Inverness",
-            "lon": -4.05,
+            "name": "Inverness Airport",
+            "lon": -4.06,
             "lat": 57.54,
             "label": "left"
           }
@@ -828,9 +914,11 @@
           [-3.61, 57.609],
           [-3.785, 57.577],
           [-3.866, 57.586],
-          [-3.908, 57.559],
+          [-3.911, 57.559],
           [-3.932, 57.572],
-          [-4.043, 57.537]
+          [-4.048, 57.53],
+          [-4.068, 57.534],
+          [-4.064, 57.541]
         ]
       }
     ]
@@ -1049,10 +1137,11 @@
         ]
       },
       {
-        "title": "Edinburgh, and home",
+        "title": "Back to Edinburgh",
         "highlights": [
-          "South to Edinburgh for a final afternoon and night in the city",
-          "To the airport the next morning"
+          "South through Angus and over the Tay",
+          "A final afternoon and night in the city",
+          "Dinner to close the week"
         ],
         "stops": [
           {
@@ -1096,6 +1185,25 @@
           [-3.21, 55.959],
           [-3.19, 55.95]
         ]
+      },
+      {
+        "title": "Departure",
+        "highlights": [
+          "Driven to Edinburgh Airport for your flight"
+        ],
+        "stops": [
+          {
+            "name": "Edinburgh Airport",
+            "lon": -3.37,
+            "lat": 55.95,
+            "label": "left"
+          }
+        ],
+        "route": [
+          [-3.19, 55.95],
+          [-3.359, 55.936],
+          [-3.369, 55.948]
+        ]
       }
     ]
   },
@@ -1105,7 +1213,7 @@
     "duration": "Five Days",
     "title": "A Programme in the Highlands",
     "story": [
-      "The best incentive trips are remembered for the moments the group shared, not for the agenda. This programme brings a team from the capital into the Highlands and gives them a castle of their own for three nights.",
+      "The best incentive trips are remembered for the moments the group shared, not for the agenda. This programme brings a team from the capital into the Highlands and gives them a castle of their own for four nights.",
       "The days are built around experiences that pull a group together: a challenge on a Highland estate, an evening ceilidh, and whisky at its source. There is plenty of time for the scenery to do its work, too."
     ],
     "start": {
@@ -1141,7 +1249,7 @@
         "highlights": [
           "A private visit to Stirling Castle",
           "Lunch aboard on Loch Lomond",
-          "North to a private castle for three nights, with a gala dinner on the first evening"
+          "North to a private castle for four nights, with a gala dinner on the first evening"
         ],
         "stops": [
           {
@@ -1251,7 +1359,7 @@
         "highlights": [
           "A private distillery tour and tasting",
           "An afternoon to walk, fish or simply take in the surroundings",
-          "A farewell dinner"
+          "Dinner at the castle"
         ],
         "stops": [
           {
@@ -1271,10 +1379,42 @@
         ]
       },
       {
-        "title": "Home",
+        "title": "The Road to the Isles",
         "highlights": [
-          "A relaxed final morning",
-          "Transfers to flights, with the option to stay on"
+          "The steam train over the Glenfinnan Viaduct, from June to October",
+          "A Land Rover safari into the hills for those who would rather stay on the ground",
+          "A farewell dinner, and a piper to close the trip"
+        ],
+        "onTheRoad": "Bonnie Prince Charlie raised his standard at Glenfinnan in 1745. The monument by the loch marks the start of the rising that ended at Culloden.",
+        "stops": [
+          {
+            "name": "Glenfinnan",
+            "lon": -5.43,
+            "lat": 56.87,
+            "label": "left"
+          },
+          {
+            "name": "Fort William",
+            "lon": -5.11,
+            "lat": 56.82
+          }
+        ],
+        "route": [
+          [-5.11, 56.82],
+          [-5.076, 56.834],
+          [-5.099, 56.845],
+          [-5.406, 56.86],
+          [-5.432, 56.868],
+          [-5.406, 56.86],
+          [-5.099, 56.845],
+          [-5.075, 56.835],
+          [-5.11, 56.82]
+        ]
+      },
+      {
+        "title": "Departure",
+        "highlights": [
+          "Transfers to Glasgow Airport, with the option to stay on"
         ],
         "stops": [
           {
