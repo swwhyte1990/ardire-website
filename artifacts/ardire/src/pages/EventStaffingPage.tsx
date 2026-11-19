@@ -1,5 +1,6 @@
 import { useEffect, type MouseEvent } from "react";
 import { usePageMeta } from "@/lib/usePageMeta";
+import staffingPrices from "@/data/staffingPrices.json";
 import { useLocation } from "wouter";
 import { m } from "framer-motion";
 import { CheckCircle } from "lucide-react";
@@ -18,26 +19,8 @@ const staffProvided = [
   "Chefs on request, for private dining and food prepared on site",
 ];
 
-const pricingCards = [
-  {
-    role: "Front-of-House & Bar Staff",
-    price: "From £25",
-    unit: "per hour, plus VAT",
-    minimum: "Minimum four hours",
-  },
-  {
-    role: "Butlers & Event Managers",
-    price: "From £40",
-    unit: "per hour, plus VAT",
-    minimum: "Minimum ten hours",
-  },
-  {
-    role: "Chefs",
-    price: "On request",
-    unit: "for private dining and on-site catering",
-    minimum: null,
-  },
-];
+// Shared with the static HTML, where the per-hour prices become Offer schema.
+const pricingCards = staffingPrices;
 
 export default function EventStaffingPage() {
   usePageMeta("services/event-staffing");
@@ -45,23 +28,6 @@ export default function EventStaffingPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    const serviceScript = document.createElement("script");
-    serviceScript.type = "application/ld+json";
-    serviceScript.id = "service-schema-event-staffing";
-    serviceScript.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Professional Event Staffing Scotland",
-      "serviceType": "Event Staffing",
-      "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
-      "areaServed": "Scotland",
-      "description": "Professional event staff for occasions across Scotland. Waiting staff, butlers and hospitality teams, briefed, well presented and ready to serve.",
-      "url": "https://ardire.co.uk/services/event-staffing/",
-    });
-    document.head.appendChild(serviceScript);
-    return () => {
-      document.getElementById("service-schema-event-staffing")?.remove();
-    };
   }, []);
 
   function goToEnquiry(e: MouseEvent<HTMLAnchorElement>) {

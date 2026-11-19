@@ -1,5 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { usePageMeta } from "@/lib/usePageMeta";
+import faqs from "@/data/faqs.json";
 import { useLocation } from "wouter";
 import { m, AnimatePresence } from "framer-motion";
 import { CheckCircle, ChevronDown } from "lucide-react";
@@ -28,44 +29,8 @@ const included = [
   "A dedicated concierge on the ground, there whenever you need them",
 ];
 
-const luxuryFaqs = [
-  {
-    q: "How does the planning work?",
-    a: "It starts with a conversation. You can plan every detail with us, or give us a sense of what you would like and we will send a draft itinerary for you to shape. Nothing is booked without your approval.",
-  },
-  {
-    q: "Can the trip be fully tailored to us?",
-    a: "Yes. The sample journeys are there to spark ideas, and nothing in them is fixed. Every trip follows your interests and your pace.",
-  },
-  {
-    q: "What does the price include?",
-    a: "Everything is taken care of: a private driver and transfers, accommodation, meals and dining, guides and experiences, and every booking handled ahead of time, with someone looking after your trip throughout.",
-  },
-  {
-    q: "How does pricing work for a group?",
-    a: "There is no set price. The cost per person depends on your plans and how many of you are travelling. Once we know both, we send a full proposal before anything is booked.",
-  },
-  {
-    q: "Why do your sample journeys not show a price?",
-    a: "The same route can vary widely with the season, the standard of stay, how you travel and how many of you there are. Tell us which journey appeals and we will send a full proposal for it.",
-  },
-  {
-    q: "How far ahead should we book?",
-    a: "As early as you can, especially for summer, when the best rooms and experiences go first. We also plan trips at shorter notice.",
-  },
-  {
-    q: "Can you arrange things that are not in your sample itineraries?",
-    a: "Almost certainly. The samples are only a starting point. Tell us what you have always wanted to do in Scotland, and we will look at building it in.",
-  },
-  {
-    q: "What parts of Scotland do you cover?",
-    a: "All of it, from Edinburgh and the Borders to the Highlands, Skye and the islands, Speyside and the far north. The route follows what you want to see. Scotland is our home, though we can plan beyond it when a trip calls for it.",
-  },
-  {
-    q: "Can you look after families, special occasions and particular requirements?",
-    a: "Yes. We plan for couples, families and groups marking something special. We look after the details that matter to you, from the pace of each day to where you dine.",
-  },
-];
+// The FAQ text is shared with the static HTML and its FAQPage schema.
+const luxuryFaqs = faqs["services/luxury-tours"].items;
 
 export default function LuxuryToursPage() {
   usePageMeta("services/luxury-tours");
@@ -75,37 +40,6 @@ export default function LuxuryToursPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    const faqScript = document.createElement("script");
-    faqScript.type = "application/ld+json";
-    faqScript.id = "faq-schema-luxury";
-    faqScript.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": luxuryFaqs.map((faq) => ({
-        "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": { "@type": "Answer", "text": faq.a },
-      })),
-    });
-    document.head.appendChild(faqScript);
-    const serviceScript = document.createElement("script");
-    serviceScript.type = "application/ld+json";
-    serviceScript.id = "service-schema-luxury";
-    serviceScript.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Private Luxury Tours of Scotland",
-      "serviceType": "Luxury Tour",
-      "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
-      "areaServed": "Scotland",
-      "description": "Bespoke private tours of Scotland with a dedicated travel concierge. We plan, arrange and look after every part of your trip.",
-      "url": "https://ardire.co.uk/services/luxury-tours/",
-    });
-    document.head.appendChild(serviceScript);
-    return () => {
-      document.getElementById("faq-schema-luxury")?.remove();
-      document.getElementById("service-schema-luxury")?.remove();
-    };
   }, []);
 
   function goToEnquiry(e: MouseEvent<HTMLAnchorElement>) {
@@ -440,7 +374,7 @@ export default function LuxuryToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Planning a private tour.
+              {faqs["services/luxury-tours"].heading}
             </h2>
           </m.div>
           <m.div

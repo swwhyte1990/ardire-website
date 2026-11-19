@@ -1,5 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { usePageMeta } from "@/lib/usePageMeta";
+import faqs from "@/data/faqs.json";
 import { useLocation } from "wouter";
 import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -15,44 +16,8 @@ import golfHero from "@/assets/images/golf-hero.webp";
 
 
 
-const golfFaqs = [
-  {
-    q: "Can you get us onto the Old Course at St Andrews?",
-    a: "The Old Course is allocated mainly through a daily public ballot, so a place can never be guaranteed. We enter the ballot for you and build your St Andrews day around a confirmed round on another of the Links courses. If your name comes up, the Old Course is the bonus.",
-  },
-  {
-    q: "How far in advance should we book?",
-    a: "As early as you can. Most courses open tee times around the autumn before the year you want to play. Booking early gives you the widest choice, especially at the well-known courses in summer. Shorter notice is still workable, with fewer options on the busiest tee sheets.",
-  },
-  {
-    q: "Which courses can you arrange?",
-    a: "We arrange rounds at most of Scotland's championship and best-loved courses. A few can only be played as a member's guest, and we will tell you which at the outset.",
-  },
-  {
-    q: "What does a golf tour include?",
-    a: "From arrival to departure: private transfers, green fees, caddies and clubs where you want them, accommodation chosen for where you play next, meals, and any experiences you would like around the golf.",
-  },
-  {
-    q: "How many rounds will we play in a week?",
-    a: "A typical week runs to four or five rounds, with the other days left for rest, a distillery, sightseeing or whatever suits the group. We set the pace to suit you.",
-  },
-  {
-    q: "Do you arrange caddies, clubs and transport between courses?",
-    a: "Yes. A private driver looks after you for the whole trip, so you are never finding your own way to an early tee time, and we arrange caddies and club hire wherever you would like them.",
-  },
-  {
-    q: "Can non-golfers come along?",
-    a: "Absolutely. We are just as happy planning the days for anyone travelling with you who would rather be at a distillery, a spa, a castle or the coast while the golf is on.",
-  },
-  {
-    q: "How much does a Scotland golf tour cost?",
-    a: "Prices vary a great deal with the courses you choose, the number of rounds, where you stay and the season, so we price every tour individually. Once we know your plans, we put together a full, itemised proposal before anything is booked.",
-  },
-  {
-    q: "Do you arrange tours for corporate or company groups?",
-    a: "Yes. We plan golf trips for companies looking to reward a team or host clients, taking care of the group logistics, the hospitality and the evenings as well as the golf.",
-  },
-];
+// The FAQ text is shared with the static HTML and its FAQPage schema.
+const golfFaqs = faqs["services/golf-tours"].items;
 
 export default function GolfToursPage() {
   usePageMeta("services/golf-tours");
@@ -68,37 +33,6 @@ export default function GolfToursPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    const faqScript = document.createElement("script");
-    faqScript.type = "application/ld+json";
-    faqScript.id = "faq-schema-golf";
-    faqScript.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": golfFaqs.map((faq) => ({
-        "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": { "@type": "Answer", "text": faq.a },
-      })),
-    });
-    document.head.appendChild(faqScript);
-    const serviceScript = document.createElement("script");
-    serviceScript.type = "application/ld+json";
-    serviceScript.id = "service-schema-golf";
-    serviceScript.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Private Golf Tours of Scotland",
-      "serviceType": "Golf Tour",
-      "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
-      "areaServed": "Scotland",
-      "description": "Bespoke private golf tours across Scotland's finest championship links. Tee times, caddies, transfers and accommodation all arranged end to end.",
-      "url": "https://ardire.co.uk/services/golf-tours/",
-    });
-    document.head.appendChild(serviceScript);
-    return () => {
-      document.getElementById("faq-schema-golf")?.remove();
-      document.getElementById("service-schema-golf")?.remove();
-    };
   }, []);
 
   return (
@@ -328,7 +262,7 @@ export default function GolfToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Before you tee off.
+              {faqs["services/golf-tours"].heading}
             </h2>
           </m.div>
           <m.div

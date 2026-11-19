@@ -1,0 +1,20 @@
+[
+  {
+    "role": "Front-of-House & Bar Staff",
+    "price": "From £25",
+    "unit": "per hour, plus VAT",
+    "minimum": "Minimum four hours"
+  },
+  {
+    "role": "Butlers & Event Managers",
+    "price": "From £40",
+    "unit": "per hour, plus VAT",
+    "minimum": "Minimum ten hours"
+  },
+  {
+    "role": "Chefs",
+    "price": "On request",
+    "unit": "for private dining and on-site catering",
+    "minimum": null
+  }
+]

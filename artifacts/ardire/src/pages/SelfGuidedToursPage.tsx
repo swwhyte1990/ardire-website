@@ -1,5 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { usePageMeta } from "@/lib/usePageMeta";
+import faqs from "@/data/faqs.json";
 import { useLocation } from "wouter";
 import { m, AnimatePresence } from "framer-motion";
 import { CheckCircle, ChevronDown } from "lucide-react";
@@ -10,40 +11,8 @@ import { setPendingScroll } from "@/lib/pendingScroll";
 import selfGuidedHeroSm from "@/assets/images/self-guided-hero-sm.webp";
 import selfGuidedHero from "@/assets/images/self-guided-hero.webp";
 
-const selfGuidedFaqs = [
-  {
-    q: "What is a self-guided tour?",
-    a: "A trip you travel independently, at your own pace and in your own company. We design the route and book the places to stay and the things worth doing. You set off with everything arranged, and we are a phone call away.",
-  },
-  {
-    q: "What exactly do you arrange?",
-    a: "We build the itinerary and book whatever you would like handled: accommodation, restaurants, tastings, activities and experiences. Each day comes with detailed recommendations. We can also add car hire or a private guide for a day.",
-  },
-  {
-    q: "Do you provide transport or move our luggage?",
-    a: "No. You travel in whatever way suits you, with your own luggage. Our part is the planning and the bookings. If you would like a car or a driver for part of the trip, we can arrange it.",
-  },
-  {
-    q: "How is this different from planning the trip myself?",
-    a: "We know which places are worth your time and which to skip, and how to join them into a route that flows. We hold the right rooms and tables before they fill. The trip is shaped around how you like to travel.",
-  },
-  {
-    q: "Can we still change things once we are travelling?",
-    a: "Yes. The pace and the days are yours, and if something needs to shift while you are away, we are on hand to help rework it. A self-guided trip is meant to leave room for spontaneity.",
-  },
-  {
-    q: "Can we add a driver or guide for part of the trip?",
-    a: "At any time. Some people travel the whole route independently, others like a private guide for a particular day or a driver for a stretch they would rather not drive. We can build that in wherever it suits you.",
-  },
-  {
-    q: "How far ahead should we book?",
-    a: "The earlier the better. The best places to stay and the most popular experiences fill well ahead, especially in summer. Shorter notice is still workable.",
-  },
-  {
-    q: "How much does a self-guided tour cost?",
-    a: "There is no set price, since it depends on your route, how long you travel and what you would like us to book. Tell us what you have in mind and we will put together a proposal, with a sample route to show what a trip can look like.",
-  },
-];
+// The FAQ text is shared with the static HTML and its FAQPage schema.
+const selfGuidedFaqs = faqs["services/self-guided-tours"].items;
 
 const whatWeArrange = [
   "A route and itinerary shaped by what you want to see and how far you like to travel each day",
@@ -61,37 +30,6 @@ export default function SelfGuidedToursPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    const faqScript = document.createElement("script");
-    faqScript.type = "application/ld+json";
-    faqScript.id = "faq-schema-self-guided";
-    faqScript.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": selfGuidedFaqs.map((faq) => ({
-        "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": { "@type": "Answer", "text": faq.a },
-      })),
-    });
-    document.head.appendChild(faqScript);
-    const serviceScript = document.createElement("script");
-    serviceScript.type = "application/ld+json";
-    serviceScript.id = "service-schema-self-guided";
-    serviceScript.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Self-Guided Tours of Scotland",
-      "serviceType": "Self-Guided Tour",
-      "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
-      "areaServed": "Scotland",
-      "description": "Bespoke self-guided tours of Scotland, planned and booked around you. We design the route and make the bookings; you travel independently at your own pace.",
-      "url": "https://ardire.co.uk/services/self-guided-tours/",
-    });
-    document.head.appendChild(serviceScript);
-    return () => {
-      document.getElementById("faq-schema-self-guided")?.remove();
-      document.getElementById("service-schema-self-guided")?.remove();
-    };
   }, []);
 
   function goToEnquiry(e: MouseEvent<HTMLAnchorElement>) {
@@ -282,7 +220,7 @@ export default function SelfGuidedToursPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Before you set off.
+              {faqs["services/self-guided-tours"].heading}
             </h2>
           </m.div>
           <m.div

@@ -1,5 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { usePageMeta } from "@/lib/usePageMeta";
+import faqs from "@/data/faqs.json";
 import { useLocation } from "wouter";
 import { m, AnimatePresence } from "framer-motion";
 import { CheckCircle, ChevronDown } from "lucide-react";
@@ -19,48 +20,8 @@ const whatWeHandle = [
   "Post-event debrief and close-out",
 ];
 
-const eventManagementFaqs = [
-  {
-    q: "What does your event management service include?",
-    a: "We take on the whole event, from the first idea to the last guest leaving. That covers the concept, the venue, the suppliers, the catering, the production and styling, the guest arrangements and the running of it on the day. One team leads all of it.",
-  },
-  {
-    q: "What kinds of events do you manage?",
-    a: "A wide range, from private dinners and celebrations to corporate functions, product launches, awards evenings, gala dinners and charity events. Each is planned around its purpose and its guests.",
-  },
-  {
-    q: "What is the difference between event management and event staffing?",
-    a: "Event management means we run the whole event: the planning, the suppliers, the production and the day itself. Event staffing means we provide the people (front-of-house and hospitality) for an event you or someone else is running. Many clients take both.",
-  },
-  {
-    q: "How large or small an event can you manage?",
-    a: "Anything from a private dinner for twenty to a corporate gathering for several hundred. The care is the same at either size.",
-  },
-  {
-    q: "Do you source the venue, or work with one we already have?",
-    a: "Either. If you need a venue, we find and secure it, whether a country estate, a city hotel or somewhere unexpected. If the venue is already decided, or you came to us through one, we work within it and manage everything around it.",
-  },
-  {
-    q: "Who runs the event on the day?",
-    a: "A dedicated event producer from our team leads it throughout, and the staff and suppliers report to them. You are free to be a guest at your own event.",
-  },
-  {
-    q: "Do you manage the suppliers, catering and production as well?",
-    a: "Yes, all of it under one roof: catering, entertainment, the technical and audiovisual side, the styling and décor, and the timing that holds it together. You deal with us, and we deal with everyone else.",
-  },
-  {
-    q: "Can you manage events beyond Scotland?",
-    a: "Scotland is our home and where most of our events take place. Where an occasion calls for it, we can manage events beyond Scotland too.",
-  },
-  {
-    q: "How far ahead should we start planning?",
-    a: "As early as you can, especially for sought-after venues and busy times of year, which book up well ahead. We can also work to shorter timelines.",
-  },
-  {
-    q: "How much does event management cost?",
-    a: "There is no set price. It depends on the scale, the venue and what the event involves. Tell us about the occasion and we will send a detailed proposal, costed in full, before anything is committed.",
-  },
-];
+// The FAQ text is shared with the static HTML and its FAQPage schema.
+const eventManagementFaqs = faqs["services/event-management"].items;
 
 export default function EventManagementPage() {
   usePageMeta("services/event-management");
@@ -69,37 +30,6 @@ export default function EventManagementPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    const faqScript = document.createElement("script");
-    faqScript.type = "application/ld+json";
-    faqScript.id = "faq-schema-event-management";
-    faqScript.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": eventManagementFaqs.map((faq) => ({
-        "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": { "@type": "Answer", "text": faq.a },
-      })),
-    });
-    document.head.appendChild(faqScript);
-    const serviceScript = document.createElement("script");
-    serviceScript.type = "application/ld+json";
-    serviceScript.id = "service-schema-event-management";
-    serviceScript.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Full-Service Event Management Scotland",
-      "serviceType": "Event Management",
-      "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
-      "areaServed": "Scotland",
-      "description": "Full-service event management across Scotland. Árdíre plans, produces and runs your event from brief to close, with one team accountable for the whole thing.",
-      "url": "https://ardire.co.uk/services/event-management/",
-    });
-    document.head.appendChild(serviceScript);
-    return () => {
-      document.getElementById("faq-schema-event-management")?.remove();
-      document.getElementById("service-schema-event-management")?.remove();
-    };
   }, []);
 
   function goToEnquiry(e: MouseEvent<HTMLAnchorElement>) {
@@ -289,7 +219,7 @@ export default function EventManagementPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Planning an event with us.
+              {faqs["services/event-management"].heading}
             </h2>
           </m.div>
           <m.div

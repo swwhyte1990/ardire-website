@@ -1,5 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { usePageMeta } from "@/lib/usePageMeta";
+import faqs from "@/data/faqs.json";
 import { useLocation } from "wouter";
 import { m, AnimatePresence } from "framer-motion";
 import { CheckCircle, ChevronDown } from "lucide-react";
@@ -17,40 +18,8 @@ const howWeCanHelp = [
   "Transport for groups, occasions and corporate days",
 ];
 
-const chauffeurFaqs = [
-  {
-    q: "What areas of Scotland do you cover?",
-    a: "We are based in Glasgow and cover the whole of Scotland, from the cities to the Highlands and islands. That might be a short transfer in town or a day's drive across the country.",
-  },
-  {
-    q: "What kind of vehicles do you provide?",
-    a: "A car to suit your party: an executive saloon for one or two, a larger luxury car or SUV, or a people carrier for a group with luggage. Tell us how many are travelling and what you have planned, and we will match the car to it.",
-  },
-  {
-    q: "How many passengers can you take?",
-    a: "Anything from a single passenger to a group of seven, depending on the vehicle. For larger parties, we can arrange more than one car so everyone travels together.",
-  },
-  {
-    q: "Will you meet us at the airport?",
-    a: "Yes. We meet you on arrival, track your flight in case it lands early or late, and see you and your luggage to the car.",
-  },
-  {
-    q: "Can we hire a car and driver for a full day, or longer?",
-    a: "Yes. Book a car and driver for a day or for several, and explore at your own pace. Your driver takes you wherever you would like to go.",
-  },
-  {
-    q: "Do you provide transfers for golf trips and events?",
-    a: "Yes. We get you between courses, dinners and events comfortably and on time, early tee times included. We drive as part of our golf tours and event services, or for a trip you are running yourself.",
-  },
-  {
-    q: "What is included?",
-    a: "Your driver, the vehicle, fuel and parking, plus meet and greet and flight tracking on airport pickups. Water and refreshments are in the car.",
-  },
-  {
-    q: "How far ahead should we book?",
-    a: "Early, if you can, especially in summer and around major events, when cars are in demand. Shorter notice is often possible, so do ask.",
-  },
-];
+// The FAQ text is shared with the static HTML and its FAQPage schema.
+const chauffeurFaqs = faqs["services/private-chauffeur"].items;
 
 export default function PrivateChauffeurPage() {
   usePageMeta("services/private-chauffeur");
@@ -59,37 +28,6 @@ export default function PrivateChauffeurPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    const faqScript = document.createElement("script");
-    faqScript.type = "application/ld+json";
-    faqScript.id = "faq-schema-private-chauffeur";
-    faqScript.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": chauffeurFaqs.map((faq) => ({
-        "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": { "@type": "Answer", "text": faq.a },
-      })),
-    });
-    document.head.appendChild(faqScript);
-    const serviceScript = document.createElement("script");
-    serviceScript.type = "application/ld+json";
-    serviceScript.id = "service-schema-private-chauffeur";
-    serviceScript.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Private Chauffeur Service Scotland",
-      "serviceType": "Chauffeur Service",
-      "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
-      "areaServed": "Scotland",
-      "description": "Private chauffeur service across Scotland. Airport transfers, days out and group transport, driven by professionals who know the country.",
-      "url": "https://ardire.co.uk/services/private-chauffeur/",
-    });
-    document.head.appendChild(serviceScript);
-    return () => {
-      document.getElementById("faq-schema-private-chauffeur")?.remove();
-      document.getElementById("service-schema-private-chauffeur")?.remove();
-    };
   }, []);
 
   function goToEnquiry(e: MouseEvent<HTMLAnchorElement>) {
@@ -265,7 +203,7 @@ export default function PrivateChauffeurPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              Before you book a car.
+              {faqs["services/private-chauffeur"].heading}
             </h2>
           </m.div>
           <m.div

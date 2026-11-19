@@ -1,5 +1,6 @@
 import { useEffect, useState, type MouseEvent } from "react";
 import { usePageMeta } from "@/lib/usePageMeta";
+import faqs from "@/data/faqs.json";
 import { useLocation } from "wouter";
 import { m, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -23,44 +24,8 @@ const experiences = [
   "Dinners with a real sense of occasion, a gala evening and a ceilidh among them",
 ];
 
-const corpFaqs = [
-  {
-    q: "How far in advance should we start planning?",
-    a: "The more notice, the more choice, especially for the most sought-after places in summer. For a trip of three days or more, we recommend coming to us four to six months ahead. Shorter timelines are often workable too.",
-  },
-  {
-    q: "How many people can you accommodate?",
-    a: "We work with groups of all sizes, from small leadership teams to company-wide reward trips. Group size shapes the choice of venues and transport, and we will say early if something suits a different scale.",
-  },
-  {
-    q: "Can the trip be themed around our company or its goals?",
-    a: "Yes. If there is a theme, a goal or a message you want the trip to carry, we build it into the days themselves: the welcome, the choice of activities, the way evenings are framed, and the small details that link one day to the next.",
-  },
-  {
-    q: "Do you handle everything once the group lands?",
-    a: "Yes. From the airport welcome to the final transfer home, we plan and run every part of the trip. Flights to Scotland are arranged separately.",
-  },
-  {
-    q: "How does pricing work for a corporate trip?",
-    a: "There is no set figure. We work out a cost per person from the group size, the experiences you choose, where you stay and how you travel. Once we understand your brief, we send a full, itemised proposal before anything is confirmed.",
-  },
-  {
-    q: "Can you accommodate a mixed group with different interests?",
-    a: "Yes. We plan the days so everyone has something they would choose to do. Distillery visits, Highland activities, wildlife, walking, spa time and cultural experiences can all run side by side.",
-  },
-  {
-    q: "Can you arrange photography, video or branded elements for the trip?",
-    a: "Yes. We can arrange a photographer for key moments, branded welcome gifts, printed materials and other touches that make the trip feel like your company's own.",
-  },
-  {
-    q: "What if our numbers change between booking and travel?",
-    a: "We build in flexibility wherever we can and manage changes as they come. Some elements, exclusive-use venues especially, are harder to change at short notice, so we set out what is fixed at the start.",
-  },
-  {
-    q: "Do you work with incentive travel agencies as well as directly with companies?",
-    a: "Yes, we work both ways. If you are coming to us through an agency or working with a travel manager, we are happy to work within that structure. If you are coming to us directly, we handle everything in house from brief to delivery.",
-  },
-];
+// The FAQ text is shared with the static HTML and its FAQPage schema.
+const corpFaqs = faqs["services/corporate-incentives"].items;
 
 export default function CorporateIncentivesPage() {
   usePageMeta("services/corporate-incentives");
@@ -70,37 +35,6 @@ export default function CorporateIncentivesPage() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
-    const faqScript = document.createElement("script");
-    faqScript.type = "application/ld+json";
-    faqScript.id = "faq-schema-corp";
-    faqScript.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": corpFaqs.map((faq) => ({
-        "@type": "Question",
-        "name": faq.q,
-        "acceptedAnswer": { "@type": "Answer", "text": faq.a },
-      })),
-    });
-    document.head.appendChild(faqScript);
-    const serviceScript = document.createElement("script");
-    serviceScript.type = "application/ld+json";
-    serviceScript.id = "service-schema-corp";
-    serviceScript.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Corporate Incentive Trips in Scotland",
-      "serviceType": "Corporate Incentive Travel",
-      "provider": { "@type": "LocalBusiness", "name": "The Árdíre Group" },
-      "areaServed": "Scotland",
-      "description": "Bespoke corporate incentive trips across Scotland. Golf, whisky, castles and Highland experiences, designed around your goals and run end to end.",
-      "url": "https://ardire.co.uk/services/corporate-incentives/",
-    });
-    document.head.appendChild(serviceScript);
-    return () => {
-      document.getElementById("faq-schema-corp")?.remove();
-      document.getElementById("service-schema-corp")?.remove();
-    };
   }, []);
 
   function goToEnquiry(e: MouseEvent<HTMLAnchorElement>) {
@@ -407,7 +341,7 @@ export default function CorporateIncentivesPage() {
           >
             <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">FAQs</p>
             <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
-              What companies ask us.
+              {faqs["services/corporate-incentives"].heading}
             </h2>
           </m.div>
           <m.div

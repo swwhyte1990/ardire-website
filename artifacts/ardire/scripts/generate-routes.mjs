@@ -47,6 +47,82 @@ function buildJourneysHtml(route) {
   return `<h2 style="${h2}">Sample journeys</h2>${body}<p style="font-size:0.95rem;margin:1rem 0 0">Price on enquiry. Every journey is shaped around you.</p>`;
 }
 
+// Page-specific structured data. Each block is marked data-page-schema so the
+// app can drop it when the visitor moves to another page in the browser; the
+// sitewide TravelAgency block in index.html is left alone.
+function ldScript(json) {
+  return `    <script type="application/ld+json" data-page-schema>\n${json}\n    </script>\n`;
+}
+// "<" escaped so copy can never close the script element early.
+const toJson = (data) => JSON.stringify(data, null, 2).replace(/</g, '\\u003c');
+
+// The same files the React pages read, so schema and page cannot disagree.
+const readData = (name) => JSON.parse(readFileSync(join(__dirname, `../src/data/${name}`), 'utf8'));
+const FAQS = readData('faqs.json');
+const SERVICES = readData('serviceSchema.json');
+const STAFFING_PRICES = readData('staffingPrices.json');
+const PROVIDER = { '@type': 'TravelAgency', name: 'The \u00c1rd\u00edre Group', url: 'https://ardire.co.uk/' };
+
+// Offers come only from the price cards shown on the Event Staffing page: a
+// "From £N" price per hour. Cards without a figure ("On request") are left out.
+function staffingOffers() {
+  return STAFFING_PRICES.flatMap((card) => {
+    const m = card.price.match(/^From £(\d+(?:\.\d+)?)$/);
+    if (!m) return [];
+    if (!/^per hour/.test(card.unit)) throw new Error(`generate-routes: unexpected staffing unit "${card.unit}"`);
+    return [{
+      '@type': 'Offer',
+      name: card.role,
+      priceCurrency: 'GBP',
+      priceSpecification: {
+        '@type': 'UnitPriceSpecification',
+        minPrice: Number(m[1]),
+        priceCurrency: 'GBP',
+        unitCode: 'HUR',
+        unitText: 'per hour',
+        valueAddedTaxIncluded: !/plus VAT/.test(card.unit),
+      },
+    }];
+  });
+}
+
+function buildServiceJsonLd(route) {
+  const svc = SERVICES[route.path];
+  if (!svc) return '';
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: svc.name,
+    serviceType: svc.serviceType,
+    description: svc.description,
+    provider: PROVIDER,
+    areaServed: { '@type': 'Country', name: 'Scotland' },
+    url: `https://ardire.co.uk/${route.path}/`,
+  };
+  if (route.path === 'services/event-staffing') data.offers = staffingOffers();
+  return ldScript(toJson(data));
+}
+
+function buildFaqJsonLd(route) {
+  const faq = FAQS[route.path];
+  if (!faq) return '';
+  return ldScript(toJson({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.items.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  }));
+}
+
+// The same questions and answers as visible text in the static fallback, so the
+// raw HTML says what the FAQPage schema says.
+function buildFaqHtml(route) {
+  const faq = FAQS[route.path];
+  if (!faq) return '';
+  return `<section style="margin-top:2.5rem"><h2 style="font-family:Georgia,serif;font-size:1.5rem;font-weight:500;margin:0 0 1rem">${esc(faq.heading)}</h2>` +
+    faq.items.map((f) => `<h3 style="font-family:Georgia,serif;font-size:1.1rem;font-weight:500;margin:1.25rem 0 0.4rem">${esc(f.q)}</h3><p style="font-size:1rem;margin:0">${esc(f.a)}</p>`).join('') +
+    `</section>`;
+}
+
 function buildJourneysJsonLd(route) {
   const list = routeJourneys(route);
   if (!list.length) return '';
@@ -73,7 +149,7 @@ function buildJourneysJsonLd(route) {
   });
   // "<" escaped so story text can never close the script element early.
   const json = JSON.stringify(trips.length === 1 ? trips[0] : trips, null, 2).replace(/</g, '\\u003c');
-  return `    <script type="application/ld+json">\n${json}\n    </script>\n`;
+  return ldScript(json);
 }
 
 // Images are imported from src/assets and content-hashed by Vite, so their built
@@ -134,7 +210,7 @@ function buildPageBlock(route) {
 
   const navHtml = `<nav style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid rgba(197,163,102,0.25);font-size:0.95rem"><a href="https://ardire.co.uk/" style="${linkStyle}">Árdíre Home</a>${serviceLinksHtml}${route.path !== 'privacy' ? `<a href="https://ardire.co.uk/privacy/" style="${linkStyle}">Privacy Policy</a>` : ''}<a href="https://ardire.co.uk/#enquiry" style="color:#c5a366;text-decoration:none;display:inline-block;padding:0.25rem 0">Contact Árdíre</a></nav>`;
 
-  return `<div data-page-content style="max-width:760px;margin:0 auto;padding:3rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7">${h1Html}${paragraphsHtml}${highlightsHtml}${buildJourneysHtml(route)}${navHtml}</div>`;
+  return `<div data-page-content style="max-width:760px;margin:0 auto;padding:3rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7">${h1Html}${paragraphsHtml}${highlightsHtml}${buildJourneysHtml(route)}${buildFaqHtml(route)}${navHtml}</div>`;
 }
 
 const routes = [
@@ -395,12 +471,12 @@ for (const route of routes) {
       : ''
   );
 
-  const journeysLd = buildJourneysJsonLd(route);
-  if (journeysLd) {
+  const pageLd = buildServiceJsonLd(route) + buildFaqJsonLd(route) + buildJourneysJsonLd(route);
+  if (pageLd) {
     if (!html.includes('</head>')) {
-      throw new Error(`generate-routes: no </head> to attach journey structured data for ${route.path}`);
+      throw new Error(`generate-routes: no </head> to attach structured data for ${route.path}`);
     }
-    html = html.replace('</head>', `${journeysLd}  </head>`);
+    html = html.replace('</head>', `${pageLd}  </head>`);
   }
 
   writeFileSync(join(routeDir, 'index.html'), html);

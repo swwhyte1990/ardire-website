@@ -17,6 +17,9 @@ export function usePageMeta(path: PagePath) {
     document.title = pageMeta[path].title;
     desc?.setAttribute("content", pageMeta[path].description);
     return () => {
+      // Structured data written into the static HTML describes the page it was
+      // served with; once the visitor moves on in the browser, it no longer applies.
+      document.querySelectorAll("script[data-page-schema]").forEach((el) => el.remove());
       document.title = pageMeta[""].title;
       desc?.setAttribute("content", pageMeta[""].description);
     };

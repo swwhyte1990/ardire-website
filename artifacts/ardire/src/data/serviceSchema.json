@@ -1,0 +1,37 @@
+{
+  "services/luxury-tours": {
+    "name": "Private Luxury Tours of Scotland",
+    "serviceType": "Luxury Tour",
+    "description": "Bespoke private tours of Scotland with a dedicated travel concierge. We plan, arrange and look after every part of your trip."
+  },
+  "services/golf-tours": {
+    "name": "Private Golf Tours of Scotland",
+    "serviceType": "Golf Tour",
+    "description": "Bespoke private golf tours across Scotland's finest championship links. Tee times, caddies, transfers and accommodation all arranged end to end."
+  },
+  "services/private-chauffeur": {
+    "name": "Private Chauffeur Service Scotland",
+    "serviceType": "Chauffeur Service",
+    "description": "Private chauffeur service across Scotland. Airport transfers, days out and group transport, driven by professionals who know the country."
+  },
+  "services/corporate-incentives": {
+    "name": "Corporate Incentive Trips in Scotland",
+    "serviceType": "Corporate Incentive Travel",
+    "description": "Bespoke corporate incentive trips across Scotland. Golf, whisky, castles and Highland experiences, designed around your goals and run end to end."
+  },
+  "services/self-guided-tours": {
+    "name": "Self-Guided Tours of Scotland",
+    "serviceType": "Self-Guided Tour",
+    "description": "Bespoke self-guided tours of Scotland, planned and booked around you. We design the route and make the bookings; you travel independently at your own pace."
+  },
+  "services/event-staffing": {
+    "name": "Professional Event Staffing Scotland",
+    "serviceType": "Event Staffing",
+    "description": "Professional event staff for occasions across Scotland. Waiting staff, butlers and hospitality teams, briefed, well presented and ready to serve."
+  },
+  "services/event-management": {
+    "name": "Full-Service Event Management Scotland",
+    "serviceType": "Event Management",
+    "description": "Full-service event management across Scotland. Árdíre plans, produces and runs your event from brief to close, with one team accountable for the whole thing."
+  }
+}
