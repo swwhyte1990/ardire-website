@@ -269,7 +269,7 @@ export function Contact() {
                   </Button>
                   <p className="font-sans text-xs text-muted-foreground text-center">
                     We use your details only to reply to your enquiry. See our{" "}
-                    <Link href="/privacy" className="text-primary underline underline-offset-2 hover:text-primary/80">
+                    <Link href="/privacy/" className="text-primary underline underline-offset-2 hover:text-primary/80">
                       privacy policy
                     </Link>
                     .

@@ -17,7 +17,7 @@ export function Services() {
 
         {/* Travel & Tours */}
         <Link
-          href="/travel"
+          href="/travel/"
           onClick={toTop}
           className="group relative block w-full h-[300px] md:h-[360px] overflow-hidden text-left"
         >
@@ -53,7 +53,7 @@ export function Services() {
 
         {/* Events & Hospitality */}
         <Link
-          href="/events"
+          href="/events/"
           onClick={toTop}
           className="group relative block w-full h-[300px] md:h-[360px] overflow-hidden text-left"
         >

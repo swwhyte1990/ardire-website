@@ -53,7 +53,7 @@ export default function TravelPage() {
   }, []);
 
   function goToService(slug: string) {
-    navigate(`/services/${slug}`);
+    navigate(`/services/${slug}/`);
     window.scrollTo({ top: 0, behavior: "auto" });
   }
 
@@ -122,7 +122,7 @@ export default function TravelPage() {
             {travelServices.map((service, i) => (
               <m.a
                 key={service.slug}
-                href={`/services/${service.slug}`}
+                href={`/services/${service.slug}/`}
                 onClick={(e) => {
                   if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
                   e.preventDefault();
