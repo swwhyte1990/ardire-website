@@ -1,14 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Deep bottle green background matching brand -->
-  <rect width="64" height="64" fill="#081a10"/>
-  <!-- Gold serif monogram -->
-  <text
-    x="32"
-    y="47"
-    font-family="Georgia, 'Times New Roman', serif"
-    font-size="40"
-    font-weight="400"
-    text-anchor="middle"
-    fill="#c4921e"
-  >Á</text>
+  <!-- Brand green, lighter than the page background so the icon reads as green in a tab -->
+  <rect width="64" height="64" rx="13" fill="#174f38"/>
+  <!-- Gold "Á" drawn as an outline from the bold Cinzel the site uses, so it looks the same on every device -->
+  <path transform="translate(15.11 54.00) scale(0.04711 -0.04711)" fill="#edc55e" d="M354 720 656 60Q671 36 690 25Q714 10 737 10H745V0H427V10H436Q456 10 471.0 26.5Q486 43 474 73L425 196H190L138 69Q132 52 136 39Q141 25 153.0 17.5Q165 10 177 10H186V0H-28V10H-19Q4 10 29 25Q48 36 62 60L296 589Q299 595 306.5 611.5Q314 628 322.5 649.0Q331 670 338.0 689.5Q345 709 345 720ZM208 238H408L310 484ZM335 769Q352 798 377.0 829.0Q402 860 429.5 887.0Q457 914 478 934Q505 919 521.0 899.0Q537 879 547 852Q517 833 481.5 815.5Q446 798 410.5 784.0Q375 770 342 762Z"/>
 </svg>
