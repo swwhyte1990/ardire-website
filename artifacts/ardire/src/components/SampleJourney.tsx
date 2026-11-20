@@ -76,6 +76,38 @@ function RouteMap({ journey, active }: { journey: Journey; active: number }) {
   // Sizes scale with the zoom so dots and labels look the same on every journey.
   const u = view.w / 300;
 
+  // Stops that sit close together would print their names over one another. Each
+  // label tries its own side at its dot's height first, then the other side, then a
+  // line above or below, and takes the first spot clear of the labels already placed
+  // and of the day's dots. A label moved off its dot's height gets a short leader.
+  const placed = useMemo(() => {
+    type Box = { x0: number; x1: number; y0: number; y1: number };
+    const hit = (a: Box, b: Box) => a.x0 < b.x1 && a.x1 > b.x0 && a.y0 < b.y1 && a.y1 > b.y0;
+    const dots = labelled.map((st) => {
+      const { x, y } = project(st.lon, st.lat);
+      return { x0: x - 5 * u, x1: x + 5 * u, y0: y - 5 * u, y1: y + 5 * u };
+    });
+    const taken: Box[] = [];
+    return labelled.map((st, i) => {
+      const { x, y } = project(st.lon, st.lat);
+      const w = (4 + st.name.length * 6.6) * u;
+      const pref = sides.get(st.name) ?? "right";
+      const other = pref === "right" ? "left" : "right";
+      for (const dy of [0, 11 * u, -11 * u, 22 * u, -22 * u]) {
+        for (const side of [pref, other] as const) {
+          const x0 = side === "right" ? x + 9 * u : x - 9 * u - w;
+          const box = { x0, x1: x0 + w, y0: y + dy - 6 * u, y1: y + dy + 8 * u };
+          // Keep the label inside the part of the map on screen.
+          if (box.x0 < view.x + 2 * u || box.x1 > view.x + view.w - 2 * u) continue;
+          if (taken.some((t) => hit(t, box)) || dots.some((d, j) => j !== i && hit(d, box))) continue;
+          taken.push(box);
+          return { side, dy };
+        }
+      }
+      return { side: pref, dy: 0 };
+    });
+  }, [labelled, sides, u, view]);
+
   return (
     <svg
       viewBox={`${view.x.toFixed(1)} ${view.y.toFixed(1)} ${view.w.toFixed(1)} ${view.h.toFixed(1)}`}
@@ -111,13 +143,21 @@ function RouteMap({ journey, active }: { journey: Journey; active: number }) {
       })}
       {labelled.map((s, i) => {
         const { x, y } = project(s.lon, s.lat);
-        const right = sides.get(s.name) !== "left";
+        const { side, dy } = placed[i];
+        const right = side === "right";
         return (
           <g key={`${active}-${s.name}-${i}`}>
+            {dy !== 0 && (
+              <line
+                x1={right ? x + 4 * u : x - 4 * u} y1={y}
+                x2={right ? x + 8 * u : x - 8 * u} y2={y + dy}
+                className="stroke-primary/60" strokeWidth={0.9 * u}
+              />
+            )}
             <circle cx={x} cy={y} r={5 * u} className="fill-primary stroke-background" strokeWidth={1.5 * u} />
             <text
               x={right ? x + 9 * u : x - 9 * u}
-              y={y + 4 * u}
+              y={y + dy + 4 * u}
               textAnchor={right ? "start" : "end"}
               className="fill-foreground font-sans"
               style={{ fontSize: 12 * u, paintOrder: "stroke" }}

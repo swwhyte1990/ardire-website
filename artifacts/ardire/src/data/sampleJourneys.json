@@ -1468,5 +1468,1471 @@
         ]
       }
     ]
+  },
+  "abbeys-and-border-country": {
+    "id": "abbeys-and-border-country",
+    "service": "self-guided-tours",
+    "duration": "Three Days",
+    "title": "Abbeys and Border Country",
+    "story": [
+      "The Borders are a short drive from Edinburgh and a different country. For centuries this was the frontier, burned by English armies and raided by reiving families, and the great abbeys David I founded in the twelfth century were wrecked and rebuilt more than once.",
+      "Three days is enough to follow that story from Rosslyn Chapel to the Tweed. Sir Walter Scott fell for this valley and turned a farm into a fantasy of a house, and the quiet roads between the abbeys, the houses and the river are made for taking slowly."
+    ],
+    "start": {
+      "name": "Edinburgh Airport",
+      "lon": -3.37,
+      "lat": 55.95,
+      "label": "left"
+    },
+    "days": [
+      {
+        "title": "Rosslyn and the Tweed valley",
+        "highlights": [
+          "Rosslyn Chapel, founded by William Sinclair in the 1450s",
+          "Peebles, and a first look at the Tweed",
+          "Traquair House, where brewing goes back to 1739 (March to November)"
+        ],
+        "onTheRoad": "The Bear Gates at Traquair have been shut for over two centuries. Legend says they will not reopen until a Stuart king returns. The record suggests they were closed in 1796, after a countess died.",
+        "stops": [
+          {
+            "name": "Rosslyn Chapel",
+            "lon": -3.1603,
+            "lat": 55.8554,
+            "label": "left"
+          },
+          {
+            "name": "Peebles",
+            "lon": -3.19,
+            "lat": 55.65,
+            "label": "left"
+          },
+          {
+            "name": "Traquair House",
+            "lon": -3.0685,
+            "lat": 55.6197
+          }
+        ],
+        "route": [
+          [-3.369, 55.948],
+          [-3.366, 55.938],
+          [-3.322, 55.94],
+          [-3.267, 55.9],
+          [-3.203, 55.897],
+          [-3.171, 55.879],
+          [-3.178, 55.869],
+          [-3.158, 55.856],
+          [-3.19, 55.852],
+          [-3.222, 55.786],
+          [-3.204, 55.747],
+          [-3.211, 55.684],
+          [-3.192, 55.649],
+          [-3.102, 55.643],
+          [-3.099, 55.63],
+          [-3.068, 55.62]
+        ]
+      },
+      {
+        "title": "Abbeys and Walter Scott",
+        "highlights": [
+          "Abbotsford, the house Sir Walter Scott built on a farm nicknamed Clarty Hole",
+          "Melrose Abbey, where the heart of Robert the Bruce lies",
+          "Dryburgh Abbey, and Scott's grave"
+        ],
+        "onTheRoad": "The heart of Robert the Bruce lies at Melrose. A lead casket found under the Chapter House was reburied there in 1998.",
+        "stops": [
+          {
+            "name": "Abbotsford",
+            "lon": -2.7845,
+            "lat": 55.5992,
+            "label": "left"
+          },
+          {
+            "name": "Melrose",
+            "lon": -2.7235,
+            "lat": 55.5986
+          },
+          {
+            "name": "Dryburgh Abbey",
+            "lon": -2.6479,
+            "lat": 55.5806
+          }
+        ],
+        "route": [
+          [-3.068, 55.62],
+          [-2.966, 55.627],
+          [-2.877, 55.605],
+          [-2.861, 55.584],
+          [-2.81, 55.579],
+          [-2.783, 55.599],
+          [-2.672, 55.596],
+          [-2.675, 55.607],
+          [-2.653, 55.61],
+          [-2.648, 55.58]
+        ]
+      },
+      {
+        "title": "Jedburgh, Mellerstain and Kelso",
+        "highlights": [
+          "Jedburgh Abbey, where Alexander III married in 1285",
+          "Mellerstain House and its Robert Adam library (April to September)",
+          "Floors Castle at Kelso, beside the Tweed, then back to Edinburgh for the last night"
+        ],
+        "onTheRoad": "Alexander III married Yolande de Dreux at Jedburgh in October 1285. His death the following year plunged Scotland into the crisis that led to the Wars of Independence.",
+        "stops": [
+          {
+            "name": "Jedburgh Abbey",
+            "lon": -2.5543,
+            "lat": 55.4781
+          },
+          {
+            "name": "Mellerstain House",
+            "lon": -2.5409,
+            "lat": 55.6514,
+            "label": "left"
+          },
+          {
+            "name": "Floors Castle",
+            "lon": -2.4357,
+            "lat": 55.5991
+          },
+          {
+            "name": "Edinburgh",
+            "lon": -3.19,
+            "lat": 55.95
+          }
+        ],
+        "route": [
+          [-2.648, 55.58],
+          [-2.615, 55.584],
+          [-2.647, 55.562],
+          [-2.571, 55.505],
+          [-2.546, 55.504],
+          [-2.552, 55.478],
+          [-2.546, 55.504],
+          [-2.572, 55.505],
+          [-2.648, 55.566],
+          [-2.491, 55.623],
+          [-2.546, 55.653],
+          [-2.431, 55.6],
+          [-2.534, 55.64],
+          [-2.57, 55.693],
+          [-2.662, 55.724],
+          [-2.717, 55.718],
+          [-2.765, 55.763],
+          [-2.83, 55.789],
+          [-2.853, 55.824],
+          [-2.915, 55.839],
+          [-3, 55.893],
+          [-3.064, 55.914],
+          [-3.093, 55.9],
+          [-3.19, 55.95]
+        ]
+      },
+      {
+        "title": "Departure",
+        "departure": true,
+        "highlights": [
+          "Hand back the car at Edinburgh Airport for your flight"
+        ],
+        "stops": [
+          {
+            "name": "Edinburgh Airport",
+            "lon": -3.37,
+            "lat": 55.95,
+            "label": "left"
+          }
+        ],
+        "route": [
+          [-3.19, 55.95],
+          [-3.359, 55.936],
+          [-3.369, 55.948]
+        ]
+      }
+    ]
+  },
+  "perthshire-and-angus": {
+    "id": "perthshire-and-angus",
+    "service": "self-guided-tours",
+    "duration": "Four Days",
+    "title": "Perthshire and Angus",
+    "story": [
+      "Perthshire is where Scotland crowned its kings, where the Jacobites won at Killiecrankie in 1689, and where Victorian visitors came for the scenery once Queen Victoria had praised it in 1842.",
+      "Four days lets you take it in order: Scone and the river at Dunkeld, the pass and Blair Castle, Wade's bridge at Aberfeldy and an ancient yew, then east to Glamis and the V&A in Dundee."
+    ],
+    "start": {
+      "name": "Edinburgh Airport",
+      "lon": -3.37,
+      "lat": 55.95,
+      "label": "left"
+    },
+    "days": [
+      {
+        "title": "Scone and Dunkeld",
+        "highlights": [
+          "Scone Palace and Moot Hill, where the Kings of Scots were crowned (April to October)",
+          "Along the Tay to Dunkeld and Birnam",
+          "An afternoon by the river, and a country house near Dunkeld for the night"
+        ],
+        "onTheRoad": "On Moot Hill the Kings of Scots were inaugurated on the Stone of Destiny. Robert the Bruce was crowned at Scone in 1306, and the last coronation here was Charles II's in 1651.",
+        "stops": [
+          {
+            "name": "Scone Palace",
+            "lon": -3.4096,
+            "lat": 56.4177,
+            "label": "left"
+          },
+          {
+            "name": "Dunkeld",
+            "lon": -3.5866,
+            "lat": 56.5649
+          }
+        ],
+        "route": [
+          [-3.369, 55.948],
+          [-3.359, 55.936],
+          [-3.402, 55.939],
+          [-3.422, 55.955],
+          [-3.381, 55.976],
+          [-3.423, 55.986],
+          [-3.406, 56.043],
+          [-3.388, 56.054],
+          [-3.402, 56.088],
+          [-3.389, 56.105],
+          [-3.394, 56.15],
+          [-3.438, 56.214],
+          [-3.43, 56.228],
+          [-3.377, 56.253],
+          [-3.398, 56.278],
+          [-3.372, 56.316],
+          [-3.397, 56.324],
+          [-3.398, 56.352],
+          [-3.423, 56.367],
+          [-3.404, 56.384],
+          [-3.419, 56.386],
+          [-3.424, 56.401],
+          [-3.405, 56.42],
+          [-3.429, 56.426],
+          [-3.417, 56.435],
+          [-3.476, 56.431],
+          [-3.52, 56.533],
+          [-3.586, 56.565]
+        ]
+      },
+      {
+        "title": "Pitlochry, Killiecrankie and Blair Castle",
+        "highlights": [
+          "The dam at Pitlochry and its salmon ladder",
+          "The pass at Killiecrankie, where the Jacobites charged in 1689",
+          "Blair Castle, the last castle in the British Isles to be besieged (April to October)"
+        ],
+        "onTheRoad": "At Killiecrankie on 27 July 1689 the Jacobite Highlanders fired one volley, threw down their muskets and charged. The government army broke in minutes, but their leader, Viscount Dundee, was fatally wounded.",
+        "stops": [
+          {
+            "name": "Pitlochry",
+            "lon": -3.7367,
+            "lat": 56.7032,
+            "label": "left"
+          },
+          {
+            "name": "Killiecrankie",
+            "lon": -3.7756,
+            "lat": 56.7466,
+            "label": "left"
+          },
+          {
+            "name": "Blair Castle",
+            "lon": -3.8505,
+            "lat": 56.7646
+          }
+        ],
+        "route": [
+          [-3.586, 56.565],
+          [-3.622, 56.565],
+          [-3.645, 56.636],
+          [-3.714, 56.696],
+          [-3.762, 56.712],
+          [-3.773, 56.746],
+          [-3.851, 56.764]
+        ]
+      },
+      {
+        "title": "Aberfeldy, Fortingall and Drummond",
+        "highlights": [
+          "Wade's Bridge at Aberfeldy",
+          "The Fortingall Yew, which may be anything from 1,500 to 9,000 years old",
+          "Drummond Castle Gardens, laid out as a giant saltire (May to October)"
+        ],
+        "onTheRoad": "In 1769 the trunk of the Fortingall Yew measured 52 feet round, before souvenir hunters cut pieces off to make drinking cups.",
+        "stops": [
+          {
+            "name": "Aberfeldy",
+            "lon": -3.8689,
+            "lat": 56.62,
+            "label": "left"
+          },
+          {
+            "name": "Fortingall Yew",
+            "lon": -4.0497,
+            "lat": 56.5978,
+            "label": "left"
+          },
+          {
+            "name": "Drummond Castle Gardens",
+            "lon": -3.825,
+            "lat": 56.3319
+          }
+        ],
+        "route": [
+          [-3.851, 56.764],
+          [-3.774, 56.747],
+          [-3.749, 56.7],
+          [-3.69, 56.678],
+          [-3.668, 56.65],
+          [-3.764, 56.66],
+          [-3.865, 56.619],
+          [-3.88, 56.626],
+          [-3.968, 56.613],
+          [-3.999, 56.618],
+          [-4.051, 56.598],
+          [-4, 56.618],
+          [-3.968, 56.613],
+          [-3.88, 56.626],
+          [-3.833, 56.611],
+          [-3.836, 56.597],
+          [-3.78, 56.561],
+          [-3.758, 56.524],
+          [-3.788, 56.51],
+          [-3.807, 56.462],
+          [-3.763, 56.432],
+          [-3.802, 56.413],
+          [-3.808, 56.389],
+          [-3.853, 56.366],
+          [-3.825, 56.331]
+        ]
+      },
+      {
+        "title": "Glamis and Dundee",
+        "highlights": [
+          "Glamis Castle, where Princess Margaret was born in 1930 (April to October)",
+          "V&A Dundee, and Mackintosh's Oak Room",
+          "Across the Tay and south to Edinburgh for the last night"
+        ],
+        "onTheRoad": "Look upstream of the rail bridge at Dundee and you can see the stumps of the first Tay Bridge, which fell in a storm in December 1879 and took a train with it.",
+        "stops": [
+          {
+            "name": "Glamis Castle",
+            "lon": -3.0044,
+            "lat": 56.6177
+          },
+          {
+            "name": "V&A Dundee",
+            "lon": -2.9674,
+            "lat": 56.4573,
+            "label": "left"
+          },
+          {
+            "name": "Edinburgh",
+            "lon": -3.19,
+            "lat": 55.95
+          }
+        ],
+        "route": [
+          [-3.825, 56.331],
+          [-3.75, 56.326],
+          [-3.489, 56.388],
+          [-3.466, 56.42],
+          [-3.476, 56.432],
+          [-3.414, 56.435],
+          [-3.407, 56.477],
+          [-3.302, 56.517],
+          [-3.221, 56.569],
+          [-3.17, 56.59],
+          [-3.003, 56.619],
+          [-3.006, 56.582],
+          [-2.939, 56.548],
+          [-2.952, 56.479],
+          [-2.974, 56.455],
+          [-2.966, 56.46],
+          [-2.932, 56.447],
+          [-2.943, 56.412],
+          [-3.11, 56.338],
+          [-3.161, 56.207],
+          [-3.137, 56.146],
+          [-3.294, 56.121],
+          [-3.384, 56.086],
+          [-3.423, 55.988],
+          [-3.346, 55.979],
+          [-3.312, 55.961],
+          [-3.21, 55.959],
+          [-3.19, 55.95]
+        ]
+      },
+      {
+        "title": "Departure",
+        "departure": true,
+        "highlights": [
+          "Hand back the car at Edinburgh Airport for your flight"
+        ],
+        "stops": [
+          {
+            "name": "Edinburgh Airport",
+            "lon": -3.37,
+            "lat": 55.95,
+            "label": "left"
+          }
+        ],
+        "route": [
+          [-3.19, 55.95],
+          [-3.359, 55.936],
+          [-3.369, 55.948]
+        ]
+      }
+    ]
+  },
+  "oban-argyll-and-kintyre": {
+    "id": "oban-argyll-and-kintyre",
+    "service": "self-guided-tours",
+    "duration": "Five Days",
+    "title": "Oban, Argyll and Kintyre",
+    "story": [
+      "Argyll is where the first kingdom of the Scots began, and the road through it runs past the evidence: standing stones and a carved footprint at Kilmartin, a Campbell castle on Loch Fyne, a MacDougall stronghold at Oban and a canal built to save sailors the long way round the Mull of Kintyre.",
+      "Five days takes in all of it, from Loch Lomond to the far end of the Kintyre peninsula, with the sea beside you for most of the way. At the end of the road, Campbeltown once had more than thirty distilleries and the links run along the shore."
+    ],
+    "start": {
+      "name": "Glasgow Airport",
+      "lon": -4.43,
+      "lat": 55.87
+    },
+    "days": [
+      {
+        "title": "Loch Lomond to Inveraray",
+        "highlights": [
+          "Along the shore of Loch Lomond",
+          "Oysters and a view at the head of Loch Fyne",
+          "Inveraray Castle, seat of the Duke of Argyll (March to October)"
+        ],
+        "onTheRoad": "Inveraray is the seat of the Duke of Argyll, chief of Clan Campbell. Its Armoury Hall has the highest ceiling in Scotland.",
+        "stops": [
+          {
+            "name": "Loch Lomond",
+            "lon": -4.6325,
+            "lat": 56.1008,
+            "label": "left"
+          },
+          {
+            "name": "Cairndow",
+            "lon": -4.9172,
+            "lat": 56.2819,
+            "label": "left"
+          },
+          {
+            "name": "Inveraray",
+            "lon": -5.0722,
+            "lat": 56.2325
+          }
+        ],
+        "route": [
+          [-4.428, 55.868],
+          [-4.45, 55.858],
+          [-4.48, 55.884],
+          [-4.485, 55.901],
+          [-4.45, 55.925],
+          [-4.527, 55.935],
+          [-4.587, 55.964],
+          [-4.589, 55.987],
+          [-4.645, 56.041],
+          [-4.636, 56.1],
+          [-4.665, 56.164],
+          [-4.712, 56.204],
+          [-4.744, 56.198],
+          [-4.749, 56.207],
+          [-4.782, 56.19],
+          [-4.826, 56.201],
+          [-4.857, 56.227],
+          [-4.848, 56.246],
+          [-4.937, 56.25],
+          [-4.914, 56.282],
+          [-4.995, 56.244],
+          [-5.045, 56.234],
+          [-5.051, 56.248],
+          [-5.074, 56.233]
+        ]
+      },
+      {
+        "title": "Inveraray to Oban",
+        "highlights": [
+          "Loch Awe, and Ben Cruachan above it",
+          "Dunstaffnage Castle, on the way into Oban",
+          "An evening at the harbour, and a climb to McCaig's Tower"
+        ],
+        "onTheRoad": "Dunstaffnage was built by the MacDougalls in the 1220s and taken by Robert the Bruce in 1308. In 1746 it briefly held Flora MacDonald, after she helped Bonnie Prince Charlie escape.",
+        "stops": [
+          {
+            "name": "Loch Awe",
+            "lon": -5,
+            "lat": 56.4,
+            "label": "left"
+          },
+          {
+            "name": "Dunstaffnage Castle",
+            "lon": -5.4388,
+            "lat": 56.4533,
+            "label": "left"
+          },
+          {
+            "name": "Oban",
+            "lon": -5.4718,
+            "lat": 56.4152
+          }
+        ],
+        "route": [
+          [-5.074, 56.233],
+          [-5.094, 56.253],
+          [-5.078, 56.354],
+          [-5.039, 56.382],
+          [-5.038, 56.397],
+          [-4.995, 56.403],
+          [-5.029, 56.41],
+          [-5.088, 56.387],
+          [-5.152, 56.402],
+          [-5.217, 56.432],
+          [-5.232, 56.426],
+          [-5.349, 56.459],
+          [-5.439, 56.445],
+          [-5.441, 56.452],
+          [-5.472, 56.415]
+        ]
+      },
+      {
+        "title": "Oban and the Appin coast",
+        "highlights": [
+          "Ardchattan Priory and its gardens, across Loch Etive (April to October)",
+          "Castle Stalker, on its rock in the loch",
+          "An afternoon boat trip from Oban to look for wildlife"
+        ],
+        "onTheRoad": "McCaig's Tower above Oban is a banker's attempt at a Roman Colosseum. It was built to give local stonemasons work in hard times, and never finished because McCaig died in 1902.",
+        "stops": [
+          {
+            "name": "Ardchattan Priory",
+            "lon": -5.3573,
+            "lat": 56.4547,
+            "label": "left"
+          },
+          {
+            "name": "Castle Stalker",
+            "lon": -5.386,
+            "lat": 56.5731,
+            "label": "left"
+          },
+          {
+            "name": "Oban",
+            "lon": -5.4718,
+            "lat": 56.4152
+          }
+        ],
+        "route": [
+          [-5.472, 56.415],
+          [-5.43, 56.449],
+          [-5.347, 56.457],
+          [-5.395, 56.454],
+          [-5.404, 56.491],
+          [-5.383, 56.509],
+          [-5.317, 56.522],
+          [-5.291, 56.546],
+          [-5.382, 56.573],
+          [-5.352, 56.558],
+          [-5.292, 56.55],
+          [-5.317, 56.522],
+          [-5.389, 56.506],
+          [-5.405, 56.485],
+          [-5.391, 56.454],
+          [-5.441, 56.444],
+          [-5.472, 56.415]
+        ]
+      },
+      {
+        "title": "Kilmartin Glen and down to Kintyre",
+        "highlights": [
+          "Kilmartin Glen, with more than 800 ancient monuments within six miles",
+          "Dunadd, where the first kings of the Scots are thought to have been made",
+          "The Crinan Canal, then the long road down the Kintyre peninsula to Campbeltown"
+        ],
+        "onTheRoad": "The Crinan Canal is nine miles long with fifteen locks. It lets boats skip the passage round the Mull of Kintyre, and Queen Victoria came through in 1847 in a boat towed by four horses.",
+        "stops": [
+          {
+            "name": "Kilmartin Glen",
+            "lon": -5.4878,
+            "lat": 56.1337,
+            "label": "left"
+          },
+          {
+            "name": "Crinan",
+            "lon": -5.5,
+            "lat": 56.09,
+            "label": "left"
+          },
+          {
+            "name": "Campbeltown",
+            "lon": -5.6,
+            "lat": 55.43
+          }
+        ],
+        "route": [
+          [-5.472, 56.415],
+          [-5.46, 56.379],
+          [-5.438, 56.367],
+          [-5.515, 56.339],
+          [-5.467, 56.308],
+          [-5.484, 56.28],
+          [-5.474, 56.261],
+          [-5.553, 56.235],
+          [-5.497, 56.185],
+          [-5.462, 56.183],
+          [-5.492, 56.122],
+          [-5.474, 56.094],
+          [-5.498, 56.091],
+          [-5.474, 56.094],
+          [-5.453, 56.08],
+          [-5.468, 56.061],
+          [-5.44, 56.041],
+          [-5.451, 55.972],
+          [-5.429, 55.948],
+          [-5.423, 55.882],
+          [-5.409, 55.875],
+          [-5.44, 55.854],
+          [-5.476, 55.8],
+          [-5.548, 55.75],
+          [-5.602, 55.731],
+          [-5.707, 55.56],
+          [-5.711, 55.475],
+          [-5.6, 55.43]
+        ]
+      },
+      {
+        "title": "Campbeltown and Machrihanish",
+        "highlights": [
+          "A round at Machrihanish Golf Club or Machrihanish Dunes, or at Dunaverty at the southern tip",
+          "A distillery tour in Campbeltown",
+          "The last evening in a town that once called itself the whisky capital of the world"
+        ],
+        "onTheRoad": "At its height Campbeltown had more than thirty distilleries. Three survive.",
+        "stops": [
+          {
+            "name": "Machrihanish",
+            "lon": -5.7,
+            "lat": 55.42,
+            "label": "left"
+          },
+          {
+            "name": "Dunaverty",
+            "lon": -5.63,
+            "lat": 55.32,
+            "label": "left"
+          },
+          {
+            "name": "Campbeltown",
+            "lon": -5.6,
+            "lat": 55.43
+          }
+        ],
+        "route": [
+          [-5.6, 55.43],
+          [-5.642, 55.419],
+          [-5.706, 55.418],
+          [-5.642, 55.419],
+          [-5.663, 55.377],
+          [-5.637, 55.317],
+          [-5.664, 55.389],
+          [-5.642, 55.419],
+          [-5.6, 55.43]
+        ]
+      },
+      {
+        "title": "Departure",
+        "departure": true,
+        "highlights": [
+          "An early start, and the car handed back at Glasgow Airport for your flight"
+        ],
+        "stops": [
+          {
+            "name": "Glasgow Airport",
+            "lon": -4.43,
+            "lat": 55.87
+          }
+        ],
+        "route": [
+          [-5.6, 55.43],
+          [-5.711, 55.475],
+          [-5.707, 55.56],
+          [-5.602, 55.731],
+          [-5.548, 55.75],
+          [-5.476, 55.8],
+          [-5.44, 55.854],
+          [-5.41, 55.872],
+          [-5.429, 55.948],
+          [-5.451, 55.972],
+          [-5.442, 56.037],
+          [-5.416, 56.012],
+          [-5.371, 56.017],
+          [-5.334, 56.071],
+          [-5.185, 56.152],
+          [-5.176, 56.18],
+          [-5.109, 56.203],
+          [-5.052, 56.248],
+          [-5.04, 56.234],
+          [-4.92, 56.273],
+          [-4.937, 56.25],
+          [-4.848, 56.246],
+          [-4.857, 56.227],
+          [-4.824, 56.2],
+          [-4.782, 56.19],
+          [-4.749, 56.207],
+          [-4.744, 56.198],
+          [-4.712, 56.204],
+          [-4.665, 56.164],
+          [-4.639, 56.107],
+          [-4.645, 56.041],
+          [-4.597, 55.999],
+          [-4.587, 55.964],
+          [-4.528, 55.935],
+          [-4.447, 55.926],
+          [-4.471, 55.916],
+          [-4.479, 55.884],
+          [-4.455, 55.86],
+          [-4.428, 55.868]
+        ]
+      }
+    ]
+  },
+  "ayrshire-and-the-south-west": {
+    "id": "ayrshire-and-the-south-west",
+    "service": "self-guided-tours",
+    "duration": "Six Days",
+    "title": "Ayrshire and the South West",
+    "story": [
+      "Ayrshire is Robert Burns country and the birthplace of championship golf, and the road south runs past both. Prestwick held the first Open in 1860, Royal Troon and Turnberry are a short drive down the coast, and the cottage where Burns was born still stands at Alloway.",
+      "Beyond lies Dumfries and Galloway, quieter again: a triangular castle on the Solway, a pink palace in the hills and a links with the water at its edge. Six days gives the golfers their rounds and the rest of the party the castles, and ends in Glasgow."
+    ],
+    "start": {
+      "name": "Glasgow Airport",
+      "lon": -4.43,
+      "lat": 55.87
+    },
+    "days": [
+      {
+        "title": "Kelburn and the Ayrshire coast",
+        "highlights": [
+          "Kelburn Castle, its walls covered in graffiti by Brazilian artists",
+          "The coast road south to Troon",
+          "A first evening by the sea"
+        ],
+        "onTheRoad": "In 2007 Lord Glasgow invited Brazilian graffiti artists to paint the castle walls. It was meant to be temporary, but in 2011 he asked to keep it.",
+        "stops": [
+          {
+            "name": "Kelburn Castle",
+            "lon": -4.8736,
+            "lat": 55.7547,
+            "label": "left"
+          },
+          {
+            "name": "Troon",
+            "lon": -4.66,
+            "lat": 55.54
+          }
+        ],
+        "route": [
+          [-4.428, 55.868],
+          [-4.523, 55.838],
+          [-4.608, 55.785],
+          [-4.638, 55.792],
+          [-4.685, 55.756],
+          [-4.745, 55.753],
+          [-4.781, 55.777],
+          [-4.836, 55.775],
+          [-4.858, 55.785],
+          [-4.866, 55.728],
+          [-4.85, 55.69],
+          [-4.808, 55.661],
+          [-4.669, 55.64],
+          [-4.648, 55.621],
+          [-4.637, 55.565],
+          [-4.656, 55.56],
+          [-4.658, 55.541]
+        ]
+      },
+      {
+        "title": "Prestwick and Alloway",
+        "highlights": [
+          "A round at Prestwick Golf Club, where the first Open was played",
+          "The Robert Burns Birthplace Museum at Alloway",
+          "An evening in Ayr"
+        ],
+        "onTheRoad": "The first Open was played at Prestwick in October 1860 by eight professionals, for a red leather belt. You can still play the Alps and the Cardinal, holes from that first championship.",
+        "stops": [
+          {
+            "name": "Prestwick",
+            "lon": -4.6179,
+            "lat": 55.4957,
+            "label": "left"
+          },
+          {
+            "name": "Alloway",
+            "lon": -4.6366,
+            "lat": 55.4296
+          }
+        ],
+        "route": [
+          [-4.658, 55.541],
+          [-4.605, 55.525],
+          [-4.646, 55.437],
+          [-4.637, 55.43]
+        ]
+      },
+      {
+        "title": "Culzean and Turnberry",
+        "highlights": [
+          "Culzean Castle and its country park (March to November)",
+          "The Turnberry coast, and a round at Turnberry for those who play",
+          "Dinner back along the coast"
+        ],
+        "onTheRoad": "When the Kennedys gave Culzean to the nation in 1945, they insisted the top-floor flat go to General Eisenhower. He stayed four times, once as President.",
+        "stops": [
+          {
+            "name": "Culzean Castle",
+            "lon": -4.7886,
+            "lat": 55.3555,
+            "label": "left"
+          },
+          {
+            "name": "Turnberry",
+            "lon": -4.8369,
+            "lat": 55.3158,
+            "label": "left"
+          }
+        ],
+        "route": [
+          [-4.637, 55.43],
+          [-4.679, 55.356],
+          [-4.788, 55.355],
+          [-4.768, 55.353],
+          [-4.82, 55.332],
+          [-4.832, 55.316]
+        ]
+      },
+      {
+        "title": "Dumfries House and into Galloway",
+        "highlights": [
+          "Dumfries House, saved for the nation in 2007",
+          "On across the hills to Dumfries",
+          "A country house near Dumfries for the next two nights"
+        ],
+        "onTheRoad": "In 2007 the then Prince of Wales led a consortium that raised about £45 million to save Dumfries House and its original Chippendale furniture from being sold off.",
+        "stops": [
+          {
+            "name": "Dumfries House",
+            "lon": -4.2644,
+            "lat": 55.4378,
+            "label": "left"
+          },
+          {
+            "name": "Dumfries",
+            "lon": -3.61,
+            "lat": 55.07
+          }
+        ],
+        "route": [
+          [-4.832, 55.316],
+          [-4.824, 55.31],
+          [-4.762, 55.335],
+          [-4.718, 55.34],
+          [-4.644, 55.386],
+          [-4.634, 55.374],
+          [-4.617, 55.379],
+          [-4.554, 55.424],
+          [-4.502, 55.445],
+          [-4.361, 55.462],
+          [-4.337, 55.453],
+          [-4.264, 55.453],
+          [-4.268, 55.425],
+          [-4.201, 55.389],
+          [-4.15, 55.394],
+          [-3.992, 55.386],
+          [-3.941, 55.378],
+          [-3.811, 55.326],
+          [-3.773, 55.235],
+          [-3.722, 55.197],
+          [-3.727, 55.177],
+          [-3.703, 55.148],
+          [-3.61, 55.07]
+        ]
+      },
+      {
+        "title": "Caerlaverock and the Solway",
+        "highlights": [
+          "Caerlaverock Castle, the only triangular castle in Britain",
+          "A round at Southerness Golf Club, beside the Solway",
+          "Back to Dumfries for the evening"
+        ],
+        "onTheRoad": "Edward I besieged Caerlaverock in 1300, and the siege was written up as a heraldic poem.",
+        "stops": [
+          {
+            "name": "Caerlaverock Castle",
+            "lon": -3.5254,
+            "lat": 54.9856,
+            "label": "left"
+          },
+          {
+            "name": "Southerness",
+            "lon": -3.6007,
+            "lat": 54.8743,
+            "label": "left"
+          },
+          {
+            "name": "Dumfries",
+            "lon": -3.61,
+            "lat": 55.07
+          }
+        ],
+        "route": [
+          [-3.61, 55.07],
+          [-3.573, 54.997],
+          [-3.539, 54.973],
+          [-3.524, 54.979],
+          [-3.535, 54.972],
+          [-3.556, 54.98],
+          [-3.604, 55.063],
+          [-3.621, 55.061],
+          [-3.623, 54.98],
+          [-3.593, 54.95],
+          [-3.617, 54.884],
+          [-3.599, 54.875],
+          [-3.617, 54.884],
+          [-3.593, 54.95],
+          [-3.623, 54.98],
+          [-3.633, 55.02],
+          [-3.61, 55.07]
+        ]
+      },
+      {
+        "title": "Drumlanrig and Glasgow",
+        "highlights": [
+          "Drumlanrig Castle, the Pink Palace in the hills above the Nith (February to October)",
+          "North to Glasgow",
+          "The Burrell Collection in Pollok Park, and a last evening in the city"
+        ],
+        "onTheRoad": "Sir William Burrell gave Glasgow his collection in 1944 on condition that it was housed at least sixteen miles from the city centre. It took nearly forty years, and the gift of Pollok Park, to open the museum in 1983.",
+        "stops": [
+          {
+            "name": "Drumlanrig Castle",
+            "lon": -3.7928,
+            "lat": 55.2586,
+            "label": "left"
+          },
+          {
+            "name": "Burrell Collection",
+            "lon": -4.3039,
+            "lat": 55.8277
+          }
+        ],
+        "route": [
+          [-3.61, 55.07],
+          [-3.703, 55.148],
+          [-3.727, 55.177],
+          [-3.722, 55.197],
+          [-3.755, 55.231],
+          [-3.784, 55.241],
+          [-3.782, 55.258],
+          [-3.802, 55.273],
+          [-3.761, 55.295],
+          [-3.756, 55.342],
+          [-3.736, 55.344],
+          [-3.73, 55.356],
+          [-3.696, 55.359],
+          [-3.67, 55.386],
+          [-3.647, 55.424],
+          [-3.661, 55.438],
+          [-3.647, 55.461],
+          [-3.693, 55.472],
+          [-3.702, 55.51],
+          [-3.767, 55.527],
+          [-3.796, 55.544],
+          [-3.861, 55.627],
+          [-3.925, 55.664],
+          [-3.955, 55.713],
+          [-3.954, 55.741],
+          [-4.073, 55.823],
+          [-4.117, 55.836],
+          [-4.2, 55.829],
+          [-4.268, 55.838],
+          [-4.304, 55.828]
+        ]
+      },
+      {
+        "title": "Departure",
+        "departure": true,
+        "highlights": [
+          "Hand back the car at Glasgow Airport for your flight"
+        ],
+        "stops": [
+          {
+            "name": "Glasgow Airport",
+            "lon": -4.43,
+            "lat": 55.87
+          }
+        ],
+        "route": [
+          [-4.304, 55.828],
+          [-4.311, 55.85],
+          [-4.362, 55.866],
+          [-4.434, 55.86],
+          [-4.428, 55.868]
+        ]
+      }
+    ]
+  },
+  "north-coast-slowly": {
+    "id": "north-coast-slowly",
+    "service": "self-guided-tours",
+    "duration": "Seven Days",
+    "title": "The North Coast, Taken Slowly",
+    "story": [
+      "The North Coast 500 was named as a route only in 2015, but the roads are far older, and the history along them is the Highlands' hardest: Culloden, the Clearances and the castles that outlasted both.",
+      "Seven days is enough to take it slowly, with a castle or a garden to break each drive, single-track roads for the empty stretches and the sea in sight for most of the way."
+    ],
+    "start": {
+      "name": "Inverness Airport",
+      "lon": -4.06,
+      "lat": 57.54,
+      "label": "left"
+    },
+    "days": [
+      {
+        "title": "Cawdor, Fort George and Culloden",
+        "highlights": [
+          "Cawdor Castle, built some four hundred years after Macbeth died (April to October)",
+          "Fort George, a working barracks that was never attacked",
+          "The moor at Culloden, and Inverness for the night"
+        ],
+        "onTheRoad": "The battle at Culloden was over in less than an hour. The clan headstones you see were put up in 1881, more than a century later.",
+        "stops": [
+          {
+            "name": "Cawdor Castle",
+            "lon": -3.9275,
+            "lat": 57.5236
+          },
+          {
+            "name": "Fort George",
+            "lon": -4.0745,
+            "lat": 57.5823,
+            "label": "left"
+          },
+          {
+            "name": "Culloden",
+            "lon": -4.0737,
+            "lat": 57.4795,
+            "label": "left"
+          },
+          {
+            "name": "Inverness",
+            "lon": -4.2247,
+            "lat": 57.4778,
+            "label": "left"
+          }
+        ],
+        "route": [
+          [-4.064, 57.541],
+          [-4.068, 57.534],
+          [-4.048, 57.531],
+          [-4.003, 57.545],
+          [-3.96, 57.523],
+          [-3.92, 57.522],
+          [-3.977, 57.529],
+          [-4.049, 57.581],
+          [-4.074, 57.583],
+          [-4.049, 57.581],
+          [-3.978, 57.529],
+          [-4.079, 57.478],
+          [-4.17, 57.467],
+          [-4.225, 57.478]
+        ]
+      },
+      {
+        "title": "Dornoch and Dunrobin",
+        "highlights": [
+          "Dornoch, where golf has been played since at least 1616",
+          "Dunrobin Castle, the largest house in the northern Highlands (April to October)",
+          "The coast road north to Wick"
+        ],
+        "onTheRoad": "Golf has been played at Dornoch since at least 1616. The Dornoch boy Donald Ross went on to become one of America's great course designers.",
+        "stops": [
+          {
+            "name": "Dornoch",
+            "lon": -4.0275,
+            "lat": 57.8788,
+            "label": "left"
+          },
+          {
+            "name": "Dunrobin Castle",
+            "lon": -3.9486,
+            "lat": 57.9789,
+            "label": "left"
+          },
+          {
+            "name": "Wick",
+            "lon": -3.0933,
+            "lat": 58.4393
+          }
+        ],
+        "route": [
+          [-4.225, 57.478],
+          [-4.22, 57.495],
+          [-4.316, 57.523],
+          [-4.337, 57.54],
+          [-4.368, 57.628],
+          [-4.289, 57.682],
+          [-4.102, 57.731],
+          [-4.03, 57.768],
+          [-4.032, 57.794],
+          [-4.11, 57.836],
+          [-4.107, 57.878],
+          [-4.079, 57.887],
+          [-4.027, 57.879],
+          [-4.077, 57.926],
+          [-4.084, 57.95],
+          [-3.953, 57.985],
+          [-3.897, 57.989],
+          [-3.853, 58.012],
+          [-3.854, 58.027],
+          [-3.791, 58.069],
+          [-3.673, 58.102],
+          [-3.601, 58.141],
+          [-3.586, 58.163],
+          [-3.496, 58.184],
+          [-3.479, 58.215],
+          [-3.389, 58.276],
+          [-3.278, 58.31],
+          [-3.217, 58.312],
+          [-3.159, 58.351],
+          [-3.093, 58.439]
+        ]
+      },
+      {
+        "title": "John o' Groats and the Castle of Mey",
+        "highlights": [
+          "John o' Groats and the Pentland Firth",
+          "The Castle of Mey, the Queen Mother's home (May to September)",
+          "Dunnet Head, the true northern tip of mainland Britain"
+        ],
+        "onTheRoad": "The Queen Mother found Mey half-derelict the year after the King died, bought it, and came every August and October for nearly fifty years.",
+        "stops": [
+          {
+            "name": "John o' Groats",
+            "lon": -3.0689,
+            "lat": 58.6373
+          },
+          {
+            "name": "Castle of Mey",
+            "lon": -3.2003,
+            "lat": 58.6458,
+            "label": "left"
+          },
+          {
+            "name": "Dunnet Head",
+            "lon": -3.3763,
+            "lat": 58.6722,
+            "label": "left"
+          },
+          {
+            "name": "Thurso",
+            "lon": -3.5226,
+            "lat": 58.5933,
+            "label": "left"
+          }
+        ],
+        "route": [
+          [-3.093, 58.439],
+          [-3.145, 58.476],
+          [-3.153, 58.508],
+          [-3.072, 58.573],
+          [-3.089, 58.605],
+          [-3.069, 58.639],
+          [-3.163, 58.636],
+          [-3.197, 58.648],
+          [-3.343, 58.622],
+          [-3.342, 58.641],
+          [-3.377, 58.658],
+          [-3.377, 58.672],
+          [-3.377, 58.658],
+          [-3.342, 58.641],
+          [-3.354, 58.598],
+          [-3.384, 58.591],
+          [-3.522, 58.593]
+        ]
+      },
+      {
+        "title": "The north coast to Assynt",
+        "highlights": [
+          "The north coast road to Tongue, with empty beaches on the way",
+          "Durness, in the far north-west corner",
+          "Over the Kylesku bridge into Assynt"
+        ],
+        "onTheRoad": "The North Coast 500 was launched in March 2015 as a 516-mile loop from Inverness Castle. The roads are older than the name, and many are single-track, so there is no prize for hurrying.",
+        "stops": [
+          {
+            "name": "Tongue",
+            "lon": -4.4204,
+            "lat": 58.4763,
+            "label": "left"
+          },
+          {
+            "name": "Durness",
+            "lon": -4.7456,
+            "lat": 58.5657,
+            "label": "left"
+          },
+          {
+            "name": "Kylesku",
+            "lon": -5.0249,
+            "lat": 58.2477,
+            "label": "left"
+          },
+          {
+            "name": "Lochinver",
+            "lon": -5.2369,
+            "lat": 58.1493,
+            "label": "left"
+          }
+        ],
+        "route": [
+          [-3.522, 58.593],
+          [-3.628, 58.552],
+          [-3.761, 58.561],
+          [-3.868, 58.555],
+          [-3.9, 58.542],
+          [-3.933, 58.56],
+          [-4.013, 58.562],
+          [-4.15, 58.528],
+          [-4.224, 58.525],
+          [-4.222, 58.485],
+          [-4.389, 58.507],
+          [-4.421, 58.475],
+          [-4.419, 58.489],
+          [-4.495, 58.504],
+          [-4.653, 58.504],
+          [-4.685, 58.469],
+          [-4.753, 58.444],
+          [-4.757, 58.46],
+          [-4.673, 58.543],
+          [-4.747, 58.568],
+          [-4.816, 58.5],
+          [-4.865, 58.488],
+          [-5.003, 58.421],
+          [-5.033, 58.383],
+          [-5.018, 58.373],
+          [-5.066, 58.379],
+          [-5.118, 58.349],
+          [-5.16, 58.349],
+          [-5.134, 58.335],
+          [-5.114, 58.299],
+          [-5.005, 58.247],
+          [-5.003, 58.173],
+          [-5.103, 58.191],
+          [-5.127, 58.176],
+          [-5.231, 58.16],
+          [-5.237, 58.15]
+        ]
+      },
+      {
+        "title": "Ullapool to Torridon",
+        "highlights": [
+          "Ullapool and its harbour",
+          "Inverewe Garden, where redwoods and rhododendrons grow at the latitude of Moscow",
+          "The road round to Torridon, with the mountains above"
+        ],
+        "onTheRoad": "Inverewe stands at the same latitude as Moscow. Thanks to the Gulf Stream and a twenty-year-old's vision in 1862, redwoods and rhododendrons grow there.",
+        "stops": [
+          {
+            "name": "Ullapool",
+            "lon": -5.1587,
+            "lat": 57.8962,
+            "label": "left"
+          },
+          {
+            "name": "Inverewe Garden",
+            "lon": -5.5976,
+            "lat": 57.7766,
+            "label": "left"
+          },
+          {
+            "name": "Torridon",
+            "lon": -5.5258,
+            "lat": 57.5419,
+            "label": "left"
+          }
+        ],
+        "route": [
+          [-5.237, 58.15],
+          [-5.231, 58.16],
+          [-5.127, 58.176],
+          [-5.091, 58.192],
+          [-5.004, 58.173],
+          [-4.976, 58.155],
+          [-4.972, 58.067],
+          [-5.025, 58.061],
+          [-5.031, 58.048],
+          [-5.07, 58.036],
+          [-5.135, 57.957],
+          [-5.198, 57.929],
+          [-5.16, 57.896],
+          [-5.096, 57.871],
+          [-5.035, 57.766],
+          [-5.011, 57.753],
+          [-5.039, 57.759],
+          [-5.089, 57.737],
+          [-5.165, 57.785],
+          [-5.151, 57.807],
+          [-5.187, 57.831],
+          [-5.37, 57.879],
+          [-5.439, 57.88],
+          [-5.437, 57.864],
+          [-5.467, 57.849],
+          [-5.539, 57.866],
+          [-5.579, 57.837],
+          [-5.585, 57.804],
+          [-5.571, 57.798],
+          [-5.604, 57.765],
+          [-5.596, 57.75],
+          [-5.69, 57.733],
+          [-5.659, 57.688],
+          [-5.558, 57.692],
+          [-5.497, 57.674],
+          [-5.468, 57.676],
+          [-5.393, 57.654],
+          [-5.303, 57.605],
+          [-5.315, 57.58],
+          [-5.348, 57.567],
+          [-5.458, 57.552],
+          [-5.486, 57.541],
+          [-5.521, 57.548]
+        ]
+      },
+      {
+        "title": "Torridon to Kintail",
+        "highlights": [
+          "The road along Loch Torridon and Loch Carron",
+          "Eilean Donan Castle, with time to spare (February to December)",
+          "An afternoon at your own pace on the shore of Loch Duich"
+        ],
+        "onTheRoad": "In 1719 forty-six Spanish soldiers held Eilean Donan for the Jacobites. When the Navy took it they found 343 barrels of gunpowder and used every one to blow it up, so what you see is a 20th-century rebuild.",
+        "stops": [
+          {
+            "name": "Eilean Donan Castle",
+            "lon": -5.5164,
+            "lat": 57.2736
+          }
+        ],
+        "route": [
+          [-5.521, 57.548],
+          [-5.501, 57.543],
+          [-5.527, 57.527],
+          [-5.608, 57.532],
+          [-5.62, 57.521],
+          [-5.64, 57.526],
+          [-5.649, 57.519],
+          [-5.586, 57.47],
+          [-5.581, 57.442],
+          [-5.606, 57.399],
+          [-5.534, 57.406],
+          [-5.506, 57.397],
+          [-5.447, 57.431],
+          [-5.429, 57.422],
+          [-5.459, 57.388],
+          [-5.561, 57.345],
+          [-5.54, 57.337],
+          [-5.582, 57.287],
+          [-5.53, 57.286],
+          [-5.514, 57.274]
+        ]
+      },
+      {
+        "title": "Glen Shiel, Loch Ness and Inverness",
+        "highlights": [
+          "Through Glen Shiel and the Great Glen to Fort Augustus",
+          "Urquhart Castle above Loch Ness",
+          "A last evening in Inverness"
+        ],
+        "onTheRoad": "The most famous Nessie photograph, the 1934 \"surgeon's photograph\", was a toy submarine with a putty head. When scientists sampled the loch's DNA in 2018 they found no reptiles, but a great many eels.",
+        "stops": [
+          {
+            "name": "Fort Augustus",
+            "lon": -4.6806,
+            "lat": 57.1448,
+            "label": "left"
+          },
+          {
+            "name": "Urquhart Castle",
+            "lon": -4.4425,
+            "lat": 57.3243,
+            "label": "left"
+          },
+          {
+            "name": "Inverness",
+            "lon": -4.2247,
+            "lat": 57.4778,
+            "label": "left"
+          }
+        ],
+        "route": [
+          [-5.514, 57.274],
+          [-5.454, 57.24],
+          [-5.407, 57.234],
+          [-5.423, 57.215],
+          [-5.34, 57.165],
+          [-5.296, 57.17],
+          [-5.233, 57.152],
+          [-5.159, 57.16],
+          [-5.08, 57.143],
+          [-5.04, 57.15],
+          [-4.958, 57.146],
+          [-4.995, 57.098],
+          [-4.98, 57.088],
+          [-4.849, 57.081],
+          [-4.829, 57.065],
+          [-4.775, 57.071],
+          [-4.62, 57.187],
+          [-4.617, 57.214],
+          [-4.584, 57.218],
+          [-4.474, 57.294],
+          [-4.444, 57.324],
+          [-4.478, 57.329],
+          [-4.48, 57.337],
+          [-4.425, 57.342],
+          [-4.295, 57.444],
+          [-4.225, 57.478]
+        ]
+      },
+      {
+        "title": "Departure",
+        "departure": true,
+        "highlights": [
+          "Hand back the car at Inverness Airport for your flight"
+        ],
+        "stops": [
+          {
+            "name": "Inverness Airport",
+            "lon": -4.06,
+            "lat": 57.54,
+            "label": "left"
+          }
+        ],
+        "route": [
+          [-4.225, 57.478],
+          [-4.215, 57.492],
+          [-4.191, 57.482],
+          [-4.117, 57.505],
+          [-4.064, 57.541]
+        ]
+      }
+    ]
   }
 }

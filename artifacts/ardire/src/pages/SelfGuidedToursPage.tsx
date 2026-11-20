@@ -8,11 +8,24 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { setPendingScroll } from "@/lib/pendingScroll";
+import { SampleJourney } from "@/components/SampleJourney";
+import { SkipToSamples, SAMPLES_ID } from "@/components/SkipToSamples";
+import { sampleJourneys } from "@/data/sampleJourneys";
 import selfGuidedHeroSm from "@/assets/images/self-guided-hero-sm.webp";
 import selfGuidedHero from "@/assets/images/self-guided-hero.webp";
 
 // The FAQ text is shared with the static HTML and its FAQPage schema.
 const selfGuidedFaqs = faqs["services/self-guided-tours"].items;
+
+// Shortest first. The data, including each journey's title and length, lives in
+// src/data/sampleJourneys.json, which the static HTML for search engines reads too.
+const itineraries = [
+  "abbeys-and-border-country",
+  "perthshire-and-angus",
+  "oban-argyll-and-kintyre",
+  "ayrshire-and-the-south-west",
+  "north-coast-slowly",
+].map((id) => sampleJourneys[id]);
 
 const whatWeArrange = [
   "A route and itinerary shaped by what you want to see and how far you like to travel each day",
@@ -27,6 +40,7 @@ export default function SelfGuidedToursPage() {
   usePageMeta("services/self-guided-tours");
   const [, navigate] = useLocation();
   const [faqOpen, setFaqOpen] = useState<string | null>(null);
+  const [openItinerary, setOpenItinerary] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -74,6 +88,7 @@ export default function SelfGuidedToursPage() {
             <p className="font-sans text-base md:text-lg text-foreground/80 max-w-xl leading-relaxed">
               The freedom to explore Scotland your own way, with the route planned and the bookings made before you leave.
             </p>
+            <SkipToSamples label="See Sample Journeys" />
           </m.div>
         </div>
       </section>
@@ -169,6 +184,80 @@ export default function SelfGuidedToursPage() {
               ))}
             </div>
           </m.div>
+        </div>
+      </section>
+
+      {/* Sample Journeys */}
+      <section id={SAMPLES_ID} tabIndex={-1} className="scroll-mt-20 focus:outline-none py-24 md:py-32 bg-background border-t border-border/30">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <m.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="mb-4"
+          >
+            <p className="font-sans tracking-[0.3em] uppercase text-primary text-xs mb-4">Sample Journeys</p>
+            <h2 className="font-display text-3xl md:text-4xl text-foreground max-w-2xl">
+              Five journeys, from three days to seven.
+            </h2>
+          </m.div>
+          <m.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-sans font-light text-sm text-muted-foreground max-w-2xl mb-12"
+          >
+            These are journeys we can plan, here to spark a few ideas of your own. Nothing is fixed. The length, the places and the pace are yours to shape, and we will happily rework any of them. The samples are drives, but the route, the stays and the stops can be planned for any way of travelling.
+          </m.p>
+
+          <div className="space-y-3">
+            {itineraries.map((itin, i) => (
+              <m.div
+                key={itin.id}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.07 }}
+                className="bg-card border-l-2 border-primary"
+              >
+                <button
+                  onClick={() => setOpenItinerary(openItinerary === itin.id ? null : itin.id)}
+                  className="w-full flex items-center justify-between gap-4 p-6 md:p-8 text-left"
+                  aria-expanded={openItinerary === itin.id}
+                >
+                  <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 min-w-0">
+                    <span className="font-sans text-xs uppercase tracking-[0.3em] text-primary shrink-0">{itin.duration}</span>
+                    <h3 className="font-display text-lg text-foreground">{itin.title}</h3>
+                  </div>
+                  <div className="flex items-center gap-4 shrink-0">
+                    <span className="hidden sm:block font-sans text-xs text-muted-foreground">Price on enquiry</span>
+                    <ChevronDown
+                      className="w-4 h-4 text-primary transition-transform duration-300"
+                      style={{ transform: openItinerary === itin.id ? "rotate(180deg)" : "rotate(0deg)" }}
+                    />
+                  </div>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {openItinerary === itin.id && (
+                    <m.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 md:px-8 pb-8 md:pb-10 pt-2">
+                        <SampleJourney journey={itin} />
+                      </div>
+                    </m.div>
+                  )}
+                </AnimatePresence>
+              </m.div>
+            ))}
+          </div>
         </div>
       </section>
 

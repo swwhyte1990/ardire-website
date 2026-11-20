@@ -3,7 +3,8 @@
  * src/data/sampleJourneys.json, so the maps follow real roads without the site
  * calling a routing service at runtime. Re-run after changing a journey's stops:
  *
- *   node scripts/fetch-journey-routes.mjs
+ *   node scripts/fetch-journey-routes.mjs                 (every journey)
+ *   node scripts/fetch-journey-routes.mjs id-one id-two   (only those journeys)
  *
  * Routes come from the public OSRM demo server, built on OpenStreetMap data
  * (© OpenStreetMap contributors, ODbL), credited on the map itself.
@@ -44,7 +45,11 @@ function simplify(pts) {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+const only = process.argv.slice(2);
+for (const id of only) if (!journeys[id]) throw new Error(`No journey called "${id}"`);
+
 for (const journey of Object.values(journeys)) {
+  if (only.length && !only.includes(journey.id)) continue;
   let from = journey.start;
   for (const [i, day] of journey.days.entries()) {
     const leg = [from, ...day.stops];

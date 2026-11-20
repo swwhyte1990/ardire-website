@@ -22,6 +22,13 @@ const JOURNEYS_BY_ROUTE = {
   'services/luxury-tours': ['edinburgh-heart-of-scotland', 'west-highlands-skye', 'grand-sweep'],
   'services/golf-tours': ['golf-east-coast'],
   'services/corporate-incentives': ['corporate-highlands'],
+  'services/self-guided-tours': [
+    'abbeys-and-border-country',
+    'perthshire-and-angus',
+    'oban-argyll-and-kintyre',
+    'ayrshire-and-the-south-west',
+    'north-coast-slowly',
+  ],
 };
 
 function routeJourneys(route) {
