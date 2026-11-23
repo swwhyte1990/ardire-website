@@ -8,7 +8,18 @@ import notFound from "@/data/notFound.json";
 
 export default function NotFound() {
   usePageMeta("404");
-  const [, navigate] = useLocation();
+  const [location, navigate] = useLocation();
+
+  // An address with a doubled slash, such as //services/golf-tours/, is almost
+  // always a stray link or a remembered history entry rather than a missing page.
+  // Send the visitor to the same address with the slashes collapsed, replacing the
+  // history entry so Back does not return to the broken one.
+  const stray = /\/{2,}/.test(location);
+  useEffect(() => {
+    if (!stray) return;
+    const clean = location.replace(/\/{2,}/g, "/");
+    navigate(clean + window.location.search + window.location.hash, { replace: true });
+  }, [stray, location, navigate]);
 
   // The enquiry form lives on the home page, so go there and scroll to it.
   function goToEnquiry(e: MouseEvent<HTMLAnchorElement>) {
@@ -29,6 +40,9 @@ export default function NotFound() {
     }
     return () => robots.remove();
   }, []);
+
+  // Nothing to show while the visitor is on their way to the right address.
+  if (stray) return null;
 
   return (
     <div className="min-h-screen w-full flex flex-col items-center justify-center bg-background text-foreground relative overflow-hidden">
