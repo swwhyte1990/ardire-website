@@ -57,7 +57,7 @@ export default function Privacy() {
               <ul className="space-y-2 pl-5 list-disc">
                 <li><span className="text-foreground font-normal">Contact information:</span> your name, email address, and any details you include in your enquiry via our contact form.</li>
                 <li><span className="text-foreground font-normal">Communication records:</span> any correspondence between you and our team.</li>
-                <li><span className="text-foreground font-normal">Technical data:</span> basic information your browser sends automatically, such as your IP address and browser type. We do not use tracking cookies or third-party analytics on this website.</li>
+                <li><span className="text-foreground font-normal">Technical data:</span> basic information your browser sends automatically, such as your IP address and browser type, and anonymous visit statistics (see Cookies and Analytics below). We do not use tracking cookies or advertising trackers on this website.</li>
               </ul>
               <p>
                 We do not collect sensitive personal data (such as health information or payment card details) through this website.
@@ -117,9 +117,12 @@ export default function Privacy() {
               </p>
             </Section>
 
-            <Section title="Cookies">
+            <Section title="Cookies and Analytics">
               <p>
-                This website does not use analytics cookies or advertising trackers. Its pages, images and fonts are all served from our own website, so we do not profile visitors or share browsing data with any third party.
+                This website does not set cookies and does not store anything on your device. It has no advertising trackers, and its pages, images and fonts are all served from our own website.
+              </p>
+              <p>
+                We use Cloudflare Web Analytics to count page visits and see how quickly pages load. It is provided by Cloudflare, the company that hosts this website. It does not use cookies or store anything on your device, and it does not follow you across other websites. We use the totals only to understand how the site is used and to improve it. We do not use them to identify you, and we do not share them with anyone else.
               </p>
             </Section>
 
