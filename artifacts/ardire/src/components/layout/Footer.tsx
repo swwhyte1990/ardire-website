@@ -1,5 +1,6 @@
 import { Instagram } from "lucide-react";
 import logoCrest from "@/assets/images/logo-crest.webp";
+import homePage from "@/data/homePage.json";
 
 function TikTokIcon({ size = 20 }: { size?: number }) {
   return (
@@ -38,7 +39,7 @@ export function Footer() {
             </div>
           </div>
           <p className="font-sans text-xs text-muted-foreground tracking-widest uppercase text-center md:text-left">
-            Thoughtfully Planned. Quietly Delivered. Entirely Yours.
+            {homePage.about.tagline}
           </p>
           <div className="text-muted-foreground font-sans text-xs leading-relaxed mt-2">
             <p>Glasgow, Scotland</p>
