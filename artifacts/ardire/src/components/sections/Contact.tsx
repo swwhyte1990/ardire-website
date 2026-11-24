@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
+import homePage from "@/data/homePage.json";
 import { takePendingEnquiry } from "@/lib/pendingEnquiry";
 import {
   Form,
@@ -37,6 +38,14 @@ const SERVICE_OPTIONS = [
 ] as const;
 
 const EMAIL_FALLBACK = "Please try again, or email us directly at enquiries@ardire.co.uk";
+
+// The heading, intro and contact details come from src/data/homePage.json, which the
+// build also reads to write the homepage's raw HTML. The heading's last word is the
+// italic accent.
+const { enquiry } = homePage;
+const headingWords = enquiry.heading.split(" ");
+const headingLast = headingWords.pop();
+const headingStart = headingWords.join(" ");
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -122,27 +131,27 @@ export function Contact() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="font-display text-3xl md:text-4xl text-foreground mb-6">
-              Begin Your <span className="italic text-primary">Journey</span>
+              {headingStart} <span className="italic text-primary">{headingLast}</span>
             </h2>
             <p className="text-muted-foreground font-sans font-light text-base mb-12 max-w-md">
-              Tell us what you have in mind, however loosely. Our team will be in touch to arrange a private consultation.
+              {enquiry.intro}
             </p>
 
             <div className="space-y-8">
               <div>
-                <p className="font-display text-lg text-foreground">The Árdíre Group</p>
-                <p className="text-muted-foreground font-sans mt-1">Glasgow, Scotland</p>
+                <p className="font-display text-lg text-foreground">{enquiry.organisation}</p>
+                <p className="text-muted-foreground font-sans mt-1">{enquiry.place}</p>
               </div>
               <div>
-                <h3 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Direct Enquiries</h3>
-                <a href="mailto:enquiries@ardire.co.uk" className="font-display text-lg text-foreground hover:text-primary transition-colors block">
-                  enquiries@ardire.co.uk
+                <h3 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">{enquiry.emailLabel}</h3>
+                <a href={`mailto:${enquiry.email}`} className="font-display text-lg text-foreground hover:text-primary transition-colors block">
+                  {enquiry.email}
                 </a>
               </div>
               <div>
-                <h3 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">Telephone</h3>
-                <a href="tel:+441412550796" className="font-display text-lg text-foreground hover:text-primary transition-colors">
-                  +44 (0)141 255 0796
+                <h3 className="font-sans uppercase tracking-widest text-xs text-primary mb-2">{enquiry.phoneLabel}</h3>
+                <a href={`tel:${enquiry.phoneHref}`} className="font-display text-lg text-foreground hover:text-primary transition-colors">
+                  {enquiry.phone}
                 </a>
               </div>
             </div>

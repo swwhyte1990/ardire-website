@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "eyebrow": "The Árdíre Group · Glasgow",
+    "title": "Luxury Tours of Scotland & Event Services",
+    "subline": "Bespoke private tours and event hospitality. Based in Glasgow, working across Scotland."
+  },
+  "cards": [
+    {
+      "eyebrow": "For Private Travellers",
+      "title": "Travel & Tours",
+      "text": "Privately guided tours, championship golf, chauffeur, self-guided journeys and a dedicated travel concierge across Scotland.",
+      "cta": "Plan a Private Tour",
+      "href": "/travel/"
+    },
+    {
+      "eyebrow": "For Businesses & Organisers",
+      "title": "Events & Corporate",
+      "text": "Corporate incentives, end-to-end event management, and professional event staffing.",
+      "cta": "Discuss an Event",
+      "href": "/events/"
+    }
+  ],
+  "about": {
+    "heading": "Built on years of private service",
+    "paragraphs": [
+      "Árdíre grew out of years spent as event butlers, looking after guests from around the world in estates and private houses across Scotland and the rest of the UK.",
+      "Being that close to guests taught us what they need, and what they never think to ask for. We learned what makes an arrival feel easy, what a first evening should be, and what people value once the travelling is done.",
+      "From Glasgow, we bring that experience to private luxury tours, golf tours, self-guided journeys and chauffeur service across Scotland, and to corporate incentives, event management and event staffing for hosts, companies and venues."
+    ],
+    "tagline": "Thoughtfully planned. Quietly delivered."
+  },
+  "enquiry": {
+    "heading": "Begin Your Journey",
+    "intro": "Tell us what you have in mind, however loosely. Our team will be in touch to arrange a private consultation.",
+    "organisation": "The Árdíre Group",
+    "place": "Glasgow, Scotland",
+    "emailLabel": "Direct Enquiries",
+    "email": "enquiries@ardire.co.uk",
+    "phoneLabel": "Telephone",
+    "phone": "+44 (0)141 255 0796",
+    "phoneHref": "+441412550796"
+  }
+}

@@ -1,5 +1,10 @@
 import { m } from "framer-motion";
 import heroHome from "@/assets/images/hero-home.webp";
+import homePage from "@/data/homePage.json";
+
+// The words come from src/data/homePage.json, which the build also reads to write
+// the homepage's raw HTML, so the two always match.
+const { hero } = homePage;
 
 export function Hero() {
   return (
@@ -30,13 +35,13 @@ export function Hero() {
           transition={{ duration: 1.2, ease: "easeOut", delay: 0 }}
         >
           <p className="font-sans text-[11px] uppercase tracking-[0.4em] text-foreground/80 mb-6">
-            The Árdíre Group · Glasgow
+            {hero.eyebrow}
           </p>
           <h1 className="font-display text-4xl md:text-[3.4rem] text-foreground leading-[1.05] mb-6 max-w-2xl">
-            Luxury Tours of Scotland &amp; Event Services
+            {hero.title}
           </h1>
           <p className="hidden sm:block font-sans text-base md:text-lg text-foreground/85 max-w-xl leading-relaxed">
-            Bespoke private tours, concierge and event hospitality. Based in Glasgow, working across Scotland.
+            {hero.subline}
           </p>
         </m.div>
       </div>

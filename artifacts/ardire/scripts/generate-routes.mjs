@@ -68,6 +68,7 @@ const readData = (name) => JSON.parse(readFileSync(join(__dirname, `../src/data/
 const FAQS = readData('faqs.json');
 const SERVICES = readData('serviceSchema.json');
 const STAFFING_PRICES = readData('staffingPrices.json');
+const HOME = readData('homePage.json');
 const PROVIDER = { '@type': 'TravelAgency', name: 'The \u00c1rd\u00edre Group', url: 'https://ardire.co.uk/' };
 
 // Offers come only from the price cards shown on the Event Staffing page: a
@@ -218,6 +219,41 @@ function buildPageBlock(route) {
   const navHtml = `<nav style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid rgba(197,163,102,0.25);font-size:0.95rem"><a href="https://ardire.co.uk/" style="${linkStyle}">Árdíre Home</a>${serviceLinksHtml}${route.path !== 'privacy' ? `<a href="https://ardire.co.uk/privacy/" style="${linkStyle}">Privacy Policy</a>` : ''}<a href="https://ardire.co.uk/#enquiry" style="color:#c5a366;text-decoration:none;display:inline-block;padding:0.25rem 0">Contact Árdíre</a></nav>`;
 
   return `<div data-page-content style="max-width:760px;margin:0 auto;padding:3rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7">${h1Html}${paragraphsHtml}${highlightsHtml}${buildJourneysHtml(route)}${buildFaqHtml(route)}${navHtml}</div>`;
+}
+
+// The homepage's raw HTML. index.html carries only an empty placeholder; the words
+// come from src/data/homePage.json, the file the React sections read, so what a
+// crawler sees is what a visitor sees: the heading, hero line, both cards, the About
+// section and the enquiry details.
+function buildHomeBlock() {
+  const serif = "font-family:Georgia,serif;font-weight:500;color:#c5a366";
+  const small = "margin:0 0 0.5rem;font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase";
+  const heroHtml =
+    `<p style="${small}">${esc(HOME.hero.eyebrow)}</p>` +
+    `<h1 style="${serif};font-size:2rem;letter-spacing:0.05em;margin:0 0 1rem">${esc(HOME.hero.title)}</h1>` +
+    `<p style="font-size:1.05rem;margin:0 0 1.5rem">${esc(HOME.hero.subline)}</p>`;
+  const cardsHtml = HOME.cards.map((c) =>
+    `<a href="https://ardire.co.uk${c.href}" style="display:block;color:#c5a366;text-decoration:none;margin:0 0 1.25rem;padding:1rem 0;border-top:1px solid rgba(197,163,102,0.25)">` +
+      `<span style="display:block;${small}">${esc(c.eyebrow)}</span>` +
+      `<h2 style="${serif};font-size:1.5rem;margin:0 0 0.4rem">${esc(c.title)}</h2>` +
+      `<span style="display:block;margin:0 0 0.4rem">${esc(c.text)}</span>` +
+      `<span style="display:block;font-size:0.85rem;letter-spacing:0.2em;text-transform:uppercase">${esc(c.cta)}</span></a>`
+  ).join('');
+  const aboutHtml =
+    `<section style="margin-top:2.5rem"><h2 style="${serif};font-size:1.75rem;margin:0 0 1rem">${esc(HOME.about.heading)}</h2>` +
+    HOME.about.paragraphs.map((p) => `<p style="font-size:1.05rem;margin:0 0 1.25rem">${esc(p)}</p>`).join('') +
+    `<p style="font-style:italic;font-size:1.15rem;margin:1.5rem 0 0">${esc(HOME.about.tagline)}</p></section>`;
+  const e = HOME.enquiry;
+  const enquiryHtml =
+    `<section style="margin-top:2.5rem"><h2 style="${serif};font-size:1.75rem;margin:0 0 1rem">${esc(e.heading)}</h2>` +
+    `<p style="margin:0 0 1.25rem">${esc(e.intro)}</p>` +
+    `<p style="margin:0 0 1rem">${esc(e.organisation)}<br />${esc(e.place)}</p>` +
+    `<p style="margin:0 0 0.5rem">${esc(e.emailLabel)}: <a href="mailto:${esc(e.email)}" style="color:#c5a366">${esc(e.email)}</a></p>` +
+    `<p style="margin:0">${esc(e.phoneLabel)}: <a href="tel:${esc(e.phoneHref)}" style="color:#c5a366">${esc(e.phone)}</a></p></section>`;
+  const navHtml = `<nav style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid rgba(197,163,102,0.25);font-size:0.95rem">` +
+    allServiceLinks.map((s) => `<a href="https://ardire.co.uk/services/${s.slug}/" style="${linkStyle}">${esc(s.label)}</a>`).join('') +
+    `<a href="https://ardire.co.uk/privacy/" style="${linkStyle}">Privacy Policy</a></nav>`;
+  return `<div data-page-content style="max-width:760px;margin:0 auto;padding:3rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7">${heroHtml}${cardsHtml}${aboutHtml}${enquiryHtml}${navHtml}</div>`;
 }
 
 const routes = [
@@ -488,6 +524,24 @@ for (const route of routes) {
 
   writeFileSync(join(routeDir, 'index.html'), html);
   console.log(`Generated: /${route.path}/index.html  [h1: ${route.h1}]`);
+}
+
+// The homepage itself: index.html with its raw HTML written from the shared data.
+{
+  const homeBlock = buildHomeBlock();
+  const html = indexHtml.replace(
+    /<div data-page-content[^>]*>[\s\S]*?<\/div><\/div>(?=\s*<\/body>)/,
+    `${homeBlock}</div>`
+  );
+  const missing = [
+    HOME.hero.title, HOME.hero.subline, ...HOME.cards.map((c) => c.text), HOME.about.heading,
+    ...HOME.about.paragraphs, HOME.about.tagline, HOME.enquiry.heading, HOME.enquiry.email, HOME.enquiry.phone,
+  ].filter((t) => !html.includes(esc(t)));
+  if (missing.length) {
+    throw new Error(`generate-routes: homepage raw HTML is missing: ${missing.map((t) => t.slice(0, 40)).join(' | ')}`);
+  }
+  writeFileSync(join(distDir, 'index.html'), html);
+  console.log('Generated: /index.html  [h1: ' + HOME.hero.title + ']');
 }
 
 // The page Cloudflare Pages serves, with a 404 status, for any address that does
