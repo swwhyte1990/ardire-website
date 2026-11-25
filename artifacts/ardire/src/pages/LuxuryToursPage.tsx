@@ -221,7 +221,7 @@ export default function LuxuryToursPage() {
       </section>
 
       {/* Three Sample Journeys */}
-      <section id={SAMPLES_ID} tabIndex={-1} className="scroll-mt-20 focus:outline-none py-24 md:py-32 bg-background border-t border-border/30">
+      <section data-prerender-skip id={SAMPLES_ID} tabIndex={-1} className="scroll-mt-20 focus:outline-none py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <m.div
             initial={{ opacity: 0, y: 16 }}
@@ -347,14 +347,14 @@ export default function LuxuryToursPage() {
             <p className="font-sans font-light text-sm text-muted-foreground mb-8 max-w-2xl">
               Everything is taken care of:
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-8">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-8">
               {included.map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
+                <li key={i} className="flex items-start gap-3">
                   <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                   <span className="font-sans font-light text-sm text-muted-foreground">{item}</span>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
             <p className="font-sans font-light text-sm text-muted-foreground">
               Arrive, and the rest is in hand.
             </p>
@@ -363,7 +363,7 @@ export default function LuxuryToursPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 md:py-32 bg-card border-t border-border/30">
+      <section data-prerender-skip className="py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <m.div
             initial={{ opacity: 0, y: 16 }}

@@ -7,6 +7,8 @@ import { MAP_HEIGHT, MAP_WIDTH, SCOTLAND_PATH, project } from "@/components/scot
 import { setPendingScroll } from "@/lib/pendingScroll";
 import { setPendingEnquiry } from "@/lib/pendingEnquiry";
 import { cn } from "@/lib/utils";
+// Shared with scripts/generate-routes.mjs, which writes it under the static journeys.
+import journeyPrice from "@/data/journeyPrice.json";
 
 function toPoints(line: [number, number][]) {
   return line.map(([lon, lat]) => {
@@ -358,10 +360,8 @@ export function SampleJourney({ journey }: { journey: Journey }) {
 
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-t border-border/40 pt-8">
         <div>
-          <p className="font-sans text-xs uppercase tracking-[0.3em] text-primary mb-1">Price on enquiry</p>
-          <p className="font-sans font-light text-sm text-muted-foreground max-w-md">
-            Every journey is shaped around you, so the cost depends on the route, the stays and the pace you choose.
-          </p>
+          <p className="font-sans text-xs uppercase tracking-[0.3em] text-primary mb-1">{journeyPrice.label}</p>
+          <p className="font-sans font-light text-sm text-muted-foreground max-w-md">{journeyPrice.note}</p>
         </div>
         <a
           href="/#enquiry"

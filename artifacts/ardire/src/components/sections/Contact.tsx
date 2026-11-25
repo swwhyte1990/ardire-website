@@ -92,14 +92,12 @@ export function Contact() {
 
     try {
       const accessKey = import.meta.env.VITE_WEB3FORMS_KEY as string | undefined;
-      if (!accessKey) {
-        throw new Error("The form is not set up yet. Please email us directly at enquiries@ardire.co.uk");
-      }
+      if (!accessKey) throw new Error("VITE_WEB3FORMS_KEY is not set");
 
       const formData = new FormData();
       formData.append("access_key", accessKey);
       formData.append("from_name", "Árdíre Website");
-      formData.append("subject", `New Enquiry: ${serviceLabel} — ${values.name}`);
+      formData.append("subject", `New Enquiry: ${serviceLabel}, ${values.name}`);
       formData.append("name", values.name);
       formData.append("email", values.email);
       formData.append("message", `Area of Interest: ${serviceLabel}\n\n${values.message}`);
@@ -108,6 +106,7 @@ export function Contact() {
         method: "POST",
         body: formData,
       });
+      if (!res.ok) throw new Error(`Web3Forms replied ${res.status}`);
 
       const data = await res.json() as { success: boolean; message?: string };
       if (!data.success) throw new Error(data.message || "Submission failed");
@@ -115,7 +114,10 @@ export function Contact() {
       setSubmitted(true);
       setSubmitError(null);
     } catch (err) {
-      setSubmitError(err instanceof Error ? err.message : "Please try again or email us directly.");
+      // The technical reason is for us, not the visitor: they always get a way
+      // to reach us, whatever went wrong (offline, a bad key, a server error).
+      console.error("Enquiry form:", err);
+      setSubmitError(EMAIL_FALLBACK);
     }
   }
 
@@ -266,7 +268,14 @@ export function Contact() {
                   />
 
                   {submitError && (
-                    <p role="alert" className="text-destructive font-sans text-sm">{submitError}</p>
+                    <p role="alert" className="text-destructive font-sans text-sm">
+                      {submitError === EMAIL_FALLBACK ? (
+                        <>
+                          Please try again, or email us directly at{" "}
+                          <a href="mailto:enquiries@ardire.co.uk" className="underline underline-offset-2">enquiries@ardire.co.uk</a>
+                        </>
+                      ) : submitError}
+                    </p>
                   )}
 
                   <Button

@@ -86,7 +86,11 @@ const rawPort = process.env.PORT ?? "18439";
 const port = Number(rawPort);
 const basePath = process.env.BASE_PATH ?? "/";
 
-export default defineConfig({
+// Two builds share this config: the site itself, and a server render of the pages
+// (src/prerender.tsx) that scripts/generate-routes.mjs uses to write each page's
+// real text into its static HTML. The server build goes to dist/ssr, which is not
+// deployed, and needs none of the public files or the manifest.
+export default defineConfig(async ({ isSsrBuild }) => ({
   base: basePath,
   plugins: [
     react(),
@@ -111,12 +115,15 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "src"),
-      "@assets": path.resolve(import.meta.dirname, "..", "..", "attached_assets"),
     },
     dedupe: ["react", "react-dom"],
   },
   root: path.resolve(import.meta.dirname),
-  build: {
+  build: isSsrBuild ? {
+    outDir: path.resolve(import.meta.dirname, "dist/ssr"),
+    emptyOutDir: true,
+    copyPublicDir: false,
+  } : {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
     // generate-routes.mjs reads the manifest to resolve hashed hero images.
@@ -155,4 +162,4 @@ export default defineConfig({
     host: "0.0.0.0",
     allowedHosts: true,
   },
-});
+}));

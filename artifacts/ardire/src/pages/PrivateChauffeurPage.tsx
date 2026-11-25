@@ -129,14 +129,14 @@ export default function PrivateChauffeurPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-8">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-8">
               {howWeCanHelp.map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
+                <li key={i} className="flex items-start gap-3">
                   <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                   <span className="font-sans font-light text-sm text-muted-foreground">{item}</span>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
             <p className="font-sans font-light text-sm text-muted-foreground max-w-3xl">
               For an hour, a day or a week.
             </p>
@@ -192,7 +192,7 @@ export default function PrivateChauffeurPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+      <section data-prerender-skip className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <m.div
             initial={{ opacity: 0, y: 16 }}

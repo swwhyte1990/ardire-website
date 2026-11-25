@@ -31,7 +31,7 @@ export default function NotFound() {
   }, []);
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center bg-background text-foreground relative overflow-hidden">
+    <main id="main-content" className="min-h-screen w-full flex flex-col items-center justify-center bg-background text-foreground relative overflow-hidden">
       {/* Background texture */}
       <div 
         className="absolute inset-0 opacity-10 pointer-events-none mix-blend-overlay"
@@ -74,6 +74,6 @@ export default function NotFound() {
           )}
         </nav>
       </div>
-    </div>
+    </main>
   );
 }

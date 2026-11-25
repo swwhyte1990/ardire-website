@@ -176,14 +176,14 @@ export default function EventStaffingPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-6">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mb-6">
               {staffProvided.map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
+                <li key={i} className="flex items-start gap-3">
                   <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                   <span className="font-sans font-light text-sm text-muted-foreground">{item}</span>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
             <p className="font-sans font-light text-sm text-muted-foreground max-w-3xl">
               Need a role not listed here? Ask us.
             </p>

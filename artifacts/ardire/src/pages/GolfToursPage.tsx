@@ -182,7 +182,7 @@ export default function GolfToursPage() {
       </section>
 
       {/* Sample Itinerary */}
-      <section id={SAMPLES_ID} tabIndex={-1} className="scroll-mt-20 focus:outline-none py-24 md:py-32 bg-card border-t border-border/30">
+      <section data-prerender-skip id={SAMPLES_ID} tabIndex={-1} className="scroll-mt-20 focus:outline-none py-24 md:py-32 bg-card border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <m.div
             initial={{ opacity: 0, y: 16 }}
@@ -251,7 +251,7 @@ export default function GolfToursPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 md:py-32 bg-background border-t border-border/30">
+      <section data-prerender-skip className="py-24 md:py-32 bg-background border-t border-border/30">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <m.div
             initial={{ opacity: 0, y: 16 }}

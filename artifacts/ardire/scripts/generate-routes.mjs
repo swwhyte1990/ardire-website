@@ -1,14 +1,15 @@
 /**
  * Post-build script: generates pre-rendered HTML files for each route.
- * Each page contains genuine, visible content matching what React renders
- * (intro paragraphs, highlights and internal links). The static markup uses
+ * Each page's text is taken from a server render of the page itself
+ * (dist/ssr/prerender.js, built from src/prerender.tsx), so the raw HTML says
+ * exactly what the visitor sees and cannot drift from it. The static markup uses
  * brand-matched inline styles so the moment before React hydrates looks
  * intentional. React replaces the root content on mount; sighted users see
  * the full interactive site.
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const distDir = join(__dirname, '../dist/public');
@@ -47,11 +48,11 @@ function buildJourneysHtml(route) {
   const body = list.map((j) => {
     const story = j.story.map((s) => `<p style="font-size:1rem;margin:0 0 1rem">${esc(s)}</p>`).join('');
     const days = j.days.map((d, i) =>
-      `<li style="margin:0 0 0.6rem"><strong>Day ${i + 1}, ${esc(d.title)}.</strong> ${esc(d.highlights.join('. '))}.</li>`
+      `<li style="margin:0 0 0.6rem"><strong>${d.departure ? esc(d.title) : `Day ${i + 1}, ${esc(d.title)}`}.</strong> ${esc(d.highlights.join('. '))}.</li>`
     ).join('');
     return `<h3 style="${h3}">${esc(j.duration)}: ${esc(j.title)}</h3>${story}<ol style="margin:0 0 1rem;padding-left:1.25rem;font-size:0.95rem">${days}</ol>`;
   }).join('');
-  return `<h2 style="${h2}">Sample journeys</h2>${body}<p style="font-size:0.95rem;margin:1rem 0 0">Price on enquiry. Every journey is shaped around you.</p>`;
+  return `<h2 style="${h2}">Sample journeys</h2>${body}<p style="font-size:0.95rem;margin:1rem 0 0">${esc(JOURNEY_PRICE.label)}. ${esc(JOURNEY_PRICE.note)}</p>`;
 }
 
 // Page-specific structured data. Each block is marked data-page-schema so the
@@ -69,6 +70,7 @@ const FAQS = readData('faqs.json');
 const SERVICES = readData('serviceSchema.json');
 const STAFFING_PRICES = readData('staffingPrices.json');
 const HOME = readData('homePage.json');
+const JOURNEY_PRICE = readData('journeyPrice.json');
 const PROVIDER = { '@type': 'TravelAgency', name: 'The \u00c1rd\u00edre Group', url: 'https://ardire.co.uk/' };
 
 // Offers come only from the price cards shown on the Event Staffing page: a
@@ -200,17 +202,85 @@ const allServiceLinks = [
 
 const linkStyle = "color:#c5a366;text-decoration:none;margin-right:1rem;display:inline-block;padding:0.25rem 0";
 
+// The page's text in reading order, from the server render of the page: headings,
+// paragraphs and list items inside <main>. Sections marked data-prerender-skip
+// (sample journeys and FAQs, which are interactive and written below from their
+// own JSON) are left out, as are buttons, navigation, SVG and anything aria-hidden.
+const { render } = await import(pathToFileURL(join(__dirname, '../dist/ssr/prerender.js')).href);
+const BLOCKS = new Set(['h1', 'h2', 'h3', 'h4', 'p', 'li']);
+const VOID = new Set(['img', 'br', 'hr', 'input', 'meta', 'link', 'source', 'wbr', 'area', 'col', 'embed', 'track']);
+const NEVER = new Set(['button', 'nav', 'svg', 'script', 'style', 'noscript', 'template', 'select', 'form']);
+const decode = (t) => t
+  .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"')
+  .replace(/&#x27;|&#39;/g, "'").replace(/&nbsp;/g, '\u00a0').replace(/&amp;/g, '&');
+
+function pageText(route) {
+  const html = render(route.path);
+  const start = html.indexOf('<main');
+  if (start < 0) throw new Error(`generate-routes: no <main> in the server render of ${route.path}`);
+  const stack = [];
+  const out = [];
+  let block = null;
+  const tokens = /<!--[\s\S]*?-->|<(\/?)([a-zA-Z][\w-]*)((?:[^>"']|"[^"]*"|'[^']*')*?)(\/?)>|([^<]+)/g;
+  tokens.lastIndex = start;
+  for (let m; (m = tokens.exec(html)); ) {
+    const [, closing, rawTag, attrs = '', selfClosing, text] = m;
+    if (text !== undefined) {
+      if (block && !stack.at(-1)?.skip) block.text += decode(text);
+      continue;
+    }
+    if (!rawTag) continue; // a comment
+    const tag = rawTag.toLowerCase();
+    if (closing) {
+      const el = stack.pop();
+      if (block && el === block.el) {
+        const t = block.text.replace(/\s+/g, ' ').trim();
+        if (t) out.push({ tag: block.tag, eyebrow: block.eyebrow, text: t });
+        block = null;
+      }
+      if (tag === 'main' && !stack.length) break;
+      continue;
+    }
+    if (tag === 'br') { if (block) block.text += ' '; continue; }
+    if (VOID.has(tag) || selfClosing) continue;
+    const skip = Boolean(stack.at(-1)?.skip) || NEVER.has(tag) ||
+      /\sdata-prerender-skip/.test(attrs) || /\saria-hidden="true"/.test(attrs);
+    const el = { tag, skip };
+    stack.push(el);
+    if (!skip && !block && BLOCKS.has(tag)) {
+      const cls = attrs.match(/class="([^"]*)"/)?.[1] ?? '';
+      block = { el, tag, text: '', eyebrow: tag === 'p' && /\buppercase\b/.test(cls) };
+    }
+  }
+  const h1s = out.filter((b) => b.tag === 'h1');
+  if (h1s.length !== 1) throw new Error(`generate-routes: ${route.path} renders ${h1s.length} <h1> elements, expected one`);
+  if (out.length < 8) throw new Error(`generate-routes: only ${out.length} blocks of text found for ${route.path}`);
+  return out;
+}
+
+function pageTextHtml(blocks) {
+  const serif = 'font-family:Georgia,serif;font-weight:500;color:#c5a366';
+  const style = {
+    h1: `${serif};font-size:2rem;letter-spacing:0.05em;margin:0 0 1.5rem`,
+    h2: `${serif};font-size:1.5rem;margin:2.5rem 0 1rem`,
+    h3: `${serif};font-size:1.2rem;margin:1.75rem 0 0.5rem`,
+    h4: `${serif};font-size:1.05rem;margin:1.25rem 0 0.4rem`,
+    p: 'font-size:1.05rem;margin:0 0 1.25rem',
+    eyebrow: 'margin:2rem 0 0.5rem;font-size:0.8rem;letter-spacing:0.3em;text-transform:uppercase',
+    li: 'padding:0.3rem 0;font-size:1rem',
+  };
+  let html = '';
+  let inList = false;
+  for (const b of blocks) {
+    if (b.tag === 'li' && !inList) { html += '<ul style="margin:1rem 0 1.5rem;padding-left:1.25rem">'; inList = true; }
+    if (b.tag !== 'li' && inList) { html += '</ul>'; inList = false; }
+    const css = b.eyebrow ? style.eyebrow : style[b.tag];
+    html += `<${b.tag} style="${css}">${esc(b.text)}</${b.tag}>`;
+  }
+  return html + (inList ? '</ul>' : '');
+}
+
 function buildPageBlock(route) {
-  const h1Html = `<h1 style="font-family:Georgia,serif;font-size:2rem;font-weight:500;letter-spacing:0.05em;color:#c5a366;margin:0 0 1.5rem">${esc(route.h1)}</h1>`;
-
-  const paragraphsHtml = (route.paragraphs || [])
-    .map(p => `<p style="font-size:1.05rem;margin:0 0 1.25rem">${esc(p)}</p>`)
-    .join('');
-
-  const highlightsHtml = (route.highlights || []).length
-    ? `<ul style="margin:1.5rem 0;padding:0;list-style:none">${(route.highlights).map(h => `<li style="padding:0.4rem 0 0.4rem 1.25rem;position:relative;font-size:1rem">&middot; ${esc(h)}</li>`).join('')}</ul>`
-    : '';
-
   const serviceLinksHtml = allServiceLinks
     .filter(s => route.path !== `services/${s.slug}`)
     .map(s => `<a href="https://ardire.co.uk/services/${s.slug}/" style="${linkStyle}">${esc(s.label)}</a>`)
@@ -218,7 +288,7 @@ function buildPageBlock(route) {
 
   const navHtml = `<nav style="margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid rgba(197,163,102,0.25);font-size:0.95rem"><a href="https://ardire.co.uk/" style="${linkStyle}">Árdíre Home</a>${serviceLinksHtml}${route.path !== 'privacy' ? `<a href="https://ardire.co.uk/privacy/" style="${linkStyle}">Privacy Policy</a>` : ''}<a href="https://ardire.co.uk/#enquiry" style="color:#c5a366;text-decoration:none;display:inline-block;padding:0.25rem 0">Contact Árdíre</a></nav>`;
 
-  return `<div data-page-content style="max-width:760px;margin:0 auto;padding:3rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7">${h1Html}${paragraphsHtml}${highlightsHtml}${buildJourneysHtml(route)}${buildFaqHtml(route)}${navHtml}</div>`;
+  return `<div data-page-content style="max-width:760px;margin:0 auto;padding:3rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7">${pageTextHtml(route.text)}${buildJourneysHtml(route)}${buildFaqHtml(route)}${navHtml}</div>`;
 }
 
 // The homepage's raw HTML. index.html carries only an empty placeholder; the words
@@ -245,7 +315,7 @@ function buildHomeBlock() {
     `<p style="font-style:italic;font-size:1.15rem;margin:1.5rem 0 0">${esc(HOME.about.tagline)}</p></section>`;
   const e = HOME.enquiry;
   const enquiryHtml =
-    `<section style="margin-top:2.5rem"><h2 style="${serif};font-size:1.75rem;margin:0 0 1rem">${esc(e.heading)}</h2>` +
+    `<section id="enquiry" style="margin-top:2.5rem"><h2 style="${serif};font-size:1.75rem;margin:0 0 1rem">${esc(e.heading)}</h2>` +
     `<p style="margin:0 0 1.25rem">${esc(e.intro)}</p>` +
     `<p style="margin:0 0 1rem">${esc(e.organisation)}<br />${esc(e.place)}</p>` +
     `<p style="margin:0 0 0.5rem">${esc(e.emailLabel)}: <a href="mailto:${esc(e.email)}" style="color:#c5a366">${esc(e.email)}</a></p>` +
@@ -256,174 +326,19 @@ function buildHomeBlock() {
   return `<div data-page-content style="max-width:760px;margin:0 auto;padding:3rem 1.5rem;font-family:Georgia,'Times New Roman',serif;color:#c5a366;line-height:1.7">${heroHtml}${cardsHtml}${aboutHtml}${enquiryHtml}${navHtml}</div>`;
 }
 
+// Every page except the homepage, with the hero image its static HTML preloads.
+// The words come from the server render; see pageText().
 const routes = [
-  {
-    path: 'travel',
-    heroImage: 'travel-glenfinnan.webp',
-    h1: 'Private Tours & Travel in Scotland',
-    paragraphs: [
-      'Privately guided tours, championship golf, a private chauffeur, self-guided routes and a dedicated travel concierge. Each one planned with you.',
-      'Whether you want a private tour of the Highlands, a week on Scotland\'s championship links, a chauffeur on call for the duration of your stay, or a self-guided route with everything booked ahead of you, each journey is built around how you prefer to travel rather than a fixed itinerary.',
-    ],
-    highlights: [
-      'Luxury Tours - a private tour and a travel concierge in one',
-      'Golf Tours - a week on Scotland\'s great courses, planned end to end',
-      'Private Chauffeur - discreet, professional drivers across the country',
-      'Self-Guided Tours - routes, stays and access arranged in advance',
-    ],
-  },
-  {
-    path: 'events',
-    heroImage: 'events-hero.webp',
-    h1: 'Corporate Events & Incentive Travel in Scotland',
-    paragraphs: [
-      'Corporate incentives, full-service event management, professional staffing and bespoke experiences across Scotland.',
-      'From the first concept through to the final curtain, we plan and run events across Scotland: incentive programmes that reward the people who earned them, full event management for conferences, dinners and launches, and experienced hospitality staff for occasions of any scale.',
-    ],
-    highlights: [
-      'Corporate Incentives - programmes that reward and motivate teams',
-      'Event Management - conferences, dinners and launches run end to end',
-      'Event Staffing - experienced hospitality staff at any scale',
-    ],
-  },
-  {
-    path: 'services/luxury-tours',
-    heroImage: 'tours-hero.webp',
-    h1: 'Private Tours of Scotland',
-    paragraphs: [
-      'A private tour of Scotland, with a travel concierge who arranges and looks after every part of it, from first idea to final evening.',
-      'A private tour follows what you want to see, the pace you want to keep and the kind of days you want to have. We plan the itinerary and book everything: transport, rooms, meals and experiences. Then we run it on the ground, so there is nothing to chase while you are here.',
-      'This is a country we know well and love showing off, and most of that love is in the detail: the right glen on the right morning, the dinner worth driving for, the distillery that will open a door for you. Some of our guests arrive knowing exactly what they want. Most come with a few ideas and let us fill in the rest.',
-      'We can also be your travel concierge for the whole of your time in Scotland: one person who arranges, books and looks after everything, and is on call while you are here.',
-    ],
-    highlights: [
-      'A private driver and transfers throughout',
-      'Accommodation chosen for its standard and its setting',
-      'Meals and dining, with a private chef whenever you would like one',
-      'Guides, experiences and access arranged around your interests',
-      'Every booking, ticket and reservation handled ahead of time',
-      'A dedicated concierge looking after your trip on the ground throughout',
-    ],
-  },
-  {
-    path: 'services/golf-tours',
-    heroImage: 'golf-hero.webp',
-    h1: 'Private Golf Tours of Scotland',
-    paragraphs: [
-      'A week on Scotland\'s great courses, planned and run from arrival to departure. You play. We look after everything around it.',
-      'We plan and run private golf tours across Scotland for small groups of golfers. Tell us how you like to play and the courses on your list. We shape the trip around them: the rounds, the cars, the rooms, the dinners and the evenings.',
-      'Tee times are booked in the right order, and early enough to secure the courses that matter most to you. A private driver takes you to each one. Each night\'s stay is chosen for where you play the next morning. Someone who knows your plans is with you through the week, so if the weather turns or you want to change something, it is quickly done.',
-      'There is no set price for a tour. Each trip depends on the courses you play and the way you travel. You receive a full, itemised proposal before anything is booked.',
-    ],
-    highlights: [
-      'Tee times booked in the right order, for the courses that matter most to you',
-      'A private driver between courses, hotels and dinners',
-      'Accommodation chosen for where you are playing next',
-      'Evenings, dinners and experiences arranged around the golf',
-      'Someone with you through the week who knows your plans',
-    ],
-  },
-  {
-    path: 'services/private-chauffeur',
-    heroImage: 'chauffeur-hero.webp',
-    h1: 'Private Chauffeur Service in Scotland',
-    paragraphs: [
-      'A professional driver and a comfortable car, anywhere in Scotland. Airport transfers, days out and everything in between.',
-      'We provide a private chauffeur service across Scotland, for a single transfer or for as long as you would like a car and driver. That might be a quiet run from the airport after a long flight, a day exploring at your own pace, or getting a group where it needs to be, on time.',
-      'Our drivers know the roads and the country, and work with care and discretion. This is the same driving that runs our private tours and golf trips, offered on its own for an hour or a week.',
-      'Pricing is per journey or per day. Send us the details and we will reply with a quote.',
-    ],
-    highlights: [
-      'Airport transfers, met at arrivals and driven to your door',
-      'A car and driver for a day or several, to explore at your own pace',
-      'Getting between courses, dinners and events comfortably and on time',
-      'Transport for groups, occasions and corporate days',
-    ],
-  },
-  {
-    path: 'services/corporate-incentives',
-    heroImage: 'corporate-hero.webp',
-    h1: 'Corporate Incentive Trips in Scotland',
-    paragraphs: [
-      'Reward a team, motivate your top performers, or bring clients somewhere they will not forget. We design and run the whole trip, from arrival to the journey home.',
-      'We plan and run incentive trips across Scotland for companies who want to reward their people, motivate them or bring them closer together. Tell us the aim, and we build the programme and run every part of it.',
-      'Scotland gives a group plenty to remember: famous golf, whisky at its source, castles to stay in, and scenery that does much of the work. We turn it into days that run smoothly and land as you intended.',
-      'There is no set price for an incentive trip. Your figure reflects where you stay, how you travel, the experiences you choose and the number coming. We send a full, itemised proposal before anything is confirmed.',
-    ],
-    highlights: [
-      'A welcome that sets the tone, from a piper on arrival to a private first-night dinner',
-      'Stays worth the trip in themselves, from exclusive-use castles to landmark city hotels',
-      'Whisky at its source, with private tastings',
-      'Golf arranged around every level of ability',
-      'Days that bring a group together, on the lochs, the islands and the open country',
-      'Dinners with a real sense of occasion, a gala evening and a ceilidh among them',
-    ],
-  },
-  {
-    path: 'services/self-guided-tours',
-    heroImage: 'self-guided-hero.webp',
-    h1: 'Self-Guided Tours of Scotland',
-    paragraphs: [
-      'The freedom to explore Scotland your own way, with the route planned and the bookings made before you leave.',
-      'Tell us where you would like to go, how long you have and how you like to travel. We design a route, recommend places to stay and stop, and book whatever you would like handled, from rooms to tables and experiences. Then the trip is yours, and we are there if you need us.',
-      'Self-guided suits couples and families who would rather set their own rhythm than follow a guide, confident travellers who love the drive and the discovery, and people who have toured Scotland with a guide before and want to come back and explore it their own way.',
-      'There is no set price. Each self-guided trip depends on your route, your pace and what you would like us to book.',
-    ],
-    highlights: [
-      'A route and itinerary shaped by what you want to see and how far you like to travel each day',
-      'Accommodation booked throughout, from country houses and castles to the best small hotels',
-      'Tables, tastings and experiences reserved in advance',
-      'Detailed recommendations for each day: where to stop, what to see, and where to eat',
-      'Anything else you would like arranged, from car hire to a private guide for a day',
-      'A point of contact throughout, for changes of plan or advice on the road',
-    ],
-  },
-  {
-    path: 'services/event-staffing',
-    heroImage: 'events-hero.webp',
-    h1: 'Event Staffing in Scotland',
-    paragraphs: [
-      'Waiting staff, butlers and hospitality teams for events of any size. Briefed, well presented and ready to look after your guests.',
-      'Pricing is by role and by the hour: front-of-house and bar staff from £25 per hour plus VAT (minimum four hours), butlers and event managers from £40 per hour plus VAT (minimum ten hours), and chefs on request for private dining and on-site catering.',
-      'We provide trained staff for events across Scotland, from a single butler for a private dinner to a full front-of-house team for a large gathering. Our staff arrive briefed and uniformed to your specification. A senior coordinator runs the team on the day, so you deal with one person.',
-      'Everyone we provide is experienced, background-checked, insured and briefed before they arrive. We work with private hosts, companies, families, private households, and the venues and event planners who need a reliable team for an event they are running.',
-    ],
-    highlights: [
-      'Waiting staff for dinners, receptions and functions of every size',
-      'Butlers and private service staff for households, private dinners and smaller occasions',
-      'Front-of-house and hospitality teams: reception, hosts and guest liaison',
-      'Bar staff, from a quiet drinks reception to a full event bar',
-      'Chefs on request, for private dining and on-site catering',
-    ],
-  },
-  {
-    path: 'services/event-management',
-    heroImage: 'events-hero.webp',
-    h1: 'Event Management in Scotland',
-    paragraphs: [
-      'We plan, produce and run events from start to finish, with one point of contact throughout.',
-      'We take full responsibility for your event, from the first conversation to the moment the last guest leaves. We manage the production, make the decisions on the day and answer for the result. Our clients want to hand the event over and know it will be run properly, whatever the size.',
-      'We start with the brief: what the event is for, who is attending, what impression it should leave. From there we develop the concept, source the venue, build the supplier list, and manage every booking and contract. On the day, we are there with a full team, running the event.',
-      'Smaller occasions include private dinners, birthday celebrations and family gatherings. Larger ones include product launches, awards evenings, corporate hospitality days, charity galas and conference receptions. Each is produced differently. The approach stays the same: plan thoroughly, staff well and run it calmly.',
-    ],
-    highlights: [
-      'Venue sourcing and contract negotiation',
-      'Supplier management: catering, bar, AV and technical production, lighting, entertainment',
-      'Event design and styling',
-      'Guest communications, registration and on-the-day reception',
-      'Full on-site management with a dedicated event producer',
-      'Post-event debrief and close-out',
-    ],
-  },
-  {
-    path: 'privacy',
-    heroImage: null,
-    h1: 'Privacy Policy',
-    paragraphs: [
-      'This privacy policy explains how The Árdíre Group collects, uses, stores, and protects your personal data when you visit our website or contact us about our services.',
-    ],
-    highlights: [],
-  },
+  { path: 'travel', heroImage: 'travel-glenfinnan.webp' },
+  { path: 'events', heroImage: 'events-hero.webp' },
+  { path: 'services/luxury-tours', heroImage: 'tours-hero.webp' },
+  { path: 'services/golf-tours', heroImage: 'golf-hero.webp' },
+  { path: 'services/private-chauffeur', heroImage: 'chauffeur-hero.webp' },
+  { path: 'services/corporate-incentives', heroImage: 'corporate-hero.webp' },
+  { path: 'services/self-guided-tours', heroImage: 'self-guided-hero.webp' },
+  { path: 'services/event-staffing', heroImage: 'events-hero.webp' },
+  { path: 'services/event-management', heroImage: 'events-hero.webp' },
+  { path: 'privacy', heroImage: null },
 ];
 
 const indexHtml = readFileSync(join(distDir, 'index.html'), 'utf8');
@@ -433,6 +348,8 @@ const pageMeta = JSON.parse(readFileSync(join(__dirname, '../src/data/pageMeta.j
 for (const route of routes) {
   if (!pageMeta[route.path]) throw new Error(`No entry for ${route.path} in src/data/pageMeta.json`);
   Object.assign(route, pageMeta[route.path]);
+  route.text = pageText(route);
+  route.h1 = route.text.find((b) => b.tag === 'h1').text;
 }
 // The home page's tags are written by hand in index.html; make sure they match too.
 for (const [label, re] of [['title', /<title>([^<]*)<\/title>/], ['description', /name="description"\s+content="([^"]*)"/]]) {
