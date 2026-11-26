@@ -1,7 +1,5 @@
 import { m } from "framer-motion";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import homePage from "@/data/homePage.json";
@@ -17,14 +15,29 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { ChevronDown } from "lucide-react";
 
-const formSchema = z.object({
-  name: z.string().min(2, "Name is required"),
-  email: z.string().email("Invalid email address"),
-  service: z.string().min(1, "Please select an area of interest"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
+interface EnquiryValues {
+  name: string;
+  email: string;
+  service: string;
+  message: string;
+}
+
+// react-hook-form's own rules, which cover these four simple checks without a
+// schema library (zod and its resolver added about 60 kB to the form's download).
+const RULES = {
+  name: { minLength: { value: 2, message: "Name is required" }, required: "Name is required" },
+  email: {
+    required: "Invalid email address",
+    pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email address" },
+  },
+  service: { required: "Please select an area of interest" },
+  message: {
+    required: "Message must be at least 10 characters",
+    minLength: { value: 10, message: "Message must be at least 10 characters" },
+  },
+} as const;
 
 const SERVICE_OPTIONS = [
   { value: "luxury-tours", label: "Luxury Tours" },
@@ -64,8 +77,7 @@ export function Contact() {
   // and an opening line here, so the enquiry arrives with that context.
   const [prefill] = useState(takePendingEnquiry);
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<EnquiryValues>({
     defaultValues: {
       name: "",
       email: "",
@@ -74,7 +86,7 @@ export function Contact() {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: EnquiryValues) {
     // Both guards used to return silently, so the button appeared dead and the
     // visitor had no idea why. A genuine person caught by either needs telling.
     if (honeypotRef.current?.value) {
@@ -199,6 +211,7 @@ export function Contact() {
                     <FormField
                       control={form.control}
                       name="name"
+                      rules={RULES.name}
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Full Name</FormLabel>
@@ -212,6 +225,7 @@ export function Contact() {
                     <FormField
                       control={form.control}
                       name="email"
+                      rules={RULES.email}
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Email Address</FormLabel>
@@ -227,23 +241,28 @@ export function Contact() {
                   <FormField
                     control={form.control}
                     name="service"
+                    rules={RULES.service}
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Area of Interest</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                        {/* A native select: the phone's own picker on mobile, and none of
+                            the 70 kB a custom dropdown library costs. */}
+                        <div className="relative">
                           <FormControl>
-                            <SelectTrigger className="bg-background/50 border-border/50 rounded-none focus:ring-primary h-12">
-                              <SelectValue placeholder="Select a service" />
-                            </SelectTrigger>
+                            <select
+                              {...field}
+                              className={`flex w-full appearance-none border border-border/50 bg-background/50 pl-3 pr-10 h-12 text-base md:text-sm [color-scheme:dark] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary ${field.value ? "text-foreground" : "text-muted-foreground"}`}
+                            >
+                              <option value="" disabled>Select a service</option>
+                              {SERVICE_OPTIONS.map((o) => (
+                                <option key={o.value} value={o.value} className="text-foreground bg-card">
+                                  {o.label}
+                                </option>
+                              ))}
+                            </select>
                           </FormControl>
-                          <SelectContent className="bg-card border-border rounded-none">
-                            {SERVICE_OPTIONS.map((o) => (
-                              <SelectItem key={o.value} value={o.value}>
-                                {o.label}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                          <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 opacity-50" />
+                        </div>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -252,6 +271,7 @@ export function Contact() {
                   <FormField
                     control={form.control}
                     name="message"
+                    rules={RULES.message}
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-xs uppercase tracking-widest text-muted-foreground font-sans">Your Requirements</FormLabel>

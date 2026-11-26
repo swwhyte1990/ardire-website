@@ -1,9 +1,13 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
-import { LazyMotion, domAnimation } from "framer-motion";
+import { LazyMotion } from "framer-motion";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 import { takePendingScroll } from "@/lib/pendingScroll";
+
+// The animation features are about 55 kB of framer-motion's 80 kB, so every page
+// paints without them and they load straight after.
+const loadMotionFeatures = () => import("@/lib/motionFeatures").then((m) => m.default);
 
 const Privacy = lazy(() => import("@/pages/Privacy"));
 const TravelPage = lazy(() => import("@/pages/TravelPage"));
@@ -62,7 +66,7 @@ function Router() {
 
 function App() {
   return (
-    <LazyMotion features={domAnimation} strict>
+    <LazyMotion features={loadMotionFeatures} strict>
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-background focus:text-primary focus:border focus:border-primary focus:px-4 focus:py-2 focus:font-sans focus:text-xs focus:tracking-widest focus:uppercase"

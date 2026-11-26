@@ -132,9 +132,8 @@ export default defineConfig(async ({ isSsrBuild }) => ({
       output: {
         manualChunks(id) {
           if (!id.includes("node_modules")) return;
-          if (id.includes("framer-motion") || id.includes("motion-dom") || id.includes("motion-utils")) {
-            return "framer-motion";
-          }
+          // framer-motion is left to Rollup, so its lazily loaded animation features
+          // (src/lib/motionFeatures.ts) split away from the small core pages need.
           if (
             id.includes("/react/") ||
             id.includes("/react-dom/") ||
